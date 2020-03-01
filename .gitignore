@@ -1,0 +1,17 @@
+src/services/mock-api/mock-data/db.json
+
+# build folders
+/dist
+/serve
+/lib
+
+# Dependency directories
+/node_modules
+
+# Server related
+.env
+
+/yarn-error.log
+
+# User-specific stuff:
+.idea/

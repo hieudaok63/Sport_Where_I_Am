@@ -1,0 +1,5 @@
+{
+  "/user-test": "/user",
+  "/user-test/:userId": "/user/:userId",
+  "/department": "/department"
+}

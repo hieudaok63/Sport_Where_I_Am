@@ -1,0 +1,28 @@
+{
+  "plugins": ["prettier"],
+  "env": {
+    "es6": true,
+    "node": true,
+    "mocha": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module"
+  },
+  "extends": ["airbnb", "prettier"],
+  "rules": {
+    "curly": "error",
+    "no-unused-vars": "off",
+    "no-dupe-class-members": "off",
+    "comma-dangle": "off",
+    "prefer-destructuring": "warn",
+    "no-undef": "warn",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "trailingComma": "es5"
+      }
+    ]
+  }
+}
