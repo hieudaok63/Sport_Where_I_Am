@@ -9,9 +9,10 @@
     "start:api-server": "node src/services/mock-api/mock-server.js",
     "start:graphql-server": "npm run babel-node -- src/index.js",
     "test": "nyc mocha \"test/**/*.test.js\"",
-
     "start": "nodemon --exec npm run babel-node -- src/index.js",
-    "start:dev": "npm-run-all --parallel start:api-server start:graphql-server"
+    "start:dev": "npm-run-all --parallel start:api-server start:graphql-server",
+    "lint": "eslint src",
+    "lint:fix": "eslint src test --fix"
   },
   "keywords": [],
   "author": "",

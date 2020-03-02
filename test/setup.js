@@ -9,5 +9,6 @@ global.expect = require('expect');
 global.apiPrefix = process.env.GQL_PREFIX || 'gql';
 
 after(() => {
+  // eslint-disable-next-line global-require
   require('../src').stop();
 });

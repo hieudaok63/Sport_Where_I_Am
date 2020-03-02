@@ -3,34 +3,31 @@ import getAuthOption from '../tools/auth-header';
 
 const { BASE_API } = process.env;
 
-export const getUserById = (userId, token) => {
-  const strUserId = userId && userId.toString();
-  const url = `${BASE_API}/user-test/${strUserId}`;
+export const getCityById = (cityId, token) => {
+  const url = `${BASE_API}/v3i/cities/${cityId}`;
 
-  const http = HttpClient.getHttpClient(3000);
+  const http = HttpClient.getHttpClient();
   return http
     .get(url, token && getAuthOption(token))
     .then(res => res.data)
     .catch(error => {
       logger.error(
-        `Error in User Service - getUserById() for user: ${userId} `,
+        `Error in City Service - getCityById() for city number: ${cityId} `,
         error.message
       );
       return null;
     });
 };
 
-export const getAllUsers = token => {
-  const url = `${BASE_API}/user-test`;
+export const getAllCities = token => {
+  const url = `${BASE_API}/v3i/cities`;
 
   const http = HttpClient.getHttpClient(3000);
   return http
     .get(url, token && getAuthOption(token))
     .then(res => res.data)
     .catch(error => {
-      logger.error(`Error in User Service - getAllUsers() - `, error.message);
+      logger.error(`Error in City Service - getAllCities() - `, error.message);
       return null;
     });
 };
-
-export default getUserById;

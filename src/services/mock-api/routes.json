@@ -1,5 +1,4 @@
 {
-  "/user-test": "/user",
-  "/user-test/:userId": "/user/:userId",
-  "/department": "/department"
+  "/v3i/cities": "/city",
+  "/v3i/cities/:cityId": "/city/:cityId"
 }

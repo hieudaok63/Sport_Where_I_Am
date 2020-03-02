@@ -1,6 +1,7 @@
 const axios = require('axios');
 
 const strTimeOut = process.env.TIME_OUT;
+// eslint-disable-next-line radix
 const intTimeOut = (strTimeOut && parseInt(process.env.TIME_OUT)) || 3000;
 
 class HttpClient {

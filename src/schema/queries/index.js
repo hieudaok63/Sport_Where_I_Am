@@ -1,4 +1,3 @@
-import { userById, allUsers } from './user';
-import { departmentById, allDepartments } from './department';
+import { cityById, allCities } from './city';
 
-export { userById, allUsers, departmentById, allDepartments };
+export { cityById, allCities };
