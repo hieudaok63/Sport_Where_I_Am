@@ -23,20 +23,6 @@ see  `src/services/mock-api/mock-data/createdb.js`
 
 [Install and use `yarn`](https://yarnpkg.com/en/docs/install) instead of `npm`.
 
-###Get up and running 
-
-Easiest way is to just hit the "Use this Template" button and follow the prompts to set up a new repo.
-
-![alt_text](https://help.github.com/assets/images/help/repository/use-this-template-button.png "Use as template")
-
-Naming convention for your new project should be `gql-{projectname}` where {projectname} is you guessed it, your project name eg gql-webjet
-
-then follow instructions in your newly created github repo home page.
-
-```
-git clone git@github.com:TheRocketLab/gql-{projectname} 
-cd gql-{projectname} 
-```
 
 ```cp .env.example .env
 yarn
