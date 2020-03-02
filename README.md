@@ -1,8 +1,8 @@
-# gql-aggregator-boilerplate 
+# gql-swiam
 
 ## Description
 
-GraphQL Service Boilerplate on Node.js with Express to act as API aggregator. 
+GraphQL Service for the Sports Where I Am Application.
 
 ## How it works
 
