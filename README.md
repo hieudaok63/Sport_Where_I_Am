@@ -88,7 +88,29 @@ Hence we mock the responses that we receive.
 
 ## Run with docker
 
-- To be completed 
+There are docker configurations for both development and production.
+
+To run docker for development - 
+
+```
+docker-compose -f docker-compose-development.yml build
+docker-compose -f docker-compose-development.yml up
+```
+
+To run docker for staging - 
+
+```
+docker-compose -f docker-compose-staging.yml build
+docker-compose -f docker-compose-staging.yml up
+```
+
+To run docker for production -
+
+```
+docker-compose build
+docker-compose up
+```
+
 
 ## Deployment 
 

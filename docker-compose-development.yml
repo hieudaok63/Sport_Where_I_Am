@@ -1,0 +1,12 @@
+swiam-gql:
+  build: .
+  dockerfile: Dockerfile-development
+  env_file:
+    - .env
+  volumes:
+    - ./:/usr/src/app
+  ports:
+    - "4000:4000"
+    - "5000:5000"
+  environment:
+    - NODE_ENV="development"

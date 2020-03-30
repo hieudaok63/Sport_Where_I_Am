@@ -45,6 +45,7 @@ logger.info('[] Route registration complete.');
 const webServer = createServer(app);
 
 const server = webServer.listen(PORT, () => {
+  logger.info(`NODE_ENV ${process.env.NODE_ENV}`);
   logger.info(`Server running at ${BASE_GQL_URL}`);
 });
 

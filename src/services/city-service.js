@@ -21,6 +21,8 @@ export const getCityById = (cityId, token) => {
 
 export const getAllCities = token => {
   const url = `${BASE_API}/v3i/cities`;
+  console.log('========== BASE API ==========');
+  console.log(url);
 
   const http = HttpClient.getHttpClient(3000);
   return http
