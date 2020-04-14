@@ -10,6 +10,7 @@ const Popular = new GraphQLObjectType({
   fields: {
     id: { type: GraphQLInt },
     name: { type: GraphQLString },
+    image: { type: GraphQLString },
     date: { type: GraphQLString },
     state: { type: GraphQLString },
     city: { type: GraphQLString },
