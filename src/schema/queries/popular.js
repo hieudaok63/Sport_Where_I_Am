@@ -1,4 +1,4 @@
-import { GraphQLID, GraphQLList } from 'graphql';
+import { GraphQLID, GraphQLInt, GraphQLList } from 'graphql';
 import Popular from '../types/Popular';
 import { getAllPopulars, getPopularById } from '../../services/popular-service';
 
@@ -18,5 +18,9 @@ export const popularById = {
 
 export const allPopulars = {
   type: GraphQLList(Popular),
-  resolve: (rawUserData, args, req) => getAllPopulars(req.token),
+  args: {
+    limit: { type: GraphQLInt },
+    offset: { type: GraphQLInt },
+  },
+  resolve: (rawUserData, args, req) => getAllPopulars(args, req.token),
 };
