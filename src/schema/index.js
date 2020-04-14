@@ -1,12 +1,9 @@
 import { GraphQLObjectType, GraphQLSchema } from 'graphql';
-import { cityById, allCities } from './queries/index';
+import * as fields from './queries/index';
 
 const api = new GraphQLObjectType({
   name: 'api',
-  fields: {
-    cityById,
-    allCities,
-  },
+  fields,
 });
 
 module.exports = new GraphQLSchema({
