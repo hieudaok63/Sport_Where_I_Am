@@ -1,4 +1,6 @@
 {
   "/v3i/cities": "/city",
-  "/v3i/cities/:cityId": "/city/:cityId"
+  "/v3i/cities/:cityId": "/city/:cityId",
+  "/v3i/popular": "/popular",
+  "/v3i/popular/:popularId": "/popular/:popularId"
 }
