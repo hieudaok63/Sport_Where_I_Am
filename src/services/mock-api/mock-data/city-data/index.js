@@ -2,6 +2,11 @@ module.exports = [
   {
     id: 117,
     name: 'Aberdeen',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/117',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/117/venues',
@@ -11,6 +16,11 @@ module.exports = [
   {
     id: 62,
     name: 'Adelaide, SA',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/62',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/62/venues',
@@ -20,6 +30,11 @@ module.exports = [
   {
     id: 233,
     name: 'Amsterdam',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/233',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/233/venues',
@@ -29,6 +44,11 @@ module.exports = [
   {
     id: 170,
     name: 'Angers',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/170',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/170/venues',
@@ -38,6 +58,11 @@ module.exports = [
   {
     id: 217,
     name: 'Antwerp',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/217',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/217/venues',
@@ -47,6 +72,11 @@ module.exports = [
   {
     id: 125,
     name: 'Aragon',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/125',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/125/venues',
@@ -56,6 +86,11 @@ module.exports = [
   {
     id: 8,
     name: 'Atlanta',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/8',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/8/venues',
@@ -65,6 +100,11 @@ module.exports = [
   {
     id: 143,
     name: 'Augsburg',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/143',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/143/venues',
@@ -74,6 +114,11 @@ module.exports = [
   {
     id: 75,
     name: 'Augusta',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/75',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/75/venues',
@@ -83,6 +128,11 @@ module.exports = [
   {
     id: 11,
     name: 'Baltimore',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/11',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/11/venues',
@@ -92,6 +142,11 @@ module.exports = [
   {
     id: 144,
     name: 'Bamberg',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/144',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/144/venues',
@@ -101,6 +156,11 @@ module.exports = [
   {
     id: 126,
     name: 'Barcelona',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/126',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/126/venues',
@@ -110,6 +170,11 @@ module.exports = [
   {
     id: 102,
     name: 'Barnsley',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/102',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/102/venues',
@@ -119,6 +184,11 @@ module.exports = [
   {
     id: 251,
     name: 'Basel',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/251',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/251/venues',
@@ -128,6 +198,11 @@ module.exports = [
   {
     id: 171,
     name: 'Bastia',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/171',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/171/venues',
@@ -137,6 +212,11 @@ module.exports = [
   {
     id: 113,
     name: 'Belfast',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/113',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/113/venues',
@@ -146,6 +226,11 @@ module.exports = [
   {
     id: 208,
     name: 'Benevento',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/208',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/208/venues',
@@ -155,6 +240,11 @@ module.exports = [
   {
     id: 191,
     name: 'Bergamo',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/191',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/191/venues',
@@ -164,6 +254,11 @@ module.exports = [
   {
     id: 145,
     name: 'Berlin',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/145',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/145/venues',
@@ -173,6 +268,11 @@ module.exports = [
   {
     id: 252,
     name: 'Bern',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/252',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/252/venues',
@@ -182,6 +282,11 @@ module.exports = [
   {
     id: 127,
     name: 'Bilbao',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/127',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/127/venues',
@@ -191,6 +296,11 @@ module.exports = [
   {
     id: 106,
     name: 'Birmingham',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/106',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/106/venues',
@@ -200,6 +310,11 @@ module.exports = [
   {
     id: 94,
     name: 'Blackburn',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/94',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/94/venues',
@@ -209,6 +324,11 @@ module.exports = [
   {
     id: 146,
     name: 'Bochum',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/146',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/146/venues',
@@ -218,6 +338,11 @@ module.exports = [
   {
     id: 192,
     name: 'Bologna',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/192',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/192/venues',
@@ -227,6 +352,11 @@ module.exports = [
   {
     id: 172,
     name: 'Bordeaux',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/172',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/172/venues',
@@ -236,6 +366,11 @@ module.exports = [
   {
     id: 3,
     name: 'Boston',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/3',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/3/venues',
@@ -245,6 +380,11 @@ module.exports = [
   {
     id: 81,
     name: 'Bournemouth',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/81',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/81/venues',
@@ -254,6 +394,11 @@ module.exports = [
   {
     id: 239,
     name: 'Braga',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/239',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/239/venues',
@@ -263,6 +408,11 @@ module.exports = [
   {
     id: 245,
     name: 'Bratislava',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/245',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/245/venues',
@@ -272,6 +422,11 @@ module.exports = [
   {
     id: 147,
     name: 'Bremen',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/147',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/147/venues',
@@ -281,6 +436,11 @@ module.exports = [
   {
     id: 55,
     name: 'Brisbane, QLD',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/55',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/55/venues',
@@ -290,6 +450,11 @@ module.exports = [
   {
     id: 87,
     name: 'Bristol',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/87',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/87/venues',
@@ -299,6 +464,11 @@ module.exports = [
   {
     id: 218,
     name: 'Bruges',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/218',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/218/venues',
@@ -308,6 +478,11 @@ module.exports = [
   {
     id: 219,
     name: 'Brussels',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/219',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/219/venues',
@@ -317,6 +492,11 @@ module.exports = [
   {
     id: 230,
     name: 'Budapest',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/230',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/230/venues',
@@ -326,6 +506,11 @@ module.exports = [
   {
     id: 10,
     name: 'Buffalo',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/10',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/10/venues',
@@ -335,6 +520,11 @@ module.exports = [
   {
     id: 82,
     name: 'Burnley',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/82',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/82/venues',
@@ -344,6 +534,11 @@ module.exports = [
   {
     id: 173,
     name: 'Caen',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/173',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/173/venues',
@@ -353,6 +548,11 @@ module.exports = [
   {
     id: 193,
     name: 'Cagliari',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/193',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/193/venues',
@@ -362,6 +562,11 @@ module.exports = [
   {
     id: 41,
     name: 'Calgary',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/41',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/41/venues',
@@ -371,6 +576,11 @@ module.exports = [
   {
     id: 73,
     name: 'Canberra, ACT',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/73',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/73/venues',
@@ -380,6 +590,11 @@ module.exports = [
   {
     id: 115,
     name: 'Cardiff',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/115',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/115/venues',
@@ -389,6 +604,11 @@ module.exports = [
   {
     id: 31,
     name: 'Charlotte',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/31',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/31/venues',
@@ -398,6 +618,11 @@ module.exports = [
   {
     id: 148,
     name: 'Chemnitz',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/148',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/148/venues',
@@ -407,6 +632,11 @@ module.exports = [
   {
     id: 2,
     name: 'Chicago',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/2',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/2/venues',
@@ -416,6 +646,11 @@ module.exports = [
   {
     id: 13,
     name: 'Cincinnati',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/13',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/13/venues',
@@ -425,6 +660,11 @@ module.exports = [
   {
     id: 20,
     name: 'Cleveland',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/20',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/20/venues',
@@ -434,6 +674,11 @@ module.exports = [
   {
     id: 149,
     name: 'Cologne',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/149',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/149/venues',
@@ -443,6 +688,11 @@ module.exports = [
   {
     id: 14,
     name: 'Columbus',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/14',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/14/venues',
@@ -452,6 +702,11 @@ module.exports = [
   {
     id: 227,
     name: 'Copenhagen',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/227',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/227/venues',
@@ -461,6 +716,11 @@ module.exports = [
   {
     id: 209,
     name: 'Crotone',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/209',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/209/venues',
@@ -470,6 +730,11 @@ module.exports = [
   {
     id: 21,
     name: 'Dallas',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/21',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/21/venues',
@@ -479,6 +744,11 @@ module.exports = [
   {
     id: 150,
     name: 'Darmstadt',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/150',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/150/venues',
@@ -488,6 +758,11 @@ module.exports = [
   {
     id: 19,
     name: 'Denver',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/19',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/19/venues',
@@ -497,6 +772,11 @@ module.exports = [
   {
     id: 104,
     name: 'Derby',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/104',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/104/venues',
@@ -506,6 +786,11 @@ module.exports = [
   {
     id: 22,
     name: 'Detroit',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/22',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/22/venues',
@@ -515,6 +800,11 @@ module.exports = [
   {
     id: 174,
     name: 'Dijon',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/174',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/174/venues',
@@ -524,6 +814,11 @@ module.exports = [
   {
     id: 118,
     name: 'Dingwall',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/118',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/118/venues',
@@ -533,6 +828,11 @@ module.exports = [
   {
     id: 151,
     name: 'Dortmund',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/151',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/151/venues',
@@ -542,6 +842,11 @@ module.exports = [
   {
     id: 116,
     name: 'Dublin',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/116',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/116/venues',
@@ -551,6 +856,11 @@ module.exports = [
   {
     id: 119,
     name: 'Dundee',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/119',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/119/venues',
@@ -560,6 +870,11 @@ module.exports = [
   {
     id: 152,
     name: 'Dusseldorf',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/152',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/152/venues',
@@ -569,6 +884,11 @@ module.exports = [
   {
     id: 124,
     name: 'Edinburgh',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/124',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/124/venues',
@@ -578,6 +898,11 @@ module.exports = [
   {
     id: 42,
     name: 'Edmonton',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/42',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/42/venues',
@@ -587,6 +912,11 @@ module.exports = [
   {
     id: 128,
     name: 'Eibar',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/128',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/128/venues',
@@ -596,6 +926,11 @@ module.exports = [
   {
     id: 234,
     name: 'Eindhoven',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/234',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/234/venues',
@@ -605,6 +940,11 @@ module.exports = [
   {
     id: 194,
     name: 'Empoli',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/194',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/194/venues',
@@ -614,6 +954,11 @@ module.exports = [
   {
     id: 240,
     name: 'Estoril',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/240',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/240/venues',
@@ -623,6 +968,11 @@ module.exports = [
   {
     id: 210,
     name: 'Ferrara',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/210',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/210/venues',
@@ -632,6 +982,11 @@ module.exports = [
   {
     id: 195,
     name: 'Florence',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/195',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/195/venues',
@@ -641,6 +996,11 @@ module.exports = [
   {
     id: 220,
     name: 'Francorchamps',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/220',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/220/venues',
@@ -650,6 +1010,11 @@ module.exports = [
   {
     id: 153,
     name: 'Frankfurt',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/153',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/153/venues',
@@ -659,6 +1024,11 @@ module.exports = [
   {
     id: 154,
     name: 'Freiburg',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/154',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/154/venues',
@@ -668,6 +1038,11 @@ module.exports = [
   {
     id: 155,
     name: 'Fuerth',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/155',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/155/venues',
@@ -677,6 +1052,11 @@ module.exports = [
   {
     id: 241,
     name: 'Funchal',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/241',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/241/venues',
@@ -686,6 +1066,11 @@ module.exports = [
   {
     id: 74,
     name: 'Geelong, VIC',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/74',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/74/venues',
@@ -695,6 +1080,11 @@ module.exports = [
   {
     id: 156,
     name: 'Gelsenkirchen',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/156',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/156/venues',
@@ -704,6 +1094,11 @@ module.exports = [
   {
     id: 221,
     name: 'Genk',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/221',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/221/venues',
@@ -713,6 +1108,11 @@ module.exports = [
   {
     id: 196,
     name: 'Genoa',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/196',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/196/venues',
@@ -722,6 +1122,11 @@ module.exports = [
   {
     id: 222,
     name: 'Gent',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/222',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/222/venues',
@@ -731,6 +1136,11 @@ module.exports = [
   {
     id: 129,
     name: 'Gijon',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/129',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/129/venues',
@@ -740,6 +1150,11 @@ module.exports = [
   {
     id: 120,
     name: 'Glasgow',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/120',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/120/venues',
@@ -749,6 +1164,11 @@ module.exports = [
   {
     id: 66,
     name: 'Gold Coast, QLD',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/66',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/66/venues',
@@ -758,6 +1178,11 @@ module.exports = [
   {
     id: 130,
     name: 'Granada',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/130',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/130/venues',
@@ -767,6 +1192,11 @@ module.exports = [
   {
     id: 23,
     name: 'Green Bay',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/23',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/23/venues',
@@ -776,6 +1206,11 @@ module.exports = [
   {
     id: 175,
     name: 'Guingamp',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/175',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/175/venues',
@@ -785,6 +1220,11 @@ module.exports = [
   {
     id: 157,
     name: 'Hamburg',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/157',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/157/venues',
@@ -794,6 +1234,11 @@ module.exports = [
   {
     id: 121,
     name: 'Hamilton',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/121',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/121/venues',
@@ -803,6 +1248,11 @@ module.exports = [
   {
     id: 158,
     name: 'Hannover',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/158',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/158/venues',
@@ -812,6 +1262,11 @@ module.exports = [
   {
     id: 43,
     name: 'Hartford',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/43',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/43/venues',
@@ -821,6 +1276,11 @@ module.exports = [
   {
     id: 63,
     name: 'Hobart, TAS',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/63',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/63/venues',
@@ -830,6 +1290,11 @@ module.exports = [
   {
     id: 44,
     name: 'Honolulu',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/44',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/44/venues',
@@ -839,6 +1304,11 @@ module.exports = [
   {
     id: 24,
     name: 'Houston',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/24',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/24/venues',
@@ -848,6 +1318,11 @@ module.exports = [
   {
     id: 96,
     name: 'Huddersfield',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/96',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/96/venues',
@@ -857,6 +1332,11 @@ module.exports = [
   {
     id: 97,
     name: 'Hull',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/97',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/97/venues',
@@ -866,6 +1346,11 @@ module.exports = [
   {
     id: 32,
     name: 'Indianapolis',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/32',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/32/venues',
@@ -875,6 +1360,11 @@ module.exports = [
   {
     id: 159,
     name: 'Ingolstadt',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/159',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/159/venues',
@@ -884,6 +1374,11 @@ module.exports = [
   {
     id: 213,
     name: 'Innsbruck',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/213',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/213/venues',
@@ -893,6 +1388,11 @@ module.exports = [
   {
     id: 103,
     name: 'Ipswich',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/103',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/103/venues',
@@ -902,6 +1402,11 @@ module.exports = [
   {
     id: 45,
     name: 'Jacksonville',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/45',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/45/venues',
@@ -911,6 +1416,11 @@ module.exports = [
   {
     id: 131,
     name: 'Jerez',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/131',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/131/venues',
@@ -920,6 +1430,11 @@ module.exports = [
   {
     id: 160,
     name: 'Kaiserslautern',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/160',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/160/venues',
@@ -929,6 +1444,11 @@ module.exports = [
   {
     id: 25,
     name: 'Kansas City',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/25',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/25/venues',
@@ -938,6 +1458,11 @@ module.exports = [
   {
     id: 257,
     name: 'Kiev',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/257',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/257/venues',
@@ -947,6 +1472,11 @@ module.exports = [
   {
     id: 122,
     name: 'Kilmarnock',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/122',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/122/venues',
@@ -956,6 +1486,11 @@ module.exports = [
   {
     id: 132,
     name: 'La Coruna',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/132',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/132/venues',
@@ -965,6 +1500,11 @@ module.exports = [
   {
     id: 133,
     name: 'Las Palmas de Gran Canaria',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/133',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/133/venues',
@@ -974,6 +1514,11 @@ module.exports = [
   {
     id: 46,
     name: 'Las Vegas',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/46',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/46/venues',
@@ -983,6 +1528,11 @@ module.exports = [
   {
     id: 176,
     name: 'Le Mans',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/176',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/176/venues',
@@ -992,6 +1542,11 @@ module.exports = [
   {
     id: 211,
     name: 'Lecce',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/211',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/211/venues',
@@ -1001,6 +1556,11 @@ module.exports = [
   {
     id: 93,
     name: 'Leeds',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/93',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/93/venues',
@@ -1010,6 +1570,11 @@ module.exports = [
   {
     id: 98,
     name: 'Leicester',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/98',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/98/venues',
@@ -1019,6 +1584,11 @@ module.exports = [
   {
     id: 161,
     name: 'Leipzig',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/161',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/161/venues',
@@ -1028,6 +1598,11 @@ module.exports = [
   {
     id: 162,
     name: 'Leverkusen',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/162',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/162/venues',
@@ -1037,6 +1612,11 @@ module.exports = [
   {
     id: 223,
     name: 'Liege',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/223',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/223/venues',
@@ -1046,6 +1626,11 @@ module.exports = [
   {
     id: 177,
     name: 'Lille',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/177',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/177/venues',
@@ -1055,6 +1640,11 @@ module.exports = [
   {
     id: 242,
     name: 'Lisbon',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/242',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/242/venues',
@@ -1064,6 +1654,11 @@ module.exports = [
   {
     id: 79,
     name: 'Liverpool',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/79',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/79/venues',
@@ -1073,6 +1668,11 @@ module.exports = [
   {
     id: 247,
     name: 'Ljubljana',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/247',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/247/venues',
@@ -1082,6 +1682,11 @@ module.exports = [
   {
     id: 80,
     name: 'London',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/80',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/80/venues',
@@ -1091,6 +1696,11 @@ module.exports = [
   {
     id: 178,
     name: 'Lorient',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/178',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/178/venues',
@@ -1100,6 +1710,11 @@ module.exports = [
   {
     id: 5,
     name: 'Los Angeles',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/5',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/5/venues',
@@ -1109,6 +1724,11 @@ module.exports = [
   {
     id: 253,
     name: 'Lugano',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/253',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/253/venues',
@@ -1118,6 +1738,11 @@ module.exports = [
   {
     id: 232,
     name: 'Luxembourg',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/232',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/232/venues',
@@ -1127,6 +1752,11 @@ module.exports = [
   {
     id: 179,
     name: 'Lyon',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/179',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/179/venues',
@@ -1136,6 +1766,11 @@ module.exports = [
   {
     id: 134,
     name: 'Madrid',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/134',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/134/venues',
@@ -1145,6 +1780,11 @@ module.exports = [
   {
     id: 163,
     name: 'Mainz',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/163',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/163/venues',
@@ -1154,6 +1794,11 @@ module.exports = [
   {
     id: 135,
     name: 'Malaga',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/135',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/135/venues',
@@ -1163,6 +1808,11 @@ module.exports = [
   {
     id: 85,
     name: 'Manchester',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/85',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/85/venues',
@@ -1172,6 +1822,11 @@ module.exports = [
   {
     id: 248,
     name: 'Maribor',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/248',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/248/venues',
@@ -1181,6 +1836,11 @@ module.exports = [
   {
     id: 180,
     name: 'Marseille',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/180',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/180/venues',
@@ -1190,6 +1850,11 @@ module.exports = [
   {
     id: 54,
     name: 'Melbourne, VIC',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/54',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/54/venues',
@@ -1199,6 +1864,11 @@ module.exports = [
   {
     id: 33,
     name: 'Memphis',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/33',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/33/venues',
@@ -1208,6 +1878,11 @@ module.exports = [
   {
     id: 181,
     name: 'Metz',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/181',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/181/venues',
@@ -1217,6 +1892,11 @@ module.exports = [
   {
     id: 7,
     name: 'Miami',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/7',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/7/venues',
@@ -1226,6 +1906,11 @@ module.exports = [
   {
     id: 105,
     name: 'Middlesbrough',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/105',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/105/venues',
@@ -1235,6 +1920,11 @@ module.exports = [
   {
     id: 197,
     name: 'Milan',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/197',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/197/venues',
@@ -1244,6 +1934,11 @@ module.exports = [
   {
     id: 15,
     name: 'Milwaukee',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/15',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/15/venues',
@@ -1253,6 +1948,11 @@ module.exports = [
   {
     id: 26,
     name: 'Minneapolis',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/26',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/26/venues',
@@ -1262,6 +1962,11 @@ module.exports = [
   {
     id: 198,
     name: 'Misano',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/198',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/198/venues',
@@ -1271,6 +1976,11 @@ module.exports = [
   {
     id: 164,
     name: 'Monchengladbach',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/164',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/164/venues',
@@ -1280,6 +1990,11 @@ module.exports = [
   {
     id: 182,
     name: 'Montpellier',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/182',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/182/venues',
@@ -1289,6 +2004,11 @@ module.exports = [
   {
     id: 47,
     name: 'Montreal',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/47',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/47/venues',
@@ -1298,6 +2018,11 @@ module.exports = [
   {
     id: 165,
     name: 'Munich',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/165',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/165/venues',
@@ -1307,6 +2032,11 @@ module.exports = [
   {
     id: 183,
     name: 'Nancy',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/183',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/183/venues',
@@ -1316,6 +2046,11 @@ module.exports = [
   {
     id: 184,
     name: 'Nantes',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/184',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/184/venues',
@@ -1325,6 +2060,11 @@ module.exports = [
   {
     id: 199,
     name: 'Naples',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/199',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/199/venues',
@@ -1334,6 +2074,11 @@ module.exports = [
   {
     id: 34,
     name: 'Nashville',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/34',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/34/venues',
@@ -1343,6 +2088,11 @@ module.exports = [
   {
     id: 35,
     name: 'New Orleans',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/35',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/35/venues',
@@ -1352,6 +2102,11 @@ module.exports = [
   {
     id: 9,
     name: 'New York',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/9',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/9/venues',
@@ -1361,6 +2116,11 @@ module.exports = [
   {
     id: 108,
     name: 'Newcastle',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/108',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/108/venues',
@@ -1370,6 +2130,11 @@ module.exports = [
   {
     id: 65,
     name: 'Newcastle, NSW',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/65',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/65/venues',
@@ -1379,6 +2144,11 @@ module.exports = [
   {
     id: 185,
     name: 'Nice',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/185',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/185/venues',
@@ -1388,6 +2158,11 @@ module.exports = [
   {
     id: 89,
     name: 'Norwich',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/89',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/89/venues',
@@ -1397,6 +2172,11 @@ module.exports = [
   {
     id: 90,
     name: 'Nottingham',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/90',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/90/venues',
@@ -1406,6 +2186,11 @@ module.exports = [
   {
     id: 166,
     name: 'Nuremberg',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/166',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/166/venues',
@@ -1415,6 +2200,11 @@ module.exports = [
   {
     id: 36,
     name: 'Oklahoma City',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/36',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/36/venues',
@@ -1424,6 +2214,11 @@ module.exports = [
   {
     id: 37,
     name: 'Orlando',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/37',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/37/venues',
@@ -1433,6 +2228,11 @@ module.exports = [
   {
     id: 236,
     name: 'Oslo',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/236',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/236/venues',
@@ -1442,6 +2242,11 @@ module.exports = [
   {
     id: 224,
     name: 'Ostend',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/224',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/224/venues',
@@ -1451,6 +2256,11 @@ module.exports = [
   {
     id: 249,
     name: 'Ostersund',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/249',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/249/venues',
@@ -1460,6 +2270,11 @@ module.exports = [
   {
     id: 48,
     name: 'Ottawa',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/48',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/48/venues',
@@ -1469,6 +2284,11 @@ module.exports = [
   {
     id: 200,
     name: 'Padova',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/200',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/200/venues',
@@ -1478,6 +2298,11 @@ module.exports = [
   {
     id: 201,
     name: 'Palermo',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/201',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/201/venues',
@@ -1487,6 +2312,11 @@ module.exports = [
   {
     id: 136,
     name: 'Pamplona',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/136',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/136/venues',
@@ -1496,6 +2326,11 @@ module.exports = [
   {
     id: 187,
     name: 'Paris',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/187',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/187/venues',
@@ -1505,6 +2340,11 @@ module.exports = [
   {
     id: 123,
     name: 'Perth',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/123',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/123/venues',
@@ -1514,6 +2354,11 @@ module.exports = [
   {
     id: 61,
     name: 'Perth, WA',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/61',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/61/venues',
@@ -1523,6 +2368,11 @@ module.exports = [
   {
     id: 202,
     name: 'Pescara',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/202',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/202/venues',
@@ -1532,6 +2382,11 @@ module.exports = [
   {
     id: 12,
     name: 'Philadelphia',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/12',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/12/venues',
@@ -1541,6 +2396,11 @@ module.exports = [
   {
     id: 18,
     name: 'Phoenix',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/18',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/18/venues',
@@ -1550,6 +2410,11 @@ module.exports = [
   {
     id: 16,
     name: 'Pittsburgh',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/16',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/16/venues',
@@ -1559,6 +2424,11 @@ module.exports = [
   {
     id: 225,
     name: 'Plzen',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/225',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/225/venues',
@@ -1568,6 +2438,11 @@ module.exports = [
   {
     id: 38,
     name: 'Portland',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/38',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/38/venues',
@@ -1577,6 +2452,11 @@ module.exports = [
   {
     id: 243,
     name: 'Porto',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/243',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/243/venues',
@@ -1586,6 +2466,11 @@ module.exports = [
   {
     id: 226,
     name: 'Prague',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/226',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/226/venues',
@@ -1595,6 +2480,11 @@ module.exports = [
   {
     id: 91,
     name: 'Preston',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/91',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/91/venues',
@@ -1604,6 +2494,11 @@ module.exports = [
   {
     id: 39,
     name: 'Raleigh',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/39',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/39/venues',
@@ -1613,6 +2508,11 @@ module.exports = [
   {
     id: 99,
     name: 'Reading',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/99',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/99/venues',
@@ -1622,6 +2522,11 @@ module.exports = [
   {
     id: 203,
     name: 'Reggio Emiliaa',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/203',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/203/venues',
@@ -1631,6 +2536,11 @@ module.exports = [
   {
     id: 188,
     name: 'Rennes',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/188',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/188/venues',
@@ -1640,6 +2550,11 @@ module.exports = [
   {
     id: 49,
     name: 'Richmond',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/49',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/49/venues',
@@ -1649,6 +2564,11 @@ module.exports = [
   {
     id: 204,
     name: 'Rome',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/204',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/204/venues',
@@ -1658,6 +2578,11 @@ module.exports = [
   {
     id: 101,
     name: 'Rotherham',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/101',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/101/venues',
@@ -1667,6 +2592,11 @@ module.exports = [
   {
     id: 235,
     name: 'Rotterdam',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/235',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/235/venues',
@@ -1676,6 +2606,11 @@ module.exports = [
   {
     id: 50,
     name: 'Sacramento',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/50',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/50/venues',
@@ -1685,6 +2620,11 @@ module.exports = [
   {
     id: 189,
     name: 'Saint Etienne',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/189',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/189/venues',
@@ -1694,6 +2634,11 @@ module.exports = [
   {
     id: 40,
     name: 'Salt Lake City',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/40',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/40/venues',
@@ -1703,6 +2648,11 @@ module.exports = [
   {
     id: 214,
     name: 'Salzburg',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/214',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/214/venues',
@@ -1712,6 +2662,11 @@ module.exports = [
   {
     id: 27,
     name: 'San Antonio',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/27',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/27/venues',
@@ -1721,6 +2676,11 @@ module.exports = [
   {
     id: 212,
     name: 'San Benedetto del Tronto',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/212',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/212/venues',
@@ -1730,6 +2690,11 @@ module.exports = [
   {
     id: 28,
     name: 'San Diego',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/28',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/28/venues',
@@ -1739,6 +2704,11 @@ module.exports = [
   {
     id: 6,
     name: 'San Francisco',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/6',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/6/venues',
@@ -1748,6 +2718,11 @@ module.exports = [
   {
     id: 137,
     name: 'San Sebastian',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/137',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/137/venues',
@@ -1757,6 +2732,11 @@ module.exports = [
   {
     id: 29,
     name: 'Seattle',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/29',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/29/venues',
@@ -1766,6 +2746,11 @@ module.exports = [
   {
     id: 244,
     name: 'Setubal',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/244',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/244/venues',
@@ -1775,6 +2760,11 @@ module.exports = [
   {
     id: 138,
     name: 'Seville',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/138',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/138/venues',
@@ -1784,6 +2774,11 @@ module.exports = [
   {
     id: 95,
     name: 'Sheffield',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/95',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/95/venues',
@@ -1793,6 +2788,11 @@ module.exports = [
   {
     id: 167,
     name: 'Sinsheim',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/167',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/167/venues',
@@ -1802,6 +2802,11 @@ module.exports = [
   {
     id: 107,
     name: 'Southampton',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/107',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/107/venues',
@@ -1811,6 +2816,11 @@ module.exports = [
   {
     id: 215,
     name: 'Spielberg',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/215',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/215/venues',
@@ -1820,6 +2830,11 @@ module.exports = [
   {
     id: 254,
     name: 'St. Gallen',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/254',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/254/venues',
@@ -1829,6 +2844,11 @@ module.exports = [
   {
     id: 17,
     name: 'St. Louis',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/17',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/17/venues',
@@ -1838,6 +2858,11 @@ module.exports = [
   {
     id: 250,
     name: 'Stockholm',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/250',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/250/venues',
@@ -1847,6 +2872,11 @@ module.exports = [
   {
     id: 88,
     name: 'Stoke-on-Trent',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/88',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/88/venues',
@@ -1856,6 +2886,11 @@ module.exports = [
   {
     id: 168,
     name: 'Stuttgart',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/168',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/168/venues',
@@ -1865,6 +2900,11 @@ module.exports = [
   {
     id: 84,
     name: 'Sunderland',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/84',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/84/venues',
@@ -1874,6 +2914,11 @@ module.exports = [
   {
     id: 114,
     name: 'Swansea',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/114',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/114/venues',
@@ -1883,6 +2928,11 @@ module.exports = [
   {
     id: 56,
     name: 'Sydney, NSW',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/56',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/56/venues',
@@ -1892,6 +2942,11 @@ module.exports = [
   {
     id: 30,
     name: 'Tampa',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/30',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/30/venues',
@@ -1901,6 +2956,11 @@ module.exports = [
   {
     id: 228,
     name: 'Tampere',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/228',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/228/venues',
@@ -1910,6 +2970,11 @@ module.exports = [
   {
     id: 51,
     name: 'Toronto',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/51',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/51/venues',
@@ -1919,6 +2984,11 @@ module.exports = [
   {
     id: 190,
     name: 'Toulouse',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/190',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/190/venues',
@@ -1928,6 +2998,11 @@ module.exports = [
   {
     id: 86,
     name: 'Towcester',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/86',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/86/venues',
@@ -1937,6 +3012,11 @@ module.exports = [
   {
     id: 246,
     name: 'Trnava',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/246',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/246/venues',
@@ -1946,6 +3026,11 @@ module.exports = [
   {
     id: 237,
     name: 'Trondheim',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/237',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/237/venues',
@@ -1955,6 +3040,11 @@ module.exports = [
   {
     id: 205,
     name: 'Turin',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/205',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/205/venues',
@@ -1964,6 +3054,11 @@ module.exports = [
   {
     id: 229,
     name: 'Turku',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/229',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/229/venues',
@@ -1973,6 +3068,11 @@ module.exports = [
   {
     id: 206,
     name: 'Udine',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/206',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/206/venues',
@@ -1982,6 +3082,11 @@ module.exports = [
   {
     id: 231,
     name: 'Vaduz',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/231',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/231/venues',
@@ -1991,6 +3096,11 @@ module.exports = [
   {
     id: 139,
     name: 'Valencia',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/139',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/139/venues',
@@ -2000,6 +3110,11 @@ module.exports = [
   {
     id: 52,
     name: 'Vancouver',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/52',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/52/venues',
@@ -2009,6 +3124,11 @@ module.exports = [
   {
     id: 207,
     name: 'Verona',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/207',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/207/venues',
@@ -2018,6 +3138,11 @@ module.exports = [
   {
     id: 216,
     name: 'Vienna',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/216',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/216/venues',
@@ -2027,6 +3152,11 @@ module.exports = [
   {
     id: 140,
     name: 'Vigo',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/140',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/140/venues',
@@ -2036,6 +3166,11 @@ module.exports = [
   {
     id: 141,
     name: 'Villarreal',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/141',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/141/venues',
@@ -2045,6 +3180,11 @@ module.exports = [
   {
     id: 142,
     name: 'Vitoria',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/142',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/142/venues',
@@ -2054,6 +3194,11 @@ module.exports = [
   {
     id: 238,
     name: 'Warsaw',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/238',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/238/venues',
@@ -2063,6 +3208,11 @@ module.exports = [
   {
     id: 4,
     name: 'Washington DC',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/4',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/4/venues',
@@ -2072,6 +3222,11 @@ module.exports = [
   {
     id: 83,
     name: 'West Bromwich',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/83',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/83/venues',
@@ -2081,6 +3236,11 @@ module.exports = [
   {
     id: 92,
     name: 'Wigan',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/92',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/92/venues',
@@ -2090,6 +3250,11 @@ module.exports = [
   {
     id: 53,
     name: 'Winnipeg',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/53',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/53/venues',
@@ -2099,6 +3264,11 @@ module.exports = [
   {
     id: 169,
     name: 'Wolfsburg',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/169',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/169/venues',
@@ -2108,6 +3278,11 @@ module.exports = [
   {
     id: 100,
     name: 'Wolverhampton',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/100',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/100/venues',
@@ -2117,6 +3292,11 @@ module.exports = [
   {
     id: 255,
     name: 'Zurich',
+    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
+    state: 'CA',
+    city: 'Los Angeles',
+    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
+    price: 199.5,
     thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/255',
     venuesHref:
       'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/255/venues',
