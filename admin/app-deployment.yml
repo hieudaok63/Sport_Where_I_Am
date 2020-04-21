@@ -1,0 +1,25 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: swiam-gql
+  labels:
+    app: graphql-service-swiam
+spec:
+  selector:
+    matchLabels:
+      app: swiam-gql
+      tier: backend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: swiam-gql
+        tier: backend
+    spec:
+      containers:
+        - image: gcr.io/circle-ci-demo/circleci-gke:v1
+          name: rusty-pangolin
+          ports:
+            - containerPort: 3000
+              name: ci-deploy

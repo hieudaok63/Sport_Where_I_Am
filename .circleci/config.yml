@@ -1,0 +1,64 @@
+defaults: &defaults
+  working_directory: ~/app/
+  docker:
+    - image: circleci/node:10.16.3
+
+version: 2.1
+orbs:
+  node: circleci/node@1.0.1
+  gcp-gke: circleci/gcp-gke@0.1.0
+  gcr: circleci/gcp-gcr@0.0.2
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: node_modules-{{ checksum "package.json" }}
+      - run: NODE_ENV=production yarn
+      - run:
+          nane: Lint Everything
+          command: yarn lint
+      - run:
+          name: Tests
+          command: yarn test --maxWorkers 2
+      - save_cache:
+          key: node_modules-{{ checksum "package.json" }}
+          paths:
+            - ~/app/node_modules/
+  Build-Push-Image-Docker:
+    description: Build and push image to Google Container Registry
+    machine: true
+    steps:
+      - checkout
+      - gcr/gcr-auth
+      - gcr/build-image:
+          image: circle-gke
+          tag: "0.1.0" #Change version number e.g to 'v3' when updating application
+      - gcr/push-image:
+          image: circle-gke
+          tag: "0.1.0" #Change version number e.g to 'v3' when updating application
+
+  deploy:
+    description: Deploy application to Google Kubernetes Engine
+    machine: true
+    steps:
+      # Install `gcloud` and `kubectl` if not already installed.
+      - gcp-gke/install
+      # Initialize the `gcloud` CLI.
+      - gcp-gke/init
+      # Update a deployment Docker image.
+      - gcp-gke/rollout-image:
+          deployment: swiam-cluster
+          container: swiam-gql
+          image: gcr.io/swiam-274409/swiam-gql:0.1.0 # change version when updating
+workflows:
+  build_update_deploy:
+    jobs:
+      - build
+      - Build-Push-Image-Docker:
+          requires:
+            - build
+      - deploy:
+          requires:
+            - Build-Push-Image-Docker
