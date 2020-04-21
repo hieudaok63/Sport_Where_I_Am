@@ -50,7 +50,7 @@ jobs:
           perform-login: true
       - gke/rollout-image:
           cluster: swiam-cluster
-          deployment: swiam-cluster
+          deployment: swiam-gql
           container: swiam-gql
           image: swiam-gql:0.1.0 # change version when updating
 workflows:
