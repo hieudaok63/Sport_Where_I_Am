@@ -52,7 +52,8 @@ jobs:
           cluster: swiam-cluster
           deployment: swiam-gql
           container: swiam-gql
-          image: swiam-gql:0.1.0 # change version when updating
+          image: gcr.io/swiam-274409/swiam-gql # change version when updating
+          tag: 0.1.0
 workflows:
   build_update_deploy:
     jobs:
