@@ -51,6 +51,7 @@ jobs:
       - gcp-gke/init
       # Update a deployment Docker image.
       - gcp-gke/rollout-image:
+          cluster: swiam-cluster
           deployment: swiam-cluster
           container: swiam-gql
           image: gcr.io/swiam-274409/swiam-gql:0.1.0 # change version when updating
