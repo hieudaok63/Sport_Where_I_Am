@@ -45,7 +45,7 @@ jobs:
     description: Deploy application to Google Kubernetes Engine
     machine: true
     steps:
-      - gcp-gke/publish-and-rollout-image:
+      - gcp-gke/rollout-image:
           cluster: swiam-cluster
           deployment: swiam-cluster
           container: swiam-gql
