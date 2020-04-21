@@ -35,10 +35,10 @@ jobs:
       - checkout
       - gcr/gcr-auth
       - gcr/build-image:
-          image: gcr.io/swiam-274409/swiam-gql:0.1.0
+          image: swiam-gql
           tag: "0.1.0" #Change version number e.g to 'v3' when updating application
       - gcr/push-image:
-          image: gcr.io/swiam-274409/swiam-gql:0.1.0
+          image: swiam-gql
           tag: "0.1.0" #Change version number e.g to 'v3' when updating application
 
   deploy:
