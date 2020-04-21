@@ -1,6 +1,6 @@
 import HttpClient from '../tools/http-client';
 import getAuthOption from '../tools/auth-header';
-import { getPaginatedItems } from '../tools/pagination';
+import { getIncrementalItems } from '../tools/pagination';
 
 const { BASE_API } = process.env;
 
@@ -20,13 +20,13 @@ export const getPopularById = (popularId, token) => {
     });
 };
 
-export const getAllPopulars = ({ limit, offset }, token) => {
+export const getAllPopulars = ({ offset }, token) => {
   const url = `${BASE_API}/v3i/popular`;
 
   const http = HttpClient.getHttpClient(3000);
   return http
     .get(url, token && getAuthOption(token))
-    .then(res => getPaginatedItems(res.data, offset, limit).data)
+    .then(res => getIncrementalItems(res.data, offset))
     .catch(error => {
       logger.error(
         `Error in Popular Service - getAllPopulars() - `,
