@@ -17,9 +17,6 @@ jobs:
           key: node_modules-{{ checksum "package.json" }}
       - run: NODE_ENV=production yarn
       - run:
-          nane: Lint Everything
-          command: yarn lint
-      - run:
           name: Tests
           command: yarn test --maxWorkers 2
       - save_cache:
