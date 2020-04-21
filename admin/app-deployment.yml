@@ -18,8 +18,8 @@ spec:
         tier: backend
     spec:
       containers:
-        - image: gcr.io/circle-ci-demo/circleci-gke:v1
-          name: rusty-pangolin
+        - image: gcr.io/swiam-274409/swiam-gql:0.1.0
+          name: swiam-gql
           ports:
-            - containerPort: 3000
-              name: ci-deploy
+            - containerPort: 5000
+              name: swiam-gql
