@@ -6,7 +6,7 @@ defaults: &defaults
 version: 2.1
 orbs:
   node: circleci/node@1.0.1
-  gcp-gke: circleci/gcp-gke@0.1.9
+  gcp-gke: circleci/gcp-gke@0.1.0
   gcr: circleci/gcp-gcr@0.0.2
 jobs:
   build:
@@ -51,7 +51,6 @@ jobs:
       - gcp-gke/init
       # Update a deployment Docker image.
       - gcp-gke/rollout-image:
-          cluster: swiam-cluster
           deployment: swiam-cluster
           container: swiam-gql
           image: gcr.io/swiam-274409/swiam-gql:0.1.0 # change version when updating
