@@ -45,6 +45,9 @@ jobs:
     machine: true
     steps:
       - gke/install
+      - gke/update-kubeconfig-with-credentials:
+          cluster: swiam-cluster
+          perform-login: true
       - gke/rollout-image:
           cluster: swiam-cluster
           deployment: swiam-cluster
