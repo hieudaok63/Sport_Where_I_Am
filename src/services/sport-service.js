@@ -1,16 +1,15 @@
 import HttpClient from '../tools/http-client';
 import getAuthOption from '../tools/auth-header';
-import { getIncrementalItems } from '../tools/pagination';
 
-const { BASE_API } = process.env;
+const { BASE_API_V2 } = process.env;
 
-export const getAllSports = ({ offset }, token) => {
-  const url = `${BASE_API}/cms/v1/getSports`;
+export const getAllSports = token => {
+  const url = `${BASE_API_V2}/cms/v1/getSports`;
 
-  const http = HttpClient.getHttpClient(3000);
+  const http = HttpClient.getHttpClient();
   return http
     .get(url, token && getAuthOption(token))
-    .then(res => getIncrementalItems(res.data.data, offset))
+    .then(res => res.data.data)
     .catch(error => {
       logger.error(`Error in Sport Service - getAllSports() - `, error.message);
       return null;
