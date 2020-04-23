@@ -27,18 +27,18 @@ jobs:
           key: node_modules-{{ checksum "package.json" }}
           paths:
             - ~/app/node_modules/
-#  Build-Push-Image-Docker:
-#    description: Build and push image to Google Container Registry
-#    machine: true
-#    steps:
-#      - checkout
-#      - gcr/gcr-auth
-#      - gcr/build-image:
-#          image: swiam-gql
-#          tag: "0.1.0" #Change version number e.g to 'v3' when updating application
-#      - gcr/push-image:
-#          image: swiam-gql
-#          tag: "0.1.0" #Change version number e.g to 'v3' when updating application
+  Build-Push-Image-Docker:
+    description: Build and push image to Google Container Registry
+    machine: true
+    steps:
+      - checkout
+      - gcr/gcr-auth
+      - gcr/build-image:
+          image: gcr.io/swiam-274409/swiam-gql
+          tag: "0.1.0" #Change version number e.g to 'v3' when updating application
+      - gcr/push-image:
+          image: gcr.io/swiam-274409/swiam-gql
+          tag: "0.1.0" #Change version number e.g to 'v3' when updating application
 
   deploy:
     description: Deploy application to Google Kubernetes Engine
