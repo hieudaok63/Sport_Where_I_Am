@@ -1,4 +1,4 @@
-import { GraphQLID, GraphQLList, GraphQLInt } from 'graphql';
+import { GraphQLID, GraphQLList } from 'graphql';
 import City from '../types/City';
 import { getAllCities, getCityById } from '../../services/city-service';
 
@@ -18,9 +18,6 @@ export const cityById = {
 
 export const allCities = {
   type: GraphQLList(City),
-  args: {
-    limit: { type: GraphQLInt },
-    offset: { type: GraphQLInt },
-  },
-  resolve: (rawUserData, args, req) => getAllCities(args, req.token),
+  args: {},
+  resolve: (rawUserData, args, req) => getAllCities(req.token),
 };
