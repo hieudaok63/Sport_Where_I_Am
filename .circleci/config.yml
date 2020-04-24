@@ -11,6 +11,7 @@ version: 2.1
 orbs:
   node: circleci/node@1.0.1
   gke: circleci/gcp-gke@1.0.3
+  gcr: circleci/gcp-gcr@0.6.1
 jobs:
   build-and-test:
     <<: *defaults
@@ -43,10 +44,10 @@ jobs:
       - gcr/gcr-auth
       - gcr/build-image:
           image: gcr.io/swiam-274409/swiam-gql
-          tag: "0.1.0" #Change version number e.g to 'v3' when updating application
+          tag: $CIRCLE_SHA1 #Change version number e.g to 'v3' when updating application
       - gcr/push-image:
           image: gcr.io/swiam-274409/swiam-gql
-          tag: "0.1.0" #Change version number e.g to 'v3' when updating application
+          tag: $CIRCLE_SHA1 #Change version number e.g to 'v3' when updating application
 
   deploy:
     description: Deploy application to Google Kubernetes Engine
@@ -61,14 +62,17 @@ jobs:
           deployment: swiam-gql
           container: swiam-gql
           image: gcr.io/swiam-274409/swiam-gql # change version when updating
-          tag: 0.1.0
+          tag: $CIRCLE_SHA1
 workflows:
   build_update_deploy:
     jobs:
       - build-and-test
-      - deploy:
+      - Build-Push-Image-Docker:
           requires:
             - build-and-test
+      - deploy:
+          requires:
+            - Build-Push-Image-Docker
           filters:
             branches:
               only:
