@@ -43,10 +43,10 @@ jobs:
       - checkout
       - gcr/gcr-auth
       - gcr/build-image:
-          image: gcr.io/swiam-274409/swiam-gql
+          image: swiam-gql
           tag: $CIRCLE_SHA1 #Change version number e.g to 'v3' when updating application
       - gcr/push-image:
-          image: gcr.io/swiam-274409/swiam-gql
+          image: swiam-gql
           tag: $CIRCLE_SHA1 #Change version number e.g to 'v3' when updating application
 
   deploy:
