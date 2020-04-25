@@ -1,7 +1,7 @@
 {
   "/v3i/cities": "/city",
   "/v3i/cities/:cityId": "/city/:cityId",
-  "/v3i/popular": "/popular",
-  "/v3i/popular/:popularId": "/popular/:popularId",
-  "/cms/v1/getSports": "/sports"
+  "/cms/v1/getSports": "/sports",
+  "/cms/v1/getPopularEvents": "/popularEvents",
+  "/cms/v1/getPopularExperiences": "/experiences"
 }
