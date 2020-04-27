@@ -6,7 +6,7 @@ import {
   GraphQLList,
 } from 'graphql';
 
-const PriceType = entity =>
+const Price = entity =>
   new GraphQLObjectType({
     name: `${entity}Price`,
     fields: {
@@ -15,7 +15,7 @@ const PriceType = entity =>
     },
   });
 
-const SportType = entity =>
+const Sport = entity =>
   new GraphQLObjectType({
     name: `${entity}Sport`,
     fields: {
@@ -26,18 +26,18 @@ const SportType = entity =>
     },
   });
 
-const LeagueType = entity =>
+const League = entity =>
   new GraphQLObjectType({
     name: `${entity}League`,
     fields: {
       leagueAbbreviation: { type: GraphQLString },
       leagueID: { type: GraphQLInt },
       leagueName: { type: GraphQLString },
-      sport: { type: SportType(entity) },
+      sport: { type: Sport(entity) },
     },
   });
 
-const TeamsType = entity =>
+const Teams = entity =>
   new GraphQLObjectType({
     name: `${entity}Teams`,
     fields: {
@@ -46,7 +46,7 @@ const TeamsType = entity =>
     },
   });
 
-const CountryType = entity =>
+const Country = entity =>
   new GraphQLObjectType({
     name: `${entity}Country`,
     fields: {
@@ -55,17 +55,17 @@ const CountryType = entity =>
     },
   });
 
-const CityType = entity =>
+const City = entity =>
   new GraphQLObjectType({
     name: `${entity}City`,
     fields: {
       cityID: { type: GraphQLInt },
       cityName: { type: GraphQLString },
-      country: { type: CountryType(entity) },
+      country: { type: Country(entity) },
     },
   });
 
-const CoOrdinatesType = entity =>
+const CoOrdinates = entity =>
   new GraphQLObjectType({
     name: `${entity}CoOrdinates`,
     fields: {
@@ -74,12 +74,12 @@ const CoOrdinatesType = entity =>
     },
   });
 
-const VenueType = entity =>
+const Venue = entity =>
   new GraphQLObjectType({
     name: `${entity}Venue`,
     fields: {
-      city: { type: CityType(entity) },
-      coOrdinates: { type: CoOrdinatesType(entity) },
+      city: { type: City(entity) },
+      coOrdinates: { type: CoOrdinates(entity) },
       venueAddress: { type: GraphQLString },
       venueID: { type: GraphQLInt },
       venueImage: { type: GraphQLString },
@@ -95,10 +95,10 @@ const Events = name =>
       eventID: { type: GraphQLInt },
       eventImage: { type: GraphQLString },
       eventName: { type: GraphQLString },
-      fromPrice: { type: PriceType(name) },
-      league: { type: LeagueType(name) },
-      teams: { type: new GraphQLList(TeamsType(name)) },
-      venue: { type: VenueType(name) },
+      fromPrice: { type: Price(name) },
+      league: { type: League(name) },
+      teams: { type: new GraphQLList(Teams(name)) },
+      venue: { type: Venue(name) },
     },
   });
 

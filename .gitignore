@@ -15,3 +15,6 @@ src/services/mock-api/mock-data/db.json
 
 # User-specific stuff:
 .idea/
+
+.nyc_output/
+
