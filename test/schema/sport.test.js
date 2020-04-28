@@ -33,7 +33,7 @@ describe('Sports Query', () => {
       .expect(200)
       .end((err, res) => {
         if (err) return done(err);
-        console.log(res.body.data.allSports);
+
         const sportsResult = res.body.data.allSports;
         expect(sportsResult.length).toBe(sportsLength);
         expect(sportsResult[0]).toHaveProperty('sportID');
