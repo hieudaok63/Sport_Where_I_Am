@@ -3,4 +3,13 @@ import { allSports } from './sport';
 import { allPopularEvents } from './popularEvents';
 import { allExperiences } from './experiences';
 
-export { cityById, allCities, allSports, allPopularEvents, allExperiences };
+import { allCarousels } from './carousel';
+
+export {
+  cityById,
+  allCarousels,
+  allCities,
+  allPopularEvents,
+  allExperiences,
+  allSports,
+};

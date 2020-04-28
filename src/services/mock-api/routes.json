@@ -1,7 +1,9 @@
 {
+  "/cms/v1/getMainCarousel": "/carousel",
   "/v3i/cities": "/city",
   "/v3i/cities/:cityId": "/city/:cityId",
   "/cms/v1/getSports": "/sports",
+  "/cms/v1/getPopularExperiences": "/experiences",
   "/cms/v1/getPopularEvents": "/popularEvents",
-  "/cms/v1/getPopularExperiences": "/experiences"
+  "/cms/v1/getSports": "/sports"
 }
