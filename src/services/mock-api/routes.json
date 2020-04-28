@@ -1,6 +1,7 @@
 {
   "/v3i/cities": "/city",
   "/v3i/cities/:cityId": "/city/:cityId",
+  "/cms/v1/search": "/search",
   "/v3i/popular": "/popular",
   "/v3i/popular/:popularId": "/popular/:popularId",
   "/cms/v1/getSports": "/sports"

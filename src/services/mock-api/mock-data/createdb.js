@@ -27,9 +27,11 @@ const getEmptyArray = length => new Array(length).fill(null);
 const cities = require('./city-data');
 const popular = require('./popular-data');
 const sports = require('./sports-data');
+const search = require('./search-data');
 
 writeData(DB_FILEPATH, {
   city: cities,
   popular,
   sports,
+  search,
 });
