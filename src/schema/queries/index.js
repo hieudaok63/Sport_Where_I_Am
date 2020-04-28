@@ -4,12 +4,14 @@ import { allPopularEvents } from './popularEvents';
 import { allExperiences } from './experiences';
 
 import { allCarousels } from './carousel';
+import { allBlogPosts } from './blogPost';
 
 export {
   cityById,
-  allCarousels,
   allCities,
   allPopularEvents,
   allExperiences,
   allSports,
+  allCarousels,
+  allBlogPosts,
 };
