@@ -1,7 +1,7 @@
 import nock from 'nock';
 import carousel from '../test-data/test-carousel-data';
 
-const mockApi = process.env.BASE_API || 'http://localhost:4000';
+const mockApi = process.env.BASE_API_V2 || 'http://localhost:4000';
 const carouselRoute = '/cms/v1/getMainCarousel';
 
 const setup = () => {
