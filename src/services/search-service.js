@@ -9,7 +9,7 @@ const getSearchByTerm = (searchTerm, token) => {
   const http = HttpClient.getHttpClient();
   return http
     .get(url, token && getAuthOption(token))
-    .then(res => res.data)
+    .then(res => res.data.data)
     .catch(error => {
       logger.error(
         `Error in Search Service - getSearchByTerm() for search term: ${searchTerm} `,

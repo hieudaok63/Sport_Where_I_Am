@@ -1,9 +1,9 @@
-import { GraphQLString } from 'graphql';
+import { GraphQLList, GraphQLString } from 'graphql';
 import Search from '../types/Search';
 import { getSearchByTerm } from '../../services/search-service';
 
 const searchByTerm = {
-  type: Search,
+  type: GraphQLList(Search),
   args: {
     searchTerm: { type: GraphQLString },
   },
