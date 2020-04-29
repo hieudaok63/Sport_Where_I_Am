@@ -5,6 +5,7 @@ defaults: &defaults
 
 uat-envs: &uat-envs
   environment:
+    BASE_API: "https://apidev.sportswhereiam.com/swiam-api"
     BASE_API_V2: "https://apidev2.sportswhereiam.com/openapi"
 
 version: 2.1
