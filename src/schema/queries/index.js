@@ -1,8 +1,8 @@
 import { cityById, allCities } from './city';
 import { allSports } from './sport';
+import { searchByTerm } from './search';
 import { allPopularEvents } from './popularEvents';
 import { allExperiences } from './experiences';
-
 import { allCarousels } from './carousel';
 
 export {
@@ -12,4 +12,5 @@ export {
   allPopularEvents,
   allExperiences,
   allSports,
+  searchByTerm
 };

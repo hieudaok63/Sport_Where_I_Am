@@ -27,6 +27,7 @@ const getEmptyArray = length => new Array(length).fill(null);
 const cities = require('./city-data');
 const carousel = require('./carousel-data');
 const sports = require('./sports-data');
+const search = require('./search-data');
 const popularEvents = require('./popularEvents-data');
 const experiences = require('./experiences-data');
 
@@ -36,4 +37,5 @@ writeData(DB_FILEPATH, {
   experiences,
   popularEvents,
   sports,
+  search,
 });
