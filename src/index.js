@@ -11,10 +11,12 @@ require('dotenv-expand')(origEnv);
 
 const express = require('express');
 
+const { BASE_API_V2, BASE_API, BASE_GQL_URL } = process.env;
+
 const app = express();
 
 const PORT = process.env.PORT || 5000;
-const BASE_GQL_URL = `${process.env.BASE_GQL_URL}:${PORT}`;
+const BASE_URL = `${process.env.BASE_GQL_URL}:${PORT}`;
 
 // general cache settings
 app.set('etag', process.env.ENABLE_ETAG === 'true');
@@ -46,9 +48,21 @@ const webServer = createServer(app);
 
 const server = webServer.listen(PORT, () => {
   logger.info(`NODE_ENV ${process.env.NODE_ENV}`);
-  logger.info(`Server running at ${BASE_GQL_URL}`);
+  logger.info(`Server running at ${BASE_URL}`);
   logger.info(`Utilising api1 ${process.env.BASE_API}`);
   logger.info(`Utilising api2 ${process.env.BASE_API_V2}`);
+
+  logger.info('BASE_API_V2: ');
+  logger.info(BASE_API_V2);
+
+  logger.info('BASE_API: ');
+  logger.info(BASE_API);
+
+  logger.info('BASE_GQL_URL: ');
+  logger.info(BASE_GQL_URL);
+
+  logger.info('PORT: ');
+  logger.info(PORT);
 });
 
 function stop() {
