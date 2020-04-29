@@ -47,6 +47,8 @@ const webServer = createServer(app);
 const server = webServer.listen(PORT, () => {
   logger.info(`NODE_ENV ${process.env.NODE_ENV}`);
   logger.info(`Server running at ${BASE_GQL_URL}`);
+  logger.info(`Utilising api1 ${process.env.BASE_API}`);
+  logger.info(`Utilising api2 ${process.env.BASE_API_V2}`);
 });
 
 function stop() {

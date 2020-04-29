@@ -9,9 +9,14 @@ export const getAllSports = token => {
   const http = HttpClient.getHttpClient();
   return http
     .get(url, token && getAuthOption(token))
-    .then(res => res.data.data)
+    .then(res => {
+      logger.info('Fetched result');
+      logger.info(res);
+      return res.data.data;
+    })
     .catch(error => {
       logger.error(`Error in Sport Service - getAllSports() - `, error.message);
+      logger.error(error);
       return null;
     });
 };
