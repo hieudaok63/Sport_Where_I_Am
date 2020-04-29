@@ -24,6 +24,7 @@ const writeData = (filePath, data) => {
 const getEmptyArray = length => new Array(length).fill(null);
 
 // Generate entities
+const blogPost = require('./blogPost-data');
 const cities = require('./city-data');
 const carousel = require('./carousel-data');
 const sports = require('./sports-data');
@@ -32,6 +33,7 @@ const popularEvents = require('./popularEvents-data');
 const experiences = require('./experiences-data');
 
 writeData(DB_FILEPATH, {
+  blogPost,
   carousel,
   city: cities,
   experiences,
