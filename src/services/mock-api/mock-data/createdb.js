@@ -25,11 +25,15 @@ const getEmptyArray = length => new Array(length).fill(null);
 
 // Generate entities
 const cities = require('./city-data');
-const popular = require('./popular-data');
+const carousel = require('./carousel-data');
 const sports = require('./sports-data');
+const popularEvents = require('./popularEvents-data');
+const experiences = require('./experiences-data');
 
 writeData(DB_FILEPATH, {
+  carousel,
   city: cities,
-  popular,
+  experiences,
+  popularEvents,
   sports,
 });

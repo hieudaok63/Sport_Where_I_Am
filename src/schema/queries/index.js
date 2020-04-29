@@ -1,5 +1,15 @@
 import { cityById, allCities } from './city';
-import { popularById, allPopulars } from './popular';
 import { allSports } from './sport';
+import { allPopularEvents } from './popularEvents';
+import { allExperiences } from './experiences';
 
-export { cityById, allCities, popularById, allPopulars, allSports };
+import { allCarousels } from './carousel';
+
+export {
+  cityById,
+  allCarousels,
+  allCities,
+  allPopularEvents,
+  allExperiences,
+  allSports,
+};
