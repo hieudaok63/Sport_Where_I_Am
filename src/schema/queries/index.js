@@ -4,6 +4,7 @@ import { searchByTerm } from './search';
 import { allPopularEvents } from './popularEvents';
 import { allExperiences } from './experiences';
 import { allCarousels } from './carousel';
+import { allHotels } from './hotel';
 import { allBlogPosts } from './blogPost';
 
 export {
@@ -14,5 +15,6 @@ export {
   allSports,
   allCarousels,
   allBlogPosts,
-  searchByTerm
+  searchByTerm,
+  allHotels,
 };
