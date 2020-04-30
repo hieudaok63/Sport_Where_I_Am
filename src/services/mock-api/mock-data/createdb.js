@@ -31,6 +31,7 @@ const sports = require('./sports-data');
 const search = require('./search-data');
 const popularEvents = require('./popularEvents-data');
 const experiences = require('./experiences-data');
+const user = require('./user-data');
 
 writeData(DB_FILEPATH, {
   blogPost,
@@ -40,4 +41,5 @@ writeData(DB_FILEPATH, {
   popularEvents,
   sports,
   search,
+  user,
 });
