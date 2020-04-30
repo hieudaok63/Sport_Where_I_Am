@@ -6,5 +6,6 @@
   "/cms/v1/getPopularEvents": "/popularEvents",
   "/cms/v1/getSports": "/sports",
   "/cms/v1/getPopularBlogpost": "/blogPost",
-  "/cms/v1/search": "/search"
+  "/cms/v1/search": "/search",
+  "/cms/v1/getPopularHotel": "/hotel"
 }
