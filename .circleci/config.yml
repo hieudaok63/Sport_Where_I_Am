@@ -48,7 +48,7 @@ jobs:
       - checkout
       - gcr/gcr-auth
       - gcr/build-image:
-          extra_build_args: "--build-arg BASE_API='https://apidev.sportswhereiam.com/swiam-api' --build-arg BASE_API_V2='https://apidev2.sportswhereiam.com/openapi' --build-arg BASE_GQL_URL='http://localhost'"
+          extra_build_args: "--build-arg $BASE_API='https://apidev.sportswhereiam.com/swiam-api' --build-arg $BASE_API_V2='https://apidev2.sportswhereiam.com/openapi' --build-arg $BASE_GQL_URL='http://localhost'"
           image: swiam-gql
           tag: $CIRCLE_SHA1 #Change version number e.g to 'v3' when updating application
       - gcr/push-image:
