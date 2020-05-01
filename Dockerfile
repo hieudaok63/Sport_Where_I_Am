@@ -22,6 +22,12 @@ COPY . .
 RUN touch .env
 
 ENV NODE_ENV production
+ENV BASE_API=$BASE_API
+ENV BASE_API_V2=$BASE_API_V2
+ENV PORT=5000
+ENV TIME_OUT=3000
+ENV CITY_ROUTE=/v3i/cities
+ENV BASE_GQL_URL=$BASE_GQL_URL
 
 # set a health check
 HEALTHCHECK --interval=5s \
