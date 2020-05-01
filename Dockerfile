@@ -21,6 +21,10 @@ COPY . .
 # Add an empty .env file (if it doesn't exist)
 RUN touch .env
 
+ARG BASE_API
+ARG BASE_API_V2
+ARG BASE_GQL_URL
+
 ENV NODE_ENV production
 ENV BASE_API=$BASE_API
 ENV BASE_API_V2=$BASE_API_V2
