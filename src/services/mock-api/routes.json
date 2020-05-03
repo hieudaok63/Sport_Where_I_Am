@@ -8,4 +8,5 @@
   "/cms/v1/getPopularBlogpost": "/blogPost",
   "/cms/v1/search": "/search",
   "/cms/v1/getPopularHotel": "/hotel"
+  "/v2/login": "/login"
 }

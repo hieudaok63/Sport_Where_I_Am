@@ -6,6 +6,7 @@ import { allExperiences } from './experiences';
 import { allCarousels } from './carousel';
 import { allHotels } from './hotel';
 import { allBlogPosts } from './blogPost';
+import { loginWithEmail } from './login';
 
 export {
   cityById,
@@ -17,4 +18,5 @@ export {
   allBlogPosts,
   searchByTerm,
   allHotels,
+  loginWithEmail,
 };
