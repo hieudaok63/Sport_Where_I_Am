@@ -4,6 +4,7 @@ import { searchByTerm } from './search';
 import { allPopularEvents } from './popularEvents';
 import { allExperiences } from './experiences';
 import { allCarousels } from './carousel';
+import { allHotels } from './hotel';
 import { allBlogPosts } from './blogPost';
 import { loginWithEmail } from './login';
 
@@ -16,5 +17,6 @@ export {
   allCarousels,
   allBlogPosts,
   searchByTerm,
+  allHotels,
   loginWithEmail,
 };

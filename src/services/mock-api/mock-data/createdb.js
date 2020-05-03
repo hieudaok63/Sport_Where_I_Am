@@ -1,5 +1,4 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-const faker = require('faker');
 const fs = require('fs');
 const path = require('path');
 
@@ -21,8 +20,6 @@ const writeData = (filePath, data) => {
   });
 };
 
-const getEmptyArray = length => new Array(length).fill(null);
-
 // Generate entities
 const blogPost = require('./blogPost-data');
 const cities = require('./city-data');
@@ -31,6 +28,7 @@ const sports = require('./sports-data');
 const search = require('./search-data');
 const popularEvents = require('./popularEvents-data');
 const experiences = require('./experiences-data');
+const hotel = require('./hotel-data');
 const user = require('./user-data');
 
 writeData(DB_FILEPATH, {
@@ -41,5 +39,6 @@ writeData(DB_FILEPATH, {
   popularEvents,
   sports,
   search,
+  hotel,
   user,
 });
