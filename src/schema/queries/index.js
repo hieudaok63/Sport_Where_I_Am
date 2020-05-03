@@ -5,6 +5,7 @@ import { allPopularEvents } from './popularEvents';
 import { allExperiences } from './experiences';
 import { allCarousels } from './carousel';
 import { allBlogPosts } from './blogPost';
+import { loginWithEmail } from './login';
 
 export {
   cityById,
@@ -14,5 +15,6 @@ export {
   allSports,
   allCarousels,
   allBlogPosts,
-  searchByTerm
+  searchByTerm,
+  loginWithEmail,
 };
