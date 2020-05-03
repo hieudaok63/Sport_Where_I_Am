@@ -76,11 +76,10 @@ workflows:
       - Build-Push-Image-Docker:
           requires:
             - build-and-test
-      - deploy:
-          requires:
-            - Build-Push-Image-Docker
           filters:
             branches:
               only:
                 - develop
-
+      - deploy:
+          requires:
+            - Build-Push-Image-Docker

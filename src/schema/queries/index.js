@@ -14,5 +14,5 @@ export {
   allSports,
   allCarousels,
   allBlogPosts,
-  searchByTerm
+  searchByTerm,
 };
