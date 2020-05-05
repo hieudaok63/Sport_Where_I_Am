@@ -1,12 +1,13 @@
 {
   "/cms/v1/getMainCarousel": "/carousel",
   "/v3i/cities": "/city",
+  "/usingwpids/cities/:cityId": "/cityDetails/:cityId",
   "/v3i/cities/:cityId": "/city/:cityId",
   "/cms/v1/getPopularExperiences": "/experiences",
   "/cms/v1/getPopularEvents": "/popularEvents",
   "/cms/v1/getSports": "/sports",
   "/cms/v1/getPopularBlogpost": "/blogPost",
   "/cms/v1/search": "/search",
-  "/cms/v1/getPopularHotel": "/hotel"
+  "/cms/v1/getPopularHotel": "/hotel",
   "/v2/login": "/login"
 }

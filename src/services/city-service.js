@@ -1,10 +1,10 @@
 import HttpClient from '../tools/http-client';
 import getAuthOption from '../tools/auth-header';
 
-const { BASE_API } = process.env;
+const { SWIAM_API, SWIAM_API_V2 } = process.env;
 
 export const getCityById = (cityId, token) => {
-  const url = `${BASE_API}/v3i/cities/${cityId}`;
+  const url = `${SWIAM_API}/v3i/cities/${cityId}`;
 
   const http = HttpClient.getHttpClient();
   return http
@@ -19,8 +19,26 @@ export const getCityById = (cityId, token) => {
     });
 };
 
+export const getCityDetailsByIdFromDate = (cityId, fromDate, token) => {
+  // fromDate must me format YYYY-MM-DD eg 2020-05-30
+  const url = `${SWIAM_API_V2}/usingwpids/cities/${cityId}?dateTime=${fromDate ||
+    ''}`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data)
+    .catch(error => {
+      logger.error(
+        `Error in City Service - getCityDetailsById() for city id: ${cityId} `,
+        error.message
+      );
+      return null;
+    });
+};
+
 export const getAllCities = token => {
-  const url = `${BASE_API}/v3i/cities`;
+  const url = `${SWIAM_API}/v3i/cities`;
   console.log('========== BASE API ==========');
   console.log(url);
 

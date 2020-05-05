@@ -1,10 +1,10 @@
 import HttpClient from '../tools/http-client';
 import getAuthOption from '../tools/auth-header';
 
-const { BASE_API } = process.env;
+const { SWIAM_API } = process.env;
 
 export const getPopularById = (popularId, token) => {
-  const url = `${BASE_API}/v3i/popular/${popularId}`;
+  const url = `${SWIAM_API}/v3i/popular/${popularId}`;
 
   const http = HttpClient.getHttpClient();
   return http
@@ -20,7 +20,7 @@ export const getPopularById = (popularId, token) => {
 };
 
 export const getAllPopulars = token => {
-  const url = `${BASE_API}/v3i/popular`;
+  const url = `${SWIAM_API}/v3i/popular`;
 
   const http = HttpClient.getHttpClient(3000);
   return http

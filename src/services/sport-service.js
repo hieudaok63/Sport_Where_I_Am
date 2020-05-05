@@ -2,15 +2,15 @@ import HttpClient from '../tools/http-client';
 import getAuthOption from '../tools/auth-header';
 import logger from '../tools/logger';
 
-const { BASE_API_V2, BASE_API, BASE_GQL_URL, PORT } = process.env;
+const { SWIAM_OPENAPI, SWIAM_API, BASE_GQL_URL, PORT } = process.env;
 
 export const getAllSports = token => {
-  const url = `${BASE_API_V2}/cms/v1/getSports`;
-  logger.info('BASE_API_V2: ');
-  logger.info(BASE_API_V2);
+  const url = `${SWIAM_OPENAPI}/cms/v1/getSports`;
+  logger.info('SWIAM_OPENAPI: ');
+  logger.info(SWIAM_OPENAPI);
 
-  logger.info('BASE_API: ');
-  logger.info(BASE_API);
+  logger.info('SWIAM_API: ');
+  logger.info(SWIAM_API);
 
   logger.info('BASE_GQL_URL: ');
   logger.info(BASE_GQL_URL);

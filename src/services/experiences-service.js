@@ -1,10 +1,10 @@
 import HttpClient from '../tools/http-client';
 import getAuthOption from '../tools/auth-header';
 
-const { BASE_API_V2 } = process.env;
+const { SWIAM_OPENAPI } = process.env;
 
 export const getAllExperiences = token => {
-  const url = `${BASE_API_V2}/cms/v1/getPopularExperiences`;
+  const url = `${SWIAM_OPENAPI}/cms/v1/getPopularExperiences`;
 
   const http = HttpClient.getHttpClient();
   return http

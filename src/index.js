@@ -11,7 +11,7 @@ require('dotenv-expand')(origEnv);
 
 const express = require('express');
 
-const { BASE_API_V2, BASE_API, BASE_GQL_URL } = process.env;
+const { SWIAM_OPENAPI, SWIAM_API, BASE_GQL_URL } = process.env;
 
 const app = express();
 
@@ -49,14 +49,14 @@ const webServer = createServer(app);
 const server = webServer.listen(PORT, () => {
   logger.info(`NODE_ENV ${process.env.NODE_ENV}`);
   logger.info(`Server running at ${BASE_URL}`);
-  logger.info(`Utilising api1 ${process.env.BASE_API}`);
-  logger.info(`Utilising api2 ${process.env.BASE_API_V2}`);
+  logger.info(`Utilising api1 ${process.env.SWIAM_API}`);
+  logger.info(`Utilising api2 ${process.env.SWIAM_OPENAPI}`);
 
-  logger.info('BASE_API_V2: ');
-  logger.info(BASE_API_V2);
+  logger.info('SWIAM_OPENAPI: ');
+  logger.info(SWIAM_OPENAPI);
 
-  logger.info('BASE_API: ');
-  logger.info(BASE_API);
+  logger.info('SWIAM_API: ');
+  logger.info(SWIAM_API);
 
   logger.info('BASE_GQL_URL: ');
   logger.info(BASE_GQL_URL);
