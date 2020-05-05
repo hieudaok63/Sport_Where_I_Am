@@ -1,11 +1,19 @@
 import { GraphQLObjectType, GraphQLSchema } from 'graphql';
-import * as fields from './queries/index';
 
-const api = new GraphQLObjectType({
-  name: 'api',
-  fields,
+import * as queryFields from './queries/index';
+import * as mutationFields from './mutations/index';
+
+const query = new GraphQLObjectType({
+  name: 'QueryAPI',
+  fields: queryFields,
+});
+
+const mutation = new GraphQLObjectType({
+  name: 'MutationAPI',
+  fields: mutationFields,
 });
 
 module.exports = new GraphQLSchema({
-  query: api,
+  query,
+  mutation,
 });
