@@ -51,7 +51,7 @@ jobs:
       - gcr/build-image:
           extra_build_args: |
             "--build-arg SWIAM_API='https://apidev.sportswhereiam.com/swiam-api'
-             --build-arg SWIAM_API_V2 https://apidev2.sportswhereiam.com/swiam-api/v2
+             --build-arg SWIAM_API_V2='https://apidev2.sportswhereiam.com/swiam-api/v2'
             --build-arg SWIAM_OPENAPI='https://apidev2.sportswhereiam.com/openapi'
             --build-arg BASE_GQL_URL='http://localhost'"
           image: swiam-gql
