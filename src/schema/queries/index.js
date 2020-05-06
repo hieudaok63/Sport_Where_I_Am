@@ -1,4 +1,4 @@
-import { cityById, allCities } from './city';
+import { cityById, allCities, cityDetailsByIdFromDate } from './city';
 import { allSports } from './sport';
 import { searchByTerm } from './search';
 import { allPopularEvents } from './popularEvents';
@@ -10,6 +10,7 @@ import { loginWithEmail } from './login';
 
 export {
   cityById,
+  cityDetailsByIdFromDate,
   allCities,
   allPopularEvents,
   allExperiences,

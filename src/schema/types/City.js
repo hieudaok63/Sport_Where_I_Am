@@ -4,6 +4,8 @@ import {
   GraphQLInt,
   GraphQLFloat,
 } from 'graphql';
+import CityDetails from './CityDetails';
+import { getCityById } from '../../services/city-service';
 
 const City = new GraphQLObjectType({
   name: 'City',
@@ -18,6 +20,16 @@ const City = new GraphQLObjectType({
     thisHref: { type: GraphQLString },
     venuesHref: { type: GraphQLString },
     eventsHref: { type: GraphQLString },
+    cityDetails: {
+      type: CityDetails,
+      resolve: (rawUserData, args, req) => {
+        const { id } = args;
+        if (id) {
+          return getCityById(id, req.token);
+        }
+        return null;
+      },
+    },
   },
 });
 

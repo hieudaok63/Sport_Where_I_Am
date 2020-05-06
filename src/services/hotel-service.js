@@ -1,10 +1,10 @@
 import HttpClient from '../tools/http-client';
 import getAuthOption from '../tools/auth-header';
 
-const { BASE_API } = process.env;
+const { SWIAM_API } = process.env;
 
 export const getAllHotels = token => {
-  const url = `${BASE_API}/cms/v1/getPopularHotel`;
+  const url = `${SWIAM_API}/cms/v1/getPopularHotel`;
 
   const http = HttpClient.getHttpClient();
   return http
