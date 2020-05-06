@@ -8,6 +8,7 @@ defaults: &defaults
     SWIAM_API_V2: "https://apidev2.sportswhereiam.com/swiam-api/v2"
     SWIAM_OPENAPI: "https://apidev2.sportswhereiam.com/openapi"
 
+
 uat-envs: &uat-envs
   environment:
     BASE_GQL_URL: "http://localhost"
