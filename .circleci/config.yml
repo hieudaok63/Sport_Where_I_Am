@@ -5,11 +5,13 @@ defaults: &defaults
   environment:
     BASE_GQL_URL: "http://localhost"
     SWIAM_API: "https://apidev.sportswhereiam.com/swiam-api"
+    SWIAM_API_V2: "https://apidev2.sportswhereiam.com/swiam-api/v2"
     SWIAM_OPENAPI: "https://apidev2.sportswhereiam.com/openapi"
 
 uat-envs: &uat-envs
   environment:
     BASE_GQL_URL: "http://localhost"
+    SWIAM_API_V2: "https://apidev2.sportswhereiam.com/swiam-api/v2"
     SWIAM_API: "https://apidev.sportswhereiam.com/swiam-api"
     SWIAM_OPENAPI: "https://apidev2.sportswhereiam.com/openapi"
 
@@ -27,12 +29,18 @@ jobs:
           key: node_modules-{{ checksum "package.json" }}
       - run:
           name: Setup common environment variables
+#          command: |
+#            echo 'export APP_ENV="staging"' >> $BASH_ENV
+#            echo 'export BASE_API="https://apidev.sportswhereiam.com/swiam-api" >> $BASH_ENV
+#            echo 'export BASE_API_V2="https://apidev2.sportswhereiam.com/openapi" >> $BASH_ENV
+#            echo 'export BASE_GQL_URL="http://localhost" export PORT="5000"' >> $BASH_ENV
+#            echo 'export PORT="5000"' >> $BASH_ENV
           command: |
             echo 'export APP_ENV="staging"' >> $BASH_ENV
-            echo 'export SWIAM_API="https://apidev.sportswhereiam.com/swiam-api" >> $BASH_ENV
-            echo 'export SWIAM_API_V2="https://apidev2.sportswhereiam.com/swiam-api/v2" >> $BASH_ENV
-            echo 'export SWIAM_OPENAPI="https://apidev2.sportswhereiam.com/openapi" >> $BASH_ENV
-            echo 'export BASE_GQL_URL="http://localhost" export PORT="5000"' >> $BASH_ENV
+            echo 'export SWIAM_API="https://apidev.sportswhereiam.com/swiam-api"' >> $BASH_ENV
+            echo 'export SWIAM_API_V2="https://apidev2.sportswhereiam.com/swiam-api/v2"' >> $BASH_ENV
+            echo 'export SWIAM_OPENAPI="https://apidev2.sportswhereiam.com/openapi"' >> $BASH_ENV
+            echo 'export BASE_GQL_URL="http://localhost" >> $BASH_ENV
             echo 'export PORT="5000"' >> $BASH_ENV
       - run: NODE_ENV=development yarn
       - run:
