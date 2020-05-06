@@ -7,6 +7,8 @@ const Search = new GraphQLObjectType({
     resultText: { type: GraphQLString },
     type: { type: GraphQLString },
     subType: { type: GraphQLString },
+    date: { type: GraphQLString },
+    venue: { type: GraphQLString },
   },
 });
 
