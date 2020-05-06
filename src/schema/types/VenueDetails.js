@@ -1,11 +1,11 @@
-import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql';
+import { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLID } from 'graphql';
 import Coordinates from './Coordinates';
 
 const VenueDetails = new GraphQLObjectType({
   name: 'VenueDetails',
   fields: {
     photoURL: { type: GraphQLString },
-    venueid: { type: GraphQLInt },
+    venueid: { type: GraphQLID },
     venueWordpressID: { type: GraphQLInt },
     venueName: { type: GraphQLString },
     venueAddress: { type: GraphQLString },
