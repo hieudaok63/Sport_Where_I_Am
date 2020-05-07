@@ -1,4 +1,4 @@
-import { GraphQLID, GraphQLList } from 'graphql';
+import { GraphQLID, GraphQLList, GraphQLString } from 'graphql';
 import City from '../types/City';
 import CityDetails from '../types/CityDetails';
 import {
@@ -25,7 +25,7 @@ export const cityDetailsByIdFromDate = {
   type: CityDetails,
   args: {
     id: { type: GraphQLID },
-    fromDate: { type: GraphQLID },
+    fromDate: { type: GraphQLString },
   },
   resolve: (rawUserData, args, req) => {
     const { id, fromDate } = args;
