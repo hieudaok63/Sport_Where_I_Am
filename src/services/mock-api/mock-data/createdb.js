@@ -26,7 +26,6 @@ const cities = require('./city-data');
 const cityDetails = require('./city-data/cityDetails-data');
 const carousel = require('./carousel-data');
 const sports = require('./sports-data');
-const venues = require('./venue-data');
 const search = require('./search-data');
 const popularEvents = require('./popularEvents-data');
 const experiences = require('./experiences-data');
@@ -40,7 +39,6 @@ writeData(DB_FILEPATH, {
   city: cities,
   venues,
   cityDetails,
-  venues,
   experiences,
   popularEvents,
   sports,
