@@ -6,6 +6,7 @@ import {
   GraphQLFloat,
 } from 'graphql';
 import Event from './EventDetails';
+import Coordinates from './Coordinates';
 
 const Venue = new GraphQLObjectType({
   name: 'Venue',
@@ -17,10 +18,7 @@ const Venue = new GraphQLObjectType({
     venueAddress: { type: GraphQLString },
     address: { type: GraphQLString },
     cityid: { type: GraphQLInt },
-    coOrdinates: {
-      latitude: { type: GraphQLFloat },
-      longitude: { type: GraphQLFloat },
-    },
+    coOrdinates: { type: Coordinates },
     venueDescription: { type: GraphQLString },
     events: { type: GraphQLList(Event) },
   },

@@ -7,6 +7,7 @@ import { allCarousels } from './carousel';
 import { allHotels } from './hotel';
 import { allBlogPosts } from './blogPost';
 import { loginWithEmail } from './login';
+import { venueByIdFromDate } from './venue';
 
 export {
   cityById,
@@ -20,4 +21,5 @@ export {
   searchByTerm,
   allHotels,
   loginWithEmail,
+  venueByIdFromDate,
 };
