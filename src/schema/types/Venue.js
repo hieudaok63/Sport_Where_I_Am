@@ -5,10 +5,10 @@ import {
   GraphQLFloat,
 } from 'graphql';
 import CityDetails from './CityDetails';
-import { getCityDetailsByIdFromDate } from '../../services/city-service';
+import { getCityById } from '../../services/city-service';
 
-const City = new GraphQLObjectType({
-  name: 'City',
+const Venue = new GraphQLObjectType({
+  name: 'Venue',
   fields: {
     id: { type: GraphQLInt },
     name: { type: GraphQLString },
@@ -22,10 +22,10 @@ const City = new GraphQLObjectType({
     eventsHref: { type: GraphQLString },
     cityDetails: {
       type: CityDetails,
-      resolve: (rawCityData, args, req) => {
-        const { id } = rawCityData;
+      resolve: (rawUserData, args, req) => {
+        const { id } = args;
         if (id) {
-          return getCityDetailsByIdFromDate(id, '', req.token);
+          return getCityById(id, req.token);
         }
         return null;
       },
@@ -33,4 +33,4 @@ const City = new GraphQLObjectType({
   },
 });
 
-export default City;
+export default Venue;
