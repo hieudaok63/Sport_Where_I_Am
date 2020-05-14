@@ -7,27 +7,13 @@ import {
   getCityDetailsByIdFromDate,
 } from '../../services/city-service';
 
-export const venueByCityById = {
-  type: City,
-  args: {
-    id: { type: GraphQLID },
-  },
-  resolve: (rawUserData, args, req) => {
-    const { id } = args;
-    if (id) {
-      return getCityById(id, req.token);
-    }
-    return null;
-  },
-};
-
-export const cityDetailsByIdFromDate = {
+export const venueByIdFromDate = {
   type: CityDetails,
   args: {
     id: { type: GraphQLID },
     fromDate: { type: GraphQLString },
   },
-  resolve: (rawUserData, args, req) => {
+  resolve: (rawCityData, args, req) => {
     const { id, fromDate } = args;
     if (id) {
       return getCityDetailsByIdFromDate(id, fromDate, req.token);
@@ -36,8 +22,3 @@ export const cityDetailsByIdFromDate = {
   },
 };
 
-export const allCities = {
-  type: GraphQLList(City),
-  args: {},
-  resolve: (rawUserData, args, req) => getAllCities(req.token),
-};

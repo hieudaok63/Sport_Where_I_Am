@@ -50,6 +50,8 @@ describe('Cities Query', () => {
         expect(city).toHaveProperty('thisHref');
         expect(city).toHaveProperty('venuesHref');
         expect(city).toHaveProperty('eventsHref');
+        expect(city.id).toBe(117);
+        expect(city.name).toEqual('Aberdeen');
         return done();
       });
   });

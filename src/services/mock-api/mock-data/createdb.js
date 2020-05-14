@@ -31,11 +31,13 @@ const popularEvents = require('./popularEvents-data');
 const experiences = require('./experiences-data');
 const hotel = require('./hotel-data');
 const user = require('./user-data');
+const venues = require('./venues-data');
 
 writeData(DB_FILEPATH, {
   blogPost,
   carousel,
   city: cities,
+  venues,
   cityDetails,
   experiences,
   popularEvents,
