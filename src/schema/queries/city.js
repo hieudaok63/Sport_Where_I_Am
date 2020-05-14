@@ -12,7 +12,7 @@ export const cityById = {
   args: {
     id: { type: GraphQLID },
   },
-  resolve: (rawUserData, args, req) => {
+  resolve: (rawCityData, args, req) => {
     const { id } = args;
     if (id) {
       return getCityById(id, req.token);
@@ -27,7 +27,7 @@ export const cityDetailsByIdFromDate = {
     id: { type: GraphQLID },
     fromDate: { type: GraphQLString },
   },
-  resolve: (rawUserData, args, req) => {
+  resolve: (rawCityData, args, req) => {
     const { id, fromDate } = args;
     if (id) {
       return getCityDetailsByIdFromDate(id, fromDate, req.token);
