@@ -1,19 +1,20 @@
 import HttpClient from '../tools/http-client';
 import getAuthOption from '../tools/auth-header';
 
-const { SWIAM_API, SWIAM_API_V2 } = process.env;
+const { SWIAM_API, SWIAM_API_V2, SWIAM_OPENAPI } = process.env;
 
-const getAllLeagues = token => {
-  const url = `${SWIAM_API}/cms/v1/get-Leagues`;
-  console.log('========== BASE API ==========');
-  console.log(url);
+export const getAllLeagues = token => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/getLeagues`;
 
-  const http = HttpClient.getHttpClient(3000);
+  const http = HttpClient.getHttpClient();
   return http
     .get(url, token && getAuthOption(token))
-    .then(res => res.data)
+    .then(res => res.data.data)
     .catch(error => {
-      logger.error(`Error in City Service - getAllVenues() - `, error.message);
+      logger.error(
+        `Error in League Service - getAllHotels() - `,
+        error.message
+      );
       return null;
     });
 };

@@ -8,6 +8,7 @@ import { allHotels } from './hotel';
 import { allBlogPosts } from './blogPost';
 import { loginWithEmail } from './login';
 import { venueByIdFromDate } from './venue';
+import { allLeagues } from './leagues';
 
 export {
   cityById,
@@ -21,5 +22,6 @@ export {
   searchByTerm,
   allHotels,
   loginWithEmail,
+  allLeagues,
   venueByIdFromDate,
 };
