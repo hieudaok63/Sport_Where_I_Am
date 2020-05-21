@@ -8,6 +8,7 @@ import { allHotels } from './hotel';
 import { allBlogPosts } from './blogPost';
 import { loginWithEmail } from './login';
 import { venueByIdFromDate } from './venue';
+import { productIdByEventId } from './shop';
 
 export {
   cityById,
@@ -22,4 +23,5 @@ export {
   allHotels,
   loginWithEmail,
   venueByIdFromDate,
+  productIdByEventId,
 };
