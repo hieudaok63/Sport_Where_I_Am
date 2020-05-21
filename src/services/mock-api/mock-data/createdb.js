@@ -32,6 +32,7 @@ const experiences = require('./experiences-data');
 const hotel = require('./hotel-data');
 const user = require('./user-data');
 const venues = require('./venues-data');
+const eventProducts = require('./product-data');
 
 writeData(DB_FILEPATH, {
   blogPost,
@@ -45,4 +46,5 @@ writeData(DB_FILEPATH, {
   search,
   hotel,
   user,
+  eventProducts,
 });
