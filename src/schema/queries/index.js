@@ -2,6 +2,7 @@ import { cityById, allCities, cityDetailsByIdFromDate } from './city';
 import { allSports } from './sport';
 import { searchByTerm } from './search';
 import { allPopularEvents } from './popularEvents';
+import { getNearbyEventsByCityId } from './nearbyEvents';
 import { allExperiences } from './experiences';
 import { allCarousels } from './carousel';
 import { allHotels } from './hotel';

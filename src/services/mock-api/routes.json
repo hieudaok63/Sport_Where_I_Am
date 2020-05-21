@@ -2,12 +2,14 @@
   "/cms/v1/getMainCarousel": "/carousel",
   "/cms/v1/getLeagues": "/leagues",
   "/v3i/cities": "/city",
+
   "/usingwpids/cities/:cityId": "/cityDetails/:cityId",
   "/usingwpids/venues/:venueId": "/venues/:venueId",
   "/usingwpids/venues": "/venues",
   
   "/v3i/cities/:cityId": "/city/:cityId",
   "/cms/v1/getPopularExperiences": "/experiences",
+  "/cms/v1/getNearbyEvents?cityId=:cityId": "/nearbyEvents/:cityId",
   "/cms/v1/getPopularEvents": "/popularEvents",
   "/cms/v1/getSports": "/sports",
   "/cms/v1/getPopularBlogpost": "/blogPost",
