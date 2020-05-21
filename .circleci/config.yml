@@ -7,6 +7,7 @@ defaults: &defaults
     SWIAM_API: "https://apidev.sportswhereiam.com/swiam-api"
     SWIAM_API_V2: "https://apidev2.sportswhereiam.com/swiam-api/v2"
     SWIAM_API_V3I: "https://apidev2.sportswhereiam.com/swiam-api/v3i"
+    SWIAM_API_V3: "https://apidev2.sportswhereiam.com/swiam-api/v3"
     SWIAM_OPENAPI: "https://apidev2.sportswhereiam.com/openapi"
 
 
@@ -15,6 +16,7 @@ uat-envs: &uat-envs
     BASE_GQL_URL: "http://localhost"
     SWIAM_API_V2: "https://apidev2.sportswhereiam.com/swiam-api/v2"
     SWIAM_API_V3I: "https://apidev2.sportswhereiam.com/swiam-api/v3i"
+    SWIAM_API_V3: "https://apidev2.sportswhereiam.com/swiam-api/v3"
     SWIAM_API: "https://apidev.sportswhereiam.com/swiam-api"
     SWIAM_OPENAPI: "https://apidev2.sportswhereiam.com/openapi"
 
@@ -37,6 +39,7 @@ jobs:
             echo 'export SWIAM_API="https://apidev.sportswhereiam.com/swiam-api"' >> $BASH_ENV
             echo 'export SWIAM_API_V2="https://apidev2.sportswhereiam.com/swiam-api/v2"' >> $BASH_ENV
             echo 'export SWIAM_API_V3I="https://apidev2.sportswhereiam.com/swiam-api/v3i"' >> $BASH_ENV
+            echo 'export SWIAM_API_V3="https://apidev2.sportswhereiam.com/swiam-api/v3"' >> $BASH_ENV
             echo 'export SWIAM_OPENAPI="https://apidev2.sportswhereiam.com/openapi"' >> $BASH_ENV
             echo 'export BASE_GQL_URL="http://localhost"'>> $BASH_ENV
             echo 'export PORT="5000"' >> $BASH_ENV
@@ -57,6 +60,8 @@ jobs:
       - gcr/build-image:
           extra_build_args: "--build-arg SWIAM_API='https://apidev.sportswhereiam.com/swiam-api'
              --build-arg SWIAM_API_V2='https://apidev2.sportswhereiam.com/swiam-api/v2'
+             --build-arg SWIAM_API_V3I='https://apidev2.sportswhereiam.com/swiam-api/v3i'
+             --build-arg SWIAM_API_V3='https://apidev2.sportswhereiam.com/swiam-api/v3'
             --build-arg SWIAM_OPENAPI='https://apidev2.sportswhereiam.com/openapi'
             --build-arg BASE_GQL_URL='http://localhost'"
           image: swiam-gql
