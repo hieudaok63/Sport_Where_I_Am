@@ -9,6 +9,7 @@ import { allBlogPosts } from './blogPost';
 import { loginWithEmail } from './login';
 import { venueByIdFromDate } from './venue';
 import { productIdByEventId } from './shop';
+import { eventById } from './event';
 
 export {
   cityById,
@@ -24,4 +25,5 @@ export {
   loginWithEmail,
   venueByIdFromDate,
   productIdByEventId,
+  eventById,
 };
