@@ -14,6 +14,8 @@
   "/cms/v1/getSports": "/sports",
   "/cms/v1/getPopularBlogpost": "/blogPost",
   "/cms/v1/search": "/search",
+  "/shop/events/:eventId/products": "/eventProducts/:eventId",
   "/cms/v1/getPopularHotel": "/hotel",
-  "/v2/login": "/login"
+  "/v2/login": "/login",
+  "/v2/event/:eventId": "/eventDetails/:eventId"
 }

@@ -10,6 +10,8 @@ swiam-gql:
     - NODE_ENV="production"
     - SWIAM_API=https://api.sportswhereiam.com/swiam-api
     - SWIAM_API_V2=https://apidev2.sportswhereiam.com/swiam-api/v2
+    - SWIAM_API_V3I=https://apidev2.sportswhereiam.com/swiam-api/v3i
+    - SWIAM_API_V3=https://apidev2.sportswhereiam.com/swiam-api/v3
     - SWIAM_OPENAPI=https://apidev2.sportswhereiam.com/openapi
     - PORT=5000
     - TIME_OUT=3000
