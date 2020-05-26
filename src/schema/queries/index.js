@@ -8,6 +8,7 @@ import { allHotels } from './hotel';
 import { allBlogPosts } from './blogPost';
 import { loginWithEmail } from './login';
 import { venueByIdFromDate } from './venue';
+import { allLeagues } from './leagues';
 import { productIdByEventId } from './shop';
 import { eventById } from './event';
 
@@ -23,6 +24,7 @@ export {
   searchByTerm,
   allHotels,
   loginWithEmail,
+  allLeagues,
   venueByIdFromDate,
   productIdByEventId,
   eventById,
