@@ -38,7 +38,7 @@ export const getCityDetailsByIdFromDate = (cityId, fromDate, token) => {
 };
 
 export const getAllCities = token => {
-  const url = `${SWIAM_API_V3I}/cities`;
+  const url = `${SWIAM_API_V3I}/v3i/cities`;
   console.log('========== BASE API ==========');
   console.log(url);
 
