@@ -26,7 +26,8 @@ const cities = require('./city-data');
 const cityDetails = require('./city-data/cityDetails-data');
 const carousel = require('./carousel-data');
 const sports = require('./sports-data');
-const leagues = require('./league-data');
+const leagues = require('./leagues-data');
+const league = require('./league-data');
 const search = require('./search-data');
 const popularEvents = require('./popularEvents-data');
 const nearbyEvents = require('./nearbyEvents-data');
@@ -50,6 +51,7 @@ writeData(DB_FILEPATH, {
   search,
   hotel,
   user,
+  league,
   leagues,
   eventProducts,
   eventDetails,
