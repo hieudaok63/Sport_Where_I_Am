@@ -1,7 +1,7 @@
 {
   "/cms/v1/getMainCarousel": "/carousel",
   "/cms/v1/getLeagues": "/leagues",
-  "/cms/v1/league/:leagueId/info": "/league/:leagueId",
+  "/cms/v1/league/:leagueId/info": "/league",
   "/v3i/cities": "/city",
   "/v3i/cities/:cityId": "/city/:cityId",
 
