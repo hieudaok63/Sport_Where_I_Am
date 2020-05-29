@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: swiam-gql
-  labels:
-    app: swiam-gql
+  name: swiam-service
 spec:
   ports:
-    - port: 5000
+  - protocol: TCP
+    port: 5000
+    targetPort: 5000
   selector:
     app: swiam-gql
     tier: backend
-  type: LoadBalancer
+  type: NodePort

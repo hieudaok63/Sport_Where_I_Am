@@ -44,25 +44,15 @@ app.use(routes);
 logger.debug('[] Route registration complete.');
 logger.info('[] Route registration complete.');
 
+app.get('/health', (req, res) => {
+  res.send('Healthy');
+});
+
 const webServer = createServer(app);
 
 const server = webServer.listen(PORT, () => {
   logger.info(`NODE_ENV ${process.env.NODE_ENV}`);
-  logger.info(`Server running at ${BASE_URL}`);
-  logger.info(`Utilising api1 ${process.env.SWIAM_API}`);
-  logger.info(`Utilising api2 ${process.env.SWIAM_OPENAPI}`);
-
-  logger.info('SWIAM_OPENAPI: ');
-  logger.info(SWIAM_OPENAPI);
-
-  logger.info('SWIAM_API: ');
-  logger.info(SWIAM_API);
-
-  logger.info('BASE_GQL_URL: ');
-  logger.info(BASE_GQL_URL);
-
-  logger.info('PORT: ');
-  logger.info(PORT);
+  logger.info(`Server running at ${BASE_URL} on port ${process.env.PORT}`);
 });
 
 function stop() {

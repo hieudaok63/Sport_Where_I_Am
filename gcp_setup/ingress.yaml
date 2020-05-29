@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: swiam-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: rocket-lab-ip
+    networking.gke.io/managed-certificates: rocketlab-cert
+  labels:
+    app: swiam-gql
+    tier: backend
+spec:
+  backend:
+    serviceName: swiam-gql
+    servicePort: 5000
