@@ -10,6 +10,6 @@ export const allLeagues = {
 
 export const leagueInfo = {
   type: League,
-  args: { leagueId: { type: GraphQLString } },
+  args: { leagueId: { type: GraphQLInt } },
   resolve: (rawUserData, args, req) => getLeagueInfo(req.token, args.leagueId),
 };
