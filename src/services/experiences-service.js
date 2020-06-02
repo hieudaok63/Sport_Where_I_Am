@@ -4,7 +4,7 @@ import getAuthOption from '../tools/auth-header';
 const { SWIAM_OPENAPI } = process.env;
 
 export const getAllExperiences = token => {
-  const url = `${SWIAM_OPENAPI}/cms/v1/getPopularExperiences`;
+  const url = `${SWIAM_OPENAPI}/cms/v1/popularExperiences`;
 
   const http = HttpClient.getHttpClient();
   return http
@@ -12,7 +12,7 @@ export const getAllExperiences = token => {
     .then(res => res.data.data)
     .catch(error => {
       logger.error(
-        `Error in Sport Service - getPopularExperiences() - `,
+        `Error in Sport Service - popularExperiences() - `,
         error.message
       );
       return null;

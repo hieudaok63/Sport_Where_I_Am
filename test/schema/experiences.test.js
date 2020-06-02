@@ -2,7 +2,7 @@ import nock from 'nock';
 import experiences from '../test-data/test-experiences-data';
 
 const mockApi = process.env.SWIAM_OPENAPI || 'http://localhost:4000';
-const experiencesRoute = '/cms/v1/getPopularExperiences';
+const experiencesRoute = '/cms/v1/popularExperiences';
 
 const setup = () => {
   nock(mockApi)

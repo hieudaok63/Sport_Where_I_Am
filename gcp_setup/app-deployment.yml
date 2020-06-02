@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: swiam-gql
+  labels:
+    app: graphql-service-swiam
+spec:
+  selector:
+    matchLabels:
+      app: swiam-gql
+      tier: backend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: swiam-gql
+        tier: backend
+    spec:
+      containers:
+        - image: gcr.io/swiam-274409/swiam-gql:0.1.0
+          name: swiam-gql
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+              name: swiam-gql
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 30
+            periodSeconds: 3
+            failureThreshold: 2
+#

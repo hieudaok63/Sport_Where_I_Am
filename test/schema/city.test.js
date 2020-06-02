@@ -1,8 +1,8 @@
 import nock from 'nock';
 import cities from '../test-data/test-city-data';
 
-const mockApi = process.env.SWIAM_API || 'http://localhost:4000';
-const cityRoute = process.env.CITY_ROUTE || '/cities';
+const mockApi = process.env.SWIAM_API_V3I || 'http://localhost:4000';
+const cityRoute = '/cities';
 
 const setup = () => {
   cities.forEach(item => {

@@ -3,8 +3,8 @@ import getAuthOption from '../tools/auth-header';
 
 const { SWIAM_OPENAPI } = process.env;
 
-export const getAllBlogPosts = token => {
-  const url = `${SWIAM_OPENAPI}/cms/v1/popularBlogposts`;
+export const getNearbyEventsByCityId = (cityId, token) => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/nearbyEvents?cityId=${cityId}`;
 
   const http = HttpClient.getHttpClient();
   return http
@@ -12,7 +12,7 @@ export const getAllBlogPosts = token => {
     .then(res => res.data.data)
     .catch(error => {
       logger.error(
-        `Error in Sport Service - getAllPopularBlogPost() - `,
+        `Error in Events Service - nearbyEventsByCityId() - `,
         error.message
       );
       return null;

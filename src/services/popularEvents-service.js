@@ -4,7 +4,7 @@ import getAuthOption from '../tools/auth-header';
 const { SWIAM_OPENAPI } = process.env;
 
 export const getAllPopularEvents = token => {
-  const url = `${SWIAM_OPENAPI}/cms/v1/getPopularEvents`;
+  const url = `${SWIAM_OPENAPI}/cms/v1/popularEvents`;
 
   const http = HttpClient.getHttpClient();
   return http
