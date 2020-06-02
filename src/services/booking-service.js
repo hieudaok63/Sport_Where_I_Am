@@ -1,5 +1,6 @@
 const sendEmailToBookingCrew = (bookingId, email, fullName) => {
-  // TODO: Return the real API data
+  // TODO: Return the real API data (staging / prod)
+  // TODO: Mock localhost response
   const promiseTimeout = time => () =>
     new Promise(resolve => setTimeout(resolve, time));
 
@@ -24,7 +25,8 @@ const sendEmailToBookingCrew = (bookingId, email, fullName) => {
 export { sendEmailToBookingCrew };
 
 const findBooking = (bookingId, email, fullName) => {
-  // TODO: Return the real API data
+  // TODO: Return the real API data (staging / prod)
+  // TODO: Mock localhost response
   const promiseTimeout = time => () =>
     new Promise(resolve => setTimeout(resolve, time));
 
