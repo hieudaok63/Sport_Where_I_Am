@@ -1,4 +1,9 @@
-import { GraphQLObjectType, GraphQLString, GraphQLList } from 'graphql';
+import {
+  GraphQLObjectType,
+  GraphQLString,
+  GraphQLList,
+  GraphQLInt,
+} from 'graphql';
 
 const Ticket = new GraphQLObjectType({
   name: 'Ticket',
@@ -13,9 +18,18 @@ const Booking = new GraphQLObjectType({
   name: 'Booking',
   fields: {
     bookingId: { type: GraphQLString },
-    buyerFullName: { type: GraphQLString },
-    buyerEmail: { type: GraphQLString },
+    bookerFullName: { type: GraphQLString },
+    bookerEmail: { type: GraphQLString },
+    ticketClassID: { type: GraphQLInt },
+    ticketDeliveryAddress: { type: GraphQLString },
+    numberOfTickets: { type: GraphQLInt },
     tickets: { type: GraphQLList(Ticket) },
+    eventID: { type: GraphQLString },
+    eventDate: { type: GraphQLString },
+    eventName: { type: GraphQLString },
+    ticketDescription: { type: GraphQLString },
+    venueName: { type: GraphQLString },
+    venueAddress: { type: GraphQLString },
   },
 });
 

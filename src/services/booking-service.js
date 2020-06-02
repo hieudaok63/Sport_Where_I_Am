@@ -33,8 +33,17 @@ const findBooking = (bookingId, email, fullName) => {
   return promiseTimeout(3000)()
     .then(() => ({
       bookingId,
-      buyerFullName: fullName,
-      buyerEmail: email,
+      bookerFullName: fullName,
+      bookerEmail: email,
+      ticketClassID: 'ABC',
+      ticketDeliveryAddress: '',
+      numberOfTickets: 5,
+      eventID: '1670',
+      eventDate: '1591121741',
+      eventName: 'New York Knicks vs. Chicago Bulls',
+      ticketDescription: '',
+      venueName: 'Madison Square Garden',
+      venueAddress: '4 Pennsylvania Plaza, New York, NY 10001, United States',
       tickets: [
         {
           id: '1',
