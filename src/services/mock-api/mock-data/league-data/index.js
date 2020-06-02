@@ -12,7 +12,8 @@ module.exports = {
         'https://api.sportswhereiam.com/swiam-api/imgs/sports/png_basketball.png',
       sportName: 'Basketball',
     },
-    leagueDescription: null,
+    leagueDescription:
+    'Community league basketball team with teams consisting of players aged 16-21 competing for the regional trophy wth tournaments held quarterly',
     photoURL: null,
     events: null,
   },
