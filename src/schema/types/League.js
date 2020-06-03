@@ -3,6 +3,7 @@ import {
   GraphQLString,
   GraphQLID,
   GraphQLInt,
+  GraphQLList,
 } from 'graphql';
 import Sport from './Sport';
 import leagueEvents from './LeagueEvents';
@@ -16,7 +17,7 @@ const League = new GraphQLObjectType({
     leagueID: { type: GraphQLID },
     leagueName: { type: GraphQLString },
     sport: { type: Sport },
-    events: { type: leagueEvents },
+    events: { type: GraphQLList(leagueEvents) },
   },
 });
 
