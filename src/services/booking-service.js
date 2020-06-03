@@ -4,7 +4,7 @@ const sendEmailToBookingCrew = (bookingId, email, fullName) => {
   const promiseTimeout = time => () =>
     new Promise(resolve => setTimeout(resolve, time));
 
-  return promiseTimeout(3000)()
+  return promiseTimeout(1000)()
     .then(() => ({
       bookingId,
       id: email,
@@ -30,7 +30,7 @@ const findBooking = (bookingId, email, fullName) => {
   const promiseTimeout = time => () =>
     new Promise(resolve => setTimeout(resolve, time));
 
-  return promiseTimeout(3000)()
+  return promiseTimeout(300)()
     .then(() => ({
       bookingId,
       bookerFullName: fullName,
