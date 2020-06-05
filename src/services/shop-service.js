@@ -23,10 +23,29 @@ const getProductIdByEventId = (
         `Error in Shop Service - getProductIdByEventId() for event id: ${eventId} `,
         error.message
       );
-      console.log("____getProductIdByEventId_____ error", error)
+      console.log('____getProductIdByEventId_____ error', error);
 
       return null;
     });
 };
 
-export { getProductIdByEventId };
+const getCartId = token => {
+  const url = `${SWIAM_API_V3}/shop/carts`;
+  // https://apidev2.sportswhereiam.com/swiam-api/v3/shop/carts
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .post(url, token && getAuthOption(token))
+    .then(res => {
+      console.log('getCartId', res);
+      return res.data;
+    })
+    .catch(error => {
+      logger.error(`Error in Shop Service - getCartId( `, error.message);
+      console.log('____getCartId_____ error', error);
+
+      return null;
+    });
+};
+
+export { getProductIdByEventId, getCartId };
