@@ -1,6 +1,6 @@
 {
   "/cms/v1/mainCarousel": "/carousel",
-  "/cms/v1/l  eagues": "/leagues",
+  "/cms/v1/leagues": "/leagues",
   "/v3i/cities": "/city",
   "/v3i/cities/:cityId": "/city/:cityId",
 
