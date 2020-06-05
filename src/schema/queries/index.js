@@ -12,6 +12,8 @@ import { venueByIdFromDate } from './venue';
 import { allLeagues } from './leagues';
 import { productIdByEventId, createCartId } from './shop';
 import { eventById } from './event';
+import { sendTicketConfirmation } from './sendTicketConfirmation';
+import { getBooking } from './booking';
 
 export {
   cityById,
@@ -31,4 +33,6 @@ export {
   productIdByEventId,
   eventById,
   createCartId,
+  sendTicketConfirmation,
+  getBooking,
 };
