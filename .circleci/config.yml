@@ -58,7 +58,7 @@ jobs:
       - checkout
       - gcr/gcr-auth
       - gcr/build-image:
-          extra_build_args: "--build-arg SWIAM_API='https://apidev.sportswhereiam.com/swiam-api'
+          extra_build_args: "--build-arg SWIAM_API='https://apidev2.sportswhereiam.com/swiam-api'
              --build-arg SWIAM_API_V2='https://apidev2.sportswhereiam.com/swiam-api/v2'
              --build-arg SWIAM_API_V3I='https://apidev2.sportswhereiam.com/swiam-api/v3i'
              --build-arg SWIAM_API_V3='https://apidev2.sportswhereiam.com/swiam-api/v3'

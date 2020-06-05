@@ -4,7 +4,8 @@ import getAuthOption from '../tools/auth-header';
 const { SWIAM_API_V2 } = process.env;
 
 const getVenueByIdFromDate = (venueId, fromDate, token) => {
-  const url = `${SWIAM_API_V2}/usingwpids/venues/${venueId}?dateTime=${fromDate || ''}`;
+  const url = `${SWIAM_API_V2}/usingwpids/venues/${venueId}?dateTime=${fromDate ||
+    ''}`;
 
   const http = HttpClient.getHttpClient();
   return http

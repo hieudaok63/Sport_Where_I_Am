@@ -4,7 +4,7 @@ import getAuthOption from '../tools/auth-header';
 const { SWIAM_OPENAPI } = process.env;
 
 export const getNearbyEventsByCityId = (cityId, token) => {
-  const url = `${SWIAM_OPENAPI}/cms/v1/getNearbyEvents?cityId=${cityId}`;
+  const url = `${SWIAM_OPENAPI}/cms/v1/nearbyEvents?cityId=${cityId}`;
 
   const http = HttpClient.getHttpClient();
   return http
@@ -12,10 +12,9 @@ export const getNearbyEventsByCityId = (cityId, token) => {
     .then(res => res.data.data)
     .catch(error => {
       logger.error(
-        `Error in Events Service - getNearbyEventsByCityId() - `,
+        `Error in Events Service - nearbyEventsByCityId() - `,
         error.message
       );
       return null;
     });
 };
-

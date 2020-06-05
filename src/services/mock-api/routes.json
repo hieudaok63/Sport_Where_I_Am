@@ -1,7 +1,6 @@
 {
-  "/cms/v1/getMainCarousel": "/carousel",
-  "/cms/v1/getLeagues": "/leagues",
-  "/cms/v1/league/:leagueId/info": "/league",
+  "/cms/v1/mainCarousel": "/carousel",
+  "/cms/v1/leagues": "/leagues",
   "/v3i/cities": "/city",
   "/v3i/cities/:cityId": "/city/:cityId",
 
@@ -9,14 +8,14 @@
   "/usingwpids/venues/:venueId": "/venues/:venueId",
   "/usingwpids/venues": "/venues",
 
-  "/cms/v1/getPopularExperiences": "/experiences",
-  "/cms/v1/getNearbyEvents?cityId=:cityId": "/nearbyEvents",
-  "/cms/v1/getPopularEvents": "/popularEvents",
-  "/cms/v1/getSports": "/sports",
-  "/cms/v1/getPopularBlogpost": "/blogPost",
+  "/cms/v1/popularExperiences": "/experiences",
+  "/cms/v1/nearbyEvents?cityId=:cityId": "/nearbyEvents",
+  "/cms/v1/popularEvents": "/popularEvents",
+  "/cms/v1/sports": "/sports",
+  "/cms/v1/popularBlogposts": "/blogPost",
   "/cms/v1/search": "/search",
   "/shop/events/:eventId/products": "/eventProducts/:eventId",
-  "/cms/v1/getPopularHotel": "/hotel",
+  "/cms/v1/popularHotel": "/hotel",
   "/v2/login": "/login",
   "/v2/event/:eventId": "/eventDetails/:eventId"
 }

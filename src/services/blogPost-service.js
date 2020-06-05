@@ -4,7 +4,7 @@ import getAuthOption from '../tools/auth-header';
 const { SWIAM_OPENAPI } = process.env;
 
 export const getAllBlogPosts = token => {
-  const url = `${SWIAM_OPENAPI}/cms/v1/getPopularBlogpost`;
+  const url = `${SWIAM_OPENAPI}/cms/v1/popularBlogposts`;
 
   const http = HttpClient.getHttpClient();
   return http

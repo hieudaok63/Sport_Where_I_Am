@@ -4,7 +4,7 @@ import getAuthOption from '../tools/auth-header';
 const { SWIAM_API_V2, SWIAM_API_V3I, SWIAM_OPENAPI } = process.env;
 
 export const getCityById = (cityId, token) => {
-  const url = `${SWIAM_API_V3I}/v3i/cities/${cityId}`;
+  const url = `${SWIAM_API_V3I}/cities/${cityId}`;
 
   const http = HttpClient.getHttpClient();
   return http
@@ -38,7 +38,7 @@ export const getCityDetailsByIdFromDate = (cityId, fromDate, token) => {
 };
 
 export const getAllCities = token => {
-  const url = `${SWIAM_API_V3I}/v3i/cities`;
+  const url = `${SWIAM_API_V3I}/cities`;
   console.log('========== BASE API ==========');
   console.log(url);
 

@@ -2,7 +2,7 @@ import nock from 'nock';
 import blogPost from '../test-data/test-blogPost-data';
 
 const mockApi = process.env.SWIAM_API || 'http://localhost:4000';
-const blogPostRoute = '/cms/v1/getPopularBlogpost';
+const blogPostRoute = '/cms/v1/popularBlogposts';
 
 const setup = () => {
   nock(mockApi)

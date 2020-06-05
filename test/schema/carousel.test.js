@@ -2,7 +2,7 @@ import nock from 'nock';
 import carousel from '../test-data/test-carousel-data';
 
 const mockApi = process.env.SWIAM_OPENAPI || 'http://localhost:4000';
-const carouselRoute = '/cms/v1/getMainCarousel';
+const carouselRoute = '/cms/v1/mainCarousel';
 
 const setup = () => {
   nock(mockApi)

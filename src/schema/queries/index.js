@@ -13,6 +13,8 @@ import { allLeagues } from './leagues';
 import { leagueInfo } from './league';
 import { productIdByEventId } from './shop';
 import { eventById } from './event';
+import { sendTicketConfirmation } from './sendTicketConfirmation';
+import { getBooking } from './booking';
 
 export {
   leagueInfo,
@@ -32,4 +34,6 @@ export {
   nearbyEventsByCityId,
   productIdByEventId,
   eventById,
+  sendTicketConfirmation,
+  getBooking,
 };

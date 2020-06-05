@@ -2,7 +2,7 @@ import nock from 'nock';
 import popularEvents from '../test-data/test-popularEvents-data';
 
 const mockApi = process.env.SWIAM_OPENAPI || 'http://localhost:4000';
-const popularEventsRoute = '/cms/v1/getPopularEvents';
+const popularEventsRoute = '/cms/v1/popularEvents';
 
 const setup = () => {
   nock(mockApi)

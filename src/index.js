@@ -44,6 +44,10 @@ app.use(routes);
 logger.debug('[] Route registration complete.');
 logger.info('[] Route registration complete.');
 
+app.get('/health', (req, res) => {
+  res.send('Healthy');
+});
+
 const webServer = createServer(app);
 
 const server = webServer.listen(PORT, () => {

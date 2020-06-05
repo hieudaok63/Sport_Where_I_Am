@@ -4,7 +4,7 @@ import getAuthOption from '../tools/auth-header';
 const { SWIAM_API, SWIAM_API_V2, SWIAM_OPENAPI } = process.env;
 
 export const getAllLeagues = token => {
-  const url = `${SWIAM_OPENAPI}/cms/v1/getLeagues`;
+  const url = `${SWIAM_OPENAPI}/cms/v1/leagues`;
 
   const http = HttpClient.getHttpClient();
   return http

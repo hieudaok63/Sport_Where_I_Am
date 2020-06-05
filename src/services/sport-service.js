@@ -5,7 +5,7 @@ import logger from '../tools/logger';
 const { SWIAM_OPENAPI } = process.env;
 
 export const getAllSports = token => {
-  const url = `${SWIAM_OPENAPI}/cms/v1/getSports`;
+  const url = `${SWIAM_OPENAPI}/cms/v1/sports`;
   const http = HttpClient.getHttpClient();
   return http
     .get(url, token && getAuthOption(token))
