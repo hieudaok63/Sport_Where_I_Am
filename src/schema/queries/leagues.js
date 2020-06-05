@@ -7,4 +7,3 @@ export const allLeagues = {
   args: {},
   resolve: (rawUserData, args, req) => getAllLeagues(req.token),
 };
-
