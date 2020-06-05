@@ -1,4 +1,4 @@
-import { GraphQLInt } from 'graphql';
+import { GraphQLInt, GraphQLList } from 'graphql';
 import League from '../types/League';
 import leagueVideo from '../types/LeagueVideo';
 import { getLeagueInfo, getLeagueVideos } from '../../services/league-service';

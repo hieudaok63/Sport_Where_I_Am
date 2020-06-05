@@ -35,4 +35,20 @@ export const getLeagueInfo = (token, leagueId) => {
     });
 };
 
-export default { getAllLeagues, getLeagueInfo };
+export const getLeagueVideos = (token, leagueId) => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/league/${leagueId}/videos`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      logger.error(
+        `Error in League Service - getLeagueVideos() - `,
+        error.message
+      );
+      return null;
+    });
+};
+
+export default { getAllLeagues, getLeagueInfo, getLeagueVideos };
