@@ -10,7 +10,7 @@ import { allBlogPosts } from './blogPost';
 import { loginWithEmail } from './login';
 import { venueByIdFromDate } from './venue';
 import { allLeagues } from './leagues';
-import { productIdByEventId } from './shop';
+import { productIdByEventId, createCartId } from './shop';
 import { eventById } from './event';
 
 export {
@@ -30,4 +30,5 @@ export {
   nearbyEventsByCityId,
   productIdByEventId,
   eventById,
+  createCartId,
 };
