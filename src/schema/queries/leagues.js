@@ -7,9 +7,3 @@ export const allLeagues = {
   args: {},
   resolve: (rawUserData, args, req) => getAllLeagues(req.token),
 };
-
-export const leagueInfo = {
-  type: League,
-  args: { leagueId: { type: GraphQLInt } },
-  resolve: (rawUserData, args, req) => getLeagueInfo(req.token, args.leagueId),
-};
