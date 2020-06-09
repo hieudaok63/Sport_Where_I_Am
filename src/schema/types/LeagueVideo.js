@@ -5,21 +5,19 @@ import {
   GraphQLBoolean,
 } from 'graphql';
 
+import InterestTagging from './InterestTagging';
+
 const LeagueVideo = new GraphQLObjectType({
   name: 'LeagueVideo',
   fields: {
     imageAspect: { type: GraphQLString },
     imageURL: { type: GraphQLString },
     interestTagging: {
-      cityId: { type: GraphQLInt },
-      homepage: { type: GraphQLBoolean },
-      leagueId: { type: GraphQLInt },
-      teamId: { type: GraphQLInt },
-      venueId: { type: GraphQLInt },
+      type: InterestTagging,
     },
     objectType: { type: GraphQLString },
     title: { type: GraphQLString },
-    videoID:{ type: GraphQLInt },
+    videoID: { type: GraphQLInt },
     videoURL: { type: GraphQLString },
   },
 });

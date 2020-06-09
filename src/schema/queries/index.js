@@ -10,7 +10,7 @@ import { allBlogPosts } from './blogPost';
 import { loginWithEmail } from './login';
 import { venueByIdFromDate } from './venue';
 import { allLeagues } from './leagues';
-import { leagueInfo } from './league';
+import { leagueInfo, getleagueVideos } from './league';
 import { productIdByEventId } from './shop';
 import { eventById } from './event';
 import { sendTicketConfirmation } from './sendTicketConfirmation';
@@ -30,6 +30,7 @@ export {
   allHotels,
   loginWithEmail,
   allLeagues,
+  getleagueVideos,
   venueByIdFromDate,
   nearbyEventsByCityId,
   productIdByEventId,

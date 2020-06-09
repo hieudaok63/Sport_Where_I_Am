@@ -9,7 +9,7 @@ export const leagueInfo = {
   resolve: (rawUserData, args, req) => getLeagueInfo(req.token, args.leagueId),
 };
 
-export const leagueVideos = {
+export const getleagueVideos = {
   type: GraphQLList(leagueVideo),
   args: { leagueId: { type: GraphQLInt } },
   resolve: (rawUserData, args, req) =>

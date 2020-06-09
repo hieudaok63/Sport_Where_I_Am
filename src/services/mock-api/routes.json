@@ -2,6 +2,7 @@
   "/cms/v1/mainCarousel": "/carousel",
   "/cms/v1/leagues": "/leagues",
   "/cms/v1/league/:leagueId/info": "/league",
+  "/cms/v1/league/:leagueId/videos": "/leagueVideos",
   "/v3i/cities": "/city",
   "/v3i/cities/:cityId": "/city/:cityId",
 
