@@ -1,7 +1,13 @@
 import { GraphQLInt, GraphQLList } from 'graphql';
 import League from '../types/League';
 import leagueVideo from '../types/LeagueVideo';
-import { getLeagueInfo, getLeagueVideos } from '../../services/league-service';
+import LeagueTeams from '../types/LeagueTeams';
+
+import {
+  getLeagueInfo,
+  getLeagueVideos,
+  getLeagueTeams,
+} from '../../services/league-service';
 
 export const leagueInfo = {
   type: League,
@@ -14,4 +20,10 @@ export const getleagueVideos = {
   args: { leagueId: { type: GraphQLInt } },
   resolve: (rawUserData, args, req) =>
     getLeagueVideos(req.token, args.leagueId),
+};
+
+export const getleagueTeams = {
+  type: GraphQLList(LeagueTeams),
+  args: { leagueId: { type: GraphQLInt } },
+  resolve: (rawUserData, args, req) => getLeagueTeams(req.token, args.leagueId),
 };
