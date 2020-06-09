@@ -8,7 +8,7 @@ const getProductIdByEventId = (
   token,
   asUrl = false,
   currency = 'AUD',
-  cartId = '123' // TODO: See how this is received
+  cartId = 'GEJKL8' // TODO: See how this is received
 ) => {
   const url = `${SWIAM_API_V3}/shop/events/${eventId}/products?asUrl=${asUrl}&currency=${currency}&cartId=${cartId}`;
 
@@ -48,4 +48,23 @@ const getCartId = token => {
     });
 };
 
-export { getProductIdByEventId, getCartId };
+const getCart = (cartId = 'GEJKL8', currency = 'AUD', token) => {
+  const url = `${SWIAM_API_V3}/shop/carts/${cartId}?currency=${currency}`;
+  // https://api.sportswhereiam.com/swiam-api/v3/shop/carts/GEJKL8?currency=%22AUD%22%20
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => {
+      console.log('getCart', res);
+      return res.data;
+    })
+    .catch(error => {
+      logger.error(`Error in Shop Service - getCart( `, error.message);
+      console.log('____getCart_____ error', error);
+
+      return null;
+    });
+};
+
+export { getProductIdByEventId, getCartId, getCart };
