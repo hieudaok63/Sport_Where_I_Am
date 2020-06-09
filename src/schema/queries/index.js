@@ -10,7 +10,12 @@ import { allBlogPosts } from './blogPost';
 import { loginWithEmail } from './login';
 import { venueByIdFromDate } from './venue';
 import { allLeagues } from './leagues';
-import { productIdByEventId, createCartId, cartById } from './shop';
+import {
+  productIdByEventId,
+  createCartId,
+  cartById,
+  stripePublicKey,
+} from './shop';
 import { eventById } from './event';
 import { sendTicketConfirmation } from './sendTicketConfirmation';
 import { getBooking } from './booking';
@@ -36,4 +41,5 @@ export {
   sendTicketConfirmation,
   getBooking,
   cartById,
+  stripePublicKey,
 };
