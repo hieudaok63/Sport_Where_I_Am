@@ -1,6 +1,6 @@
-import { GraphQLList } from 'graphql';
+import { GraphQLList, GraphQLString, GraphQLInt } from 'graphql';
 import League from '../types/League';
-import { getAllLeagues } from '../../services/league-service';
+import { getAllLeagues, getLeagueInfo } from '../../services/league-service';
 
 export const allLeagues = {
   type: GraphQLList(League),
