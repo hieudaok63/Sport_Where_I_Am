@@ -67,4 +67,26 @@ const getCart = (cartId = 'GEJKL8', currency = 'AUD', token) => {
     });
 };
 
-export { getProductIdByEventId, getCartId, getCart };
+const getStripePublicKey = (currency = 'AUD', token) => {
+  const url = `${SWIAM_API_V3}/shop/payments/stripe/currencies/${currency}/publickey`;
+  // https://api.sportswhereiam.com/swiam-api/v3/shop/payments/stripe/currencies/AUD/publickey
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => {
+      console.log('getStripePublicKey', res);
+      return res.data;
+    })
+    .catch(error => {
+      logger.error(
+        `Error in Shop Service - getStripePublicKey( `,
+        error.message
+      );
+      console.log('____getStripePublicKey_____ error', error);
+
+      return null;
+    });
+};
+
+export { getProductIdByEventId, getCartId, getCart, getStripePublicKey };
