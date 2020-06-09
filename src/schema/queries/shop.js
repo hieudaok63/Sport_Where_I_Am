@@ -1,10 +1,12 @@
 import { GraphQLList, GraphQLString } from 'graphql';
 import Product from '../types/Product';
 import Cart from '../types/Cart';
+import StripePublicKey from '../types/StripePublicKey';
 import {
   getProductIdByEventId,
   getCartId,
   getCart,
+  getStripePublicKey,
 } from '../../services/shop-service';
 
 const productIdByEventId = {
@@ -47,4 +49,18 @@ const cartById = {
   },
 };
 
-export { productIdByEventId, createCartId, cartById };
+const stripePublicKey = {
+  type: StripePublicKey,
+  args: {
+    currency: { type: GraphQLString },
+  },
+  resolve: (rawUserData, args, req) => {
+    const { currency } = args;
+    if (currency) {
+      return getStripePublicKey(currency, req.token);
+    }
+    return null;
+  },
+};
+
+export { productIdByEventId, createCartId, cartById, stripePublicKey };
