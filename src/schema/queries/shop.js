@@ -1,7 +1,11 @@
 import { GraphQLList, GraphQLString } from 'graphql';
 import Product from '../types/Product';
 import Cart from '../types/Cart';
-import { getProductIdByEventId, getCartId } from '../../services/shop-service';
+import {
+  getProductIdByEventId,
+  getCartId,
+  getCart,
+} from '../../services/shop-service';
 
 const productIdByEventId = {
   type: GraphQLList(Product),
@@ -18,7 +22,7 @@ const productIdByEventId = {
 };
 
 const createCartId = {
-  type: GraphQLList(Cart),
+  type: Cart,
   args: {},
   resolve: (rawUserData, args, req) => {
     if (req.token) {
@@ -28,4 +32,19 @@ const createCartId = {
   },
 };
 
-export { productIdByEventId, createCartId };
+const cartById = {
+  type: Cart,
+  args: {
+    cartId: { type: GraphQLString },
+    currency: { type: GraphQLString },
+  },
+  resolve: (rawUserData, args, req) => {
+    const { cartId, currency } = args;
+    if (cartId && currency) {
+      return getCart(cartId, currency, req.token);
+    }
+    return null;
+  },
+};
+
+export { productIdByEventId, createCartId, cartById };
