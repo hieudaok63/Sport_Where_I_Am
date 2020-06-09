@@ -15,6 +15,6 @@ src/services/mock-api/mock-data/db.json
 
 # User-specific stuff:
 .idea/
-.vscode/launch.json
+/.vscode
 .nyc_output/
 
