@@ -15,6 +15,7 @@ import {
   createCartId,
   cartById,
   stripePublicKey,
+  removeItemFromCartById,
 } from './shop';
 import { eventById } from './event';
 import { sendTicketConfirmation } from './sendTicketConfirmation';
@@ -42,4 +43,5 @@ export {
   getBooking,
   cartById,
   stripePublicKey,
+  removeItemFromCartById,
 };
