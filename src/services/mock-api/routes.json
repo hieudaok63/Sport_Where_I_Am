@@ -3,6 +3,7 @@
   "/cms/v1/leagues": "/leagues",
   "/cms/v1/league/:leagueId/info": "/league",
   "/cms/v1/league/:leagueId/videos": "/leagueVideos",
+  "/cms/v1/league/:leagueId/teams": "/leagueTeams",
   "/v3i/cities": "/city",
   "/v3i/cities/:cityId": "/city/:cityId",
 
