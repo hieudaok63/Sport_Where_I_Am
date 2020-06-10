@@ -46,7 +46,7 @@ module.exports = {
           },
         },
       ],
-      logoURL: 'string',
+      logoURL: '/_next/static/images/tagsbulls-9c745ea2c8f612f9f22e69d10f8f04d2.svg',
       photoURL: 'string',
       sport: {
         sportID: 0,
@@ -106,7 +106,7 @@ module.exports = {
           },
         },
       ],
-      logoURL: 'string',
+      logoURL: '/_next/static/images/tagslakers-df8aaef25f42d4e6b699555a674e977c.svg',
       photoURL: 'string',
       sport: {
         sportID: 0,
@@ -166,7 +166,7 @@ module.exports = {
           },
         },
       ],
-      logoURL: 'string',
+      logoURL: '/_next/static/images/tagsraptors-86d4d518dc9a932af466573e30ed02fb.svg',
       photoURL: 'string',
       sport: {
         sportID: 0,
@@ -226,7 +226,7 @@ module.exports = {
           },
         },
       ],
-      logoURL: 'string',
+      logoURL: '/_next/static/images/tagsnets-724eef04087f2f2f19bfd116e3d551d9.svg',
       photoURL: 'string',
       sport: {
         sportID: 0,
@@ -286,7 +286,7 @@ module.exports = {
           },
         },
       ],
-      logoURL: 'string',
+      logoURL: '/_next/static/images/tagsknicks-6830abaf86bf674d7ab5426b3cbe063c.svg',
       photoURL: 'string',
       sport: {
         sportID: 0,
