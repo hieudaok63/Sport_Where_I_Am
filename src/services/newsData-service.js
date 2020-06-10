@@ -15,3 +15,5 @@ export const getNewsData = (postId, type, token) => {
       return null;
     });
 };
+
+export default getNewsData;
