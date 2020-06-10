@@ -1,6 +1,7 @@
 module.exports = {
   data: [
     {
+      id: 1,
       title: 'Trip Ideas',
       imageAspect: 'WIDE',
       imageURL:
@@ -20,6 +21,7 @@ module.exports = {
       objectType: 'EXTERNAL_LINK',
     },
     {
+      id: 2,
       title: 'Stadium Guide',
       imageAspect: 'SQUARE',
       imageURL:
