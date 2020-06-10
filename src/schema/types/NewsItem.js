@@ -7,6 +7,8 @@ import {
   GraphQLBoolean,
 } from 'graphql';
 
+import InterestTagging from './InterestTagging';
+
 const NewsItem = new GraphQLObjectType({
   name: 'NewsItem',
   fields: {
@@ -14,13 +16,7 @@ const NewsItem = new GraphQLObjectType({
     blogpostSummary: { type: GraphQLString },
     imageAspect: { type: GraphQLString },
     imageURL: { type: GraphQLString },
-    interestTagging: {
-      cityId: { type: GraphQLInt },
-      homepage: { type: GraphQLBoolean },
-      leagueId: { type: GraphQLInt },
-      teamId: { type: GraphQLInt },
-      venueId: { type: GraphQLInt },
-    },
+    interestTagging: { type: InterestTagging },
     link: { type: GraphQLString },
     objectType: { type: GraphQLString },
     title: { type: GraphQLString },
