@@ -67,6 +67,27 @@ const getCart = (cartId = 'GEJKL8', currency = 'AUD', token) => {
     });
 };
 
+const deleteItemFromCartById = (cartId = 'GEJKL8', lineItemId, token) => {
+  const url = `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems/${lineItemId}`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .delete(url, token && getAuthOption(token))
+    .then(res => {
+      console.log('deleteItemFromCartById', res);
+      return res.data;
+    })
+    .catch(error => {
+      logger.error(
+        `Error in Shop Service - deleteItemFromCartById( `,
+        error.message
+      );
+      console.log('____deleteItemFromCartById_____ error', error);
+
+      return null;
+    });
+};
+
 const getStripePublicKey = (currency = 'AUD', token) => {
   const url = `${SWIAM_API_V3}/shop/payments/stripe/currencies/${currency}/publickey`;
   // https://api.sportswhereiam.com/swiam-api/v3/shop/payments/stripe/currencies/AUD/publickey
@@ -89,4 +110,10 @@ const getStripePublicKey = (currency = 'AUD', token) => {
     });
 };
 
-export { getProductIdByEventId, getCartId, getCart, getStripePublicKey };
+export {
+  getProductIdByEventId,
+  getCartId,
+  getCart,
+  getStripePublicKey,
+  deleteItemFromCartById,
+};
