@@ -10,12 +10,14 @@ import { allBlogPosts } from './blogPost';
 import { loginWithEmail } from './login';
 import { venueByIdFromDate } from './venue';
 import { allLeagues } from './leagues';
+import { leagueInfo, getleagueVideos, getleagueTeams } from './league';
 import { productIdByEventId } from './shop';
 import { eventById } from './event';
 import { sendTicketConfirmation } from './sendTicketConfirmation';
 import { getBooking } from './booking';
 
 export {
+  leagueInfo,
   cityById,
   cityDetailsByIdFromDate,
   allCities,
@@ -28,6 +30,8 @@ export {
   allHotels,
   loginWithEmail,
   allLeagues,
+  getleagueVideos,
+  getleagueTeams,
   venueByIdFromDate,
   nearbyEventsByCityId,
   productIdByEventId,

@@ -19,4 +19,52 @@ export const getAllLeagues = token => {
     });
 };
 
-export default getAllLeagues;
+export const getLeagueInfo = (token, leagueId) => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/league/${leagueId}/info`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      logger.error(
+        `Error in League Service - getLeagueInfo() - `,
+        error.message
+      );
+      return null;
+    });
+};
+
+export const getLeagueVideos = (token, leagueId) => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/league/${leagueId}/videos`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      logger.error(
+        `Error in League Service - getLeagueVideos() - `,
+        error.message
+      );
+      return null;
+    });
+};
+
+export const getLeagueTeams = (token, leagueId) => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/league/${leagueId}/teams`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      logger.error(
+        `Error in League Service - getLeagueTeams() - `,
+        error.message
+      );
+      return null;
+    });
+};
+
+export default { getAllLeagues, getLeagueInfo, getLeagueVideos };
