@@ -17,11 +17,13 @@ import {
   stripePublicKey,
   removeItemFromCartById,
 } from './shop';
+import { leagueInfo, getleagueVideos } from './league';
 import { eventById } from './event';
 import { sendTicketConfirmation } from './sendTicketConfirmation';
 import { getBooking } from './booking';
 
 export {
+  leagueInfo,
   cityById,
   cityDetailsByIdFromDate,
   allCities,
@@ -34,6 +36,7 @@ export {
   allHotels,
   loginWithEmail,
   allLeagues,
+  getleagueVideos,
   venueByIdFromDate,
   nearbyEventsByCityId,
   productIdByEventId,
