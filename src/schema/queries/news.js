@@ -10,5 +10,5 @@ export const getNews = {
     type: { type: GraphQLString },
   },
   resolve: (rawUserData, args, req) =>
-    getNewsData(args.post, args.type, req.token),
+    getNewsData(args.postId, args.type, req.token),
 };
