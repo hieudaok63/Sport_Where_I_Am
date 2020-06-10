@@ -15,6 +15,7 @@ import { productIdByEventId } from './shop';
 import { eventById } from './event';
 import { sendTicketConfirmation } from './sendTicketConfirmation';
 import { getBooking } from './booking';
+import { getNews } from './news';
 
 export {
   leagueInfo,
@@ -31,6 +32,7 @@ export {
   loginWithEmail,
   allLeagues,
   getleagueVideos,
+  getNews,
   getleagueTeams,
   venueByIdFromDate,
   nearbyEventsByCityId,

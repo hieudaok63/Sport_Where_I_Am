@@ -1,9 +1,9 @@
 import { GraphQLInt, GraphQLList, GraphQLString } from 'graphql';
-import NewsItem from '../types/News';
+import NewsItem from '../types/NewsItem';
 
 import getNewsData from '../../services/newsData-service';
 
-export const getleagueNews = {
+export const getNews = {
   type: GraphQLList(NewsItem),
   args: {
     postId: { type: GraphQLInt },
