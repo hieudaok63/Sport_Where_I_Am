@@ -7,6 +7,7 @@ import {
   getCartId,
   getCart,
   getStripePublicKey,
+  deleteItemFromCartById,
 } from '../../services/shop-service';
 
 const productIdByEventId = {
@@ -49,6 +50,21 @@ const cartById = {
   },
 };
 
+const removeItemFromCartById = {
+  type: Cart,
+  args: {
+    cartId: { type: GraphQLString },
+    lineItemId: { type: GraphQLString },
+  },
+  resolve: (rawUserData, args, req) => {
+    const { cartId, lineItemId } = args;
+    if (cartId && lineItemId) {
+      return deleteItemFromCartById(cartId, lineItemId, req.token);
+    }
+    return null;
+  },
+};
+
 const stripePublicKey = {
   type: StripePublicKey,
   args: {
@@ -63,4 +79,10 @@ const stripePublicKey = {
   },
 };
 
-export { productIdByEventId, createCartId, cartById, stripePublicKey };
+export {
+  productIdByEventId,
+  createCartId,
+  cartById,
+  stripePublicKey,
+  removeItemFromCartById,
+};
