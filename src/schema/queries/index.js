@@ -17,7 +17,7 @@ import {
   stripePublicKey,
   removeItemFromCartById,
 } from './shop';
-import { leagueInfo, getleagueVideos } from './league';
+import { leagueInfo, getleagueVideos, getleagueTeams } from './league';
 import { eventById } from './event';
 import { sendTicketConfirmation } from './sendTicketConfirmation';
 import { getBooking } from './booking';
@@ -37,6 +37,7 @@ export {
   loginWithEmail,
   allLeagues,
   getleagueVideos,
+  getleagueTeams,
   venueByIdFromDate,
   nearbyEventsByCityId,
   productIdByEventId,
