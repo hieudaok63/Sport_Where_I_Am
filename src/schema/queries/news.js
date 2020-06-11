@@ -6,9 +6,9 @@ import getNewsData from '../../services/newsData-service';
 export const getNews = {
   type: GraphQLList(NewsItem),
   args: {
-    postId: { type: GraphQLInt },
-    type: { type: GraphQLString },
+    interestId: { type: GraphQLInt },
+    interestType: { type: GraphQLString },
   },
   resolve: (rawUserData, args, req) =>
-    getNewsData(args.postId, args.type, req.token),
+    getNewsData(args.interestId, args.interestType, req.token),
 };

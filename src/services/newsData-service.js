@@ -3,8 +3,8 @@ import getAuthOption from '../tools/auth-header';
 
 const { SWIAM_OPENAPI } = process.env;
 
-export const getNewsData = (postId, type, token) => {
-  const url = `${SWIAM_OPENAPI}/cms/v1/news/${type}/${postId}`;
+export const getNewsData = (interestId, interestType, token) => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/news/${interestType}/${interestId}`;
 
   const http = HttpClient.getHttpClient();
   return http
