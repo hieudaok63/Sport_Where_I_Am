@@ -21,6 +21,7 @@ import { leagueInfo, getleagueVideos, getleagueTeams } from './league';
 import { eventById } from './event';
 import { sendTicketConfirmation } from './sendTicketConfirmation';
 import { getBooking } from './booking';
+import { teamById } from './team';
 
 export {
   leagueInfo,
@@ -48,4 +49,5 @@ export {
   cartById,
   stripePublicKey,
   removeItemFromCartById,
+  teamById,
 };
