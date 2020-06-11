@@ -1,6 +1,6 @@
 import { GraphQLList, GraphQLString } from 'graphql';
 import Product from '../types/Product';
-import Cart from '../types/Cart';
+import Cart from '../types/shop/Cart';
 import StripePublicKey from '../types/StripePublicKey';
 import {
   getProductIdByEventId,
