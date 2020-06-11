@@ -1,6 +1,8 @@
-import { GraphQLList, GraphQLString } from 'graphql';
+import { GraphQLList, GraphQLString, GraphQLBoolean } from 'graphql';
 import Product from '../types/Product';
 import Cart from '../types/shop/Cart';
+import { PaymentInput } from '../types/shop/Payment';
+import { CreditCardInput } from '../types/shop/CreditCard';
 import StripePublicKey from '../types/StripePublicKey';
 import {
   getProductIdByEventId,
@@ -8,7 +10,31 @@ import {
   getCart,
   getStripePublicKey,
   deleteItemFromCartById,
+  setPayment,
 } from '../../services/shop-service';
+
+const payNow = {
+  type: Cart, // TODO: verify what the api returns when the payment is concluded
+  args: {
+    cartId: { type: GraphQLString },
+    paymentData: { type: PaymentInput },
+    creditCardData: { type: CreditCardInput },
+    shouldSaveCreditCard: { type: GraphQLBoolean },
+  },
+  resolve: (rawUserData, args, req) => {
+    const { cartId, paymentData, creditCardData, shouldSaveCreditCard } = args;
+    if (cartId && paymentData && creditCardData && shouldSaveCreditCard) {
+      const data = {
+        cartId,
+        paymentData,
+        creditCardData,
+        shouldSaveCreditCard,
+      };
+      return setPayment(cartId, data, req.token);
+    }
+    return null;
+  },
+};
 
 const productIdByEventId = {
   type: GraphQLList(Product),
@@ -85,4 +111,5 @@ export {
   cartById,
   stripePublicKey,
   removeItemFromCartById,
+  payNow,
 };
