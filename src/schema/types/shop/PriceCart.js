@@ -1,14 +1,26 @@
-import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql';
+import {
+  GraphQLObjectType,
+  GraphQLString,
+  GraphQLInt,
+  GraphQLInputObjectType,
+} from 'graphql';
+
+const fields = {
+  currency: { type: GraphQLString },
+  amount: { type: GraphQLInt },
+  annotation: { type: GraphQLString },
+  error: { type: GraphQLString },
+  runningTotal: { type: GraphQLString },
+};
 
 const PriceCart = new GraphQLObjectType({
   name: 'PriceCart',
-  fields: {
-    currency: { type: GraphQLString },
-    amount: { type: GraphQLInt },
-    annotation: { type: GraphQLString },
-    error: { type: GraphQLString },
-    runningTotal: { type: GraphQLString },
-  },
+  fields,
+});
+
+export const PriceCartInput = new GraphQLInputObjectType({
+  name: 'PriceCartInput',
+  fields,
 });
 
 export default PriceCart;
