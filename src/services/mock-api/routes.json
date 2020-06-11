@@ -16,6 +16,7 @@
   "/cms/v1/popularEvents": "/popularEvents",
   "/cms/v1/sports": "/sports",
   "/cms/v1/popularBlogposts": "/blogPost",
+  "/cms/v1/news/:type/:postId": "/leagueNews",
   "/cms/v1/search": "/search",
   "/shop/events/:eventId/products": "/eventProducts/:eventId",
   "/cms/v1/popularHotel": "/hotel",
