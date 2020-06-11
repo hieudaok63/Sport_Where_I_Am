@@ -22,6 +22,8 @@ import { leagueInfo, getleagueVideos, getleagueTeams } from './league';
 import { eventById } from './event';
 import { sendTicketConfirmation } from './sendTicketConfirmation';
 import { getBooking } from './booking';
+import { getNews } from './news';
+import { teamById } from './team';
 
 export {
   leagueInfo,
@@ -38,6 +40,7 @@ export {
   loginWithEmail,
   allLeagues,
   getleagueVideos,
+  getNews,
   getleagueTeams,
   venueByIdFromDate,
   nearbyEventsByCityId,
@@ -50,4 +53,5 @@ export {
   stripePublicKey,
   removeItemFromCartById,
   payNow,
+  teamById,
 };
