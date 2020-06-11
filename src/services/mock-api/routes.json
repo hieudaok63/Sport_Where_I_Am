@@ -21,5 +21,6 @@
   "/shop/events/:eventId/products": "/eventProducts/:eventId",
   "/cms/v1/popularHotel": "/hotel",
   "/v2/login": "/login",
-  "/v2/event/:eventId": "/eventDetails/:eventId"
+  "/v2/event/:eventId": "/eventDetails/:eventId",
+  "/cms/v1/team/:teamId/info": "/team"
 }
