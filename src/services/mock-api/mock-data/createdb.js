@@ -35,10 +35,11 @@ const nearbyEvents = require('./nearbyEvents-data');
 const experiences = require('./experiences-data');
 const hotel = require('./hotel-data');
 const user = require('./user-data');
-const leagueTeams = require('./leagueTeams-data ');
+const leagueTeams = require('./leagueTeams-data');
 const venues = require('./venues-data');
 const eventProducts = require('./product-data');
 const eventDetails = require('./event-data/eventDetails-data');
+const team = require('./team-data');
 
 writeData(DB_FILEPATH, {
   blogPost,
@@ -59,4 +60,5 @@ writeData(DB_FILEPATH, {
   leagues,
   eventProducts,
   eventDetails,
+  team,
 });
