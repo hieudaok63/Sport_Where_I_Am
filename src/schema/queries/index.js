@@ -16,6 +16,7 @@ import {
   cartById,
   stripePublicKey,
   removeItemFromCartById,
+  payNow,
 } from './shop';
 import { leagueInfo, getleagueVideos, getleagueTeams } from './league';
 import { eventById } from './event';
@@ -48,4 +49,5 @@ export {
   cartById,
   stripePublicKey,
   removeItemFromCartById,
+  payNow,
 };
