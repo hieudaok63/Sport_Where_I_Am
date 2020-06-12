@@ -31,6 +31,7 @@ const league = require('./league-data');
 const leagueVideos = require('./leagueVideos-data');
 const search = require('./search-data');
 const popularEvents = require('./popularEvents-data');
+const leagueNews = require('./leagueNews-data');
 const nearbyEvents = require('./nearbyEvents-data');
 const experiences = require('./experiences-data');
 const hotel = require('./hotel-data');
@@ -55,6 +56,7 @@ writeData(DB_FILEPATH, {
   sports,
   search,
   hotel,
+  leagueNews,
   user,
   league,
   leagues,
