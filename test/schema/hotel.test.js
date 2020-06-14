@@ -2,7 +2,7 @@ import nock from 'nock';
 import hotels from '../test-data/test-hotel-data';
 
 const mockApi = process.env.SWIAM_OPENAPI || 'http://localhost:4000';
-const hotelRoute = '/cms/v1/popularHotel';
+const hotelRoute = '/cms/v1/popularHotels';
 
 const setup = () => {
   nock(mockApi)
