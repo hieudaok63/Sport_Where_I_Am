@@ -1,4 +1,16 @@
-import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql';
+import {
+  GraphQLObjectType,
+  GraphQLString,
+  GraphQLInt,
+  GraphQLList,
+} from 'graphql';
+
+import LineItem from './LineItem';
+import PriceCart from './PriceCart';
+import SplitTotal from './SplitTotal';
+import CustomerInfo from './CustomerInfo';
+import Payment from './Payment';
+import StatusLine from './StatusLine';
 
 const Cart = new GraphQLObjectType({
   name: 'Cart',
@@ -7,13 +19,23 @@ const Cart = new GraphQLObjectType({
     status: { type: GraphQLInt },
     publishedFxDate: { type: GraphQLString },
     channel: { type: GraphQLString },
+    agencyCode: { type: GraphQLString },
+    lineItems: { type: GraphQLList(LineItem) },
+    total: { type: PriceCart },
+    splitTotal: { type: SplitTotal },
+    charges: { type: GraphQLList(PriceCart) },
+    displayCurrency: { type: GraphQLString },
+    customerInfo: { type: CustomerInfo },
+    payment: { type: Payment },
+    promoCodes: { type: GraphQLList(GraphQLString) },
+    statusLines: { type: GraphQLList(StatusLine) },
+    created: { type: GraphQLString },
   },
 });
 
-// TODO: include other types as below
-
 export default Cart;
 
+// TODO: double check other types as below
 // {
 //   "id": "string",
 //   "status": "PENDING",

@@ -29,6 +29,25 @@ const getProductIdByEventId = (
     });
 };
 
+const setPayment = (data, cartId, token) => {
+  const url = `${SWIAM_API_V3}/shop/carts/${cartId}/payment`;
+  // https://api.sportswhereiam.com/swiam-api/v3/shop/carts/[:id]/payment
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .put(url, data, token && getAuthOption(token))
+    .then(res => {
+      console.log('setPayment', res);
+      return res.data;
+    })
+    .catch(error => {
+      logger.error(`Error in Shop Service - setPayment( `, error.message);
+      console.log('____setPayment_____ error', error);
+
+      return null;
+    });
+};
+
 const getCartId = token => {
   const url = `${SWIAM_API_V3}/shop/carts`;
   // https://apidev2.sportswhereiam.com/swiam-api/v3/shop/carts
@@ -116,4 +135,5 @@ export {
   getCart,
   getStripePublicKey,
   deleteItemFromCartById,
+  setPayment,
 };
