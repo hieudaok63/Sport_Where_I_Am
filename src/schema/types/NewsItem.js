@@ -20,6 +20,7 @@ const NewsItem = new GraphQLObjectType({
     link: { type: GraphQLString },
     objectType: { type: GraphQLString },
     title: { type: GraphQLString },
+    postDate: { type: GraphQLString },
   },
 });
 

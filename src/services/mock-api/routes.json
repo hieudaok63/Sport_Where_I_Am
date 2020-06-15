@@ -16,10 +16,11 @@
   "/cms/v1/popularEvents": "/popularEvents",
   "/cms/v1/sports": "/sports",
   "/cms/v1/popularBlogposts": "/blogPost",
-  "/cms/v1/news/:type/:postId": "/leagueNews",
+  "/cms/v1/news/:interestType/:interestId": "/leagueNews",
+  "/cms/v1/interestData/:interestType/:interestId": "/interestData",
   "/cms/v1/search": "/search",
   "/shop/events/:eventId/products": "/eventProducts/:eventId",
-  "/cms/v1/popularHotel": "/hotel",
+  "/cms/v1/popularHotels": "/hotel",
   "/v2/login": "/login",
   "/v2/event/:eventId": "/eventDetails/:eventId",
   "/cms/v1/team/:teamId/info": "/team"

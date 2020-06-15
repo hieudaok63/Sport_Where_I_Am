@@ -22,7 +22,8 @@ import { leagueInfo, getleagueVideos, getleagueTeams } from './league';
 import { eventById } from './event';
 import { sendTicketConfirmation } from './sendTicketConfirmation';
 import { getBooking } from './booking';
-import { getNews } from './news';
+import getNews from './news';
+import interestData from './interestData';
 import { teamById } from './team';
 
 export {
@@ -54,4 +55,5 @@ export {
   removeItemFromCartById,
   payNow,
   teamById,
+  interestData,
 };

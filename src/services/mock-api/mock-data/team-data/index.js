@@ -2,6 +2,24 @@ module.exports = {
   data: {
     teamID: 1,
     teamName: 'TBA',
+    primaryLeague: {
+      leagueId: 320,
+      leagueName: 'Womens National Basketball Association',
+      leagueAbbreviation: 'WNBA',
+      sport: {
+        sportID: 100,
+        sportIconURL:
+          'https://api.sportswhereiam.com/swiam-api/imgs/sports/png_basketball.png',
+        sportIconURLV4:
+          'https://api.sportswhereiam.com/swiam-api/imgs/sports/png_basketball.png',
+        sportName: 'Basketball',
+      },
+      leagueDescription: null,
+      photoURL:
+        'https://swiam-cms.s3-ap-southeast-2.amazonaws.com/league/default_league.jpg',
+      cardImageURL:
+        'https://swiam-cms.s3-ap-southeast-2.amazonaws.com/league/default_league_card.jpg',
+    },
     sport: {
       sportID: 100,
       sportIconURL:

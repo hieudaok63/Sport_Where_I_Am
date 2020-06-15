@@ -2,6 +2,7 @@ import {
   GraphQLBoolean,
   GraphQLFloat,
   GraphQLInt,
+  GraphQLList,
   GraphQLObjectType,
   GraphQLString,
 } from 'graphql';
@@ -59,8 +60,9 @@ const LeaguesType = new GraphQLObjectType({
 const Team = new GraphQLObjectType({
   name: 'Team',
   fields: {
-    events: { type: EventsType },
-    leagues: { type: LeaguesType },
+    events: { type: GraphQLList(EventsType) },
+    primaryLeague: { type: LeaguesType },
+    leagues: { type: GraphQLList(LeaguesType) },
     logoURL: { type: GraphQLString },
     photoURL: { type: GraphQLString },
     sport: { type: SportType },
