@@ -1,10 +1,11 @@
 import HttpClient from '../tools/http-client';
 
-const { SWIAM_OPENAPI } = process.env;
+const { SWIAM_API_V2 } = process.env;
 
 const getLoginWithEmail = (email, password) => {
   // They use email as username
-  const url = `${SWIAM_OPENAPI}/v2/login?username=${email}&password=${password}`;
+  const url = `${SWIAM_API_V2}/login?username=${email}&password=${password}`;
+//  const url = `https://api.sportswhereiam.com/swiam-api/v2/login?username=${email}&password=${password}`
 
   const http = HttpClient.getHttpClient();
   return http
