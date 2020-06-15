@@ -3,20 +3,11 @@ import {
   GraphQLObjectType,
   GraphQLString,
   GraphQLInt,
-  GraphQLFloat,
   GraphQLBoolean,
 } from 'graphql';
-
-const DateTimeStatusType = new GraphQLObjectType({
-  name: 'DateTimeStatus',
-  fields: {
-    dateFinal: { type: GraphQLFloat },
-    timeFinal: { type: GraphQLFloat },
-    notes: { type: GraphQLString },
-    startDateTime: { type: GraphQLString },
-    endDateTime: { type: GraphQLString },
-  },
-});
+import VenueInfo from './shop/VenueInfo';
+import Variant from './shop/Variant';
+import DateTimeStatus from './shop/DateTimeStatus';
 
 const SearchProductsCountryType = new GraphQLObjectType({
   name: 'SearchProductsCountry',
@@ -58,54 +49,6 @@ const SearchProductsPriceType = new GraphQLObjectType({
   },
 });
 
-const PriceVariantsType = new GraphQLObjectType({
-  name: 'PriceVariants',
-  fields: {
-    currency: { type: GraphQLString },
-    amount: { type: GraphQLInt },
-    annotation: { type: GraphQLString },
-    error: { type: GraphQLString },
-    runningTotal: { type: GraphQLInt },
-  },
-});
-
-const AttributesType = new GraphQLObjectType({
-  name: 'Attributes',
-  fields: {
-    additionalProp1: { type: GraphQLString },
-    additionalProp2: { type: GraphQLString },
-    additionalProp3: { type: GraphQLString },
-  },
-});
-
-const SelectedVariantType = new GraphQLObjectType({
-  name: 'SelectedVariant',
-  fields: {
-    id: { type: GraphQLString },
-    type: { type: GraphQLString },
-    name: { type: GraphQLString },
-    description: { type: GraphQLString },
-    price: { type: PriceVariantsType },
-    url: { type: GraphQLString },
-    urlType: { type: GraphQLString },
-    attributes: { type: AttributesType },
-  },
-});
-
-const VariantsType = new GraphQLObjectType({
-  name: 'Variants',
-  fields: {
-    id: { type: GraphQLString },
-    type: { type: GraphQLString },
-    name: { type: GraphQLString },
-    description: { type: GraphQLString },
-    price: { type: PriceVariantsType },
-    url: { type: GraphQLString },
-    urlType: { type: GraphQLString },
-    attributes: { type: AttributesType },
-  },
-});
-
 const DobType = new GraphQLObjectType({
   name: 'Dob',
   fields: {
@@ -121,41 +64,6 @@ const NotesType = new GraphQLObjectType({
   },
 });
 
-const VenueDetailsAddressType = new GraphQLObjectType({
-  name: 'VenueDetailsAddress',
-  fields: {
-    attn: { type: GraphQLString },
-    premise: { type: GraphQLString },
-    address1: { type: GraphQLString },
-    address2: { type: GraphQLString },
-    city: { type: GraphQLString },
-    state: { type: GraphQLString },
-    postCode: { type: GraphQLString },
-    country: { type: SearchProductsCountryType },
-    phone: { type: GraphQLString },
-    purposes: { type: GraphQLList(GraphQLString) },
-  },
-});
-
-const VenueDetailsImagesType = new GraphQLObjectType({
-  name: 'VenueDetailsImages',
-  fields: {
-    url: { type: GraphQLString },
-    caption: { type: GraphQLString },
-  },
-});
-
-const SearchProductsVenueDetailsType = new GraphQLObjectType({
-  name: 'SearchProductsVenueDetails',
-  fields: {
-    rating: { type: GraphQLInt },
-    address: { type: VenueDetailsAddressType },
-    images: { type: GraphQLList(VenueDetailsImagesType) },
-    facilities: { type: GraphQLList(GraphQLString) },
-    ticks: { type: GraphQLList(GraphQLString) },
-  },
-});
-
 const SearchProducts = new GraphQLObjectType({
   name: 'searchProducts',
   fields: {
@@ -164,16 +72,16 @@ const SearchProducts = new GraphQLObjectType({
     name: { type: GraphQLString },
     description: { type: GraphQLString },
     localDateTime: { type: GraphQLString },
-    dateTimeStatus: { type: DateTimeStatusType },
+    dateTimeStatus: { type: DateTimeStatus },
     geo: { type: GeoType },
     price: { type: SearchProductsPriceType },
     url: { type: GraphQLString },
     urlType: { type: GraphQLString },
-    selectedVariant: { type: SelectedVariantType },
-    variants: { type: GraphQLList(VariantsType) },
+    selectedVariant: { type: Variant },
+    variants: { type: GraphQLList(Variant) },
     needs: { type: DobType },
     notes: { type: NotesType },
-    venueDetails: { type: SearchProductsVenueDetailsType },
+    venueDetails: { type: VenueInfo },
   },
 });
 
