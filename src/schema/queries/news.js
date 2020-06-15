@@ -1,9 +1,9 @@
 import { GraphQLInt, GraphQLList, GraphQLString } from 'graphql';
 import NewsItem from '../types/NewsItem';
 
-import getNewsData from '../../services/newsData-service';
+import { getNewsData } from '../../services/news-service';
 
-export const getNews = {
+const getNews = {
   type: GraphQLList(NewsItem),
   args: {
     interestId: { type: GraphQLInt },
@@ -12,3 +12,5 @@ export const getNews = {
   resolve: (rawUserData, args, req) =>
     getNewsData(args.interestId, args.interestType, req.token),
 };
+
+export default getNews;

@@ -41,6 +41,7 @@ const venues = require('./venues-data');
 const eventProducts = require('./product-data');
 const eventDetails = require('./event-data/eventDetails-data');
 const team = require('./team-data');
+const interestData = require('./interest-data');
 
 writeData(DB_FILEPATH, {
   blogPost,
@@ -63,4 +64,5 @@ writeData(DB_FILEPATH, {
   eventProducts,
   eventDetails,
   team,
+  interestData,
 });
