@@ -15,9 +15,7 @@ const getProductIdByEventId = (
   const http = HttpClient.getHttpClient();
   return http
     .get(url, token && getAuthOption(token))
-    .then(res => {
-      return res.data;
-    })
+    .then(res => res.data)
     .catch(error => {
       logger.error(
         `Error in Shop Service - getProductIdByEventId() for event id: ${eventId} `,
@@ -107,15 +105,23 @@ const deleteItemFromCartById = (cartId = 'GEJKL8', lineItemId, token) => {
     });
 };
 
-const getStripePublicKey = (currency = 'AUD', token) => {
+const getStripePublicKey = (currency, token) => {
   const url = `${SWIAM_API_V3}/shop/payments/stripe/currencies/${currency}/publickey`;
   // https://api.sportswhereiam.com/swiam-api/v3/shop/payments/stripe/currencies/AUD/publickey
 
+  return {
+    value:
+      'pk_test_51Gsc9bLnGkh5Jjyxvivbjna0wAHfLigkgiKVMLeJywz4NCetKo8jW8uKnyXIri3FOpAOFGyG6Xyk3eG9BgF5DAjy00m3K4IYeR',
+  };
+
+  // TODO: fix when api start to return the stripe key without errors
+  // The API is requiring authentication for accessing the stripe public key
+  // However, it always return "invalid password when we try to authenticate a user"
   const http = HttpClient.getHttpClient();
   return http
     .get(url, token && getAuthOption(token))
     .then(res => {
-      console.log('getStripePublicKey', res);
+      console.log('*************getStripePublicKey', res);
       return res.data;
     })
     .catch(error => {
