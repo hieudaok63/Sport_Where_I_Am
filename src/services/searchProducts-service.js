@@ -1,22 +1,32 @@
 import HttpClient from '../tools/http-client';
-import getAuthOption from '../tools/auth-header';
 
-const { SWIAM_OPENAPI } = process.env;
+const { SWIAM_API_V3, SWIAM_SHOP_API_KEY } = process.env;
 
-export const searchProductsQueryString = (
-  { vendor, query, offset, limit, qualifiers, displayCurrency, cartId },
-  token
-) => {
-  const url = `${SWIAM_OPENAPI}/v3/searchProducts/?vendor=${vendor}&query=${query}&offset=${offset}&limit=${limit}&qualifiers=${qualifiers}&displayCurrency=${displayCurrency}&cartId=${cartId}`;
+export const searchProductsQueryString = ({
+  query,
+  offset,
+  limit,
+  qualifiers,
+  displayCurrency,
+  cartId,
+  from,
+  to,
+}) => {
+  const url = `${SWIAM_API_V3}/shop/products?vendor=hb&query=${query}&offset=${offset}&limit=${limit}&qualifiers=${qualifiers}&displayCurrency=${displayCurrency}&cartId=${cartId}&from=${from}&to=${to}`;
 
   const http = HttpClient.getHttpClient();
   return http
-    .get(url, token && getAuthOption(token))
+    .get(url, {
+      headers: {
+        'api-key': SWIAM_SHOP_API_KEY,
+      },
+      timeout: 10000,
+    })
     .then(res => {
-      console.log(res.data);
-      return res.data.data;
+      return res.data;
     })
     .catch(error => {
+      console.log(error);
       logger.error(
         `Error in Hotel Search Service - searchProducts() - `,
         error.message
