@@ -7,6 +7,7 @@ import {
 
 import Address from './Address';
 import Image from './Image';
+import Facilities from './Facilities';
 
 const VenueInfo = new GraphQLObjectType({
   name: 'VenueInfo',
@@ -14,7 +15,7 @@ const VenueInfo = new GraphQLObjectType({
     rating: { type: GraphQLInt },
     address: { type: Address },
     images: { type: GraphQLList(Image) },
-    facilities: { type: GraphQLList(GraphQLString) },
+    facilities: { type: Facilities },
     ticks: { type: GraphQLList(GraphQLString) },
   },
 });

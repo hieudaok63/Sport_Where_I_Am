@@ -13,7 +13,8 @@ export const searchProducts = {
     qualifiers: { type: GraphQLString },
     displayCurrency: { type: GraphQLString },
     cartId: { type: GraphQLString },
+    from: { type: GraphQLString },
+    to: { type: GraphQLString },
   },
-  resolve: (rawUserData, args, req) =>
-    searchProductsQueryString(args, req.token),
+  resolve: (rawUserData, args) => searchProductsQueryString(args),
 };
