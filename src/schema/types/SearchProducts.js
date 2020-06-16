@@ -4,6 +4,7 @@ import {
   GraphQLString,
   GraphQLInt,
   GraphQLBoolean,
+  GraphQLFloat,
 } from 'graphql';
 import VenueInfo from './shop/VenueInfo';
 import Variant from './shop/Variant';
@@ -42,7 +43,7 @@ const SearchProductsPriceType = new GraphQLObjectType({
   name: 'SearchProductsPrice',
   fields: {
     currency: { type: GraphQLString },
-    amount: { type: GraphQLInt },
+    amount: { type: GraphQLFloat },
     annotation: { type: GraphQLString },
     error: { type: GraphQLString },
     runningTotal: { type: GraphQLInt },
