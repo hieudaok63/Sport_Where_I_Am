@@ -24,7 +24,6 @@ export const searchProductsQueryString = ({
       timeout: 10000,
     })
     .then(res => {
-      console.log(res.data[0].venueDetails.facilities);
       return res.data;
     })
     .catch(error => {
