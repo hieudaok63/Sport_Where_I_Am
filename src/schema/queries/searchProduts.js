@@ -6,6 +6,7 @@ import { searchProductsQueryString } from '../../services/searchProducts-service
 export const searchProducts = {
   type: GraphQLList(SearchProducts),
   args: {
+    vendor: { type: GraphQLString },
     query: { type: GraphQLString },
     offset: { type: GraphQLString },
     limit: { type: GraphQLInt },

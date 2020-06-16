@@ -10,9 +10,10 @@ export const searchProductsQueryString = ({
   displayCurrency,
   cartId,
   from,
+  vendor,
   to,
 }) => {
-  const url = `${SWIAM_API_V3}/shop/products?vendor=hb&query=${query}&offset=${offset}&limit=${limit}&qualifiers=${qualifiers}&displayCurrency=${displayCurrency}&cartId=${cartId}&from=${from}&to=${to}`;
+  const url = `${SWIAM_API_V3}/shop/products?vendor=${vendor}&query=${query}&offset=${offset}&limit=${limit}&qualifiers=${qualifiers}&displayCurrency=${displayCurrency}&cartId=${cartId}&from=${from}&to=${to}`;
 
   const http = HttpClient.getHttpClient();
   return http
