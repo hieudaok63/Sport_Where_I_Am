@@ -82,7 +82,7 @@ jobs:
           cluster: swiam-cluster
           deployment: swiam-gql
           container: swiam-gql
-          image: gcr.io/swiam-220407/swiam-gql # change version when updating
+          image: gcr.io/swiam-274409/swiam-gql # change version when updating
           tag: $CIRCLE_SHA1
 workflows:
   build_update_deploy:
