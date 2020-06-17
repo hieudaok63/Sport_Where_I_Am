@@ -5,13 +5,13 @@ import { getLoginWithEmail } from '../../services/login-service';
 const loginWithEmail = {
   type: User,
   args: {
-    email: { type: GraphQLString },
+    username: { type: GraphQLString },
     password: { type: GraphQLString },
   },
   resolve: (rawUserData, args, req) => {
-    const { email, password } = args;
-    if (email && password) {
-      return getLoginWithEmail(email, password);
+    const { username, password } = args;
+    if (username && password) {
+      return getLoginWithEmail(username, password);
     }
     return null;
   },

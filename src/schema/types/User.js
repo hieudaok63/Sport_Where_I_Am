@@ -6,12 +6,13 @@ const User = new GraphQLObjectType({
     id: { type: GraphQLID },
     displayName: { type: GraphQLString },
     firstName: { type: GraphQLString },
-    lastName: { type: GraphQLID },
+    surnameName: { type: GraphQLID },
     dateUpdated: { type: GraphQLString },
     email: { type: GraphQLString },
+    wpid: { type: GraphQLString },
 
     // auth info
-    token: { type: GraphQLString },
+    userToken: { type: GraphQLString },
 
     // social auth info
     // TODO: add social auth info
