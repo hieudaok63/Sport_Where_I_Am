@@ -13,7 +13,7 @@ GraphQL Service for the Sports Where I Am Application.
 - If mock api data is created each time the app runs in development mode -
   see `src/services/mock-api/mock-data/createdb.js`
 
-## Setup
+## Setup 
 
 [Install Node.js `Node.js`](https://nodejs.org/en/) (make sure the version on your node is v10+ but ideally 12)
 
