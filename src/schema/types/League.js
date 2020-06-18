@@ -16,6 +16,8 @@ const League = new GraphQLObjectType({
     leagueDescription: { type: GraphQLString },
     leagueID: { type: GraphQLID },
     leagueName: { type: GraphQLString },
+    cardImageURL: { type: GraphQLString },
+    photoURL: { type: GraphQLString },
     sport: { type: Sport },
     events: { type: GraphQLList(leagueEvents) },
   },
