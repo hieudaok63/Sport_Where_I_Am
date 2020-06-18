@@ -13,8 +13,7 @@ module.exports = {
         teamId: null,
         leagueId: null,
       },
-      blogpostID: 1,
-      blogpostSummary:
+      summary:
         'Atalanta B.C. fans: One of the most extreme Ultra cultures in European Football',
       link:
         'https://blog.sportswhereiam.com/2020/01/atalanta-b-c-fans-one-of-the-most-extreme-ultra-cultures-in-european-football/',
@@ -33,8 +32,7 @@ module.exports = {
         teamId: null,
         leagueId: null,
       },
-      blogpostID: 2,
-      blogpostSummary:
+      summary:
         'Barclays Center: A visitor guide for your Brooklyn Nets or NY Islanders game',
       link:
         'https://blog.sportswhereiam.com/2019/07/barclays-center-visitor-guide-brooklyn-nets-ny-islanders/',
