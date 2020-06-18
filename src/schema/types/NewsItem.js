@@ -1,10 +1,7 @@
 import {
   GraphQLObjectType,
   GraphQLString,
-  GraphQLID,
   GraphQLInt,
-  GraphQLList,
-  GraphQLBoolean,
 } from 'graphql';
 
 import InterestTagging from './InterestTagging';
@@ -12,8 +9,8 @@ import InterestTagging from './InterestTagging';
 const NewsItem = new GraphQLObjectType({
   name: 'NewsItem',
   fields: {
-    blogpostID: { type: GraphQLInt },
-    blogpostSummary: { type: GraphQLString },
+    id: { type: GraphQLInt },
+    summary: { type: GraphQLString },
     imageAspect: { type: GraphQLString },
     imageURL: { type: GraphQLString },
     interestTagging: { type: InterestTagging },
