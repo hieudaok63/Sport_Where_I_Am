@@ -1,5 +1,5 @@
 import HttpClient from '../tools/http-client';
-import getAuthOption from '../tools/auth-header';
+import { getAuthOption } from '../tools/auth-header';
 
 const { SWIAM_API } = process.env;
 
