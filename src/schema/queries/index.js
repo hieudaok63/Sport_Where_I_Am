@@ -14,7 +14,7 @@ import {
   productIdByEventId,
   createCartId,
   cartById,
-  stripePublicKey,
+  paymentPublicKey,
   removeItemFromCartById,
   payNow,
 } from './shop';
@@ -53,7 +53,7 @@ export {
   sendTicketConfirmation,
   getBooking,
   cartById,
-  stripePublicKey,
+  paymentPublicKey,
   removeItemFromCartById,
   payNow,
   teamById,
