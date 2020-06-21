@@ -26,6 +26,7 @@ import getNews from './news';
 import interestData from './interestData';
 import { teamById } from './team';
 import { me } from './me';
+import { searchProducts } from './searchProduts';
 
 export {
   leagueInfo,
@@ -58,4 +59,5 @@ export {
   teamById,
   interestData,
   me,
+  searchProducts,
 };

@@ -4,13 +4,9 @@
   "/cms/v1/league/:leagueId/info": "/league",
   "/cms/v1/league/:leagueId/videos": "/leagueVideos",
   "/cms/v1/league/:leagueId/teams": "/leagueTeams",
-  "/v3i/cities": "/city",
-  "/v3i/cities/:cityId": "/city/:cityId",
-
   "/usingwpids/cities/:cityId": "/cityDetails/:cityId",
   "/usingwpids/venues/:venueId": "/venues/:venueId",
   "/usingwpids/venues": "/venues",
-
   "/cms/v1/popularExperiences": "/experiences",
   "/cms/v1/nearbyEvents?cityId=:cityId": "/nearbyEvents",
   "/cms/v1/popularEvents": "/popularEvents",
@@ -23,5 +19,8 @@
   "/cms/v1/popularHotels": "/hotel",
   "/v2/login": "/login",
   "/v2/event/:eventId": "/eventDetails/:eventId",
-  "/cms/v1/team/:teamId/info": "/team"
+  "/cms/v1/team/:teamId/info": "/team",
+  "/shop/products*": "/searchProducts",
+  "/cities": "/city",
+  "/cities/:cityId": "/city/:cityId"
 }

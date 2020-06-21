@@ -6,6 +6,7 @@ const Attribute = new GraphQLObjectType({
     additionalProp1: { type: GraphQLString },
     additionalProp2: { type: GraphQLString },
     additionalProp3: { type: GraphQLString },
+    fees: { type: GraphQLString },
   },
 });
 

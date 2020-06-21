@@ -3,15 +3,12 @@ kind: Ingress
 metadata:
   name: swiam-ingress
   annotations:
-    kubernetes.io/ingress.global-static-ip-name: stage-swiam-ip
-    networking.gke.io/managed-certificates: swiam-cert
+    kubernetes.io/ingress.global-static-ip-name: rocket-lab-ip
+    networking.gke.io/managed-certificates: rocketlab-cert
   labels:
     app: swiam-gql
     tier: backend
 spec:
-  backend:
-    serviceName: swiam-gql
-    servicePort: 5000
   backend:
     serviceName: swiam-gql
     servicePort: 5000

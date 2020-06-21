@@ -26,7 +26,9 @@ describe('BlogPost Query', () => {
       .send({
         query: `query {
                   allBlogPosts {
-                    blogpostID
+                   id
+                   title
+                   summary 
                   }
                 } `,
       })
@@ -35,7 +37,9 @@ describe('BlogPost Query', () => {
         if (err) return done(err);
         const sportsResult = res.body.data.allBlogPosts;
         expect(sportsResult.length).toBe(blogPostLength);
-        expect(sportsResult[0]).toHaveProperty('blogpostID');
+        expect(sportsResult[0]).toHaveProperty('id');
+        expect(sportsResult[0]).toHaveProperty('title');
+        expect(sportsResult[0]).toHaveProperty('summary');
         return done();
       });
   });
