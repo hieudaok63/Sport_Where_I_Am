@@ -25,6 +25,7 @@ import { getBooking } from './booking';
 import getNews from './news';
 import interestData from './interestData';
 import { teamById } from './team';
+import { me } from './me';
 
 export {
   leagueInfo,
@@ -56,4 +57,5 @@ export {
   payNow,
   teamById,
   interestData,
+  me,
 };
