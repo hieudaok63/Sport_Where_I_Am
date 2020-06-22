@@ -3,12 +3,12 @@ import Product from '../types/Product';
 import Cart from '../types/shop/Cart';
 import { PaymentInput } from '../types/shop/Payment';
 import { CreditCardInput } from '../types/shop/CreditCard';
-import StripePublicKey from '../types/StripePublicKey';
+import PaymentPublicKey from '../types/PaymentPublicKey';
 import {
   getProductIdByEventId,
   getCartId,
   getCart,
-  getStripePublicKey,
+  getPaymentPublicKey,
   deleteItemFromCartById,
   setPayment,
 } from '../../services/shop-service';
@@ -91,15 +91,15 @@ const removeItemFromCartById = {
   },
 };
 
-const stripePublicKey = {
-  type: StripePublicKey,
+const paymentPublicKey = {
+  type: PaymentPublicKey,
   args: {
     currency: { type: GraphQLString },
   },
   resolve: (rawUserData, args, req) => {
     const { currency } = args;
     if (currency) {
-      return getStripePublicKey(currency, req.token);
+      return getPaymentPublicKey(currency);
     }
     return null;
   },
@@ -109,7 +109,7 @@ export {
   productIdByEventId,
   createCartId,
   cartById,
-  stripePublicKey,
+  paymentPublicKey,
   removeItemFromCartById,
   payNow,
 };

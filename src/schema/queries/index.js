@@ -14,7 +14,7 @@ import {
   productIdByEventId,
   createCartId,
   cartById,
-  stripePublicKey,
+  paymentPublicKey,
   removeItemFromCartById,
   payNow,
 } from './shop';
@@ -25,6 +25,7 @@ import { getBooking } from './booking';
 import getNews from './news';
 import interestData from './interestData';
 import { teamById } from './team';
+import { me } from './user';
 import { searchProducts } from './searchProduts';
 
 export {
@@ -52,10 +53,11 @@ export {
   sendTicketConfirmation,
   getBooking,
   cartById,
-  stripePublicKey,
+  paymentPublicKey,
   removeItemFromCartById,
   payNow,
   teamById,
   interestData,
+  me,
   searchProducts,
 };

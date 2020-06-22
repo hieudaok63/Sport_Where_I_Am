@@ -11,6 +11,8 @@ require('dotenv-expand')(origEnv);
 
 const express = require('express');
 
+import getToken from './tools/get-token';
+
 const { SWIAM_OPENAPI, SWIAM_API, BASE_GQL_URL } = process.env;
 
 const app = express();
@@ -39,7 +41,19 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
 logger.info('[] - Common middleware registration complete.');
+app.use((req, res, next) => {
+  const token = getToken(req);
+  const withToken = {
+    authorization:  token ? `Bearer ${token}` : "",
+  };
 
+  const headers = req.headers;
+  req.headers = {
+    ...headers,
+    ...withToken
+   };
+  next();
+});
 app.use(routes);
 logger.debug('[] Route registration complete.');
 logger.info('[] Route registration complete.');
