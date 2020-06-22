@@ -49,10 +49,15 @@ const setPayment = (data, cartId, token) => {
 const getCartId = token => {
   const url = `${SWIAM_API_V3}/shop/carts`;
   // https://apidev2.sportswhereiam.com/swiam-api/v3/shop/carts
+  // .post(url, token && getAuthOption(token))
 
   const http = HttpClient.getHttpClient();
   return http
-    .post(url, token && getAuthOption(token))
+    .post(url, {
+      headers: {
+        'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
+      },
+    })
     .then(res => {
       console.log('getCartId', res);
       return res.data;

@@ -1,5 +1,5 @@
 import User from '../types/User';
-import { getMe } from '../../services/me-service';
+import { getMe } from '../../services/user-service';
 
 const me = {
   type: User,
