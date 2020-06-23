@@ -46,20 +46,24 @@ const setPayment = (data, cartId, token) => {
     });
 };
 
-const getCartId = token => {
+const getCartId = () => {
   const url = `${SWIAM_API_V3}/shop/carts`;
-  // https://apidev2.sportswhereiam.com/swiam-api/v3/shop/carts
-  // .post(url, token && getAuthOption(token))
+
+  const data = JSON.stringify({
+    displayCurrency: 'AUD', // TODO: get the currency display from user agent
+  });
 
   const http = HttpClient.getHttpClient();
   return http
-    .post(url, {
+    .post(url, data, {
       headers: {
+        'Content-Type': 'application/json',
         'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
       },
     })
     .then(res => {
       console.log('getCartId', res);
+      console.log('getCartId.data', res.data);
       return res.data;
     })
     .catch(error => {
@@ -70,15 +74,19 @@ const getCartId = token => {
     });
 };
 
-const getCart = (cartId = 'GEJKL8', currency = 'AUD', token) => {
+const getCart = (cartId, currency = 'AUD') => {
   const url = `${SWIAM_API_V3}/shop/carts/${cartId}?currency=${currency}`;
-  // https://api.sportswhereiam.com/swiam-api/v3/shop/carts/GEJKL8?currency=%22AUD%22%20
 
   const http = HttpClient.getHttpClient();
   return http
-    .get(url, token && getAuthOption(token))
+    .get(url, {
+      headers: {
+        'Content-Type': 'application/json',
+        'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
+      },
+    })
     .then(res => {
-      console.log('getCart', res);
+      console.log('getCart', res.data);
       return res.data;
     })
     .catch(error => {
