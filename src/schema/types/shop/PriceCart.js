@@ -1,13 +1,13 @@
 import {
   GraphQLObjectType,
   GraphQLString,
-  GraphQLInt,
+  GraphQLFloat,
   GraphQLInputObjectType,
 } from 'graphql';
 
 const fields = {
   currency: { type: GraphQLString },
-  amount: { type: GraphQLString },
+  amount: { type: GraphQLFloat },
   annotation: { type: GraphQLString },
   error: { type: GraphQLString },
   runningTotal: { type: GraphQLString },
