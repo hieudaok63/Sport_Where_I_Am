@@ -1,3 +1,5 @@
+import { get } from 'lodash';
+
 import HttpClient from '../tools/http-client';
 import { getAuthOption } from '../tools/auth-header';
 
@@ -97,6 +99,47 @@ const getCart = (cartId, currency = 'AUD') => {
     });
 };
 
+const setCustomerInfo = (
+  cartId,
+  firstName,
+  lastName,
+  ticketingEmail,
+  phone
+) => {
+  const url = `${SWIAM_API_V3}/shop/carts/${cartId}/customerInfo`;
+
+  const data = JSON.stringify({
+    phone,
+    email: ticketingEmail,
+    ticketingEmail,
+    firstnames: firstName,
+    surname: lastName,
+  });
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .put(url, data, {
+      headers: {
+        'Content-Type': 'application/json',
+        'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
+      },
+    })
+    .then(res => {
+      const customerInfo = get(res, 'data.customerInfo', {});
+      // TODO: remove console.log when response is stable
+      console.log('setCustomerInfo response ------------------------');
+      console.log('setCustomerInfo', customerInfo);
+      console.log('setCustomerInfo response ------------------------');
+      return customerInfo;
+    })
+    .catch(error => {
+      logger.error(`Error in Shop Service - setCustomerInfo( `, error.message);
+      console.log('____setCustomerInfo_____ error', error);
+
+      return null;
+    });
+};
+
 const deleteItemFromCartById = (cartId = 'GEJKL8', lineItemId, token) => {
   const url = `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems/${lineItemId}`;
 
@@ -150,4 +193,5 @@ export {
   getPaymentPublicKey,
   deleteItemFromCartById,
   setPayment,
+  setCustomerInfo,
 };

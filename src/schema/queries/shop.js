@@ -3,6 +3,7 @@ import Product from '../types/Product';
 import Cart from '../types/shop/Cart';
 import { PaymentInput } from '../types/shop/Payment';
 import { CreditCardInput } from '../types/shop/CreditCard';
+import CustomerInfo from '../types/shop/CustomerInfo';
 import PaymentPublicKey from '../types/PaymentPublicKey';
 import {
   getProductIdByEventId,
@@ -11,6 +12,7 @@ import {
   getPaymentPublicKey,
   deleteItemFromCartById,
   setPayment,
+  setCustomerInfo,
 } from '../../services/shop-service';
 
 const payNow = {
@@ -73,6 +75,30 @@ const cartById = {
   },
 };
 
+const customerInfo = {
+  type: CustomerInfo,
+  args: {
+    cartId: { type: GraphQLString },
+    firstName: { type: GraphQLString },
+    lastName: { type: GraphQLString },
+    ticketingEmail: { type: GraphQLString },
+    phone: { type: GraphQLString },
+  },
+  resolve: (rawUserData, args, req) => {
+    const { cartId, firstName, lastName, ticketingEmail, phone } = args;
+    if (cartId && firstName && lastName && ticketingEmail && phone) {
+      return setCustomerInfo(
+        cartId,
+        firstName,
+        lastName,
+        ticketingEmail,
+        phone
+      );
+    }
+    return null;
+  },
+};
+
 const removeItemFromCartById = {
   type: Cart,
   args: {
@@ -109,4 +135,5 @@ export {
   paymentPublicKey,
   removeItemFromCartById,
   payNow,
+  customerInfo,
 };
