@@ -7,7 +7,7 @@ import {
 
 const fields = {
   currency: { type: GraphQLString },
-  amount: { type: GraphQLInt },
+  amount: { type: GraphQLString },
   annotation: { type: GraphQLString },
   error: { type: GraphQLString },
   runningTotal: { type: GraphQLString },
