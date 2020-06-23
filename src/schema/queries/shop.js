@@ -54,10 +54,7 @@ const createCartId = {
   type: Cart,
   args: {},
   resolve: (rawUserData, args, req) => {
-    if (req.token) {
-      return getCartId(req.token);
-    }
-    return null;
+    return getCartId();
   },
 };
 
@@ -70,7 +67,7 @@ const cartById = {
   resolve: (rawUserData, args, req) => {
     const { cartId, currency } = args;
     if (cartId && currency) {
-      return getCart(cartId, currency, req.token);
+      return getCart(cartId, currency);
     }
     return null;
   },
