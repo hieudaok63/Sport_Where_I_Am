@@ -16,7 +16,7 @@ const Cart = new GraphQLObjectType({
   name: 'Cart',
   fields: {
     id: { type: GraphQLString },
-    status: { type: GraphQLInt },
+    status: { type: GraphQLString },
     publishedFxDate: { type: GraphQLString },
     channel: { type: GraphQLString },
     agencyCode: { type: GraphQLString },
