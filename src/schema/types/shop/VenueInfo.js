@@ -1,13 +1,9 @@
-import {
-  GraphQLObjectType,
-  GraphQLString,
-  GraphQLInt,
-  GraphQLList,
-} from 'graphql';
+import { GraphQLObjectType, GraphQLInt, GraphQLList } from 'graphql';
 
 import Address from './Address';
 import Image from './Image';
 import Facilities from './Facilities';
+import Ticks from './Ticks.js';
 
 const VenueInfo = new GraphQLObjectType({
   name: 'VenueInfo',
@@ -16,7 +12,7 @@ const VenueInfo = new GraphQLObjectType({
     address: { type: Address },
     images: { type: GraphQLList(Image) },
     facilities: { type: Facilities },
-    ticks: { type: GraphQLList(GraphQLString) },
+    ticks: { type: Ticks },
   },
 });
 

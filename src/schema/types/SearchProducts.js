@@ -78,6 +78,7 @@ const SearchProducts = new GraphQLObjectType({
     price: { type: SearchProductsPriceType },
     url: { type: GraphQLString },
     urlType: { type: GraphQLString },
+    hotelID: { type: GraphQLString },
     selectedVariant: { type: Variant },
     variants: { type: GraphQLList(Variant) },
     needs: { type: DobType },
