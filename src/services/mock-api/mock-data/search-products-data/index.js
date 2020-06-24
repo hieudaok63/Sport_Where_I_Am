@@ -2,7 +2,7 @@ module.exports = [
   {
     id: '1',
     type: 'EVENT',
-    name: 'name test',
+    name: '4130112894:name test',
     description: 'description test',
     localDateTime: '2020-05-23 20:00',
     dateTimeStatus: {
