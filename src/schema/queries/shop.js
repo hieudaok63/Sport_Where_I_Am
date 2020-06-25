@@ -1,8 +1,6 @@
-import { GraphQLList, GraphQLString, GraphQLBoolean } from 'graphql';
+import { GraphQLList, GraphQLString, GraphQLFloat } from 'graphql';
 import Product from '../types/Product';
 import Cart from '../types/shop/Cart';
-import { PaymentInput } from '../types/shop/Payment';
-import { CreditCardInput } from '../types/shop/CreditCard';
 import CustomerInfo from '../types/shop/CustomerInfo';
 import PaymentPublicKey from '../types/PaymentPublicKey';
 import {
@@ -19,20 +17,14 @@ const payNow = {
   type: Cart, // TODO: verify what the api returns when the payment is concluded
   args: {
     cartId: { type: GraphQLString },
-    paymentData: { type: PaymentInput },
-    creditCardData: { type: CreditCardInput },
-    shouldSaveCreditCard: { type: GraphQLBoolean },
+    currency: { type: GraphQLString },
+    amount: { type: GraphQLFloat },
+    transactionToken: { type: GraphQLString },
   },
   resolve: (rawUserData, args, req) => {
-    const { cartId, paymentData, creditCardData, shouldSaveCreditCard } = args;
-    if (cartId && paymentData && creditCardData && shouldSaveCreditCard) {
-      const data = {
-        cartId,
-        paymentData,
-        creditCardData,
-        shouldSaveCreditCard,
-      };
-      return setPayment(cartId, data, req.token);
+    const { cartId, currency, amount, transactionToken } = args;
+    if (cartId && currency && amount && transactionToken) {
+      return setPayment(cartId, currency, amount, transactionToken);
     }
     return null;
   },

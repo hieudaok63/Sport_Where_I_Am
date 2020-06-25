@@ -29,25 +29,6 @@ const getProductIdByEventId = (
     });
 };
 
-const setPayment = (data, cartId, token) => {
-  const url = `${SWIAM_API_V3}/shop/carts/${cartId}/payment`;
-  // https://api.sportswhereiam.com/swiam-api/v3/shop/carts/[:id]/payment
-
-  const http = HttpClient.getHttpClient();
-  return http
-    .put(url, data, token && getAuthOption(token))
-    .then(res => {
-      console.log('setPayment', res);
-      return res.data;
-    })
-    .catch(error => {
-      logger.error(`Error in Shop Service - setPayment( `, error.message);
-      console.log('____setPayment_____ error', error);
-
-      return null;
-    });
-};
-
 const getCartId = () => {
   const url = `${SWIAM_API_V3}/shop/carts`;
 
@@ -181,6 +162,54 @@ const getPaymentPublicKey = currency => {
         error.message
       );
       console.log('____getPaymentPublicKey_____ error', error);
+
+      return null;
+    });
+};
+
+const setPayment = (cartId, currency, amount, transactionToken) => {
+  const url = `${SWIAM_API_V3}/shop/carts/${cartId}/payment`;
+
+  // TODO: remove this sample code when the api response becomes stable
+
+  // [8:28 AM] def doStripePayment(cart: JsValue, stripeToken: String ) = {
+  //   val cartId = (cart \ "id").as[String]
+  //   val currency= ( cart \ "displayCurrency" ).as[String]
+  //     val amount= (cart \ "total" \ "amount" ).as[Double]
+  //     // NB this is "OnAccount" for this example, will need "Stripe" gateway in final version (OnAccount will be disabled)
+  //     val payment= s"""{
+  //       "currencyAmount": { "currency": "$currency","amount":$amount},
+  //       "token": "$stripeToken",
+  //       "gateway": "Stripe"
+  //     }"""
+  //     println(s"Payment $payment")
+  //     await(ws.url(BaseUrl + s"/v3/shop/carts/$cartId/payment").withHttpHeaders("api-key" -> apiKey ).put(Json.parse(payment)))
+  // }
+
+  const data = JSON.stringify({
+    currencyAmount: {
+      currency,
+      amount,
+    },
+    token: transactionToken,
+    gateway: 'Stripe',
+  });
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .put(url, data, {
+      headers: {
+        'Content-Type': 'application/json',
+        'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
+      },
+    })
+    .then(res => {
+      console.log('___________setPayment', res);
+      return res.data;
+    })
+    .catch(error => {
+      logger.error(`Error in Shop Service - setPayment( `, error.message);
+      console.log('____setPayment_____ error', error);
 
       return null;
     });
