@@ -9,7 +9,7 @@ const leagueEvents = new GraphQLObjectType({
   name: 'LeagueEvents',
   fields: {
     buyTicketsURL: { type: GraphQLString },
-    cityId: { type: GraphQLInt },
+    cityid: { type: GraphQLInt },
     dateTime: { type: GraphQLString },
     dateTimeStamp: { type: GraphQLString },
     eventId: { type: GraphQLInt },
