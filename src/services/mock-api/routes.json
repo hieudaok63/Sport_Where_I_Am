@@ -18,6 +18,7 @@
   "/shop/events/:eventId/products": "/eventProducts/:eventId",
   "/cms/v1/popularHotels": "/hotel",
   "/v2/login": "/login",
+  "/register*": "/user",
   "/v2/event/:eventId": "/eventDetails/:eventId",
   "/cms/v1/team/:teamId/info": "/team",
   "/shop/products*": "/searchProducts",
