@@ -26,7 +26,7 @@ import { getBooking } from './booking';
 import getNews from './news';
 import interestData from './interestData';
 import { teamById } from './team';
-import { me } from './user';
+import { me, register } from './user';
 import { searchProducts } from './searchProduts';
 
 export {
@@ -60,6 +60,7 @@ export {
   teamById,
   interestData,
   me,
+  register,
   searchProducts,
   customerInfo,
 };
