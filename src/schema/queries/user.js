@@ -1,5 +1,9 @@
 import User from '../types/User';
-import { getMe } from '../../services/user-service';
+import { GraphQLString, GraphQLBoolean } from 'graphql';
+import {
+  getMe,
+  register as registerService,
+} from '../../services/user-service';
 
 const me = {
   type: User,
@@ -7,9 +11,24 @@ const me = {
     if (req.token) {
       return getMe(req.token);
     }
-    console.warn("Token is required")
+    console.warn('Token is required');
     return null;
   },
 };
 
-export { me };
+const register = {
+  type: User,
+  args: {
+    email: { type: GraphQLString },
+    firstName: { type: GraphQLString },
+    password: { type: GraphQLString },
+    surnameName: { type: GraphQLString },
+    tsandcs: { type: GraphQLBoolean },
+    username: { type: GraphQLString },
+  },
+  resolve: (rawUserData, args) => {
+    return registerService(args);
+  },
+};
+
+export { me, register };

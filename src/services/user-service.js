@@ -17,4 +17,27 @@ const getMe = token => {
     });
 };
 
-export { getMe };
+const register = ({
+  email,
+  firstName,
+  password,
+  surnameName,
+  tsandcs,
+  username,
+}) => {
+  const url = `${SWIAM_API_V2}/register?email=${email}&firstName=${firstName}&password=${password}&surnameName=${surnameName}&tsandcs=${tsandcs}&username=${username}`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, {
+      timeout: 10000,
+    })
+    .then(res => res.data)
+    .catch(error => {
+      logger.error(`Error in Service - register()`, error.message);
+      console.log('Register error_________', error);
+      return null;
+    });
+};
+
+export { getMe, register };
