@@ -43,6 +43,7 @@ const eventDetails = require('./event-data/eventDetails-data');
 const team = require('./team-data');
 const interestData = require('./interest-data');
 const searchProducts = require('./search-products-data');
+const login = require('./login-data');
 
 writeData(DB_FILEPATH, {
   blogPost,
@@ -57,6 +58,7 @@ writeData(DB_FILEPATH, {
   nearbyEvents,
   sports,
   search,
+  login,
   hotel,
   leagueNews,
   user,
