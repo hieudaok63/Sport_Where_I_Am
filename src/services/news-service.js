@@ -4,7 +4,7 @@ import { getAuthOption } from '../tools/auth-header';
 const { SWIAM_OPENAPI } = process.env;
 
 export const getNewsData = (interestId, interestType, token) => {
-  const url = `${SWIAM_OPENAPI}/cms/v1/news/${interestType}/${interestId}`;
+  const url = `${SWIAM_OPENAPI}/cms/v1/contentCarousel/${interestType}/${interestId}`;
 
   const http = HttpClient.getHttpClient();
   return http
@@ -17,7 +17,7 @@ export const getNewsData = (interestId, interestType, token) => {
 };
 
 export const getInterestData = (interestId, interestType, token) => {
-  const url = `${SWIAM_OPENAPI}/cms/v1/interestData/${interestType}/${interestId}`;
+  const url = `${SWIAM_OPENAPI}/cms/v1/contentCarousel/${interestType}/${interestId}`;
 
   const http = HttpClient.getHttpClient();
   return http
