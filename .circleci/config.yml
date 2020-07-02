@@ -43,6 +43,7 @@ jobs:
             echo 'export SWIAM_OPENAPI="https://localhost:4000"' >> $BASH_ENV
             echo 'export BASE_GQL_URL="http://localhost"'>> $BASH_ENV
             echo 'export PORT="5000"' >> $BASH_ENV
+            echo 'export SWIAM_SHOP_API_KEY=$SWIAM_SHOP_API_KEY >> $BASH_ENV
       - run: NODE_ENV=development yarn
       - run:
           name: Tests
