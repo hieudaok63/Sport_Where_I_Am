@@ -17,6 +17,7 @@ import {
   paymentPublicKey,
   removeItemFromCartById,
   payNow,
+  addProductOnCart,
   customerInfo,
 } from './shop';
 import { leagueInfo, getleagueVideos, getleagueTeams } from './league';
@@ -54,6 +55,7 @@ export {
   sendTicketConfirmation,
   getBooking,
   cartById,
+  addProductOnCart,
   paymentPublicKey,
   removeItemFromCartById,
   payNow,

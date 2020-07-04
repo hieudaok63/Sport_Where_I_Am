@@ -1,4 +1,4 @@
-import { GraphQLList, GraphQLString, GraphQLFloat } from 'graphql';
+import { GraphQLList, GraphQLString, GraphQLFloat, GraphQLInt } from 'graphql';
 import Product from '../types/Product';
 import Cart from '../types/shop/Cart';
 import CustomerInfo from '../types/shop/CustomerInfo';
@@ -7,6 +7,7 @@ import {
   getProductIdByEventId,
   getCartId,
   getCart,
+  addProduct,
   getPaymentPublicKey,
   deleteItemFromCartById,
   setPayment,
@@ -120,6 +121,18 @@ const paymentPublicKey = {
   },
 };
 
+const addProductOnCart = {
+  type: Cart,
+  args: {
+    cartId: { type: GraphQLString },
+    productId: { type: GraphQLString },
+    variantId: { type: GraphQLString },
+    quantity: { type: GraphQLInt },
+    currency: { type: GraphQLString },
+  },
+  resolve: (rawUserData, args, req) => addProduct(args),
+};
+
 export {
   productIdByEventId,
   createCartId,
@@ -128,4 +141,5 @@ export {
   removeItemFromCartById,
   payNow,
   customerInfo,
+  addProductOnCart,
 };
