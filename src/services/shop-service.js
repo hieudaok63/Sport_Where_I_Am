@@ -149,7 +149,7 @@ const addProduct = ({
   productId,
   currency,
 }) => {
-  const url = `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems/`;
+  const url = `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems`;
   const data = {
     productId,
     variantId,
@@ -160,8 +160,10 @@ const addProduct = ({
   const http = HttpClient.getHttpClient();
   return http
     .post(url, data, {
-      'Content-Type': 'application/json',
-      'api-key': SWIAM_SHOP_API_KEY,
+      headers: {
+        'Content-Type': 'application/json',
+        'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
+      },
     })
     .then(res => {
       console.log('addedItem on cart:', res.data);
