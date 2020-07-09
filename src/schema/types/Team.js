@@ -14,10 +14,11 @@ const EventsType = new GraphQLObjectType({
   fields: {
     abbrev: { type: TeamAbbrev },
     buyTicketsURL: { type: GraphQLString },
-    cityid: { type: GraphQLInt },
+    cityId: { type: GraphQLInt },
     dateTime: { type: GraphQLString },
     dateTimeStamp: { type: GraphQLString },
     eventId: { type: GraphQLInt },
+    eventImage: { type: GraphQLString },
     eventName: { type: GraphQLString },
     headline: { type: GraphQLString },
     isFuture: { type: GraphQLBoolean },
@@ -25,12 +26,12 @@ const EventsType = new GraphQLObjectType({
     priceFrom: { type: GraphQLFloat },
     sportIcon: { type: GraphQLString },
     sportName: { type: GraphQLString },
-    sportid: { type: GraphQLInt },
+    sportId: { type: GraphQLInt },
     teamA: { type: GraphQLString },
     teamB: { type: GraphQLString },
     timelineItemType: { type: GraphQLString },
     venueWordpressID: { type: GraphQLInt },
-    venueid: { type: GraphQLInt },
+    venueId: { type: GraphQLInt },
   },
 });
 

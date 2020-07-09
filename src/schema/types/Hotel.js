@@ -4,6 +4,7 @@ import {
   GraphQLInt,
   GraphQLFloat,
 } from 'graphql';
+import Country from './Country';
 
 const PriceType = new GraphQLObjectType({
   name: 'Price',
@@ -13,20 +14,12 @@ const PriceType = new GraphQLObjectType({
   },
 });
 
-const CountryType = new GraphQLObjectType({
-  name: 'Country',
-  fields: {
-    countryID: { type: GraphQLString },
-    countryName: { type: GraphQLString },
-  },
-});
-
 const CityType = new GraphQLObjectType({
   name: 'CityHotel',
   fields: {
     cityID: { type: GraphQLInt },
     cityName: { type: GraphQLString },
-    country: { type: CountryType },
+    country: { type: Country },
   },
 });
 

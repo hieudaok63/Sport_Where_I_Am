@@ -7,7 +7,7 @@ import {
 import EventDetails from './EventDetails';
 
 const CityDetails = new GraphQLObjectType({
-  name: 'CityDetails',
+  name: 'CityDetailsaoeu',
   fields: {
     latestDateTime: { type: GraphQLString },
     latestDateTimeStamp: { type: GraphQLString },
