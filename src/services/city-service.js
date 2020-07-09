@@ -1,15 +1,16 @@
 import HttpClient from '../tools/http-client';
 import { getAuthOption } from '../tools/auth-header';
 
-const { SWIAM_API_V2, SWIAM_API_V3I } = process.env;
+const { SWIAM_API_V2, SWIAM_API_V3I, SWIAM_OPENAPI } = process.env;
 
 export const getCityById = (cityId, token) => {
-  const url = `${SWIAM_API_V3I}/cities/${cityId}`;
+  const url = `${SWIAM_OPENAPI}/cms/v1/city/${cityId}/info`;
+  // const url = `${SWIAM_API_V3I}/cities/${cityId}`; // old
 
   const http = HttpClient.getHttpClient();
   return http
     .get(url, token && getAuthOption(token))
-    .then(res => res.data)
+    .then(res => res && res.data && res.data.data)
     .catch(error => {
       logger.error(
         `Error in City Service - getCityById() for city number: ${cityId} `,
