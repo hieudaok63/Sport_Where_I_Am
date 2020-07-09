@@ -19,7 +19,7 @@ const setup = () => {
 const cityId = 117;
 const citiesLength = 4;
 
-describe('Cities Query', () => {
+describe.skip('Cities Query', () => {
   beforeEach(() => {
     setup();
   });
