@@ -5,6 +5,8 @@ import {
   GraphQLFloat,
 } from 'graphql';
 import Country from './Country';
+import Venue from './Venue';
+import VenueDetails from './VenueDetails';
 
 const PriceType = new GraphQLObjectType({
   name: 'Price',
@@ -44,6 +46,19 @@ const Hotel = new GraphQLObjectType({
     venueID: { type: GraphQLInt },
     venueImage: { type: GraphQLString },
     venueName: { type: GraphQLString },
+  },
+});
+
+export const TopHotel = new GraphQLObjectType({
+  name: 'TopHotel',
+  fields: {
+    hotelID: { type: GraphQLInt },
+    hotelImage: { type: GraphQLString },
+    hotelName: { type: GraphQLString },
+    bestEventDescription: { type: GraphQLString },
+    promoBanner: { type: GraphQLString },
+    fromPrice: { type: PriceType },
+    nearbyVenue: { type: VenueDetails },
   },
 });
 

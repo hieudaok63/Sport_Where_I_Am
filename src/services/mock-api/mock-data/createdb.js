@@ -45,6 +45,7 @@ const team = require('./team-data');
 const interestData = require('./interest-data');
 const searchProducts = require('./search-products-data');
 const topLeagues = require('./topLeagues');
+const topSportingHotel = require('./topSportingHotels');
 const venueDetails = require('./venue-details');
 const login = require('./login-data');
 
@@ -71,6 +72,7 @@ writeData(DB_FILEPATH, {
   eventProducts,
   eventDetails,
   team,
+  topSportingHotel,
   interestData,
   searchProducts,
   topLeagues,
