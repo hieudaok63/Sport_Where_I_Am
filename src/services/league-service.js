@@ -67,4 +67,20 @@ export const getLeagueTeams = (token, leagueId) => {
     });
 };
 
-export default { getAllLeagues, getLeagueInfo, getLeagueVideos };
+export const getTopLeagues = (token, leagueId) => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/homepage/topSportLeagues`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      logger.error(
+        `Error in League Service - getTopLeagues() - `,
+        error.message
+      );
+      return null;
+    });
+};
+
+export default { getAllLeagues, getLeagueInfo, getLeagueVideos, getTopLeagues };

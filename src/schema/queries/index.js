@@ -19,7 +19,7 @@ import {
   payNow,
   customerInfo,
 } from './shop';
-import { leagueInfo, getleagueVideos, getleagueTeams } from './league';
+import { leagueInfo, getleagueVideos, getleagueTeams, topLeagues } from './league';
 import { eventById } from './event';
 import { sendTicketConfirmation } from './sendTicketConfirmation';
 import { getBooking } from './booking';
@@ -58,6 +58,7 @@ export {
   removeItemFromCartById,
   payNow,
   teamById,
+  topLeagues,
   interestData,
   me,
   register,

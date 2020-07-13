@@ -23,7 +23,8 @@ const writeData = (filePath, data) => {
 // Generate entities
 const blogPost = require('./blogPost-data');
 const cities = require('./city-data');
-const cityDetails = require('./city-data/cityDetails-data');
+const cityDetails = require('./city-details');
+const cityDetailsOld = require('./city-data/cityDetails-data');
 const carousel = require('./carousel-data');
 const sports = require('./sports-data');
 const leagues = require('./leagues-data');
@@ -43,6 +44,8 @@ const eventDetails = require('./event-data/eventDetails-data');
 const team = require('./team-data');
 const interestData = require('./interest-data');
 const searchProducts = require('./search-products-data');
+const topLeagues = require('./topLeagues');
+const venueDetails = require('./venue-details');
 const login = require('./login-data');
 
 writeData(DB_FILEPATH, {
@@ -51,6 +54,7 @@ writeData(DB_FILEPATH, {
   city: cities,
   venues,
   cityDetails,
+  cityDetailsOld,
   experiences,
   popularEvents,
   leagueVideos,
@@ -69,4 +73,6 @@ writeData(DB_FILEPATH, {
   team,
   interestData,
   searchProducts,
+  topLeagues,
+  venueDetails,
 });

@@ -7,6 +7,7 @@ import {
   getLeagueInfo,
   getLeagueVideos,
   getLeagueTeams,
+  getTopLeagues,
 } from '../../services/league-service';
 
 export const leagueInfo = {
@@ -26,4 +27,10 @@ export const getleagueTeams = {
   type: GraphQLList(LeagueTeams),
   args: { leagueId: { type: GraphQLInt } },
   resolve: (rawUserData, args, req) => getLeagueTeams(req.token, args.leagueId),
+};
+
+export const topLeagues = {
+  type: GraphQLList(League),
+  args: {},
+  resolve: (rawUserData, args, req) => getTopLeagues(req.token, args.leagueId),
 };
