@@ -30,7 +30,7 @@ export const getleagueTeams = {
 };
 
 export const topLeagues = {
-  type: GraphQLList(LeagueTeams),
+  type: GraphQLList(League),
   args: {},
   resolve: (rawUserData, args, req) => getTopLeagues(req.token, args.leagueId),
 };

@@ -1,18 +1,5 @@
 module.exports = [
-  {
-    id: 21,
-    name: 'Aberdeen',
-    date: 'Tue, 14 Apr 2020 13:20:04 GMT',
-    state: 'CA',
-    city: 'Los Angeles',
-    image: 'https://dummyimage.com/223x137/db0497/0011ff.png',
-    price: 199.5,
-    thisHref: 'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/117',
-    venuesHref:
-      'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/117/venues',
-    eventsHref:
-      'https://apidev.sportswhereiam.com/swiam-api/v3i/cities/117/events',
-  },
+  ,
   {
     id: 62,
     name: 'Adelaide, SA',
