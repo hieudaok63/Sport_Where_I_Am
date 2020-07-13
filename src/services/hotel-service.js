@@ -15,3 +15,16 @@ export const getAllHotels = token => {
       return null;
     });
 };
+
+export const getHotelsForBigSportingEvents = token => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/hotelpage/hotelsForBigSportingEvents`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      logger.error(`Error in Sport Service - getHotelsForBigSportingEvents() - `, error.message);
+      return null;
+    });
+}

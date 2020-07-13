@@ -5,7 +5,7 @@ import { allPopularEvents } from './popularEvents';
 import { nearbyEventsByCityId } from './nearbyEvents';
 import { allExperiences } from './experiences';
 import { allCarousels } from './carousel';
-import { allHotels } from './hotel';
+import { allHotels, hotelsForBigSportingEvents } from './hotel';
 import { allBlogPosts } from './blogPost';
 import { loginWithEmail } from './login';
 import { venueByIdFromDate } from './venue';
@@ -30,7 +30,6 @@ import { me, register } from './user';
 import { searchProducts } from './searchProduts';
 
 export {
-  leagueInfo,
   cityById,
   cityDetailsByIdFromDate,
   allCities,
@@ -46,6 +45,8 @@ export {
   getleagueVideos,
   getNews,
   getleagueTeams,
+  hotelsForBigSportingEvents,
+  leagueInfo,
   venueByIdFromDate,
   nearbyEventsByCityId,
   productIdByEventId,
