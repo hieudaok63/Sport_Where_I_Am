@@ -24,7 +24,7 @@ import { eventById } from './event';
 import { sendTicketConfirmation } from './sendTicketConfirmation';
 import { getBooking } from './booking';
 import getNews from './news';
-import interestData from './interestData';
+import interestData, { interestQuestions } from './interestData';
 import { teamById } from './team';
 import { me, register } from './user';
 import { searchProducts } from './searchProduts';
@@ -61,6 +61,7 @@ export {
   teamById,
   topLeagues,
   interestData,
+  interestQuestions,
   me,
   register,
   searchProducts,

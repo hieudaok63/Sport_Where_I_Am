@@ -2,9 +2,20 @@ import {
   GraphQLObjectType,
   GraphQLString,
   GraphQLInt,
+  GraphQLList,
 } from 'graphql';
 
 import InterestTagging from './InterestTagging';
+
+const InterestQuestionAnswers = new GraphQLObjectType({
+  name: 'InterestQuestionAnswers',
+  fields: {
+    answerID: { type: GraphQLInt },
+    author: { type: GraphQLString },
+    text: { type: GraphQLString },
+    votes: { type: GraphQLInt },
+  },
+});
 
 const InterestData = new GraphQLObjectType({
   name: 'InterestData',
@@ -21,6 +32,44 @@ const InterestData = new GraphQLObjectType({
     link: { type: GraphQLString },
   },
 });
+
+export const InterestQuestion = new GraphQLObjectType({
+  name: 'InterestQuestion',
+  fields: {
+    answers: { type: GraphQLList(InterestQuestionAnswers) },
+    cityId: { type: GraphQLInt },
+    icon: { type: GraphQLString },
+    questionCategory: { type: GraphQLString },
+    questionID: { type: GraphQLInt },
+    questionTitle: { type: GraphQLString },
+    venueId: { type: GraphQLInt },
+  },
+});
+
+// Interest Questions
+// {
+//   "data": [
+//   {
+//     "answers": [
+//       {
+//         "answerID": 0,
+//         "author": "string",
+//         "text": "string",
+//         "votes": 0
+//       }
+//     ],
+//     "cityId": 0,
+//     "icon": "string",
+//     "questionCategory": "TRAFFIC",
+//     "questionID": 0,
+//     "questionTitle": "string",
+//     "venueId": 0
+//   }
+// ],
+//   "errorCode": 0,
+//   "errorMessage": "string",
+//   "status": 0
+// }
 
 // [
 //   {

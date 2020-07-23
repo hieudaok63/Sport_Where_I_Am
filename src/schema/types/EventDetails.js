@@ -13,21 +13,21 @@ const EventDetails = new GraphQLObjectType({
   name: 'EventDetails',
   fields: {
     eventId: { type: GraphQLID },
-    eventid: { type: GraphQLID }, // old
+    // eventid: { type: GraphQLID }, // old
     headline: { type: GraphQLString },
     eventName: { type: GraphQLString },
     sportId: { type: GraphQLInt },
-    sportid: { type: GraphQLInt }, // old
+    // sportid: { type: GraphQLInt }, // old
     venue: { type: VenueDetails },
     venueId: { type: GraphQLInt },
-    venueid: { type: GraphQLInt }, // old
+    // venueid: { type: GraphQLInt }, // old
     leagueId: { type: GraphQLString },
     // leagueid: { type: GraphQLString }, // old
     sportName: { type: GraphQLString },
     dateTime: { type: GraphQLString },
     priceFrom: { type: GraphQLFloat },
     venueWordpressId: { type: GraphQLInt },
-    venueWordpressID: { type: GraphQLInt }, // old
+    // venueWordpressID: { type: GraphQLInt }, // old
     buyTicketsURL: { type: GraphQLString },
     teamA: { type: GraphQLString },
     teamB: { type: GraphQLString },
