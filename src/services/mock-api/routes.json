@@ -13,6 +13,7 @@
   "/cms/v1/sports": "/sports",
   "/cms/v1/popularBlogposts": "/blogPost",
   "/cms/v1/news/:interestType/:interestId": "/leagueNews",
+  "/cms/v1/questions/:interestType/:interestId": "/interestQuestions",
   "/cms/v1/contentCarousel/:interestType/:interestId": "/interestData",
   "/cms/v1/search": "/search",
   "/shop/events/:eventId/products": "/eventProducts/:eventId",

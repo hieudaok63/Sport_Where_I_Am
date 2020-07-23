@@ -31,3 +31,20 @@ export const getInterestData = (interestId, interestType, token) => {
       return null;
     });
 };
+
+export const getInterestQuestions = (interestId, interestType, token) => {
+  // /cms/v1/questions/{interestType}/{id}
+  const url = `${SWIAM_OPENAPI}/cms/v1/questions/${interestType}/${interestId}`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      logger.error(
+        `Error in News Service - getInterestQuestions() - `,
+        error.message
+      );
+      return null;
+    });
+};
