@@ -26,55 +26,57 @@ const cities = require('./city-data');
 const cityDetails = require('./city-details');
 const cityDetailsOld = require('./city-data/cityDetails-data');
 const carousel = require('./carousel-data');
-const sports = require('./sports-data');
+const eventProducts = require('./product-data');
+const eventDetails = require('./event-data/eventDetails-data');
+const experiences = require('./experiences-data');
+const interestData = require('./interest-data');
+const interestQuestions = require('./interestQuestions');
+const hotel = require('./hotel-data');
 const leagues = require('./leagues-data');
 const league = require('./league-data');
 const leagueVideos = require('./leagueVideos-data');
-const search = require('./search-data');
-const popularEvents = require('./popularEvents-data');
+const login = require('./login-data');
 const leagueNews = require('./leagueNews-data');
-const nearbyEvents = require('./nearbyEvents-data');
-const experiences = require('./experiences-data');
-const hotel = require('./hotel-data');
-const user = require('./user-data');
 const leagueTeams = require('./leagueTeams-data');
-const venues = require('./venues-data');
-const eventProducts = require('./product-data');
-const eventDetails = require('./event-data/eventDetails-data');
-const team = require('./team-data');
-const interestData = require('./interest-data');
+const nearbyEvents = require('./nearbyEvents-data');
+const popularEvents = require('./popularEvents-data');
+const search = require('./search-data');
 const searchProducts = require('./search-products-data');
+const sports = require('./sports-data');
+const team = require('./team-data');
 const topLeagues = require('./topLeagues');
 const topSportingHotel = require('./topSportingHotels');
+const user = require('./user-data');
+const venues = require('./venues-data');
 const venueDetails = require('./venue-details');
-const login = require('./login-data');
 
 writeData(DB_FILEPATH, {
   blogPost,
   carousel,
   city: cities,
-  venues,
   cityDetails,
   cityDetailsOld,
   experiences,
-  popularEvents,
-  leagueVideos,
-  leagueTeams,
-  nearbyEvents,
-  sports,
-  search,
-  login,
+  eventDetails,
+  eventProducts,
   hotel,
-  leagueNews,
-  user,
+  interestData,
+  interestQuestions,
   league,
   leagues,
-  eventProducts,
-  eventDetails,
+  leagueNews,
+  leagueVideos,
+  leagueTeams,
+  login,
+  nearbyEvents,
+  popularEvents,
+  search,
+  searchProducts,
+  sports,
   team,
   topSportingHotel,
-  interestData,
-  searchProducts,
   topLeagues,
+  user,
+  venues,
   venueDetails,
 });
