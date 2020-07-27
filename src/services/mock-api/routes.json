@@ -15,6 +15,7 @@
   "/cms/v1/news/:interestType/:interestId": "/leagueNews",
   "/cms/v1/questions/:interestType/:interestId": "/interestQuestions",
   "/cms/v1/contentCarousel/:interestType/:interestId": "/interestData",
+  "/cms/v1/hotelpage/mostPopularSportsCities": "/popularSportingCities",
   "/cms/v1/search": "/search",
   "/shop/events/:eventId/products": "/eventProducts/:eventId",
   "/cms/v1/popularHotels": "/hotel",

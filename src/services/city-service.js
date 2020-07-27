@@ -38,11 +38,24 @@ export const getCityDetailsByIdFromDate = (cityId, fromDate, token) => {
     });
 };
 
+export const getPopularSportingCities = token => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/hotelpage/mostPopularSportsCities`;
+
+  const http = HttpClient.getHttpClient(3000);
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      logger.error(
+        `Error in City Service - getPopularSportingCities() - `,
+        error.message
+      );
+      return null;
+    });
+};
+
 export const getAllCities = token => {
   const url = `${SWIAM_API_V3I}/cities`;
-  console.log('========== BASE API ==========');
-  console.log(url);
-
   const http = HttpClient.getHttpClient(3000);
   return http
     .get(url, token && getAuthOption(token))

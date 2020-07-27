@@ -1,4 +1,9 @@
-import { cityById, allCities, cityDetailsByIdFromDate } from './city';
+import {
+  cityById,
+  allCities,
+  cityDetailsByIdFromDate,
+  popularSportingCities,
+} from './city';
 import { allSports } from './sport';
 import { searchByTerm } from './search';
 import { allPopularEvents } from './popularEvents';
@@ -19,7 +24,12 @@ import {
   payNow,
   customerInfo,
 } from './shop';
-import { leagueInfo, getleagueVideos, getleagueTeams, topLeagues } from './league';
+import {
+  leagueInfo,
+  getleagueVideos,
+  getleagueTeams,
+  topLeagues,
+} from './league';
 import { eventById } from './event';
 import { sendTicketConfirmation } from './sendTicketConfirmation';
 import { getBooking } from './booking';
@@ -56,6 +66,7 @@ export {
   getBooking,
   cartById,
   paymentPublicKey,
+  popularSportingCities,
   removeItemFromCartById,
   payNow,
   teamById,

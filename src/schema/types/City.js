@@ -12,8 +12,8 @@ import Country from './Country';
 import EventDetails from './EventDetails';
 import VenueDetails from './VenueDetails';
 
-const CityDetails = new GraphQLObjectType({
-  name: 'CityDetails',
+export const CitySummary = new GraphQLObjectType({
+  name: 'CitySummary',
   fields: {
     cityId: { type: GraphQLID },
     cityName: { type: GraphQLString },
@@ -27,7 +27,7 @@ const CityDetails = new GraphQLObjectType({
 const City = new GraphQLObjectType({
   name: 'City',
   fields: {
-    city: { type: CityDetails },
+    city: { type: CitySummary },
     events: { type: GraphQLList(EventDetails) },
     venues: { type: GraphQLList(VenueDetails) },
     // old

@@ -1,10 +1,11 @@
 import { GraphQLID, GraphQLList, GraphQLString } from 'graphql';
-import City from '../types/City';
+import City, { CitySummary } from '../types/City';
 import CityDetails from '../types/CityDetails';
 import {
   getAllCities,
   getCityById,
   getCityDetailsByIdFromDate,
+  getPopularSportingCities,
 } from '../../services/city-service';
 
 export const cityById = {
@@ -36,8 +37,13 @@ export const cityDetailsByIdFromDate = {
   },
 };
 
+export const popularSportingCities = {
+  type: GraphQLList(CitySummary),
+  args: {},
+  resolve: (rawCityData, args, req) => getPopularSportingCities(req.token),
+};
+
 export const allCities = {
   type: GraphQLList(City),
-  args: {},
   resolve: (rawUserData, args, req) => getAllCities(req.token),
 };
