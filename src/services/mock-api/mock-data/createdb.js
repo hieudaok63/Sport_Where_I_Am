@@ -21,6 +21,7 @@ const writeData = (filePath, data) => {
 };
 
 // Generate entities
+const bigSportingHotels = require('./hotel-data/bigSportingHotels');
 const blogPost = require('./blogPost-data');
 const cities = require('./city-data');
 const cityDetails = require('./city-details');
@@ -52,6 +53,7 @@ const venues = require('./venues-data');
 const venueDetails = require('./venue-details');
 
 writeData(DB_FILEPATH, {
+  bigSportingHotels,
   blogPost,
   carousel,
   city: cities,
