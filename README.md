@@ -4,7 +4,7 @@
 
 GraphQL Service for the Sports Where I Am Application.
 
-## How it works
+## How it works 
 
 - If running in 'development' using `yarn start:dev` then the application will interface with a Mock API
 - Mock API was created using [faker](https://github.com/marak/Faker.js/) and is served up
