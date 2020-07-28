@@ -40,6 +40,7 @@ const leagueNews = require('./leagueNews-data');
 const leagueTeams = require('./leagueTeams-data');
 const nearbyEvents = require('./nearbyEvents-data');
 const popularEvents = require('./popularEvents-data');
+const popularSportingCities = require('./popular-sporting-cities');
 const search = require('./search-data');
 const searchProducts = require('./search-products-data');
 const sports = require('./sports-data');
@@ -70,6 +71,7 @@ writeData(DB_FILEPATH, {
   login,
   nearbyEvents,
   popularEvents,
+  popularSportingCities,
   search,
   searchProducts,
   sports,
