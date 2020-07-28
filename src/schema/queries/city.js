@@ -1,4 +1,4 @@
-import { GraphQLID, GraphQLList, GraphQLString } from 'graphql';
+import { GraphQLID, GraphQLList, GraphQLObjectType, GraphQLString } from 'graphql';
 import City, { CitySummary } from '../types/City';
 import CityDetails from '../types/CityDetails';
 import {
@@ -7,6 +7,8 @@ import {
   getCityDetailsByIdFromDate,
   getPopularSportingCities,
 } from '../../services/city-service';
+import Country from '../types/Country';
+import EventDetails from '../types/EventDetails';
 
 export const cityById = {
   type: City,

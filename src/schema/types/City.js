@@ -6,8 +6,6 @@ import {
   GraphQLID,
   GraphQLList,
 } from 'graphql';
-// import CityDetails from './CityDetails';
-// import { getCityDetailsByIdFromDate } from '../../services/city-service';
 import Country from './Country';
 import EventDetails from './EventDetails';
 import VenueDetails from './VenueDetails';
@@ -21,6 +19,7 @@ export const CitySummary = new GraphQLObjectType({
     country: { type: Country },
     events: { type: GraphQLList(EventDetails) },
     image: { type: GraphQLString },
+    imageURL: { type: GraphQLString },
   },
 });
 
