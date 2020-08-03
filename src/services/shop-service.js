@@ -142,6 +142,41 @@ const deleteItemFromCartById = (cartId = 'GEJKL8', lineItemId, token) => {
     });
 };
 
+const addProduct = ({
+  cartId = 'GEJKL8',
+  variantId,
+  quantity,
+  productId,
+  currency,
+}) => {
+  const url = `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems`;
+  const data = {
+    productId,
+    variantId,
+    quantity,
+    currency,
+  };
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .post(url, data, {
+      headers: {
+        'Content-Type': 'application/json',
+        'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
+      },
+    })
+    .then(res => {
+      console.log('addedItem on cart:', res.data);
+      return res.data;
+    })
+    .catch(error => {
+      logger.error(`Error in Shop Service - addProduct( `, error.message);
+      console.log('____addProduct_____ error', error);
+
+      return null;
+    });
+};
+
 const getPaymentPublicKey = currency => {
   const url = `${SWIAM_API_V3}/shop/payments/stripe/currencies/${currency}/publickey`;
 
@@ -220,6 +255,7 @@ export {
   getCartId,
   getCart,
   getPaymentPublicKey,
+  addProduct,
   deleteItemFromCartById,
   setPayment,
   setCustomerInfo,

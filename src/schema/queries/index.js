@@ -22,6 +22,7 @@ import {
   paymentPublicKey,
   removeItemFromCartById,
   payNow,
+  addProductOnCart,
   customerInfo,
 } from './shop';
 import {
@@ -65,6 +66,7 @@ export {
   sendTicketConfirmation,
   getBooking,
   cartById,
+  addProductOnCart,
   paymentPublicKey,
   popularSportingCities,
   removeItemFromCartById,
