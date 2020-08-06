@@ -10,7 +10,7 @@ import { allPopularEvents } from './popularEvents';
 import { nearbyEventsByCityId } from './nearbyEvents';
 import { allExperiences } from './experiences';
 import { allCarousels } from './carousel';
-import { allHotels, hotelsForBigSportingEvents } from './hotel';
+import { allHotels, hotelsForBigSportingEvents, popularHotels } from './hotel';
 import { allBlogPosts } from './blogPost';
 import { loginWithEmail } from './login';
 import { venueByIdFromDate } from './venue';
@@ -68,6 +68,7 @@ export {
   cartById,
   addProductOnCart,
   paymentPublicKey,
+  popularHotels,
   popularSportingCities,
   removeItemFromCartById,
   payNow,

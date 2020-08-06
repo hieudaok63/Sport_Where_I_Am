@@ -40,12 +40,12 @@ const Hotel = new GraphQLObjectType({
     hotelImage: { type: GraphQLString },
     hotelName: { type: GraphQLString },
     fromPrice: { type: PriceType },
-    nearbyVenue: { type: CityType },
     coOrdinates: { type: CoOrdinatesType },
     venueAddress: { type: GraphQLString },
     venueID: { type: GraphQLInt },
     venueImage: { type: GraphQLString },
     venueName: { type: GraphQLString },
+    promoBanner: { type: GraphQLString },
   },
 });
 
