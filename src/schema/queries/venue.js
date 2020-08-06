@@ -17,3 +17,17 @@ export const venueByIdFromDate = {
   },
 };
 
+export const venueImportantInformationById = {
+  type: Venue,
+  args: {
+    id: { type: GraphQLID },
+    fromDate: { type: GraphQLString },
+  },
+  resolve: (rawCityData, args, req) => {
+    const { id, fromDate } = args;
+    if (id) {
+      return getVenueByIdFromDate(id, fromDate, req.token);
+    }
+    return null;
+  },
+}

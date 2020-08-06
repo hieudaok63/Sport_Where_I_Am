@@ -16,6 +16,19 @@ export const getAllHotels = token => {
     });
 };
 
+export const getPopularHotels = token => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/homepage/popularHotels`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      logger.error(`Error in Sport Service - getPopularHotels() - `, error.message);
+      return null;
+    });
+};
+
 export const getHotelsForBigSportingEvents = token => {
   const url = `${SWIAM_OPENAPI}/cms/v1/hotelpage/hotelsForBigSportingEvents`;
 
