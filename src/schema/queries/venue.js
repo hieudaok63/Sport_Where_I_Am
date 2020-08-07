@@ -1,6 +1,6 @@
 import { GraphQLID, GraphQLList, GraphQLString } from 'graphql';
-import Venue from '../types/Venue';
-import getVenueByIdFromDate from '../../services/venue-service';
+import Venue, { VenueImportantInformation } from '../types/Venue';
+import getVenueByIdFromDate, { getVenueImportantInformationById } from '../../services/venue-service';
 
 export const venueByIdFromDate = {
   type: Venue,
@@ -18,7 +18,7 @@ export const venueByIdFromDate = {
 };
 
 export const venueImportantInformationById = {
-  type: Venue,
+  type: GraphQLList(VenueImportantInformation),
   args: {
     id: { type: GraphQLID },
     fromDate: { type: GraphQLString },
@@ -26,7 +26,7 @@ export const venueImportantInformationById = {
   resolve: (rawCityData, args, req) => {
     const { id, fromDate } = args;
     if (id) {
-      return getVenueByIdFromDate(id, fromDate, req.token);
+      return getVenueImportantInformationById(id, fromDate, req.token);
     }
     return null;
   },
