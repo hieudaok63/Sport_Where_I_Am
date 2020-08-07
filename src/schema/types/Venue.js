@@ -5,9 +5,7 @@ import {
   GraphQLInt,
 } from 'graphql';
 import Event from './EventDetails';
-import Coordinates from './Coordinates';
 import VenueDetails from './VenueDetails';
-import City from './City';
 
 const Venue = new GraphQLObjectType({
   name: 'Venue',
@@ -24,6 +22,17 @@ const Venue = new GraphQLObjectType({
     // cityid: { type: GraphQLInt },
     // coOrdinates: { type: Coordinates },
     // venueDescription: { type: GraphQLString },
+  },
+});
+
+export const VenueImportantInformation = new GraphQLObjectType({
+  name: 'VenueImportantInformation',
+  fields: {
+    infoId: { type: GraphQLString },
+    venueId: { type: GraphQLInt },
+    label: { type: GraphQLString },
+    information: { type: GraphQLString },
+    version: { type: GraphQLInt },
   },
 });
 

@@ -51,6 +51,7 @@ const topSportingHotel = require('./topSportingHotels');
 const user = require('./user-data');
 const venues = require('./venues-data');
 const venueDetails = require('./venue-details');
+const venueImportantInformation = require('./venue-data/venue-importantinformation');
 
 writeData(DB_FILEPATH, {
   bigSportingHotels,
@@ -83,4 +84,5 @@ writeData(DB_FILEPATH, {
   user,
   venues,
   venueDetails,
+  venueImportantInformation,
 });

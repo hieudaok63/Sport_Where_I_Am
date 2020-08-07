@@ -34,6 +34,7 @@ const League = entity =>
       leagueAbbreviation: { type: GraphQLString },
       leagueID: { type: GraphQLInt },
       leagueName: { type: GraphQLString },
+      cardImageURL: { type: GraphQLString },
       sport: { type: Sport(entity) },
     },
   });

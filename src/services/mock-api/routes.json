@@ -29,5 +29,6 @@
   "/cms/v1/homepage/topSportLeagues": "/topLeagues",
   "/cms/v1/hotelpage/hotelsForBigSportingEvents": "/bigSportingHotels",
   "/cms/v1/city/:cityId/info": "/cityDetails",
-  "/cms/v1/venue/:venue/info": "/venueDetails"
+  "/cms/v1/venue/:venue/info": "/venueDetails",
+  "/cms/v1/venue/:venue/importantInformation": "/venueImportantInformation"
 }
