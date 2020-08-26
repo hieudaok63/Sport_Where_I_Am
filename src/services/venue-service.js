@@ -21,7 +21,6 @@ const getVenueByIdFromDate = (venueId, fromDate, token) => {
 
 export const getVenueImportantInformationById = (venueId, token) => {
   const url = `${SWIAM_OPENAPI}/cms/v1/venue/${venueId}/importantInformation`;
-
   const http = HttpClient.getHttpClient();
   return http
     .get(url, token && getAuthOption(token))

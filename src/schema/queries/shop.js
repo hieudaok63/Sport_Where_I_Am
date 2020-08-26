@@ -35,11 +35,12 @@ const productIdByEventId = {
   type: GraphQLList(Product),
   args: {
     eventId: { type: GraphQLString },
+    cartId: { type: GraphQLString },
   },
   resolve: (rawUserData, args, req) => {
-    const { eventId } = args;
+    const { eventId, cartId } = args;
     if (eventId) {
-      return getProductIdByEventId(eventId, req.token);
+      return getProductIdByEventId(eventId, cartId, req.token);
     }
     return null;
   },

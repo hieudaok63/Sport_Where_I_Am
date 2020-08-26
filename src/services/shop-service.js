@@ -7,10 +7,10 @@ const { SWIAM_API_V3, SWIAM_SHOP_API_KEY } = process.env;
 
 const getProductIdByEventId = (
   eventId,
+  cartId,
   token,
   asUrl = false,
-  currency = 'AUD',
-  cartId = 'GEJKL8' // TODO: See how this is received
+  currency = 'AUD'
 ) => {
   const url = `${SWIAM_API_V3}/shop/events/${eventId}/products?asUrl=${asUrl}&currency=${currency}&cartId=${cartId}`;
 
