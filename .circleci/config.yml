@@ -64,6 +64,7 @@ jobs:
              --build-arg SWIAM_API_V3I='https://apidev2.sportswhereiam.com/swiam-api/v3i'
              --build-arg SWIAM_API_V3='https://apidev2.sportswhereiam.com/swiam-api/v3'
             --build-arg SWIAM_OPENAPI='https://apidev2.sportswhereiam.com/openapi'
+            --build-arg SWIAM_SHOP_API_KEY=$SWIAM_SHOP_API_KEY
             --build-arg BASE_GQL_URL='http://localhost'"
           image: swiam-gql
           tag: $CIRCLE_SHA1 #Change version number e.g to 'v3' when updating application

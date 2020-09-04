@@ -69,12 +69,12 @@ const getCart = (cartId, currency = 'AUD') => {
       },
     })
     .then(res => {
-      console.log('getCart', res.data);
+      // console.log('getCart', res.data);
       return res.data;
     })
     .catch(error => {
       logger.error(`Error in Shop Service - getCart( `, error.message);
-      console.log('____getCart_____ error', error);
+      console.log('____getCart_____ error', error.message);
 
       return null;
     });
@@ -108,14 +108,14 @@ const setCustomerInfo = (
     .then(res => {
       const customerInfo = get(res, 'data.customerInfo', {});
       // TODO: remove console.log when response is stable
-      console.log('setCustomerInfo response ------------------------');
-      console.log('setCustomerInfo', customerInfo);
-      console.log('setCustomerInfo response ------------------------');
+      // console.log('setCustomerInfo response ------------------------');
+      // console.log('setCustomerInfo', customerInfo);
+      // console.log('setCustomerInfo response ------------------------');
       return customerInfo;
     })
     .catch(error => {
       logger.error(`Error in Shop Service - setCustomerInfo( `, error.message);
-      console.log('____setCustomerInfo_____ error', error);
+      console.log('____setCustomerInfo_____ error', error.message);
 
       return null;
     });
@@ -128,7 +128,7 @@ const deleteItemFromCartById = (cartId = 'GEJKL8', lineItemId, token) => {
   return http
     .delete(url, token && getAuthOption(token))
     .then(res => {
-      console.log('deleteItemFromCartById', res);
+      // console.log('deleteItemFromCartById', res);
       return res.data;
     })
     .catch(error => {
@@ -136,7 +136,7 @@ const deleteItemFromCartById = (cartId = 'GEJKL8', lineItemId, token) => {
         `Error in Shop Service - deleteItemFromCartById( `,
         error.message
       );
-      console.log('____deleteItemFromCartById_____ error', error);
+      console.log('____deleteItemFromCartById_____ error', error.message);
 
       return null;
     });
@@ -166,12 +166,12 @@ const addProduct = ({
       },
     })
     .then(res => {
-      console.log('addedItem on cart:', res.data);
+      // console.log('addedItem on cart:', res.data);
       return res.data;
     })
     .catch(error => {
       logger.error(`Error in Shop Service - addProduct( `, error.message);
-      console.log('____addProduct_____ error', error);
+      console.log('____addProduct_____ error', error.message);
 
       return null;
     });
@@ -188,7 +188,7 @@ const getPaymentPublicKey = currency => {
       },
     })
     .then(res => {
-      console.log('*************getPaymentPublicKey', res);
+      // console.log('*************getPaymentPublicKey', res);
       return res.data;
     })
     .catch(error => {
@@ -239,12 +239,12 @@ const setPayment = (cartId, currency, amount, transactionToken) => {
       },
     })
     .then(res => {
-      console.log('___________setPayment', res);
+      // console.log('___________setPayment', res);
       return res.data;
     })
     .catch(error => {
       logger.error(`Error in Shop Service - setPayment( `, error.message);
-      console.log('____setPayment_____ error', error);
+      console.log('____setPayment_____ error', error.message);
 
       return null;
     });
