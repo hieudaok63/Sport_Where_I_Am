@@ -1,14 +1,15 @@
 import HttpClient from '../tools/http-client';
 import { getAuthOption } from '../tools/auth-header';
+import { ApolloError } from 'apollo-server';
 
-const { SWIAM_API_V2 } = process.env;
+const { SWIAM_API_V2, SWIAM_SHOP_API_KEY } = process.env;
 
 const getMe = token => {
-  const url = `${SWIAM_API_V2}/me`;
+  const url = `${SWIAM_API_V2}/me?userToken=${token}`;
 
   const http = HttpClient.getHttpClient();
   return http
-    .get(url, token && getAuthOption(token))
+    .get(url)
     .then(res => res.data)
     .catch(error => {
       logger.error(`Error in Service - getMe()`, error.message);
@@ -17,26 +18,23 @@ const getMe = token => {
     });
 };
 
-const register = ({
-  email,
-  firstName,
-  password,
-  surnameName,
-  tsandcs,
-  username,
-}) => {
-  const url = `${SWIAM_API_V2}/register?email=${email}&firstName=${firstName}&password=${password}&surnameName=${surnameName}&tsandcs=${tsandcs}&username=${username}`;
+const register = ({ email, firstName, password, surnameName, username }) => {
+  const url = `${SWIAM_API_V2}/register?email=${email}&firstName=${firstName}&password=${password}&surnameName=${surnameName}&tsandcs=true&username=${username}`;
 
   const http = HttpClient.getHttpClient();
   return http
     .get(url, {
-      timeout: 10000,
+      // API takes ages to return the register
+      // We need to provide a long timeout, otherwise it will break
+      timeout: 500000,
+      headers: {
+        'api-key': SWIAM_SHOP_API_KEY,
+      },
     })
     .then(res => res.data)
     .catch(error => {
-      logger.error(`Error in Service - register()`, error.message);
-      console.log('Register error_________', error);
-      return null;
+      logger.error(`Error in Service - register()`, error);
+      throw new ApolloError(error);
     });
 };
 

@@ -5,6 +5,7 @@ const User = new GraphQLObjectType({
   fields: {
     id: { type: GraphQLID },
     displayName: { type: GraphQLString },
+    username: { type: GraphQLString },
     firstName: { type: GraphQLString },
     surnameName: { type: GraphQLID },
     dateUpdated: { type: GraphQLString },
