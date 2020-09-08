@@ -1,6 +1,9 @@
 import { GraphQLString } from 'graphql';
 import User from '../types/User';
-import { getLoginWithEmail } from '../../services/login-service';
+import {
+  getLoginWithEmail,
+  getLoginWithFacebook,
+} from '../../services/login-service';
 
 const loginWithEmail = {
   type: User,
@@ -17,4 +20,15 @@ const loginWithEmail = {
   },
 };
 
-export { loginWithEmail };
+const loginWithFacebook = {
+  type: User,
+  args: {
+    email: { type: GraphQLString },
+    accessToken: { type: GraphQLString },
+  },
+  resolve: (rawUserData, args) => {
+    return getLoginWithFacebook(args);
+  },
+};
+
+export { loginWithEmail, loginWithFacebook };

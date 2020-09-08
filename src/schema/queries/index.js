@@ -12,7 +12,7 @@ import { allExperiences } from './experiences';
 import { allCarousels } from './carousel';
 import { allHotels, hotelsForBigSportingEvents, popularHotels } from './hotel';
 import { allBlogPosts } from './blogPost';
-import { loginWithEmail } from './login';
+import { loginWithEmail, loginWithFacebook } from './login';
 import { venueByIdFromDate, venueImportantInformationById } from './venue';
 import { allLeagues } from './leagues';
 import {
@@ -51,6 +51,7 @@ export {
   allBlogPosts,
   searchByTerm,
   allHotels,
+  loginWithFacebook,
   loginWithEmail,
   allLeagues,
   getleagueVideos,

@@ -1,5 +1,4 @@
 import HttpClient from '../tools/http-client';
-import { getAuthOption } from '../tools/auth-header';
 import { ApolloError } from 'apollo-server';
 
 const { SWIAM_API_V2, SWIAM_SHOP_API_KEY } = process.env;
