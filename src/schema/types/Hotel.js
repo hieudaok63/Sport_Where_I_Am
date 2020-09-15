@@ -7,6 +7,7 @@ import {
 import Country from './Country';
 import Venue from './Venue';
 import VenueDetails from './VenueDetails';
+import GraphQLLong from 'graphql-type-long';
 
 const PriceType = new GraphQLObjectType({
   name: 'Price',
@@ -36,7 +37,7 @@ const CoOrdinatesType = new GraphQLObjectType({
 const Hotel = new GraphQLObjectType({
   name: 'Hotel',
   fields: {
-    hotelID: { type: GraphQLInt },
+    hotelID: { type: GraphQLLong },
     hotelImage: { type: GraphQLString },
     hotelName: { type: GraphQLString },
     fromPrice: { type: PriceType },
@@ -52,7 +53,7 @@ const Hotel = new GraphQLObjectType({
 export const TopHotel = new GraphQLObjectType({
   name: 'TopHotel',
   fields: {
-    hotelID: { type: GraphQLInt },
+    hotelID: { type: GraphQLLong },
     hotelImage: { type: GraphQLString },
     hotelName: { type: GraphQLString },
     bestEventDescription: { type: GraphQLString },
