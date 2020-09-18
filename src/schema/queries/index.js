@@ -39,6 +39,12 @@ import interestData, { interestQuestions } from './interestData';
 import { teamById } from './team';
 import { me, register } from './user';
 import { searchProducts } from './searchProduts';
+import {
+  getUniversalToken,
+  listAllCountries,
+  listAllStates,
+  listAllCities,
+} from './universal';
 
 export {
   cityById,
@@ -81,4 +87,8 @@ export {
   searchProducts,
   customerInfo,
   venueImportantInformationById,
+  getUniversalToken,
+  listAllCountries,
+  listAllStates,
+  listAllCities,
 };

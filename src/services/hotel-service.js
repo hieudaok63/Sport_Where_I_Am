@@ -24,7 +24,10 @@ export const getPopularHotels = token => {
     .get(url, token && getAuthOption(token))
     .then(res => res.data.data)
     .catch(error => {
-      logger.error(`Error in Sport Service - getPopularHotels() - `, error.message);
+      logger.error(
+        `Error in Sport Service - getPopularHotels() - `,
+        error.message
+      );
       return null;
     });
 };
@@ -37,7 +40,10 @@ export const getHotelsForBigSportingEvents = token => {
     .get(url, token && getAuthOption(token))
     .then(res => res.data.data)
     .catch(error => {
-      logger.error(`Error in Sport Service - getHotelsForBigSportingEvents() - `, error.message);
+      logger.error(
+        `Error in Sport Service - getHotelsForBigSportingEvents() - `,
+        error.message
+      );
       return null;
     });
-}
+};
