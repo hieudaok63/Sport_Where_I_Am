@@ -17,6 +17,7 @@ import { venueByIdFromDate, venueImportantInformationById } from './venue';
 import { allLeagues } from './leagues';
 import {
   productIdByEventId,
+  productDataByEventId,
   createCartId,
   cartById,
   paymentPublicKey,
@@ -76,6 +77,7 @@ export {
   paymentPublicKey,
   popularHotels,
   popularSportingCities,
+  productDataByEventId,
   removeItemFromCartById,
   payNow,
   teamById,

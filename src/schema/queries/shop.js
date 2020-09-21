@@ -1,5 +1,5 @@
 import { GraphQLList, GraphQLString, GraphQLFloat, GraphQLInt } from 'graphql';
-import Product from '../types/Product';
+import Product, { EventProduct } from '../types/Product';
 import Cart from '../types/shop/Cart';
 import CustomerInfo from '../types/shop/CustomerInfo';
 import PaymentPublicKey from '../types/PaymentPublicKey';
@@ -11,7 +11,7 @@ import {
   getPaymentPublicKey,
   deleteItemFromCartById,
   setPayment,
-  setCustomerInfo,
+  setCustomerInfo, getProductDataByEventId,
 } from '../../services/shop-service';
 
 const payNow = {
@@ -41,6 +41,21 @@ const productIdByEventId = {
     const { eventId, cartId } = args;
     if (eventId) {
       return getProductIdByEventId(eventId, cartId, req.token);
+    }
+    return null;
+  },
+};
+
+const productDataByEventId = {
+  type: EventProduct,
+  args: {
+    eventId: { type: GraphQLString },
+    cartId: { type: GraphQLString },
+  },
+  resolve: (rawUserData, args, req) => {
+    const { eventId, cartId } = args;
+    if (eventId) {
+      return getProductDataByEventId(eventId, cartId, req.token);
     }
     return null;
   },
@@ -136,6 +151,7 @@ const addProductOnCart = {
 
 export {
   productIdByEventId,
+  productDataByEventId,
   createCartId,
   cartById,
   paymentPublicKey,
