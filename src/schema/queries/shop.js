@@ -47,7 +47,7 @@ const productIdByEventId = {
 };
 
 const productDataByEventId = {
-  type: GraphQLList(EventProduct),
+  type: EventProduct,
   args: {
     eventId: { type: GraphQLString },
     cartId: { type: GraphQLString },

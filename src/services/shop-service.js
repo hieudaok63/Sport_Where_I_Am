@@ -23,7 +23,7 @@ const getProductDataByProductId = async (
         'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
       },
     });
-    const data = await response.data;
+    const data = await response && response.data && response.data.length && response.data[0];
     return data;
   } catch (error) {
     console.log('Error: ');
