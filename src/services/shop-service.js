@@ -23,7 +23,11 @@ const getProductDataByProductId = async (
         'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
       },
     });
-    const data = await response && response.data && response.data.length && response.data[0];
+    const data =
+      (await response) &&
+      response.data &&
+      response.data.length &&
+      response.data[0];
     return data;
   } catch (error) {
     console.log('Error: ');
@@ -249,6 +253,25 @@ const getPaymentPublicKey = currency => {
     });
 };
 
+const removeProduct = ({ cartId, lineItemId }) => {
+  const url = `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems/${lineItemId}`;
+  const http = HttpClient.getHttpClient();
+
+  return http
+    .delete(url, {
+      headers: {
+        'api-key': SWIAM_SHOP_API_KEY,
+      },
+    })
+    .then(res => res.data)
+    .catch(error => {
+      logger.error(`Error in Shop Service - removeProduct( `, error.message);
+      console.log('____removeProduct_____ error', error.message);
+
+      return null;
+    });
+};
+
 const setPayment = (cartId, currency, amount, transactionToken) => {
   const url = `${SWIAM_API_V3}/shop/carts/${cartId}/payment`;
 
@@ -308,4 +331,5 @@ export {
   deleteItemFromCartById,
   setPayment,
   setCustomerInfo,
+  removeProduct,
 };
