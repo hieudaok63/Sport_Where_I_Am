@@ -42,7 +42,7 @@ jobs:
             echo 'export SWIAM_OPENAPI="https://localhost:4000"' >> $BASH_ENV
             echo 'export BASE_GQL_URL="http://localhost"'>> $BASH_ENV
             echo 'export UNIVERSAL_API="http://localhost"'>> $BASH_ENV
-            echo 'export UNIVERSAL_EMAIL="test@test.com"'>> $BASH_ENV
+            echo 'export UNIVERSAL_USER_EMAIL="test@test.com"'>> $BASH_ENV
             echo 'export SWIAM_UNIVERSAL_API_KEY="abcd"'>> $BASH_ENV
             echo 'export PORT="5000"' >> $BASH_ENV
             echo 'export SWIAM_SHOP_API_KEY=$SWIAM_SHOP_API_KEY' >> $BASH_ENV
@@ -69,7 +69,7 @@ jobs:
             --build-arg SWIAM_SHOP_API_KEY=$SWIAM_SHOP_API_KEY
             --build-arg BASE_GQL_URL='http://localhost'
             --build-arg UNIVERSAL_API='https://www.universal-tutorial.com/api'
-            --build-arg UNIVERSAL_EMAIL=$UNIVERSAL_EMAIL
+            --build-arg UNIVERSAL_USER_EMAIL=$UNIVERSAL_USER_EMAIL
             --build-arg SWIAM_UNIVERSAL_API_KEY=$SWIAM_UNIVERSAL_API_KEY"
           image: swiam-gql
           tag: $CIRCLE_SHA1 #Change version number e.g to 'v3' when updating application

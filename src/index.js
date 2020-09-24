@@ -81,6 +81,11 @@ const server = webServer.listen(PORT, () => {
 
   logger.info('PORT: ');
   logger.info(PORT);
+
+  logger.info('UNIVERSAL');
+  logger.info(process.env.UNIVERSAL_API);
+  logger.info(process.env.SWIAM_UNIVERSAL_API_KEY);
+  logger.info(process.env.UNIVERSAL_USER_EMAIL);
 });
 
 function stop() {

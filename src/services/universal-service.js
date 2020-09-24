@@ -7,6 +7,7 @@ const {
 } = process.env;
 
 const getAccessToken = async () => {
+  console.log('=== UNIVERSAL ===');
   const url = `${UNIVERSAL_API}/getaccesstoken`;
   const http = HttpClient.getHttpClient();
 
@@ -20,7 +21,7 @@ const getAccessToken = async () => {
     })
     .then(res => res.data)
     .catch(error => {
-      logger.error(`Error in uNIVERSAL Service -  `, error.message);
+      logger.error(`Error in Universal Service -  `, error.message);
       return null;
     });
 };
