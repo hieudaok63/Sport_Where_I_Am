@@ -11,7 +11,9 @@ import {
   getPaymentPublicKey,
   deleteItemFromCartById,
   setPayment,
-  setCustomerInfo, getProductDataByEventId,
+  setCustomerInfo,
+  getProductDataByEventId,
+  removeProduct,
 } from '../../services/shop-service';
 
 const payNow = {
@@ -149,10 +151,20 @@ const addProductOnCart = {
   resolve: (rawUserData, args, req) => addProduct(args),
 };
 
+const removeProductFromCart = {
+  type: Cart,
+  args: {
+    cartId: { type: GraphQLString },
+    lineItemId: { type: GraphQLString },
+  },
+  resolve: (rawUserData, args, req) => removeProduct(args),
+};
+
 export {
   productIdByEventId,
   productDataByEventId,
   createCartId,
+  removeProductFromCart,
   cartById,
   paymentPublicKey,
   removeItemFromCartById,

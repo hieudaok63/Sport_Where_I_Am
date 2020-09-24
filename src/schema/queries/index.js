@@ -25,6 +25,7 @@ import {
   payNow,
   addProductOnCart,
   customerInfo,
+  removeProductFromCart,
 } from './shop';
 import {
   leagueInfo,
@@ -93,4 +94,5 @@ export {
   listAllCountries,
   listAllStates,
   listAllCities,
+  removeProductFromCart,
 };
