@@ -300,7 +300,7 @@ const setPayment = (cartId, currency, amount, transactionToken) => {
     gateway: 'Stripe',
   });
 
-  const http = HttpClient.getHttpClient();
+  const http = HttpClient.getHttpClient(6000);
   return http
     .put(url, data, {
       headers: {
@@ -308,11 +308,7 @@ const setPayment = (cartId, currency, amount, transactionToken) => {
         'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
       },
     })
-    .then(
-      res =>
-        // console.log('___________setPayment', res);
-        res.data
-    )
+    .then(res => res.data)
     .catch(error => {
       logger.error(`Error in Shop Service - setPayment( `, error.message);
       console.log('____setPayment_____ error', error.message);
