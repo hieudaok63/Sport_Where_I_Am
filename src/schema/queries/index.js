@@ -47,6 +47,7 @@ import {
   listAllStates,
   listAllCities,
 } from './universal';
+import { topCities } from './topCities';
 
 export {
   cityById,
@@ -95,4 +96,5 @@ export {
   listAllStates,
   listAllCities,
   removeProductFromCart,
+  topCities,
 };
