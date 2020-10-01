@@ -7,6 +7,8 @@ import Variant from './Variant';
 import Needs from './Needs';
 import Note from './Note';
 import VenueInfo from './VenueInfo';
+import EventWithCityDetails from '../EventWithCityDetails';
+import { getEventById } from '../../../services/event-service';
 
 const CartProduct = new GraphQLObjectType({
   name: 'CartProduct',
@@ -26,6 +28,17 @@ const CartProduct = new GraphQLObjectType({
     needs: { type: Needs },
     notes: { type: GraphQLList(Note) },
     venueDetails: { type: VenueInfo },
+    eventId: { type: GraphQLString },
+    eventData: {
+      type: EventWithCityDetails,
+      resolve: (rawCityData, args, req) => {
+        const { eventId } = args;
+        if (eventId) {
+          return getEventById(eventId, req.token);
+        }
+        return null;
+      },
+    },
   },
 });
 
