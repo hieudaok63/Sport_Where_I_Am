@@ -3,6 +3,7 @@ import {
   allCities,
   cityDetailsByIdFromDate,
   popularSportingCities,
+  topCities,
 } from './city';
 import { allSports } from './sport';
 import { searchByTerm } from './search';
@@ -47,7 +48,6 @@ import {
   listAllStates,
   listAllCities,
 } from './universal';
-import { topCities } from './topCities';
 
 export {
   cityById,
@@ -66,6 +66,7 @@ export {
   getNews,
   getleagueTeams,
   hotelsForBigSportingEvents,
+  topCities,
   leagueInfo,
   venueByIdFromDate,
   nearbyEventsByCityId,
@@ -96,5 +97,4 @@ export {
   listAllStates,
   listAllCities,
   removeProductFromCart,
-  topCities,
 };
