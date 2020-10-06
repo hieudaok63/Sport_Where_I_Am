@@ -28,17 +28,6 @@ const CartProduct = new GraphQLObjectType({
     needs: { type: Needs },
     notes: { type: GraphQLList(Note) },
     venueDetails: { type: VenueInfo },
-    eventId: { type: GraphQLString },
-    eventData: {
-      type: EventWithCityDetails,
-      resolve: (rawCityData, args, req) => {
-        const { eventId } = args;
-        if (eventId) {
-          return getEventById(eventId, req.token);
-        }
-        return null;
-      },
-    },
   },
 });
 
