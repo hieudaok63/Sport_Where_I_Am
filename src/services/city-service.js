@@ -65,3 +65,19 @@ export const getAllCities = token => {
       return null;
     });
 };
+
+export const getTopCities = () => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/homepage/topCities`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url)
+    .then(res => res.data.data)
+    .catch(error => {
+      logger.error(
+        `Error in Sport Service - popularExperiences() - `,
+        error.message
+      );
+      return null;
+    });
+};

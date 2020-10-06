@@ -1,4 +1,5 @@
-import { GraphQLID, GraphQLList, GraphQLObjectType, GraphQLString } from 'graphql';
+import TopCities from '../types/TopCities';
+import { GraphQLID, GraphQLList, GraphQLString } from 'graphql';
 import City, { CitySummary } from '../types/City';
 import CityDetails from '../types/CityDetails';
 import {
@@ -6,9 +7,8 @@ import {
   getCityById,
   getCityDetailsByIdFromDate,
   getPopularSportingCities,
+  getTopCities,
 } from '../../services/city-service';
-import Country from '../types/Country';
-import EventDetails from '../types/EventDetails';
 
 export const cityById = {
   type: City,
@@ -48,4 +48,10 @@ export const popularSportingCities = {
 export const allCities = {
   type: GraphQLList(City),
   resolve: (rawUserData, args, req) => getAllCities(req.token),
+};
+
+export const topCities = {
+  type: GraphQLList(TopCities),
+  args: {},
+  resolve: (rawUserData, args, req) => getTopCities(),
 };
