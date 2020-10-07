@@ -83,4 +83,3 @@ const findBooking = (bookingId, email, fullName) => {
 };
 
 export { findBooking };
-

@@ -7,6 +7,8 @@ import Variant from './Variant';
 import Needs from './Needs';
 import Note from './Note';
 import VenueInfo from './VenueInfo';
+import EventWithCityDetails from '../EventWithCityDetails';
+import { getEventById } from '../../../services/event-service';
 
 const CartProduct = new GraphQLObjectType({
   name: 'CartProduct',
