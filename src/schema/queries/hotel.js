@@ -5,6 +5,7 @@ import {
   getAllHotels,
   getHotelsForBigSportingEvents,
   getPopularHotels,
+  getPopularHotelsByCityId,
 } from '../../services/hotel-service';
 
 export const allHotels = {
@@ -18,6 +19,14 @@ export const popularHotels = {
   args: {},
   resolve: (rawUserData, args, req) => getPopularHotels(req.token),
 };
+
+export const popularHotelsByCityId = {
+  type: GraphQLList(Hotel),
+  args: {
+    cityId: { type: GraphQLString },
+  },
+  resolve: (rawUserData, args, req) => getPopularHotelsByCityId(req.token),
+}
 
 export const hotelsForBigSportingEvents = {
   type: GraphQLList(TopHotel),

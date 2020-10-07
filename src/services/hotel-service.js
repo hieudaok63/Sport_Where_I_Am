@@ -11,7 +11,7 @@ export const getAllHotels = token => {
     .get(url, token && getAuthOption(token))
     .then(res => res.data.data)
     .catch(error => {
-      logger.error(`Error in Sport Service - getAllHotels() - `, error.message);
+      logger.error(`Error in Hotel Service - getAllHotels() - `, error.message);
       return null;
     });
 };
@@ -25,12 +25,29 @@ export const getPopularHotels = token => {
     .then(res => res.data.data)
     .catch(error => {
       logger.error(
-        `Error in Sport Service - getPopularHotels() - `,
+        `Error in Hotel Service - getPopularHotels() - `,
         error.message
       );
       return null;
     });
 };
+
+export const getPopularHotelsByCityId = (token, cityId) => {
+
+  const url = `${SWIAM_OPENAPI}/cms/v1/${cityId}/popularHotels`;
+
+  const http = HttpClient.getHttpClient()
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      logger.error(
+        `Error in Hotel Service - getPopularHotelsByCityId(cityId:${cityId})`,
+        error.message
+      )
+      return null
+    })
+}
 
 export const getHotelsForBigSportingEvents = token => {
   const url = `${SWIAM_OPENAPI}/cms/v1/hotelpage/hotelsForBigSportingEvents`;
@@ -41,7 +58,7 @@ export const getHotelsForBigSportingEvents = token => {
     .then(res => res.data.data)
     .catch(error => {
       logger.error(
-        `Error in Sport Service - getHotelsForBigSportingEvents() - `,
+        `Error in Hotel Service - getHotelsForBigSportingEvents() - `,
         error.message
       );
       return null;
