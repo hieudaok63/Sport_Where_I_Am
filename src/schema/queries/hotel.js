@@ -25,7 +25,13 @@ export const popularHotelsByCityId = {
   args: {
     cityId: { type: GraphQLString },
   },
-  resolve: (rawUserData, args, req) => getPopularHotelsByCityId(req.token),
+  resolve: (rawUserData, args, req) => {
+    const { cityId } = args;
+    if (cityId !== undefined) {
+      return getPopularHotelsByCityId(cityId, req.token);
+    }
+    return null;
+  },
 };
 
 export const hotelsForBigSportingEvents = {

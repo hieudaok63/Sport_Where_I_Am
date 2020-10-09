@@ -32,11 +32,10 @@ export const getPopularHotels = token => {
     });
 };
 
-export const getPopularHotelsByCityId = (token, cityId) => {
-
+export const getPopularHotelsByCityId = (cityId, token) => {
   const url = `${SWIAM_OPENAPI}/cms/v1/${cityId}/popularHotels`;
 
-  const http = HttpClient.getHttpClient()
+  const http = HttpClient.getHttpClient();
   return http
     .get(url, token && getAuthOption(token))
     .then(res => res.data.data)
@@ -44,10 +43,10 @@ export const getPopularHotelsByCityId = (token, cityId) => {
       logger.error(
         `Error in Hotel Service - getPopularHotelsByCityId(cityId:${cityId})`,
         error.message
-      )
-      return null
-    })
-}
+      );
+      return null;
+    });
+};
 
 export const getHotelsForBigSportingEvents = token => {
   const url = `${SWIAM_OPENAPI}/cms/v1/hotelpage/hotelsForBigSportingEvents`;
