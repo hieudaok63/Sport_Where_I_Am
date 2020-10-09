@@ -1,4 +1,4 @@
-import { GraphQLList } from 'graphql';
+import { GraphQLList, GraphQLString } from 'graphql';
 
 import Hotel, { TopHotel } from '../types/Hotel';
 import {
@@ -26,7 +26,7 @@ export const popularHotelsByCityId = {
     cityId: { type: GraphQLString },
   },
   resolve: (rawUserData, args, req) => getPopularHotelsByCityId(req.token),
-}
+};
 
 export const hotelsForBigSportingEvents = {
   type: GraphQLList(TopHotel),
