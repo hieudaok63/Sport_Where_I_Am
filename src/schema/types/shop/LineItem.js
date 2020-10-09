@@ -34,8 +34,8 @@ const LineItem = new GraphQLObjectType({
     eventId: { type: GraphQLString },
     eventData: {
       type: EventWithCityDetails,
-      resolve: (rawCityData, args, req) => {
-        const { eventId } = args;
+      resolve: (rawLineItemData, args, req) => {
+        const { eventId } = rawLineItemData;
         if (eventId) {
           return getEventById(eventId, req.token);
         }
