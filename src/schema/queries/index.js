@@ -11,7 +11,12 @@ import { allPopularEvents } from './popularEvents';
 import { nearbyEventsByCityId } from './nearbyEvents';
 import { allExperiences } from './experiences';
 import { allCarousels } from './carousel';
-import { allHotels, hotelsForBigSportingEvents, popularHotels } from './hotel';
+import {
+  allHotels,
+  hotelsForBigSportingEvents,
+  popularHotels,
+  popularHotelsByCityId,
+} from './hotel';
 import { allBlogPosts } from './blogPost';
 import { loginWithEmail } from './login';
 import { venueByIdFromDate, venueImportantInformationById } from './venue';
@@ -79,6 +84,7 @@ export {
   addProductOnCart,
   paymentPublicKey,
   popularHotels,
+  popularHotelsByCityId,
   popularSportingCities,
   productDataByEventId,
   removeItemFromCartById,

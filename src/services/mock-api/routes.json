@@ -19,6 +19,7 @@
   "/cms/v1/search": "/search",
   "/shop/events/:eventId/products": "/eventProducts/:eventId",
   "/cms/v1/popularHotels": "/hotel",
+  "/cms/v1/:cityId/popularHotels": "/hotel/:cityId",
   "/login": "/login",
   "/register*": "/user",
   "/v2/event/:eventId": "/eventDetails/:eventId",
