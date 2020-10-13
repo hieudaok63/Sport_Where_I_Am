@@ -1,13 +1,6 @@
 import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql';
 import Team from './Team';
-
-const MerchandisePrice = new GraphQLObjectType({
-  name: 'MerchandisePrice',
-  fields: {
-    amount: GraphQLInt,
-    currencyId: GraphQLString,
-  },
-});
+import CurrencyValue from './CurrencyValue';
 
 const Merchandise = new GraphQLObjectType({
   name: 'Merchandise',
@@ -15,7 +8,7 @@ const Merchandise = new GraphQLObjectType({
     merchandiseId: { type: GraphQLInt },
     description: { type: GraphQLString },
     merchandiseImageUrl: { type: GraphQLString },
-    price: { type: MerchandisePrice },
+    price: { type: CurrencyValue },
     purchaseUrl: { type: GraphQLString },
     team: { type: Team },
   },
