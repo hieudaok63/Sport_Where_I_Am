@@ -17,6 +17,7 @@ import { loginWithEmail } from './login';
 import { venueByIdFromDate, venueImportantInformationById } from './venue';
 import { allLeagues } from './leagues';
 import {
+  products,
   productIdByEventId,
   productDataByEventId,
   createCartId,
@@ -70,6 +71,7 @@ export {
   leagueInfo,
   venueByIdFromDate,
   nearbyEventsByCityId,
+  products,
   productIdByEventId,
   eventById,
   createCartId,

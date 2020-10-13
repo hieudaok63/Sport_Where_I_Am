@@ -1,9 +1,10 @@
 import { GraphQLList, GraphQLString, GraphQLFloat, GraphQLInt } from 'graphql';
-import Product, { EventProduct } from '../types/Product';
+import { Product, ProductValue, EventProduct } from '../types/Product';
 import Cart from '../types/shop/Cart';
 import CustomerInfo from '../types/shop/CustomerInfo';
 import PaymentPublicKey from '../types/PaymentPublicKey';
 import {
+  getProducts,
   getProductIdByEventId,
   getCartId,
   getCart,
@@ -33,8 +34,25 @@ const payNow = {
   },
 };
 
-const productIdByEventId = {
+const products = {
   type: GraphQLList(Product),
+  args: {
+    startDate: { type: GraphQLString },
+    endDate: { type: GraphQLString },
+    qualifiers: { type: GraphQLString },
+    hotelId: { type: GraphQLString },
+  },
+  resolve: (rawUserData, args) => {
+    const { startDate, endDate, qualifiers, hotelId } = args;
+    if (startDate && endDate && qualifiers && hotelId) {
+      return getProducts(startDate, endDate, qualifiers, hotelId);
+    }
+    return null;
+  },
+};
+
+const productIdByEventId = {
+  type: GraphQLList(ProductValue),
   args: {
     eventId: { type: GraphQLString },
     cartId: { type: GraphQLString },
@@ -161,6 +179,7 @@ const removeProductFromCart = {
 };
 
 export {
+  products,
   productIdByEventId,
   productDataByEventId,
   createCartId,

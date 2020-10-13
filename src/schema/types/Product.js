@@ -1,7 +1,82 @@
-import { GraphQLList, GraphQLObjectType, GraphQLString } from 'graphql';
+import {
+  GraphQLFloat,
+  GraphQLList,
+  GraphQLInt,
+  GraphQLObjectType,
+  GraphQLString,
+} from 'graphql';
+
+import DateTimeStatus from './shop/DateTimeStatus';
+import Address from './shop/Address';
+import Facilities from './shop/Facilities';
+import Ticks from './shop/Ticks';
+
+const PriceProduct = new GraphQLObjectType({
+  name: 'PriceProduct',
+  fields: {
+    currency: { type: GraphQLString },
+    amount: { type: GraphQLFloat },
+    annotation: { type: GraphQLString },
+  },
+});
+
+const Attributes = new GraphQLObjectType({
+  name: 'Attributes',
+  fields: {
+    fees: { type: GraphQLString },
+  },
+});
+
+const Variants = new GraphQLObjectType({
+  name: 'Variants',
+  fields: {
+    id: { type: GraphQLString },
+    type: { type: GraphQLString },
+    name: { type: GraphQLString },
+    description: { type: GraphQLString },
+    price: { type: PriceProduct },
+    attributes: { type: Attributes },
+  },
+});
+
+const ImagesProducts = new GraphQLObjectType({
+  name: 'ImagesProducts',
+  fields: {
+    url: { type: GraphQLString },
+    caption: { type: GraphQLString },
+  },
+});
+
+const VenueDetailsProduct = new GraphQLObjectType({
+  name: 'VenueDetailsProduct',
+  fields: {
+    rating: { type: GraphQLInt },
+    address: { type: GraphQLList(Address) },
+    images: { type: GraphQLList(ImagesProducts) },
+  },
+});
 
 const Product = new GraphQLObjectType({
   name: 'Product',
+  fields: {
+    id: { type: GraphQLString },
+    type: { type: GraphQLString },
+    name: { type: GraphQLString },
+    description: { type: GraphQLString },
+    localDateTime: { type: GraphQLString },
+    dateTimeStatus: { type: DateTimeStatus },
+    price: { type: PriceProduct },
+    url: { type: GraphQLString },
+    urlType: { type: GraphQLString },
+    variants: { type: GraphQLList(Variants) },
+    venueDetails: { type: VenueDetailsProduct },
+    facilities: { type: GraphQLList(Facilities) },
+    ticks: { type: GraphQLList(Ticks) },
+  },
+});
+
+const ProductValue = new GraphQLObjectType({
+  name: 'ProductValue',
   fields: {
     value: { type: GraphQLString },
   },
@@ -76,54 +151,5 @@ export const EventProduct = new GraphQLObjectType({
   },
 });
 
+export { Product, ProductValue };
 export default Product;
-
-// Example Product Data
-// [
-//   {
-//     "id": "a371492b1bab79b16ce6",
-//     "type": "EVENT",
-//     "name": "New York Mets vs. Miami Marlins - Home Opener",
-//     "description": "Citi Field, Flushing at 03:30 on 8 Apr 2021",
-//     "localDateTime": "2021-04-08T03:30:00",
-//     "geo": {
-//       "city": "Flushing",
-//       "country": {
-//         "code": "US",
-//         "name": "United States of America"
-//       }
-//     },
-//     "price": {
-//       "currency": "AUD",
-//       "amount": 190.99,
-//       "annotation": "from, 172.73 m/u All channels TN vendor AUD currency add 10USD+8%, free shipping"
-//     },
-//     "url": "https://apidev2.sportswhereiam.com/punchout.html?channel=SWiAM&cartId=XXXXXX&currency=AUD&productId=a371492b1bab79b16ce6",
-//     "urlType": "PUNCHOUT",
-//     "variants": [
-//       {
-//         "id": "a37149271eaf71bb6ae71dd0",
-//         "type": "TICKET",
-//         "name": "Event Ticket",
-//         "description": "Row 5,  Section de Reserved ",
-//         "price": {
-//           "currency": "AUD",
-//           "amount": 279.05,
-//           "annotation": "254.26 m/u All channels TN vendor AUD currency add 10USD+8%, free shipping"
-//         },
-//         "attributes": {
-//           "inventory": "6",
-//           "groupType": "Event Ticket",
-//           "deliveryOpts": "ETICKET",
-//           "lowHighSeats": "11-16",
-//           "row": "5",
-//           "section": "de Reserved ",
-//           "splits": "1,2,3,4,5,6",
-//           "live": "false",
-//           "notes": "Tickets will be ready for delivery by Apr 04, 2021.",
-//           "rdo": "MD"
-//         }
-//       },
-//     ],
-//   }
-// ]
