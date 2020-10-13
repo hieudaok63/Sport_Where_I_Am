@@ -53,6 +53,7 @@ import {
   listAllStates,
   listAllCities,
 } from './universal';
+import { merchandiseByEventId } from './merchandise';
 
 export {
   cityById,
