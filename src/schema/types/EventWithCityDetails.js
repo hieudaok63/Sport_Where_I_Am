@@ -8,9 +8,10 @@ import {
 } from 'graphql';
 import VenueDetails from './VenueDetails';
 import TeamAbbrev from './TeamAbbrev';
-
+import League from './League';
 import City from './City';
 import { getCityById } from '../../services/city-service';
+import { getLeagueInfo } from '../../services/league-service';
 
 const EventWithCityDetails = new GraphQLObjectType({
   name: 'EventWithCityDetails',
@@ -43,6 +44,15 @@ const EventWithCityDetails = new GraphQLObjectType({
         if (venue && venue.cityid) {
           return getCityById(venue.cityid, req.token);
         }
+        return null;
+      },
+    },
+    league: {
+      type: League,
+      resolve: (rawEventData, args, req) => {
+        // const { leagueId } = rawEventData;
+        const leagueId = 200;
+        if (leagueId) return getLeagueInfo(req.token, leagueId);
         return null;
       },
     },

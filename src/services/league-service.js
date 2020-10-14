@@ -28,7 +28,7 @@ export const getLeagueInfo = (token, leagueId) => {
     .then(res => res.data.data)
     .catch(error => {
       logger.error(
-        `Error in League Service - getLeagueInfo() - `,
+        `Error in League Service - getLeagueInfo() - leagueId:${leagueId}`,
         error.message
       );
       return null;
