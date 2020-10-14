@@ -38,6 +38,7 @@ const EventsType = new GraphQLObjectType({
 const SportType = new GraphQLObjectType({
   name: 'TeamSport',
   fields: {
+    sportCardImage: { type: GraphQLString },
     sportID: { type: GraphQLInt },
     sportIconURL: { type: GraphQLString },
     sportIconURLV4: { type: GraphQLString },
