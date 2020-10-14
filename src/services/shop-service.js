@@ -27,7 +27,7 @@ const getProductsByEventId = eventId => {
     });
 };
 
-const getProducts = (startDate, endDate, qualifiers, hotelId) => {
+const getHotelProductById = (startDate, endDate, qualifiers, hotelId) => {
   const url = `${SWIAM_API}/admin/enc?message=hb:${startDate}:${endDate}:${qualifiers}:${hotelId}`;
 
   const http = HttpClient.getHttpClient();
@@ -353,7 +353,7 @@ const setPayment = (cartId, currency, amount, transactionToken) => {
 
 export {
   getProductDataByEventId,
-  getProducts,
+  getHotelProductById,
   getProductIdByEventId,
   getCartId,
   getCart,

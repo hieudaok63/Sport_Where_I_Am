@@ -4,7 +4,7 @@ import Cart from '../types/shop/Cart';
 import CustomerInfo from '../types/shop/CustomerInfo';
 import PaymentPublicKey from '../types/PaymentPublicKey';
 import {
-  getProducts,
+  getHotelProductById,
   getProductIdByEventId,
   getCartId,
   getCart,
@@ -34,7 +34,7 @@ const payNow = {
   },
 };
 
-const products = {
+const hotelProductById = {
   type: GraphQLList(Product),
   args: {
     startDate: { type: GraphQLString },
@@ -45,7 +45,7 @@ const products = {
   resolve: (rawUserData, args) => {
     const { startDate, endDate, qualifiers, hotelId } = args;
     if (startDate && endDate && qualifiers && hotelId) {
-      return getProducts(startDate, endDate, qualifiers, hotelId);
+      return getHotelProductById(startDate, endDate, qualifiers, hotelId);
     }
     return null;
   },
@@ -179,7 +179,7 @@ const removeProductFromCart = {
 };
 
 export {
-  products,
+  hotelProductById,
   productIdByEventId,
   productDataByEventId,
   createCartId,
