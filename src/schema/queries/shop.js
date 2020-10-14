@@ -1,5 +1,5 @@
 import { GraphQLList, GraphQLString, GraphQLFloat, GraphQLInt } from 'graphql';
-import { Product, ProductValue, EventProduct } from '../types/Product';
+import { EventProduct } from '../types/Product';
 import Cart from '../types/shop/Cart';
 import CustomerInfo from '../types/shop/CustomerInfo';
 import PaymentPublicKey from '../types/PaymentPublicKey';
@@ -16,6 +16,7 @@ import {
   getProductDataByEventId,
   removeProduct,
 } from '../../services/shop-service';
+import { HotelProduct, HotelValue } from '../types/Hotel';
 
 const payNow = {
   type: Cart, // TODO: verify what the api returns when the payment is concluded
@@ -35,7 +36,7 @@ const payNow = {
 };
 
 const hotelProductById = {
-  type: GraphQLList(Product),
+  type: GraphQLList(HotelProduct),
   args: {
     startDate: { type: GraphQLString },
     endDate: { type: GraphQLString },
@@ -52,7 +53,7 @@ const hotelProductById = {
 };
 
 const productIdByEventId = {
-  type: GraphQLList(ProductValue),
+  type: GraphQLList(HotelValue),
   args: {
     eventId: { type: GraphQLString },
     cartId: { type: GraphQLString },

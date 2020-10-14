@@ -2,12 +2,18 @@ import {
   GraphQLObjectType,
   GraphQLString,
   GraphQLInt,
+  GraphQLList,
   GraphQLFloat,
 } from 'graphql';
 import Country from './Country';
-import Venue from './Venue';
 import VenueDetails from './VenueDetails';
 import GraphQLLong from 'graphql-type-long';
+import DateTimeStatus from './shop/DateTimeStatus';
+import Facilities from './shop/Facilities';
+import Ticks from './shop/Ticks';
+import PriceCart from './shop/PriceCart';
+import Variant from './shop/Variant';
+import VenueInfo from './shop/VenueInfo';
 
 const PriceType = new GraphQLObjectType({
   name: 'Price',
@@ -60,6 +66,32 @@ export const TopHotel = new GraphQLObjectType({
     promoBanner: { type: GraphQLString },
     fromPrice: { type: PriceType },
     nearbyVenue: { type: VenueDetails },
+  },
+});
+
+export const HotelValue = new GraphQLObjectType({
+  name: 'HotelValue',
+  fields: {
+    value: { type: GraphQLString },
+  },
+});
+
+export const HotelProduct = new GraphQLObjectType({
+  name: 'HotelProduct',
+  fields: {
+    id: { type: GraphQLString },
+    type: { type: GraphQLString },
+    name: { type: GraphQLString },
+    description: { type: GraphQLString },
+    localDateTime: { type: GraphQLString },
+    dateTimeStatus: { type: DateTimeStatus },
+    price: { type: PriceCart },
+    url: { type: GraphQLString },
+    urlType: { type: GraphQLString },
+    variants: { type: GraphQLList(Variant) },
+    venueDetails: { type: VenueInfo },
+    facilities: { type: GraphQLList(Facilities) },
+    ticks: { type: GraphQLList(Ticks) },
   },
 });
 
