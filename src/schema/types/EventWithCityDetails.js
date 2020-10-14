@@ -50,6 +50,7 @@ const EventWithCityDetails = new GraphQLObjectType({
     league: {
       type: League,
       resolve: (rawEventData, args, req) => {
+        // TODO: use leagueId from parent data when it has been changed from abbreviation to id
         // const { leagueId } = rawEventData;
         const leagueId = 200;
         if (leagueId) return getLeagueInfo(req.token, leagueId);
