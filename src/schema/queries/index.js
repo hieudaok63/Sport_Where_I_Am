@@ -104,4 +104,5 @@ export {
   listAllStates,
   listAllCities,
   removeProductFromCart,
+  merchandiseByEventId,
 };
