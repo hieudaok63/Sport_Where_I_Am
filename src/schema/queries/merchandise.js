@@ -1,6 +1,6 @@
 import { GraphQLList, GraphQLString, GraphQLFloat, GraphQLInt } from 'graphql';
 import Merchandise from '../types/Merchandise';
-import { getMerchandiseByEventId } from '../../services/merchandise-service';
+import { getMerchandiseByEventId } from '../../services/shop-service';
 
 const merchandiseByEventId = {
   type: Merchandise,

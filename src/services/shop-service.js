@@ -4,7 +4,7 @@ import { get } from 'lodash';
 import HttpClient from '../tools/http-client';
 import { getAuthOption } from '../tools/auth-header';
 
-const { SWIAM_API_V3, SWIAM_SHOP_API_KEY } = process.env;
+const { SWIAM_API_V3, SWIAM_OPENAPI, SWIAM_SHOP_API_KEY } = process.env;
 
 const getProductDataByProductId = async (
   productId,
@@ -317,6 +317,22 @@ const setPayment = (cartId, currency, amount, transactionToken) => {
     });
 };
 
+const getMerchandiseByEventId = (eventId, token) => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/eventmerchandise/${eventId}`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      logger.error(
+        `Error in Merchandise Service - getMerchandiseByEventId() for event ID: ${eventId}`,
+        error.message
+      );
+      return null;
+    });
+};
+
 export {
   getProductDataByEventId,
   getProductIdByEventId,
@@ -328,4 +344,5 @@ export {
   setPayment,
   setCustomerInfo,
   removeProduct,
+  getMerchandiseByEventId,
 };
