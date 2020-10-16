@@ -11,6 +11,8 @@ import ShippingOption from './ShippingOption';
 import PriceCart from './PriceCart';
 import CustomerInfo from './CustomerInfo';
 import StatusLine from './StatusLine';
+import EventWithCityDetails from '../EventWithCityDetails';
+import { getEventById } from '../../../services/event-service';
 
 const LineItem = new GraphQLObjectType({
   name: 'LineItem',
@@ -29,6 +31,17 @@ const LineItem = new GraphQLObjectType({
     customerInfo: { type: CustomerInfo },
     statusLines: { type: GraphQLList(StatusLine) },
     created: { type: GraphQLString },
+    eventId: { type: GraphQLString },
+    eventData: {
+      type: EventWithCityDetails,
+      resolve: (rawLineItemData, args, req) => {
+        const { eventId } = rawLineItemData;
+        if (eventId) {
+          return getEventById(eventId, req.token);
+        }
+        return null;
+      },
+    },
   },
 });
 

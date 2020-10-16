@@ -1,10 +1,11 @@
-import { GraphQLList } from 'graphql';
+import { GraphQLList, GraphQLString } from 'graphql';
 
 import Hotel, { TopHotel } from '../types/Hotel';
 import {
   getAllHotels,
   getHotelsForBigSportingEvents,
   getPopularHotels,
+  getPopularHotelsByCityId,
 } from '../../services/hotel-service';
 
 export const allHotels = {
@@ -17,6 +18,20 @@ export const popularHotels = {
   type: GraphQLList(Hotel),
   args: {},
   resolve: (rawUserData, args, req) => getPopularHotels(req.token),
+};
+
+export const popularHotelsByCityId = {
+  type: GraphQLList(Hotel),
+  args: {
+    cityId: { type: GraphQLString },
+  },
+  resolve: (rawUserData, args, req) => {
+    const { cityId } = args;
+    if (cityId !== undefined) {
+      return getPopularHotelsByCityId(cityId, req.token);
+    }
+    return null;
+  },
 };
 
 export const hotelsForBigSportingEvents = {

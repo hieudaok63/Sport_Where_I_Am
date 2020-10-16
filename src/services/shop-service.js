@@ -1,11 +1,45 @@
+/* eslint-disable consistent-return */
 import { get } from 'lodash';
 
 import HttpClient from '../tools/http-client';
 import { getAuthOption } from '../tools/auth-header';
 
-const { SWIAM_API_V3, SWIAM_SHOP_API_KEY } = process.env;
+const { SWIAM_API_V3, SWIAM_OPENAPI, SWIAM_SHOP_API_KEY } = process.env;
 
-const getProductIdByEventId = (
+const getProductDataByProductId = async (
+  productId,
+  currency,
+  eventId,
+  token
+) => {
+  const url = `${SWIAM_API_V3}/shop/products/${productId}?currency=${currency}`;
+
+  const http = HttpClient.getHttpClient(5000);
+
+  try {
+    const response = await http.get(url, {
+      headers: {
+        'Content-Type': 'application/json',
+        'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
+      },
+    });
+    const data =
+      (await response) &&
+      response.data &&
+      response.data.length &&
+      response.data[0];
+    return data;
+  } catch (error) {
+    console.log('Error: ');
+    console.log(error);
+    logger.error(
+      `Error in Shop Service - getProductDataByProductId() for event id: ${eventId} and productId ${productId}`,
+      error.message
+    );
+  }
+};
+
+const getProductIdByEventId = async (
   eventId,
   cartId,
   token,
@@ -13,20 +47,47 @@ const getProductIdByEventId = (
   currency = 'AUD'
 ) => {
   const url = `${SWIAM_API_V3}/shop/events/${eventId}/products?asUrl=${asUrl}&currency=${currency}&cartId=${cartId}`;
-
   const http = HttpClient.getHttpClient();
-  return http
-    .get(url, token && getAuthOption(token))
-    .then(res => res.data)
-    .catch(error => {
-      logger.error(
-        `Error in Shop Service - getProductIdByEventId() for event id: ${eventId} `,
-        error.message
-      );
-      console.log('____getProductIdByEventId_____ error', error);
-
-      return null;
+  try {
+    const response = await http.get(url, {
+      headers: {
+        'Content-Type': 'application/json',
+        'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
+      },
     });
+    const data = await response.data;
+    return data;
+  } catch (error) {
+    logger.error(
+      `Error in Shop Service - getProductIdByEventId() for event id: ${eventId} `,
+      error.message
+    );
+  }
+};
+
+const getProductDataByEventId = async (
+  eventId,
+  cartId,
+  token,
+  asUrl = false,
+  currency = 'AUD'
+) => {
+  const product = await getProductIdByEventId(
+    eventId,
+    cartId,
+    token,
+    asUrl,
+    currency
+  );
+  console.log(product);
+  const productId = product && product.length && product[0].value;
+  const productData = await getProductDataByProductId(
+    productId,
+    currency,
+    eventId,
+    token
+  );
+  return productData;
 };
 
 const getCartId = () => {
@@ -68,10 +129,7 @@ const getCart = (cartId, currency = 'AUD') => {
         'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
       },
     })
-    .then(res => {
-      // console.log('getCart', res.data);
-      return res.data;
-    })
+    .then(res => res.data)
     .catch(error => {
       logger.error(`Error in Shop Service - getCart( `, error.message);
       console.log('____getCart_____ error', error.message);
@@ -107,10 +165,6 @@ const setCustomerInfo = (
     })
     .then(res => {
       const customerInfo = get(res, 'data.customerInfo', {});
-      // TODO: remove console.log when response is stable
-      // console.log('setCustomerInfo response ------------------------');
-      // console.log('setCustomerInfo', customerInfo);
-      // console.log('setCustomerInfo response ------------------------');
       return customerInfo;
     })
     .catch(error => {
@@ -127,10 +181,7 @@ const deleteItemFromCartById = (cartId = 'GEJKL8', lineItemId, token) => {
   const http = HttpClient.getHttpClient();
   return http
     .delete(url, token && getAuthOption(token))
-    .then(res => {
-      // console.log('deleteItemFromCartById', res);
-      return res.data;
-    })
+    .then(res => res.data)
     .catch(error => {
       logger.error(
         `Error in Shop Service - deleteItemFromCartById( `,
@@ -165,13 +216,12 @@ const addProduct = ({
         'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
       },
     })
-    .then(res => {
-      // console.log('addedItem on cart:', res.data);
-      return res.data;
-    })
+    .then(res => res.data)
     .catch(error => {
-      logger.error(`Error in Shop Service - addProduct( `, error.message);
-      console.log('____addProduct_____ error', error.message);
+      logger.error(
+        `Error in Shop Service - addProduct() for productId ${productId}: `,
+        error.message
+      );
 
       return null;
     });
@@ -187,16 +237,36 @@ const getPaymentPublicKey = currency => {
         'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
       },
     })
-    .then(res => {
-      // console.log('*************getPaymentPublicKey', res);
-      return res.data;
-    })
+    .then(
+      res =>
+        // console.log('*************getPaymentPublicKey', res);
+        res.data
+    )
     .catch(error => {
       logger.error(
         `Error in Shop Service - getPaymentPublicKey( `,
         error.message
       );
       console.log('____getPaymentPublicKey_____ error', error);
+
+      return null;
+    });
+};
+
+const removeProduct = ({ cartId, lineItemId }) => {
+  const url = `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems/${lineItemId}`;
+  const http = HttpClient.getHttpClient();
+
+  return http
+    .delete(url, {
+      headers: {
+        'api-key': SWIAM_SHOP_API_KEY,
+      },
+    })
+    .then(res => res.data)
+    .catch(error => {
+      logger.error(`Error in Shop Service - removeProduct( `, error.message);
+      console.log('____removeProduct_____ error', error.message);
 
       return null;
     });
@@ -230,7 +300,7 @@ const setPayment = (cartId, currency, amount, transactionToken) => {
     gateway: 'Stripe',
   });
 
-  const http = HttpClient.getHttpClient();
+  const http = HttpClient.getHttpClient(6000);
   return http
     .put(url, data, {
       headers: {
@@ -238,10 +308,7 @@ const setPayment = (cartId, currency, amount, transactionToken) => {
         'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
       },
     })
-    .then(res => {
-      // console.log('___________setPayment', res);
-      return res.data;
-    })
+    .then(res => res.data)
     .catch(error => {
       logger.error(`Error in Shop Service - setPayment( `, error.message);
       console.log('____setPayment_____ error', error.message);
@@ -250,7 +317,24 @@ const setPayment = (cartId, currency, amount, transactionToken) => {
     });
 };
 
+const getMerchandiseByEventId = (eventId, token) => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/eventmerchandise/${eventId}`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      logger.error(
+        `Error in Merchandise Service - getMerchandiseByEventId() for event ID: ${eventId}`,
+        error.message
+      );
+      return null;
+    });
+};
+
 export {
+  getProductDataByEventId,
   getProductIdByEventId,
   getCartId,
   getCart,
@@ -259,4 +343,6 @@ export {
   deleteItemFromCartById,
   setPayment,
   setCustomerInfo,
+  removeProduct,
+  getMerchandiseByEventId,
 };
