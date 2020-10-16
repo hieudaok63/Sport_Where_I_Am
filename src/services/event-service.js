@@ -1,7 +1,7 @@
 import HttpClient from '../tools/http-client';
 import { getAuthOption } from '../tools/auth-header';
 
-const { SWIAM_API_V2 } = process.env;
+const { SWIAM_API_V2, SWIAM_OPENAPI } = process.env;
 
 export const getEventById = (eventId, token) => {
   const url = `${SWIAM_API_V2}/event?eventid=${eventId}&ticketApi=true`;
@@ -23,14 +23,14 @@ export const getEventById = (eventId, token) => {
 };
 
 export const getEventDataById = (eventId, token) => {
-  const url = `${SWIAM_API_V2}/event?eventid=${eventId}&ticketApi=true`;
+  const url = `${SWIAM_OPENAPI}/cms/v1/eventData/${eventId}`;
 
   const http = HttpClient.getHttpClient();
   return http
     .get(url, token && getAuthOption(token))
     .then(res => {
-      console.log(res.data);
-      return res.data;
+      console.log(res.data.data);
+      return res.data.data;
     })
     .catch(error => {
       logger.error(

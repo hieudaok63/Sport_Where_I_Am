@@ -12,6 +12,7 @@ import TeamAbbrev from './TeamAbbrev';
 import City from './City';
 import { getCityById } from '../../services/city-service';
 import { getEventDataById } from '../../services/event-service';
+import League from './League';
 
 const EventData = new GraphQLObjectType({
   name: 'EventData',
@@ -20,6 +21,8 @@ const EventData = new GraphQLObjectType({
     eventDateTime: { type: GraphQLString },
     eventImage: { type: GraphQLString },
     eventName: { type: GraphQLString },
+    league: { type: League },
+    venue: { type: VenueDetails },
   },
 });
 
