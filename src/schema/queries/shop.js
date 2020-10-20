@@ -26,7 +26,7 @@ const payNow = {
     amount: { type: GraphQLFloat },
     transactionToken: { type: GraphQLString },
   },
-  resolve: (rawUserData, args, req) => {
+  resolve: (rawCartData, args, req) => {
     const { cartId, currency, amount, transactionToken } = args;
     if (cartId && currency && amount && transactionToken) {
       return setPayment(cartId, currency, amount, transactionToken);
