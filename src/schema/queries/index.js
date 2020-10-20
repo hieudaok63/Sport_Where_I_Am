@@ -32,6 +32,7 @@ import {
   addProductOnCart,
   customerInfo,
   removeProductFromCart,
+  merchandiseByEventId,
 } from './shop';
 import {
   leagueInfo,
@@ -103,4 +104,5 @@ export {
   listAllStates,
   listAllCities,
   removeProductFromCart,
+  merchandiseByEventId,
 };

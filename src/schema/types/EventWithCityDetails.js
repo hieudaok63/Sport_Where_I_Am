@@ -11,6 +11,20 @@ import TeamAbbrev from './TeamAbbrev';
 import League from './League';
 import City from './City';
 import { getCityById } from '../../services/city-service';
+import { getEventDataById } from '../../services/event-service';
+import League from './League';
+
+const EventData = new GraphQLObjectType({
+  name: 'EventData',
+  fields: {
+    eventID: { type: GraphQLID },
+    eventDateTime: { type: GraphQLString },
+    eventImage: { type: GraphQLString },
+    eventName: { type: GraphQLString },
+    league: { type: League },
+    venue: { type: VenueDetails },
+  },
+});
 import { getLeagueInfoByAbbreviation } from '../../services/league-service';
 
 const EventWithCityDetails = new GraphQLObjectType({
@@ -43,6 +57,16 @@ const EventWithCityDetails = new GraphQLObjectType({
         const { venue } = rawCityData;
         if (venue && venue.cityid) {
           return getCityById(venue.cityid, req.token);
+        }
+        return null;
+      },
+    },
+    moreEventData: {
+      type: EventData,
+      resolve: (rawEventData, args, req) => {
+        const { eventid } = rawEventData;
+        if (eventid) {
+          return getEventDataById(eventid, req.token);
         }
         return null;
       },
