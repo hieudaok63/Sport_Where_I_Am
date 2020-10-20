@@ -11,7 +11,7 @@ import TeamAbbrev from './TeamAbbrev';
 import League from './League';
 import City from './City';
 import { getCityById } from '../../services/city-service';
-import { getLeagueInfo } from '../../services/league-service';
+import { getLeagueInfoByAbbreviation } from '../../services/league-service';
 
 const EventWithCityDetails = new GraphQLObjectType({
   name: 'EventWithCityDetails',
@@ -50,10 +50,9 @@ const EventWithCityDetails = new GraphQLObjectType({
     league: {
       type: League,
       resolve: (rawEventData, args, req) => {
-        // TODO: use leagueId from parent data when it has been changed from abbreviation to id
-        // const { leagueId } = rawEventData;
-        const leagueId = 200;
-        if (leagueId) return getLeagueInfo(req.token, leagueId);
+        // NB: leagueid in this case is actually the abbreviation
+        const { leagueid } = rawEventData;
+        if (leagueid) return getLeagueInfoByAbbreviation(req.token, leagueid);
         return null;
       },
     },

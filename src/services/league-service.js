@@ -35,6 +35,22 @@ export const getLeagueInfo = (token, leagueId) => {
     });
 };
 
+export const getLeagueInfoByAbbreviation = (token, leagueAbbreviation) => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/league/${leagueAbbreviation}/infoByAbbreviation`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      logger.error(
+        `Error in League Service - getLeagueInfoByAbbreviation() - leagueAbbreviation:${leagueAbbreviation}`,
+        error.message
+      );
+      return null;
+    });
+};
+
 export const getLeagueVideos = (token, leagueId) => {
   const url = `${SWIAM_OPENAPI}/cms/v1/league/${leagueId}/videos`;
 
