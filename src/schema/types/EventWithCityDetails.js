@@ -12,7 +12,7 @@ import League from './League';
 import City from './City';
 import { getCityById } from '../../services/city-service';
 import { getEventDataById } from '../../services/event-service';
-import League from './League';
+import { getLeagueInfoByAbbreviation } from '../../services/league-service';
 
 const EventData = new GraphQLObjectType({
   name: 'EventData',
@@ -25,7 +25,6 @@ const EventData = new GraphQLObjectType({
     venue: { type: VenueDetails },
   },
 });
-import { getLeagueInfoByAbbreviation } from '../../services/league-service';
 
 const EventWithCityDetails = new GraphQLObjectType({
   name: 'EventWithCityDetails',
