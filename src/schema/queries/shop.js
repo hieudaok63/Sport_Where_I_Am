@@ -16,7 +16,7 @@ import {
   getProductDataByEventId,
   removeProduct,
 } from '../../services/shop-service';
-import { HotelProduct, HotelValue } from '../types/Hotel';
+import { HotelProduct, ProductIdValue } from '../types/Hotel';
 
 const payNow = {
   type: Cart, // TODO: verify what the api returns when the payment is concluded
@@ -53,7 +53,7 @@ const hotelProductById = {
 };
 
 const productIdByEventId = {
-  type: GraphQLList(HotelValue),
+  type: GraphQLList(ProductIdValue),
   args: {
     eventId: { type: GraphQLString },
     cartId: { type: GraphQLString },
@@ -85,9 +85,7 @@ const productDataByEventId = {
 const createCartId = {
   type: Cart,
   args: {},
-  resolve: (rawUserData, args, req) => {
-    return getCartId();
-  },
+  resolve: (rawUserData, args, req) => getCartId(),
 };
 
 const cartById = {

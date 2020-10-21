@@ -5,9 +5,9 @@ import {
   GraphQLList,
   GraphQLFloat,
 } from 'graphql';
+import GraphQLLong from 'graphql-type-long';
 import Country from './Country';
 import VenueDetails from './VenueDetails';
-import GraphQLLong from 'graphql-type-long';
 import DateTimeStatus from './shop/DateTimeStatus';
 import Facilities from './shop/Facilities';
 import Ticks from './shop/Ticks';
@@ -69,8 +69,8 @@ export const TopHotel = new GraphQLObjectType({
   },
 });
 
-export const HotelValue = new GraphQLObjectType({
-  name: 'HotelValue',
+export const ProductIdValue = new GraphQLObjectType({
+  name: 'ProductIdValue',
   fields: {
     value: { type: GraphQLString },
   },
