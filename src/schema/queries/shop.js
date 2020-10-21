@@ -25,11 +25,33 @@ const payNow = {
     currency: { type: GraphQLString },
     amount: { type: GraphQLFloat },
     transactionToken: { type: GraphQLString },
+    firstName: { type: GraphQLString },
+    lastName: { type: GraphQLString },
+    email: { type: GraphQLString },
+    phone: { type: GraphQLString },
   },
   resolve: (rawCartData, args, req) => {
-    const { cartId, currency, amount, transactionToken } = args;
+    const {
+      cartId,
+      currency,
+      amount,
+      transactionToken,
+      firstName,
+      lastName,
+      email,
+      phone,
+    } = args;
     if (cartId && currency && amount && transactionToken) {
-      return setPayment(cartId, currency, amount, transactionToken);
+      return setPayment(
+        cartId,
+        currency,
+        amount,
+        transactionToken,
+        firstName,
+        lastName,
+        email,
+        phone
+      );
     }
     return null;
   },

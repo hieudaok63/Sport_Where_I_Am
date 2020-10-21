@@ -138,7 +138,7 @@ const getCart = (cartId, currency = 'AUD') => {
     });
 };
 
-const setCustomerInfo = (
+const setCustomerInfo = async (
   cartId,
   firstName,
   lastName,
@@ -194,7 +194,7 @@ const deleteItemFromCartById = (cartId = 'GEJKL8', lineItemId, token) => {
 };
 
 const addProduct = ({
-  cartId = 'GEJKL8',
+  cartId,
   variantId,
   quantity,
   productId,
@@ -277,15 +277,16 @@ const syncLineItems = async (
   cartId,
   firstName,
   lastName,
-  ticketingEmail,
+  email,
   phone
 ) => {
   const url = `${SWIAM_API_V3}/shop/carts/${cartId}/customerInfo?syncLineItems=false`;
   const data = JSON.stringify({
     name: `${firstName} ${lastName}`,
-    email: ticketingEmail,
+    email,
     phone,
   });
+  const http = HttpClient.getHttpClient();
   return http
     .put(url, data, {
       headers: {
@@ -309,7 +310,7 @@ const setPayment = (
   transactionToken,
   firstName,
   lastName,
-  ticketingEmail,
+  email,
   phone
 ) => {
   const url = `${SWIAM_API_V3}/shop/carts/${cartId}/payment`;
@@ -338,9 +339,22 @@ const setPayment = (
     token: transactionToken,
     gateway: 'Stripe',
   });
-  syncLineItems(cartId, 'Bob', 'Rob', 'eastuto@gmail.com')
+  // const customerInfoRes = await setCustomerInfo(
+  //   cartId,
+  //   'Bob',
+  //   'Rob',
+  //   'eastuto@gmail.com',
+  //   '+61407819466'
+  // );
+  return syncLineItems(
+    cartId,
+    firstName,
+    lastName,
+    email,
+    phone
+  )
     .then(() => {
-      const http = HttpClient.getHttpClient(6000);
+      const http = HttpClient.getHttpClient(8000);
       return http
         .put(url, data, {
           headers: {
