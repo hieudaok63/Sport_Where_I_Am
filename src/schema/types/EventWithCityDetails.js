@@ -8,11 +8,11 @@ import {
 } from 'graphql';
 import VenueDetails from './VenueDetails';
 import TeamAbbrev from './TeamAbbrev';
-
+import League from './League';
 import City from './City';
 import { getCityById } from '../../services/city-service';
 import { getEventDataById } from '../../services/event-service';
-import League from './League';
+import { getLeagueInfoByAbbreviation } from '../../services/league-service';
 
 const EventData = new GraphQLObjectType({
   name: 'EventData',
@@ -67,6 +67,15 @@ const EventWithCityDetails = new GraphQLObjectType({
         if (eventid) {
           return getEventDataById(eventid, req.token);
         }
+        return null;
+      },
+    },
+    league: {
+      type: League,
+      resolve: (rawEventData, args, req) => {
+        // NB: leagueid in this case is actually the abbreviation
+        const { leagueid } = rawEventData;
+        if (leagueid) return getLeagueInfoByAbbreviation(req.token, leagueid);
         return null;
       },
     },

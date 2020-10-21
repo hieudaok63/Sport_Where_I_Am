@@ -28,7 +28,23 @@ export const getLeagueInfo = (token, leagueId) => {
     .then(res => res.data.data)
     .catch(error => {
       logger.error(
-        `Error in League Service - getLeagueInfo() - `,
+        `Error in League Service - getLeagueInfo() - leagueId:${leagueId}`,
+        error.message
+      );
+      return null;
+    });
+};
+
+export const getLeagueInfoByAbbreviation = (token, leagueAbbreviation) => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/league/${leagueAbbreviation}/infoByAbbreviation`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      logger.error(
+        `Error in League Service - getLeagueInfoByAbbreviation() - leagueAbbreviation:${leagueAbbreviation}`,
         error.message
       );
       return null;
