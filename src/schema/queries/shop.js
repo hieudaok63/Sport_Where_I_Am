@@ -1,5 +1,6 @@
 import { GraphQLList, GraphQLString, GraphQLFloat, GraphQLInt } from 'graphql';
-import { EventProduct } from '../types/Product';
+import Product, { EventProduct } from '../types/Product';
+import Merchandise from '../types/Merchandise';
 import Cart from '../types/shop/Cart';
 import CustomerInfo from '../types/shop/CustomerInfo';
 import PaymentPublicKey from '../types/PaymentPublicKey';
@@ -15,6 +16,7 @@ import {
   setCustomerInfo,
   getProductDataByEventId,
   removeProduct,
+  getMerchandiseByEventId,
 } from '../../services/shop-service';
 import { HotelProduct, ProductIdValue } from '../types/Hotel';
 
@@ -25,11 +27,33 @@ const payNow = {
     currency: { type: GraphQLString },
     amount: { type: GraphQLFloat },
     transactionToken: { type: GraphQLString },
+    firstName: { type: GraphQLString },
+    lastName: { type: GraphQLString },
+    email: { type: GraphQLString },
+    phone: { type: GraphQLString },
   },
-  resolve: (rawUserData, args, req) => {
-    const { cartId, currency, amount, transactionToken } = args;
+  resolve: (rawCartData, args, req) => {
+    const {
+      cartId,
+      currency,
+      amount,
+      transactionToken,
+      firstName,
+      lastName,
+      email,
+      phone,
+    } = args;
     if (cartId && currency && amount && transactionToken) {
-      return setPayment(cartId, currency, amount, transactionToken);
+      return setPayment(
+        cartId,
+        currency,
+        amount,
+        transactionToken,
+        firstName,
+        lastName,
+        email,
+        phone
+      );
     }
     return null;
   },
@@ -177,6 +201,20 @@ const removeProductFromCart = {
   resolve: (rawUserData, args, req) => removeProduct(args),
 };
 
+const merchandiseByEventId = {
+  type: Merchandise,
+  args: {
+    eventId: { type: GraphQLString },
+  },
+  resolve: (rawUserData, args, req) => {
+    const { eventId, transactionToken } = args;
+    if (eventId && transactionToken) {
+      return getMerchandiseByEventId(eventId, transactionToken);
+    }
+    return null;
+  },
+};
+
 export {
   hotelProductById,
   productIdByEventId,
@@ -189,4 +227,5 @@ export {
   payNow,
   customerInfo,
   addProductOnCart,
+  merchandiseByEventId,
 };

@@ -11,6 +11,8 @@ import SplitTotal from './SplitTotal';
 import CustomerInfo from './CustomerInfo';
 import Payment from './Payment';
 import StatusLine from './StatusLine';
+import Booking from '../Booking';
+import { findBooking } from '../../../services/booking-service';
 
 const Cart = new GraphQLObjectType({
   name: 'Cart',
@@ -30,6 +32,15 @@ const Cart = new GraphQLObjectType({
     promoCodes: { type: GraphQLList(GraphQLString) },
     statusLines: { type: GraphQLList(StatusLine) },
     created: { type: GraphQLString },
+    booking: {
+      type: Booking,
+      resolve: (rawCartData, args, req) => {
+        if (rawCartData.id) {
+          return findBooking(rawCartData.id, req.token);
+        }
+        return null;
+      },
+    },
   },
 });
 

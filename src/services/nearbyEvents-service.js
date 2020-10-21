@@ -9,7 +9,7 @@ export const getNearbyEventsByCityId = (cityId, token) => {
   const http = HttpClient.getHttpClient();
   return http
     .get(url, token && getAuthOption(token))
-    .then(res => res.data.data)
+    .then(res => res.data.data.slice(0, 5))
     .catch(error => {
       logger.error(
         `Error in Events Service - nearbyEventsByCityId() - `,

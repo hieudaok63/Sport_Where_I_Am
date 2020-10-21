@@ -4,7 +4,7 @@ import { get } from 'lodash';
 import HttpClient from '../tools/http-client';
 import { getAuthOption } from '../tools/auth-header';
 
-const { SWIAM_API, SWIAM_API_V3, SWIAM_SHOP_API_KEY } = process.env;
+const { SWIAM_API, SWIAM_OPENAPI, SWIAM_API_V3, SWIAM_SHOP_API_KEY } = process.env;
 
 const getProductsByEventId = eventId => {
   const url = `${SWIAM_API_V3}/shop/products/${eventId}`;
@@ -172,7 +172,7 @@ const getCart = (cartId, currency = 'AUD') => {
     });
 };
 
-const setCustomerInfo = (
+const setCustomerInfo = async (
   cartId,
   firstName,
   lastName,
@@ -228,7 +228,7 @@ const deleteItemFromCartById = (cartId = 'GEJKL8', lineItemId, token) => {
 };
 
 const addProduct = ({
-  cartId = 'GEJKL8',
+  cartId,
   variantId,
   quantity,
   productId,
@@ -306,7 +306,47 @@ const removeProduct = ({ cartId, lineItemId }) => {
     });
 };
 
-const setPayment = (cartId, currency, amount, transactionToken) => {
+// This call is required by the API for God knows what reason
+const syncLineItems = async (
+  cartId,
+  firstName,
+  lastName,
+  email,
+  phone
+) => {
+  const url = `${SWIAM_API_V3}/shop/carts/${cartId}/customerInfo?syncLineItems=false`;
+  const data = JSON.stringify({
+    name: `${firstName} ${lastName}`,
+    email,
+    phone,
+  });
+  const http = HttpClient.getHttpClient();
+  return http
+    .put(url, data, {
+      headers: {
+        'Content-Type': 'application/json',
+        'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
+      },
+    })
+    .then(res => res.data)
+    .catch(error => {
+      logger.error(`Error in Shop Service - setPayment( `, error.message);
+      console.log('____setPayment_____ error', error.message);
+
+      return null;
+    });
+};
+
+const setPayment = (
+  cartId,
+  currency,
+  amount,
+  transactionToken,
+  firstName,
+  lastName,
+  email,
+  phone
+) => {
   const url = `${SWIAM_API_V3}/shop/carts/${cartId}/payment`;
 
   // TODO: remove this sample code when the api response becomes stable
@@ -333,20 +373,57 @@ const setPayment = (cartId, currency, amount, transactionToken) => {
     token: transactionToken,
     gateway: 'Stripe',
   });
+  // const customerInfoRes = await setCustomerInfo(
+  //   cartId,
+  //   'Bob',
+  //   'Rob',
+  //   'eastuto@gmail.com',
+  //   '+61407819466'
+  // );
+  return syncLineItems(
+    cartId,
+    firstName,
+    lastName,
+    email,
+    phone
+  )
+    .then(() => {
+      const http = HttpClient.getHttpClient(8000);
+      return http
+        .put(url, data, {
+          headers: {
+            'Content-Type': 'application/json',
+            'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
+          },
+        })
+        .then(res => res.data)
+        .catch(error => {
+          logger.error(`Error in Shop Service - setPayment( `, error.message);
+          console.log('____setPayment_____ error', error.message);
 
-  const http = HttpClient.getHttpClient(6000);
-  return http
-    .put(url, data, {
-      headers: {
-        'Content-Type': 'application/json',
-        'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
-      },
+          return null;
+        });
     })
-    .then(res => res.data)
-    .catch(error => {
-      logger.error(`Error in Shop Service - setPayment( `, error.message);
-      console.log('____setPayment_____ error', error.message);
+    .catch(e => {
+      console.log(
+        `Error syncing line items before payment for cart id ${cartId}`
+      );
+      return null;
+    });
+};
 
+const getMerchandiseByEventId = (eventId, token) => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/eventmerchandise/${eventId}`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      logger.error(
+        `Error in Merchandise Service - getMerchandiseByEventId() for event ID: ${eventId}`,
+        error.message
+      );
       return null;
     });
 };
@@ -363,4 +440,5 @@ export {
   setPayment,
   setCustomerInfo,
   removeProduct,
+  getMerchandiseByEventId,
 };
