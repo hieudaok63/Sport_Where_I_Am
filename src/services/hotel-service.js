@@ -63,3 +63,19 @@ export const getHotelsForBigSportingEvents = token => {
       return null;
     });
 };
+
+export const getHotelsNearTheGame = (eventId, token) => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/hotelpage/hotelsNearTheGame/${eventId}`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      logger.error(
+        `Error in Hotel Service - getHotelsNearTheGame(eventId:${eventId})`,
+        error.message
+      );
+      return null;
+    });
+};

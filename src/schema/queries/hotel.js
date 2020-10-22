@@ -6,6 +6,7 @@ import {
   getHotelsForBigSportingEvents,
   getPopularHotels,
   getPopularHotelsByCityId,
+  getHotelsNearTheGame,
 } from '../../services/hotel-service';
 
 export const allHotels = {
@@ -29,6 +30,20 @@ export const popularHotelsByCityId = {
     const { cityId } = args;
     if (cityId !== undefined) {
       return getPopularHotelsByCityId(cityId, req.token);
+    }
+    return null;
+  },
+};
+
+export const hotelsNearTheGame = {
+  type: GraphQLList(Hotel),
+  args: {
+    eventId: { type: GraphQLString },
+  },
+  resolve: (rawUserData, args, req) => {
+    const { eventId } = args;
+    if (eventId !== undefined) {
+      return getHotelsNearTheGame(eventId, req.token);
     }
     return null;
   },
