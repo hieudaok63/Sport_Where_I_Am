@@ -5,6 +5,7 @@ import Cart from '../types/shop/Cart';
 import CustomerInfo from '../types/shop/CustomerInfo';
 import PaymentPublicKey from '../types/PaymentPublicKey';
 import {
+  getHotelProductById,
   getProductIdByEventId,
   getCartId,
   getCart,
@@ -17,6 +18,7 @@ import {
   removeProduct,
   getMerchandiseByEventId,
 } from '../../services/shop-service';
+import { HotelProduct, ProductIdValue } from '../types/Hotel';
 
 const payNow = {
   type: Cart, // TODO: verify what the api returns when the payment is concluded
@@ -57,8 +59,25 @@ const payNow = {
   },
 };
 
+const hotelProductById = {
+  type: GraphQLList(HotelProduct),
+  args: {
+    startDate: { type: GraphQLString },
+    endDate: { type: GraphQLString },
+    qualifiers: { type: GraphQLString },
+    hotelId: { type: GraphQLString },
+  },
+  resolve: (rawUserData, args) => {
+    const { startDate, endDate, qualifiers, hotelId } = args;
+    if (startDate && endDate && qualifiers && hotelId) {
+      return getHotelProductById(startDate, endDate, qualifiers, hotelId);
+    }
+    return null;
+  },
+};
+
 const productIdByEventId = {
-  type: GraphQLList(Product),
+  type: GraphQLList(ProductIdValue),
   args: {
     eventId: { type: GraphQLString },
     cartId: { type: GraphQLString },
@@ -197,6 +216,7 @@ const merchandiseByEventId = {
 };
 
 export {
+  hotelProductById,
   productIdByEventId,
   productDataByEventId,
   createCartId,

@@ -4,7 +4,41 @@ import { get } from 'lodash';
 import HttpClient from '../tools/http-client';
 import { getAuthOption } from '../tools/auth-header';
 
-const { SWIAM_API_V3, SWIAM_OPENAPI, SWIAM_SHOP_API_KEY } = process.env;
+const { SWIAM_API, SWIAM_OPENAPI, SWIAM_API_V3, SWIAM_SHOP_API_KEY } = process.env;
+
+const getProductsByEventId = eventId => {
+  const url = `${SWIAM_API_V3}/shop/products/${eventId}`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, {
+      headers: {
+        'Content-Type': 'application/json',
+        'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
+      },
+    })
+    .then(res => res.data)
+    .catch(error => {
+      logger.error(
+        `Error in Shop Service - getProductsByEventId() for event id: ${eventId} `,
+        error.message
+      );
+      console.log('____getProductsByEventId_____ error', error);
+    });
+};
+
+const getHotelProductById = (startDate, endDate, qualifiers, hotelId) => {
+  const url = `${SWIAM_API}/admin/enc?message=hb:${startDate}:${endDate}:${qualifiers}:${hotelId}`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url)
+    .then(res => getProductsByEventId(res.data))
+    .catch(error => {
+      logger.error(`Error in Shop Service - getEventId()`, error.message);
+      console.log('____getEventId_____ error', error);
+    });
+};
 
 const getProductDataByProductId = async (
   productId,
@@ -396,6 +430,7 @@ const getMerchandiseByEventId = (eventId, token) => {
 
 export {
   getProductDataByEventId,
+  getHotelProductById,
   getProductIdByEventId,
   getCartId,
   getCart,
