@@ -54,8 +54,8 @@ jobs:
           key: node_modules-{{ checksum "package.json" }}
           paths:
             - ~/app/node_modules/
-  Build-Push-Image-Docker:
-    description: Build and push image to Google Container Registry
+  staging-build-push-image-docker:
+    description: Build and push staging image to Google Container Registry
     machine: true
     steps:
       - checkout
@@ -71,19 +71,59 @@ jobs:
             --build-arg UNIVERSAL_API='https://www.universal-tutorial.com/api'
             --build-arg UNIVERSAL_USER_EMAIL=$UNIVERSAL_USER_EMAIL
             --build-arg SWIAM_UNIVERSAL_API_KEY=$SWIAM_UNIVERSAL_API_KEY"
+          image: staging-swiam-gql
+          tag: $CIRCLE_SHA1 #Change version number e.g to 'v3' when updating application
+      - gcr/push-image:
+          image: staging-swiam-gql
+          tag: $CIRCLE_SHA1 #Change version number e.g to 'v3' when updating application
+
+  production-build-push-image-docker:
+    description: Build and push staging image to Google Container Registry
+    machine: true
+    steps:
+      - checkout
+      - gcr/gcr-auth
+      - gcr/build-image:
+          extra_build_args: "--build-arg SWIAM_API='https://api.sportswhereiam.com/swiam-api'
+               --build-arg SWIAM_API_V2='https://api.sportswhereiam.com/swiam-api/v2'
+               --build-arg SWIAM_API_V3I='https://api.sportswhereiam.com/swiam-api/v3i'
+               --build-arg SWIAM_API_V3='https://api.sportswhereiam.com/swiam-api/v3'
+              --build-arg SWIAM_OPENAPI='https://api.sportswhereiam.com/openapi'
+              --build-arg SWIAM_SHOP_API_KEY=$SWIAM_SHOP_API_KEY
+              --build-arg BASE_GQL_URL='http://localhost'
+              --build-arg UNIVERSAL_API='https://www.universal-tutorial.com/api'
+              --build-arg UNIVERSAL_USER_EMAIL=$UNIVERSAL_USER_EMAIL
+              --build-arg SWIAM_UNIVERSAL_API_KEY=$SWIAM_UNIVERSAL_API_KEY"
           image: swiam-gql
           tag: $CIRCLE_SHA1 #Change version number e.g to 'v3' when updating application
       - gcr/push-image:
           image: swiam-gql
           tag: $CIRCLE_SHA1 #Change version number e.g to 'v3' when updating application
 
-  deploy:
-    description: Deploy application to Google Kubernetes Engine
+  staging-deploy:
+    description: Deploy Staging application to Google Kubernetes Engine
+    machine: true
+    steps:
+      - gke/install
+      - gke/update-kubeconfig-with-credentials:
+          cluster: staging-swiam-cluster
+          google-compute-zone: STAGING_GOOGLE_COMPUTE_ZONE
+          perform-login: true
+      - gke/rollout-image:
+          cluster: staging-swiam-cluster
+          deployment: staging-swiam-gql
+          container: staging-swiam-gql
+          image: gcr.io/swiam-220407/staging-swiam-gql # change version when updating
+          tag: $CIRCLE_SHA1
+
+  production-deploy:
+    description: Deploy Production application to Google Kubernetes Engine
     machine: true
     steps:
       - gke/install
       - gke/update-kubeconfig-with-credentials:
           cluster: swiam-cluster
+          google-compute-zone: STAGING_GOOGLE_COMPUTE_ZONE
           perform-login: true
       - gke/rollout-image:
           cluster: swiam-cluster
@@ -91,17 +131,28 @@ jobs:
           container: swiam-gql
           image: gcr.io/swiam-220407/swiam-gql # change version when updating
           tag: $CIRCLE_SHA1
+
 workflows:
   build_update_deploy:
     jobs:
       - build-and-test
-      - Build-Push-Image-Docker:
+      - staging-build-push-image-docker:
           requires:
             - build-and-test
           filters:
             branches:
               only:
-                - develop
-      - deploy:
+                - staging
+      - staging-deploy:
           requires:
-            - Build-Push-Image-Docker
+            - staging-build-push-image-docker
+      - production-build-push-image-docker:
+          requires:
+            - build-and-test
+          filters:
+            branches:
+              only:
+                - master
+      - production-deploy:
+          requires:
+            - production-build-push-image-docker
