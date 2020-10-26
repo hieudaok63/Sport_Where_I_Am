@@ -100,6 +100,22 @@ jobs:
           image: swiam-gql
           tag: $CIRCLE_SHA1 #Change version number e.g to 'v3' when updating application
 
+  staging-deploy:
+    description: Deploy Staging application to Google Kubernetes Engine
+    machine: true
+    steps:
+      - gke/install
+      - gke/update-kubeconfig-with-credentials:
+          cluster: staging-swiam-cluster
+          google-compute-zone: STAGING_GOOGLE_COMPUTE_ZONE
+          perform-login: true
+      - gke/rollout-image:
+          cluster: staging-swiam-cluster
+          deployment: staging-swiam-gql
+          container: staging-swiam-gql
+          image: gcr.io/swiam-220407/staging-swiam-gql # change version when updating
+          tag: $CIRCLE_SHA1
+
   production-deploy:
     description: Deploy Production application to Google Kubernetes Engine
     machine: true
@@ -107,6 +123,7 @@ jobs:
       - gke/install
       - gke/update-kubeconfig-with-credentials:
           cluster: swiam-cluster
+          google-compute-zone: STAGING_GOOGLE_COMPUTE_ZONE
           perform-login: true
       - gke/rollout-image:
           cluster: swiam-cluster
@@ -115,20 +132,6 @@ jobs:
           image: gcr.io/swiam-220407/swiam-gql # change version when updating
           tag: $CIRCLE_SHA1
 
-  staging-deploy:
-    description: Deploy Staging application to Google Kubernetes Engine
-    machine: true
-    steps:
-      - gke/install
-      - gke/update-kubeconfig-with-credentials:
-          cluster: staging-swiam-cluster
-          perform-login: true
-      - gke/rollout-image:
-          cluster: staging-swiam-cluster
-          deployment: staging-swiam-gql
-          container: staging-swiam-gql
-          image: gcr.io/swiam-220407/staging-swiam-gql # change version when updating
-          tag: $CIRCLE_SHA1
 workflows:
   build_update_deploy:
     jobs:
