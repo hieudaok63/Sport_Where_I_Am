@@ -50,7 +50,7 @@ jobs:
              --build-arg SWIAM_API_V3I='https://apidev2.sportswhereiam.com/swiam-api/v3i'
              --build-arg SWIAM_API_V3='https://apidev2.sportswhereiam.com/swiam-api/v3'
             --build-arg SWIAM_OPENAPI='https://apidev2.sportswhereiam.com/openapi'
-            --build-arg SWIAM_SHOP_API_KEY=$SWIAM_SHOP_API_KEY
+            --build-arg SWIAM_SHOP_API_KEY=$STAGING_SWIAM_SHOP_API_KEY
             --build-arg BASE_GQL_URL='http://localhost'
             --build-arg UNIVERSAL_API='https://www.universal-tutorial.com/api'
             --build-arg UNIVERSAL_USER_EMAIL=$UNIVERSAL_USER_EMAIL
