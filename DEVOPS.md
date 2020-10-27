@@ -1,7 +1,7 @@
 ### Intended Audience
 
 This documentation is technical in nature. It is intended for team members looking to understand the CI / CD process of the Sports Where I Am project
-The instructions are reproduced in Confluence - https://lerocketlab.atlassian.net/l/c/DuubKQES
+The instructions are reproduced in Confluence - https://lerocketlab.atlassian.net/l/c/2UrZVxty
 
 ### Set up Google Cloud cli
 
