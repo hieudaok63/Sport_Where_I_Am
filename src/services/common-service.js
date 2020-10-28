@@ -5,7 +5,7 @@ const { SWIAM_OPENAPI } = process.env;
 
 export const getObjectIdByName = (name, token) => {
   const parsedName = name && name.replace(/\s+/g, '-').toLowerCase();
-  const url = `${SWIAM_OPENAPI}/cms/v1/cityOrVenueByName/${parsedName}`;
+  const url = `${SWIAM_OPENAPI}/cms/v1/objectIdByName/${parsedName}`;
   const http = HttpClient.getHttpClient();
   return http
     .get(url, token && getAuthOption(token))
