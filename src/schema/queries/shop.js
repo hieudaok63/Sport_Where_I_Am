@@ -1,4 +1,10 @@
-import { GraphQLList, GraphQLString, GraphQLFloat, GraphQLInt } from 'graphql';
+import {
+  GraphQLList,
+  GraphQLString,
+  GraphQLFloat,
+  GraphQLInt,
+  GraphQLObjectType,
+} from 'graphql';
 import Product, { EventProduct } from '../types/Product';
 import Merchandise from '../types/Merchandise';
 import Cart from '../types/shop/Cart';
@@ -31,6 +37,12 @@ const payNow = {
     lastName: { type: GraphQLString },
     email: { type: GraphQLString },
     phone: { type: GraphQLString },
+    lineItems: {
+      type: GraphQLString,
+    },
+    typeTickets: {
+      type: GraphQLList(GraphQLString),
+    },
   },
   resolve: (rawCartData, args, req) => {
     const {
@@ -42,9 +54,12 @@ const payNow = {
       lastName,
       email,
       phone,
+      lineItems,
+      typeTickets,
     } = args;
     if (cartId && currency && amount && transactionToken) {
-      return setPayment(
+      return setPayment({
+        lineItems: JSON.parse(lineItems),
         cartId,
         currency,
         amount,
@@ -52,8 +67,9 @@ const payNow = {
         firstName,
         lastName,
         email,
-        phone
-      );
+        phone,
+        typeTickets,
+      });
     }
     return null;
   },

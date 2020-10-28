@@ -52,5 +52,7 @@ export const EventProduct = new GraphQLObjectType({
     url: { type: GraphQLString },
     urlType: { type: GraphQLString },
     variants: { type: GraphQLList(ProductVariant) },
+    status: { type: GraphQLString },
+    message: { type: GraphQLString },
   },
 });

@@ -62,6 +62,8 @@ const getProductDataByProductId = async (
       response.data &&
       response.data.length &&
       response.data[0];
+    console.log('\n\n\n ==== getProductDataByProductId ====');
+    console.log(data);
     return data;
   } catch (error) {
     console.log('Error: ');
@@ -227,13 +229,7 @@ const deleteItemFromCartById = (cartId = 'GEJKL8', lineItemId, token) => {
     });
 };
 
-const addProduct = ({
-  cartId,
-  variantId,
-  quantity,
-  productId,
-  currency,
-}) => {
+const addProduct = ({ cartId, variantId, quantity, productId, currency }) => {
   const url = `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems`;
   const data = {
     productId,
@@ -307,13 +303,7 @@ const removeProduct = ({ cartId, lineItemId }) => {
 };
 
 // This call is required by the API for God knows what reason
-const syncLineItems = async (
-  cartId,
-  firstName,
-  lastName,
-  email,
-  phone
-) => {
+const syncLineItems = async (cartId, firstName, lastName, email, phone) => {
   const url = `${SWIAM_API_V3}/shop/carts/${cartId}/customerInfo?syncLineItems=false`;
   const data = JSON.stringify({
     name: `${firstName} ${lastName}`,
@@ -337,33 +327,58 @@ const syncLineItems = async (
     });
 };
 
-const setPayment = (
+const setPayment = async ({
   cartId,
   currency,
+  lineItems,
   amount,
   transactionToken,
   firstName,
   lastName,
   email,
-  phone
-) => {
-  const url = `${SWIAM_API_V3}/shop/carts/${cartId}/payment`;
+  phone,
+  typeTickets,
+}) => {
+  const http = HttpClient.getHttpClient(8000);
+  const requestParameters = {
+    headers: {
+      'Content-Type': 'application/json',
+      'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
+    },
+  };
 
-  // TODO: remove this sample code when the api response becomes stable
+  await Promise.all(
+    lineItems.map((item, index) =>
+      http.put(
+        `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems/${
+          item.id
+        }/shippingOption`,
+        {
+          id: typeTickets[index],
+        },
+        requestParameters
+      )
+    )
+  );
 
-  // [8:28 AM] def doStripePayment(cart: JsValue, stripeToken: String ) = {
-  //   val cartId = (cart \ "id").as[String]
-  //   val currency= ( cart \ "displayCurrency" ).as[String]
-  //     val amount= (cart \ "total" \ "amount" ).as[Double]
-  //     // NB this is "OnAccount" for this example, will need "Stripe" gateway in final version (OnAccount will be disabled)
-  //     val payment= s"""{
-  //       "currencyAmount": { "currency": "$currency","amount":$amount},
-  //       "token": "$stripeToken",
-  //       "gateway": "Stripe"
-  //     }"""
-  //     println(s"Payment $payment")
-  //     await(ws.url(BaseUrl + s"/v3/shop/carts/$cartId/payment").withHttpHeaders("api-key" -> apiKey ).put(Json.parse(payment)))
-  // }
+  await Promise.all(
+    lineItems.map((item, index) =>
+      http.put(
+        `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems/${
+          item.id
+        }/customerInfo`,
+        {
+          name: `${firstName} ${lastName}`,
+          email: email,
+          phone: phone,
+          ticketingEmail: '',
+          dob: '',
+          addresses: [],
+        },
+        requestParameters
+      )
+    )
+  );
 
   const data = JSON.stringify({
     currencyAmount: {
@@ -373,29 +388,13 @@ const setPayment = (
     token: transactionToken,
     gateway: 'Stripe',
   });
-  // const customerInfoRes = await setCustomerInfo(
-  //   cartId,
-  //   'Bob',
-  //   'Rob',
-  //   'eastuto@gmail.com',
-  //   '+61407819466'
-  // );
-  return syncLineItems(
-    cartId,
-    firstName,
-    lastName,
-    email,
-    phone
-  )
+
+  return syncLineItems(cartId, firstName, lastName, email, phone)
     .then(() => {
-      const http = HttpClient.getHttpClient(8000);
+      const paymentUrl = `${SWIAM_API_V3}/shop/carts/${cartId}/payment`;
+
       return http
-        .put(url, data, {
-          headers: {
-            'Content-Type': 'application/json',
-            'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
-          },
-        })
+        .put(paymentUrl, data, requestParameters)
         .then(res => res.data)
         .catch(error => {
           logger.error(`Error in Shop Service - setPayment( `, error.message);
