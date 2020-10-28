@@ -62,6 +62,8 @@ const getProductDataByProductId = async (
       response.data &&
       response.data.length &&
       response.data[0];
+    console.log('\n\n\n ==== getProductDataByProductId ====');
+    console.log(data);
     return data;
   } catch (error) {
     console.log('Error: ');
