@@ -51,4 +51,17 @@ const City = new GraphQLObjectType({
   },
 });
 
+export const IdByName = new GraphQLObjectType({
+  name: 'IdByName',
+  fields: {
+    cityId: { type: GraphQLID },
+    cityName: { type: GraphQLString },
+    cityOverview: { type: GraphQLString },
+    country: { type: Country },
+    events: { type: GraphQLList(EventDetails) },
+    image: { type: GraphQLString },
+    imageURL: { type: GraphQLString },
+  },
+});
+
 export default City;
