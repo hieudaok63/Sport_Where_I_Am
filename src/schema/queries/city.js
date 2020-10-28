@@ -2,6 +2,7 @@ import TopCities from '../types/TopCities';
 import { GraphQLID, GraphQLList, GraphQLString } from 'graphql';
 import City, { CitySummary } from '../types/City';
 import CityDetails from '../types/CityDetails';
+import { IdByName } from './index';
 import {
   getAllCities,
   getCityById,
@@ -9,6 +10,8 @@ import {
   getPopularSportingCities,
   getTopCities,
 } from '../../services/city-service';
+
+
 
 export const cityById = {
   type: City,
