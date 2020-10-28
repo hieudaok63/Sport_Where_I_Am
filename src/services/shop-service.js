@@ -49,7 +49,8 @@ const getProductDataByProductId = async (
   const url = `${SWIAM_API_V3}/shop/products/${productId}?currency=${currency}`;
 
   const http = HttpClient.getHttpClient(5000);
-
+  console.log('==== SHOP_KEY ====');
+  console.log(SWIAM_SHOP_API_KEY);
   try {
     const response = await http.get(url, {
       headers: {
