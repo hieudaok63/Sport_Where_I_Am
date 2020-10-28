@@ -56,6 +56,7 @@ import {
   listAllStates,
   listAllCities,
 } from './universal';
+import { objectIdByName } from './common';
 
 export {
   cityById,
@@ -79,6 +80,7 @@ export {
   venueByIdFromDate,
   nearbyEventsByCityId,
   hotelProductById,
+  objectIdByName,
   productIdByEventId,
   eventById,
   createCartId,
