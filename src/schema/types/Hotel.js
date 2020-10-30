@@ -53,6 +53,7 @@ const Hotel = new GraphQLObjectType({
     venueImage: { type: GraphQLString },
     venueName: { type: GraphQLString },
     promoBanner: { type: GraphQLString },
+    nearbyVenue: { type: VenueDetails },
   },
 });
 
