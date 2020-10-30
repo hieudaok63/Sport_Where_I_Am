@@ -67,6 +67,22 @@ export const getLeagueVideos = (token, leagueId) => {
     });
 };
 
+export const getLeaguesByCityId = (token, cityId) => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/${cityId}/leagues`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      logger.error(
+        `Error in League Service - getLeaguesByCityId() - `,
+        error.message
+      );
+      return null;
+    });
+};
+
 export const getLeagueTeams = (token, leagueId) => {
   const url = `${SWIAM_OPENAPI}/cms/v1/league/${leagueId}/teams`;
 
@@ -99,4 +115,4 @@ export const getTopLeagues = (token, leagueId) => {
     });
 };
 
-export default { getAllLeagues, getLeagueInfo, getLeagueVideos, getTopLeagues };
+export default { getAllLeagues, getLeagueInfo, getLeagueVideos, getTopLeagues, getLeaguesByCityId };

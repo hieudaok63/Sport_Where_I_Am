@@ -1,4 +1,4 @@
-import { GraphQLList, GraphQLString } from 'graphql';
+import { GraphQLInt, GraphQLList, GraphQLString } from 'graphql';
 
 import Hotel, { TopHotel } from '../types/Hotel';
 import {
@@ -24,7 +24,7 @@ export const popularHotels = {
 export const popularHotelsByCityId = {
   type: GraphQLList(Hotel),
   args: {
-    cityId: { type: GraphQLString },
+    cityId: { type: GraphQLInt },
   },
   resolve: (rawUserData, args, req) => {
     const { cityId } = args;
