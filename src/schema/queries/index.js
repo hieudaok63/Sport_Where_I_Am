@@ -41,6 +41,7 @@ import {
   getleagueVideos,
   getleagueTeams,
   topLeagues,
+  leaguesByCityId,
 } from './league';
 import { eventById } from './event';
 import { sendTicketConfirmation } from './sendTicketConfirmation';
@@ -77,6 +78,7 @@ export {
   hotelsForBigSportingEvents,
   topCities,
   leagueInfo,
+  leaguesByCityId,
   venueByIdFromDate,
   nearbyEventsByCityId,
   hotelProductById,
