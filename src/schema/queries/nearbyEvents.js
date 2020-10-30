@@ -8,7 +8,7 @@ const NEARBY_EVENTS = 'NearbyEvents';
 export const nearbyEventsByCityId = {
   type: GraphQLList(Events(NEARBY_EVENTS)),
   args: {
-    cityId: { type: GraphQLString },
+    cityId: { type: GraphQLInt },
   },
   resolve: (rawEventData, args, req) => {
     const { cityId } = args;
