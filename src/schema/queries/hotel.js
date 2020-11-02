@@ -24,7 +24,7 @@ export const popularHotels = {
 export const popularHotelsByCityId = {
   type: GraphQLList(Hotel),
   args: {
-    cityId: { type: GraphQLInt },
+    cityId: { type: GraphQLString },
   },
   resolve: (rawUserData, args, req) => {
     const { cityId } = args;
