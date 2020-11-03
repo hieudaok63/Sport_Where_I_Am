@@ -17,6 +17,7 @@ import {
   popularHotels,
   popularHotelsByCityId,
   hotelsNearTheGame,
+  hotelData,
 } from './hotel';
 import { allBlogPosts } from './blogPost';
 import { loginWithEmail } from './login';
@@ -94,6 +95,7 @@ export {
   popularHotels,
   popularHotelsByCityId,
   hotelsNearTheGame,
+  hotelData,
   popularSportingCities,
   productDataByEventId,
   removeItemFromCartById,

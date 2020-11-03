@@ -1,18 +1,31 @@
 import { GraphQLInt, GraphQLList, GraphQLString } from 'graphql';
 
-import Hotel, { TopHotel } from '../types/Hotel';
+import Hotel, { TopHotel, HotelData } from '../types/Hotel';
 import {
   getAllHotels,
   getHotelsForBigSportingEvents,
   getPopularHotels,
   getPopularHotelsByCityId,
   getHotelsNearTheGame,
+  getHotelDataById,
 } from '../../services/hotel-service';
 
 export const allHotels = {
   type: GraphQLList(Hotel),
   args: {},
   resolve: (rawUserData, args, req) => getAllHotels(req.token),
+};
+
+export const hotelData = {
+  type: HotelData,
+  args: {
+    hotelId: { type: GraphQLString },
+  },
+  resolve: (rawHotelData, args, req) => {
+    const { hotelId } = args;
+    if (hotelId !== undefined) return getHotelDataById(hotelId, req.token);
+    return null;
+  },
 };
 
 export const popularHotels = {
