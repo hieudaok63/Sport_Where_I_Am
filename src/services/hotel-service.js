@@ -48,6 +48,21 @@ export const getPopularHotelsByCityId = (cityId, token) => {
     });
 };
 
+export const getHotelDataById = (hotelId, token) => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/hoteldata/${hotelId}`;
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      logger.error(
+        `Error in Hotel Service - getHotelDataById(hotelId:${hotelId})`,
+        error.message
+      );
+      return null;
+    });
+};
+
 export const getHotelsForBigSportingEvents = token => {
   const url = `${SWIAM_OPENAPI}/cms/v1/hotelpage/hotelsForBigSportingEvents`;
 
