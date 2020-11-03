@@ -57,6 +57,26 @@ const Hotel = new GraphQLObjectType({
   },
 });
 
+export const HotelData = new GraphQLObjectType({
+  name: 'HotelData',
+  fields: {
+    hotelID: { type: GraphQLString },
+    nearbyVenue: { type: VenueDetails },
+    bestEventDescription: { type: GraphQLString },
+    bestVenueDescription: { type: GraphQLString },
+    hotelName: { type: GraphQLString },
+    hotelImage: { type: GraphQLString },
+    fromPrice: { type: PriceType },
+    promoBanner: { type: GraphQLString },
+    rating: { type: GraphQLInt },
+    address: { type: GraphQLString },
+    overview: { type: GraphQLString },
+    images: { type: GraphQLList(GraphQLString) },
+    geoCoordinates: { type: CoOrdinatesType },
+    amenities: { type: GraphQLList(GraphQLString) },
+  },
+});
+
 export const TopHotel = new GraphQLObjectType({
   name: 'TopHotel',
   fields: {
