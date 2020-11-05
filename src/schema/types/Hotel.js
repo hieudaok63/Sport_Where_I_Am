@@ -68,7 +68,7 @@ export const HotelData = new GraphQLObjectType({
     hotelImage: { type: GraphQLString },
     fromPrice: { type: PriceType },
     promoBanner: { type: GraphQLString },
-    rating: { type: GraphQLInt },
+    rating: { type: GraphQLFloat },
     address: { type: GraphQLString },
     overview: { type: GraphQLString },
     images: { type: GraphQLList(GraphQLString) },
