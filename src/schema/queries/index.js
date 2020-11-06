@@ -8,7 +8,7 @@ import {
 import { allSports } from './sport';
 import { searchByTerm } from './search';
 import { allPopularEvents } from './popularEvents';
-import { nearbyEventsByCityId } from './nearbyEvents';
+import { nearbyEventsByCityId, eventsNearHotel } from './nearbyEvents';
 import { allExperiences } from './experiences';
 import { allCarousels } from './carousel';
 import {
@@ -82,6 +82,7 @@ export {
   leaguesByCityId,
   venueByIdFromDate,
   nearbyEventsByCityId,
+  eventsNearHotel,
   hotelProductById,
   objectIdByName,
   productIdByEventId,
