@@ -4,7 +4,12 @@ import { get } from 'lodash';
 import HttpClient from '../tools/http-client';
 import { getAuthOption } from '../tools/auth-header';
 
-const { SWIAM_API, SWIAM_OPENAPI, SWIAM_API_V3, SWIAM_SHOP_API_KEY } = process.env;
+const {
+  SWIAM_API,
+  SWIAM_OPENAPI,
+  SWIAM_API_V3,
+  SWIAM_SHOP_API_KEY,
+} = process.env;
 
 const getProductsByEventId = eventId => {
   const url = `${SWIAM_API_V3}/shop/products/${eventId}`;
@@ -411,12 +416,12 @@ const setPayment = async ({
     });
 };
 
-const getMerchandiseByEventId = (eventId, token) => {
-  const url = `${SWIAM_OPENAPI}/cms/v1/eventmerchandise/${eventId}`;
+const getMerchandiseByEventId = eventId => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/eventMerchandise/${eventId}`;
 
   const http = HttpClient.getHttpClient();
   return http
-    .get(url, token && getAuthOption(token))
+    .get(url)
     .then(res => res.data.data)
     .catch(error => {
       logger.error(
