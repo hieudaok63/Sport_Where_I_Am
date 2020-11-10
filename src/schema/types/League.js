@@ -35,6 +35,11 @@ export const LeagueDashboard = new GraphQLObjectType({
     objectType: { type: GraphQLString },
     postDate: { type: GraphQLString },
     title: { type: GraphQLString },
+    videoID: { type: GraphQLInt },
+    videoURL: { type: GraphQLString },
+    videoType: { type: GraphQLString },
+    summary: { type: GraphQLString },
+    link: { type: GraphQLString },
   },
 });
 
@@ -48,6 +53,11 @@ export const LeagueCarousel = new GraphQLObjectType({
     objectType: { type: GraphQLString },
     postDate: { type: GraphQLString },
     title: { type: GraphQLString },
+    videoID: { type: GraphQLInt },
+    videoURL: { type: GraphQLString },
+    videoType: { type: GraphQLString },
+    summary: { type: GraphQLString },
+    link: { type: GraphQLString },
   },
 });
 
