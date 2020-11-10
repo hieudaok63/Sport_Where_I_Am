@@ -22,7 +22,7 @@ import {
 import { allBlogPosts } from './blogPost';
 import { loginWithEmail } from './login';
 import { venueByIdFromDate, venueImportantInformationById } from './venue';
-import { allLeagues } from './leagues';
+import { allLeagues, contentDashboard, contentCarousel } from './leagues';
 import {
   hotelProductById,
   productIdByEventId,
@@ -116,4 +116,6 @@ export {
   listAllCities,
   removeProductFromCart,
   merchandiseByEventId,
+  contentDashboard,
+  contentCarousel,
 };

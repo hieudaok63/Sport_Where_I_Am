@@ -115,4 +115,43 @@ export const getTopLeagues = (token, leagueId) => {
     });
 };
 
-export default { getAllLeagues, getLeagueInfo, getLeagueVideos, getTopLeagues, getLeaguesByCityId };
+export const getContentDashboard = (token, interestId, interestType) => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/contentDashboard/${interestType}/${interestId}`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      logger.error(
+        `Error in League Service - getContentDashboard() - `,
+        error.message
+      );
+      return null;
+    });
+};
+
+export const getContentCarousel = (token, interestId, interestType) => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/contentCarousel/${interestType}/${interestId}`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      console.log(error);
+      logger.error(
+        `Error in League Service - getContentCarousel() - `,
+        error.message
+      );
+      return null;
+    });
+};
+
+export default {
+  getAllLeagues,
+  getLeagueInfo,
+  getLeagueVideos,
+  getTopLeagues,
+  getLeaguesByCityId,
+};
