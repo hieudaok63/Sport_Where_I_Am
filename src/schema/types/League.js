@@ -4,9 +4,11 @@ import {
   GraphQLID,
   GraphQLInt,
   GraphQLList,
+  GraphQLBoolean,
 } from 'graphql';
 import Sport from './Sport';
 import leagueEvents from './LeagueEvents';
+import InterestTagging from './InterestTagging';
 
 const League = new GraphQLObjectType({
   name: 'League',
@@ -20,6 +22,42 @@ const League = new GraphQLObjectType({
     photoURL: { type: GraphQLString },
     sport: { type: Sport },
     events: { type: GraphQLList(leagueEvents) },
+  },
+});
+
+export const LeagueDashboard = new GraphQLObjectType({
+  name: 'LeagueDashboard',
+  fields: {
+    id: { type: GraphQLInt },
+    imageAspect: { type: GraphQLString },
+    imageURL: { type: GraphQLString },
+    interestTagging: { type: InterestTagging },
+    objectType: { type: GraphQLString },
+    postDate: { type: GraphQLString },
+    title: { type: GraphQLString },
+    videoID: { type: GraphQLInt },
+    videoURL: { type: GraphQLString },
+    videoType: { type: GraphQLString },
+    summary: { type: GraphQLString },
+    link: { type: GraphQLString },
+  },
+});
+
+export const LeagueCarousel = new GraphQLObjectType({
+  name: 'LeagueCarousel',
+  fields: {
+    id: { type: GraphQLInt },
+    imageAspect: { type: GraphQLString },
+    imageURL: { type: GraphQLString },
+    interestTagging: { type: InterestTagging },
+    objectType: { type: GraphQLString },
+    postDate: { type: GraphQLString },
+    title: { type: GraphQLString },
+    videoID: { type: GraphQLInt },
+    videoURL: { type: GraphQLString },
+    videoType: { type: GraphQLString },
+    summary: { type: GraphQLString },
+    link: { type: GraphQLString },
   },
 });
 
