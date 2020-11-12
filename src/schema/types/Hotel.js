@@ -75,6 +75,7 @@ export const HotelData = new GraphQLObjectType({
     geoCoordinates: { type: CoOrdinatesType },
     amenities: { type: GraphQLList(GraphQLString) },
     headlineImage: { type: GraphQLString },
+    nearestCityId: { type: GraphQLInt },
   },
 });
 

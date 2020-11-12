@@ -218,16 +218,16 @@ const removeProductFromCart = {
 };
 
 const merchandiseByEventId = {
-  type: Merchandise,
+  type: GraphQLList(Merchandise),
   args: {
     eventId: { type: GraphQLString },
   },
   resolve: (rawUserData, args, req) => {
-    const { eventId, transactionToken } = args;
-    if (eventId && transactionToken) {
-      return getMerchandiseByEventId(eventId, transactionToken);
-    }
-    return null;
+    const { eventId } = args;
+
+    if (!eventId) return null;
+
+    return getMerchandiseByEventId(eventId);
   },
 };
 
