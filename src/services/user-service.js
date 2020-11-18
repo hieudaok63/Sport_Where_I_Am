@@ -2,7 +2,12 @@ import HttpClient from '../tools/http-client';
 import { ApolloError } from 'apollo-server';
 import { getAuthOption } from '../tools/auth-header';
 
-const { SWIAM_API_V2, SWIAM_SHOP_API_KEY } = process.env;
+const {
+  SWIAM_API_V2,
+  SWIAM_API,
+  SWIAM_SHOP_API_KEY,
+  SWIAM_API_V3,
+} = process.env;
 
 const getMe = token => {
   const url = `${SWIAM_API_V2}/me?userToken=${token}`;
@@ -19,7 +24,7 @@ const getMe = token => {
 };
 
 const register = ({ email, firstName, password, surnameName, username }) => {
-  const url = `${SWIAM_API_V2}/register?email=${email}&firstName=${firstName}&password=${password}&surnameName=${surnameName}&tsandcs=true&username=${username}`;
+  const url = `${SWIAM_API}/register?email=${email}&firstName=${firstName}&password=${password}&surnameName=${surnameName}&tsandcs=true&username=${username}`;
 
   const http = HttpClient.getHttpClient();
   return http
@@ -31,7 +36,10 @@ const register = ({ email, firstName, password, surnameName, username }) => {
         'api-key': SWIAM_SHOP_API_KEY,
       },
     })
-    .then(res => res.data)
+    .then(res => ({
+      ...res.data,
+      wpid: res.data.wpid || res.data.wpID,
+    }))
     .catch(error => {
       logger.error(`Error in Service - register()`, error);
       throw new ApolloError(error);
