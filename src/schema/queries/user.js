@@ -3,7 +3,9 @@ import { GraphQLString, GraphQLBoolean } from 'graphql';
 import {
   getMe,
   register as registerService,
+  getUserCards,
 } from '../../services/user-service';
+import Cart from '../types/shop/Cart';
 
 const me = {
   type: User,
@@ -13,6 +15,14 @@ const me = {
     }
     console.warn('Token is required');
     return null;
+  },
+};
+
+const userCards = {
+  type: Cart,
+  args: {},
+  resolve: (rawUserData, args, req) => {
+    return getUserCards(req.token);
   },
 };
 
@@ -31,4 +41,4 @@ const register = {
   },
 };
 
-export { me, register };
+export { me, register, userCards };

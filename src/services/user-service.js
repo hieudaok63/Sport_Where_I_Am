@@ -1,6 +1,5 @@
 import HttpClient from '../tools/http-client';
 import { ApolloError } from 'apollo-server';
-import { getAuthOption } from '../tools/auth-header';
 
 const {
   SWIAM_API_V2,
@@ -19,6 +18,28 @@ const getMe = token => {
     .catch(error => {
       logger.error(`Error in Service - getMe()`, error.message);
       console.log('Me error_________', error);
+      return null;
+    });
+};
+
+const getUserCards = token => {
+  const url = `${SWIAM_API_V3}/shop/users/${token}/carts`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, {
+      // API takes ages to return the register
+      // We need to provide a long timeout, otherwise it will break
+      timeout: 500000,
+      headers: {
+        'api-key': SWIAM_SHOP_API_KEY,
+      },
+    })
+    .then(res => res.data)
+    .catch(error => {
+      logger.error(`Error in Service - getMe()`, error.message);
+      console.log('Me error_________', error);
+
       return null;
     });
 };
@@ -46,4 +67,4 @@ const register = ({ email, firstName, password, surnameName, username }) => {
     });
 };
 
-export { getMe, register };
+export { getMe, register, getUserCards };
