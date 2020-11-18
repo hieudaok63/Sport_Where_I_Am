@@ -3,7 +3,7 @@ import { GraphQLString, GraphQLBoolean } from 'graphql';
 import {
   getMe,
   register as registerService,
-  getUserCards,
+  getUpComingEvents,
 } from '../../services/user-service';
 import Cart from '../types/shop/Cart';
 
@@ -18,11 +18,11 @@ const me = {
   },
 };
 
-const userCards = {
+const upComingEvents = {
   type: Cart,
   args: {},
   resolve: (rawUserData, args, req) => {
-    return getUserCards(req.token);
+    return getUpComingEvents(req.token);
   },
 };
 
@@ -41,4 +41,4 @@ const register = {
   },
 };
 
-export { me, register, userCards };
+export { me, register, upComingEvents };

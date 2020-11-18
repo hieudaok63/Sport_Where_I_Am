@@ -50,7 +50,7 @@ import { getBooking } from './booking';
 import getNews from './news';
 import interestData, { interestQuestions } from './interestData';
 import { teamById } from './team';
-import { me, register, userCards } from './user';
+import { me, register, upComingEvents } from './user';
 import { searchProducts } from './searchProduts';
 import {
   getUniversalToken,
@@ -106,7 +106,7 @@ export {
   interestData,
   interestQuestions,
   me,
-  userCards,
+  upComingEvents,
   register,
   searchProducts,
   customerInfo,

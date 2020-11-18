@@ -22,7 +22,7 @@ const getMe = token => {
     });
 };
 
-const getUserCards = token => {
+const getUpComingEvents = token => {
   const url = `${SWIAM_API_V3}/shop/users/${token}/carts`;
 
   const http = HttpClient.getHttpClient();
@@ -67,4 +67,4 @@ const register = ({ email, firstName, password, surnameName, username }) => {
     });
 };
 
-export { getMe, register, getUserCards };
+export { getMe, register, getUpComingEvents };
