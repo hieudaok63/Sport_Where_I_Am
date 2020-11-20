@@ -17,7 +17,6 @@ const getMe = token => {
     .then(res => res.data)
     .catch(error => {
       logger.error(`Error in Service - getMe()`, error.message);
-      console.log('Me error_________', error);
       return null;
     });
 };
@@ -38,7 +37,6 @@ const getUpComingEvents = token => {
     .then(res => res.data)
     .catch(error => {
       logger.error(`Error in Service - getMe()`, error.message);
-      console.log('Me error_________', error);
 
       return null;
     });

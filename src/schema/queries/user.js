@@ -1,5 +1,5 @@
 import User from '../types/User';
-import { GraphQLString, GraphQLBoolean } from 'graphql';
+import { GraphQLString, GraphQLList, GraphQLBoolean } from 'graphql';
 import {
   getMe,
   register as registerService,
@@ -13,16 +13,18 @@ const me = {
     if (req.token) {
       return getMe(req.token);
     }
-    console.warn('Token is required');
+
     return null;
   },
 };
 
 const upComingEvents = {
-  type: Cart,
-  args: {},
+  type: GraphQLList(Cart),
+  args: {
+    token: { type: GraphQLString },
+  },
   resolve: (rawUserData, args, req) => {
-    return getUpComingEvents(req.token);
+    return getUpComingEvents(args.token);
   },
 };
 
