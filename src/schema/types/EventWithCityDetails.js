@@ -55,7 +55,7 @@ const EventWithCityDetails = new GraphQLObjectType({
       resolve: (rawCityData, args, req) => {
         const { venue } = rawCityData;
         if (venue && venue.cityid) {
-          return getCityById(venue.cityid, req.token);
+          return getCityById(venue.cityid, req.headers.authorization);
         }
         return null;
       },
@@ -65,7 +65,7 @@ const EventWithCityDetails = new GraphQLObjectType({
       resolve: (rawEventData, args, req) => {
         const { eventid } = rawEventData;
         if (eventid) {
-          return getEventDataById(eventid, req.token);
+          return getEventDataById(eventid, req.headers.authorization);
         }
         return null;
       },
@@ -75,7 +75,11 @@ const EventWithCityDetails = new GraphQLObjectType({
       resolve: (rawEventData, args, req) => {
         // NB: leagueid in this case is actually the abbreviation
         const { leagueid } = rawEventData;
-        if (leagueid) return getLeagueInfoByAbbreviation(req.token, leagueid);
+        if (leagueid)
+          return getLeagueInfoByAbbreviation(
+            req.headers.authorization,
+            leagueid
+          );
         return null;
       },
     },

@@ -10,7 +10,7 @@ const eventById = {
   resolve: (rawUserData, args, req) => {
     const { eventId } = args;
     if (eventId) {
-      return getEventById(eventId, req.token);
+      return getEventById(eventId, req.headers.authorization);
     }
     return null;
   },

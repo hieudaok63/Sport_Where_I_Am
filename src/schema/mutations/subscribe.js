@@ -9,7 +9,8 @@ const addSubscribe = {
     email: { type: GraphQLString },
     fullName: { type: GraphQLString },
   },
-  resolve: (parent, args, req) => createSubscribe(args, req.token),
+  resolve: (parent, args, req) =>
+    createSubscribe(args, req.headers.authorization),
 };
 
 export { addSubscribe };

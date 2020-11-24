@@ -6,5 +6,6 @@ import { getAllBlogPosts } from '../../services/blogPost-service';
 export const allBlogPosts = {
   type: GraphQLList(BlogPost),
   args: {},
-  resolve: (rawUserData, args, req) => getAllBlogPosts(req.token),
+  resolve: (rawUserData, args, req) =>
+    getAllBlogPosts(req.headers.authorization),
 };

@@ -9,7 +9,7 @@ export const teamById = {
     const { id } = args;
 
     if (id) {
-      return getTeamById(id, req.token);
+      return getTeamById(id, req.headers.authorization);
     }
     return null;
   },

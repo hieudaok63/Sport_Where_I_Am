@@ -43,7 +43,7 @@ const City = new GraphQLObjectType({
     //   resolve: (rawCityData, args, req) => {
     //     const { id } = rawCityData;
     //     if (id) {
-    //       return getCityDetailsByIdFromDate(id, '', req.token);
+    //       return getCityDetailsByIdFromDate(id, '', req.headers.authorization);
     //     }
     //     return null;
     //   },

@@ -10,7 +10,7 @@ import {
 export const allLeagues = {
   type: GraphQLList(League),
   args: {},
-  resolve: (rawUserData, args, req) => getAllLeagues(req.token),
+  resolve: (rawUserData, args, req) => getAllLeagues(req.headers.authorization),
 };
 
 export const contentDashboard = {
@@ -22,7 +22,11 @@ export const contentDashboard = {
   resolve: (rawData, args, req) => {
     const { interestId, interestType } = args;
     if (interestId !== undefined && interestType !== undefined) {
-      return getContentDashboard(req.token, interestId, interestType);
+      return getContentDashboard(
+        req.headers.authorization,
+        interestId,
+        interestType
+      );
     }
     return null;
   },
@@ -37,7 +41,11 @@ export const contentCarousel = {
   resolve: (rawData, args, req) => {
     const { interestId, interestType } = args;
     if (interestId !== undefined && interestType !== undefined) {
-      return getContentCarousel(req.token, interestId, interestType);
+      return getContentCarousel(
+        req.headers.authorization,
+        interestId,
+        interestType
+      );
     }
     return null;
   },
