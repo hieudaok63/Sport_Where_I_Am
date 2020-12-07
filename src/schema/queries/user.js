@@ -10,8 +10,8 @@ import Cart from '../types/shop/Cart';
 const me = {
   type: User,
   resolve: (rawUserData, args, req) => {
-    if (req.token) {
-      return getMe(req.token);
+    if (req.headers.authorization) {
+      return getMe(req.headers.authorization);
     }
 
     return null;
@@ -24,7 +24,7 @@ const upComingEvents = {
     token: { type: GraphQLString },
   },
   resolve: (rawUserData, args, req) => {
-    return getUpComingEvents(args.token);
+    return getUpComingEvents(req.headers.authorization);
   },
 };
 

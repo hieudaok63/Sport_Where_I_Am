@@ -10,7 +10,7 @@ const getNews = {
     interestType: { type: GraphQLString },
   },
   resolve: (rawUserData, args, req) =>
-    getNewsData(args.interestId, args.interestType, req.token),
+    getNewsData(args.interestId, args.interestType, req.headers.authorization),
 };
 
 export default getNews;

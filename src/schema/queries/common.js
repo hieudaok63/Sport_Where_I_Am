@@ -1,4 +1,4 @@
-import {  GraphQLString } from 'graphql';
+import { GraphQLString } from 'graphql';
 import { getObjectIdByName } from '../../services/common-service';
 import { IdByName } from '../types/Common';
 
@@ -10,7 +10,7 @@ export const objectIdByName = {
   resolve: (rawCityData, args, req) => {
     const { name } = args;
     if (name) {
-      return getObjectIdByName(name, req.token);
+      return getObjectIdByName(name, req.headers.authorization);
     }
     return null;
   },

@@ -41,17 +41,19 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
 logger.info('[] - Common middleware registration complete.');
-app.use((req, res, next) => {
-  const token = getToken(req);
+app.use((req, _res, next) => {
+  const authorization = getToken(req);
   const withToken = {
-    authorization:  token ? `Bearer ${token}` : "",
+    authorization,
   };
 
   const headers = req.headers;
+
   req.headers = {
     ...headers,
-    ...withToken
-   };
+    ...withToken,
+  };
+
   next();
 });
 app.use(routes);

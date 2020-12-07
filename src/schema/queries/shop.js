@@ -101,7 +101,7 @@ const productIdByEventId = {
   resolve: (rawUserData, args, req) => {
     const { eventId, cartId } = args;
     if (eventId) {
-      return getProductIdByEventId(eventId, cartId, req.token);
+      return getProductIdByEventId(eventId, cartId, req.headers.authorization);
     }
     return null;
   },
@@ -116,7 +116,11 @@ const productDataByEventId = {
   resolve: (rawUserData, args, req) => {
     const { eventId, cartId } = args;
     if (eventId) {
-      return getProductDataByEventId(eventId, cartId, req.token);
+      return getProductDataByEventId(
+        eventId,
+        cartId,
+        req.headers.authorization
+      );
     }
     return null;
   },
@@ -176,7 +180,11 @@ const removeItemFromCartById = {
   resolve: (rawUserData, args, req) => {
     const { cartId, lineItemId } = args;
     if (cartId && lineItemId) {
-      return deleteItemFromCartById(cartId, lineItemId, req.token);
+      return deleteItemFromCartById(
+        cartId,
+        lineItemId,
+        req.headers.authorization
+      );
     }
     return null;
   },
