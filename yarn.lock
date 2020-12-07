@@ -2381,6 +2381,11 @@ cors@^2.8.4, cors@^2.8.5:
     object-assign "^4"
     vary "^1"
 
+country-code-lookup@^0.0.18:
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/country-code-lookup/-/country-code-lookup-0.0.18.tgz#389f4cd170e4c52c3fe84192db4dceaf6ae87f1a"
+  integrity sha512-wg6ZIa8PFiFhKBNPPzLWFm+wkK4ZPsT8AWitoYMcC6zRKqw3lR4my25AJ67+VKZ24VLEZg96SZmWW9IaNmGBDg==
+
 create-error-class@^3.0.0:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/create-error-class/-/create-error-class-3.0.2.tgz#06be7abef947a3f14a30fd610671d401bca8b7b6"
