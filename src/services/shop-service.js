@@ -37,8 +37,18 @@ const getHotelProductById = (startDate, endDate, qualifiers, hotelId) => {
 
   const http = HttpClient.getHttpClient();
   return http
-    .get(url)
+    .get(
+      url,
+      {},
+      {
+        auth: {
+          username: 'rocketlab',
+          password: 'react4me',
+        },
+      }
+    )
     .then(res => getProductsByEventId(res.data))
+    .then(data => data)
     .catch(error => {
       logger.error(`Error in Shop Service - getEventId()`, error.message);
       console.log('____getEventId_____ error', error);
@@ -53,7 +63,7 @@ const getProductDataByProductId = async (
 ) => {
   const url = `${SWIAM_API_V3}/shop/products/${productId}?currency=${currency}`;
 
-  const http = HttpClient.getHttpClient(5000);
+  const http = HttpClient.getHttpClient();
 
   try {
     const response = await http.get(url, {
@@ -374,8 +384,8 @@ const setPayment = async ({
         }/customerInfo`,
         {
           name: `${firstName} ${lastName}`,
-          email: email,
-          phone: phone,
+          email,
+          phone,
           ticketingEmail: '',
           dob: '',
           addresses: [],
