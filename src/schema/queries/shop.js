@@ -37,6 +37,8 @@ const payNow = {
     lastName: { type: GraphQLString },
     email: { type: GraphQLString },
     phone: { type: GraphQLString },
+    cardholderName: { type: GraphQLString },
+    deliveryAdress: { type: GraphQLString },
     lineItems: {
       type: GraphQLString,
     },
@@ -55,7 +57,9 @@ const payNow = {
       email,
       phone,
       lineItems,
+      cardholderName,
       typeTickets,
+      deliveryAdress,
     } = args;
     if (cartId && currency && amount && transactionToken) {
       return setPayment({
@@ -68,7 +72,9 @@ const payNow = {
         lastName,
         email,
         phone,
+        cardholderName,
         typeTickets,
+        deliveryAdress: JSON.parse(deliveryAdress),
       });
     }
     return null;
