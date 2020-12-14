@@ -25,10 +25,7 @@ export const getEventsNearHotel = (hotelId, token) => {
   const http = HttpClient.getHttpClient();
   return http
     .get(url, token && getAuthOption(token))
-    .then(res => {
-      console.log('GQL DATA', res.data);
-      return res.data.data;
-    })
+    .then(res => res.data.data)
     .catch(error => {
       logger.error(
         `Error in Nearby Events Service - getEventsNearHotel`,

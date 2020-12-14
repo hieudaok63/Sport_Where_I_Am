@@ -17,7 +17,7 @@ export const nearbyEventsByCityId = {
   resolve: (rawEventData, args, req) => {
     const { cityId } = args;
     if (cityId) {
-      return getNearbyEventsByCityId(cityId, req.token);
+      return getNearbyEventsByCityId(cityId, req.headers.authorization);
     }
     return null;
   },
@@ -31,7 +31,7 @@ export const eventsNearHotel = {
   resolve: (rawEventData, args, req) => {
     const { hotelId } = args;
     if (hotelId) {
-      return getEventsNearHotel(hotelId, req.token);
+      return getEventsNearHotel(hotelId, req.headers.authorization);
     }
     return null;
   },

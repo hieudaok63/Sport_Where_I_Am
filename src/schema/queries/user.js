@@ -1,18 +1,30 @@
 import User from '../types/User';
-import { GraphQLString, GraphQLBoolean } from 'graphql';
+import { GraphQLString, GraphQLList, GraphQLBoolean } from 'graphql';
 import {
   getMe,
   register as registerService,
+  getUpComingEvents,
 } from '../../services/user-service';
+import Cart from '../types/shop/Cart';
 
 const me = {
   type: User,
   resolve: (rawUserData, args, req) => {
-    if (req.token) {
-      return getMe(req.token);
+    if (req.headers.authorization) {
+      return getMe(req.headers.authorization);
     }
-    console.warn('Token is required');
+
     return null;
+  },
+};
+
+const upComingEvents = {
+  type: GraphQLList(Cart),
+  args: {
+    token: { type: GraphQLString },
+  },
+  resolve: (rawUserData, args, req) => {
+    return getUpComingEvents(req.headers.authorization);
   },
 };
 
@@ -31,4 +43,4 @@ const register = {
   },
 };
 
-export { me, register };
+export { me, register, upComingEvents };

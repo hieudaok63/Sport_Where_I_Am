@@ -37,6 +37,8 @@ const payNow = {
     lastName: { type: GraphQLString },
     email: { type: GraphQLString },
     phone: { type: GraphQLString },
+    cardholderName: { type: GraphQLString },
+    deliveryAdress: { type: GraphQLString },
     lineItems: {
       type: GraphQLString,
     },
@@ -55,7 +57,9 @@ const payNow = {
       email,
       phone,
       lineItems,
+      cardholderName,
       typeTickets,
+      deliveryAdress,
     } = args;
     if (cartId && currency && amount && transactionToken) {
       return setPayment({
@@ -68,7 +72,9 @@ const payNow = {
         lastName,
         email,
         phone,
+        cardholderName,
         typeTickets,
+        deliveryAdress: JSON.parse(deliveryAdress),
       });
     }
     return null;
@@ -101,7 +107,7 @@ const productIdByEventId = {
   resolve: (rawUserData, args, req) => {
     const { eventId, cartId } = args;
     if (eventId) {
-      return getProductIdByEventId(eventId, cartId, req.token);
+      return getProductIdByEventId(eventId, cartId, req.headers.authorization);
     }
     return null;
   },
@@ -116,7 +122,11 @@ const productDataByEventId = {
   resolve: (rawUserData, args, req) => {
     const { eventId, cartId } = args;
     if (eventId) {
-      return getProductDataByEventId(eventId, cartId, req.token);
+      return getProductDataByEventId(
+        eventId,
+        cartId,
+        req.headers.authorization
+      );
     }
     return null;
   },
@@ -176,7 +186,11 @@ const removeItemFromCartById = {
   resolve: (rawUserData, args, req) => {
     const { cartId, lineItemId } = args;
     if (cartId && lineItemId) {
-      return deleteItemFromCartById(cartId, lineItemId, req.token);
+      return deleteItemFromCartById(
+        cartId,
+        lineItemId,
+        req.headers.authorization
+      );
     }
     return null;
   },

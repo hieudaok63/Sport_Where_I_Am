@@ -13,7 +13,7 @@ import {
 export const allHotels = {
   type: GraphQLList(Hotel),
   args: {},
-  resolve: (rawUserData, args, req) => getAllHotels(req.token),
+  resolve: (rawUserData, args, req) => getAllHotels(req.headers.authorization),
 };
 
 export const hotelData = {
@@ -23,7 +23,8 @@ export const hotelData = {
   },
   resolve: (rawHotelData, args, req) => {
     const { hotelId } = args;
-    if (hotelId !== undefined) return getHotelDataById(hotelId, req.token);
+    if (hotelId !== undefined)
+      return getHotelDataById(hotelId, req.headers.authorization);
     return null;
   },
 };
@@ -31,7 +32,8 @@ export const hotelData = {
 export const popularHotels = {
   type: GraphQLList(Hotel),
   args: {},
-  resolve: (rawUserData, args, req) => getPopularHotels(req.token),
+  resolve: (rawUserData, args, req) =>
+    getPopularHotels(req.headers.authorization),
 };
 
 export const popularHotelsByCityId = {
@@ -42,7 +44,7 @@ export const popularHotelsByCityId = {
   resolve: (rawUserData, args, req) => {
     const { cityId } = args;
     if (cityId !== undefined) {
-      return getPopularHotelsByCityId(cityId, req.token);
+      return getPopularHotelsByCityId(cityId, req.headers.authorization);
     }
     return null;
   },
@@ -56,7 +58,7 @@ export const hotelsNearTheGame = {
   resolve: (rawUserData, args, req) => {
     const { eventId } = args;
     if (eventId !== undefined) {
-      return getHotelsNearTheGame(eventId, req.token);
+      return getHotelsNearTheGame(eventId, req.headers.authorization);
     }
     return null;
   },
@@ -65,5 +67,6 @@ export const hotelsNearTheGame = {
 export const hotelsForBigSportingEvents = {
   type: GraphQLList(TopHotel),
   args: {},
-  resolve: (rawUserData, args, req) => getHotelsForBigSportingEvents(req.token),
+  resolve: (rawUserData, args, req) =>
+    getHotelsForBigSportingEvents(req.headers.authorization),
 };

@@ -3,6 +3,7 @@ import { get } from 'lodash';
 
 import HttpClient from '../tools/http-client';
 import { getAuthOption } from '../tools/auth-header';
+const lookup = require('country-code-lookup');
 
 const {
   SWIAM_API,
@@ -10,6 +11,32 @@ const {
   SWIAM_API_V3,
   SWIAM_SHOP_API_KEY,
 } = process.env;
+
+const MAIL_OPTION = 'MAIL';
+const E_TICKET_OPTION = 'ETICKET';
+
+const isInternationalDelivery = ticket =>
+  ticket.shippingOptions[0].type === MAIL_OPTION;
+const isMobileDelivery = ticket =>
+  ticket.shippingOptions[0].type === E_TICKET_OPTION;
+
+const getDeliveryAdress = (ticket, deliveryAdress) => {
+  let address = deliveryAdress.local;
+
+  if (isInternationalDelivery(ticket)) {
+    address = deliveryAdress.international;
+  } else if (isMobileDelivery(ticket)) {
+    address = deliveryAdress.billing;
+  }
+
+  return {
+    ...address,
+    country: {
+      ...address.country,
+      code: lookup.byCountry(address.country.name).iso3,
+    },
+  };
+};
 
 const getProductsByEventId = eventId => {
   const url = `${SWIAM_API_V3}/shop/products/${eventId}`;
@@ -37,8 +64,18 @@ const getHotelProductById = (startDate, endDate, qualifiers, hotelId) => {
 
   const http = HttpClient.getHttpClient();
   return http
-    .get(url)
+    .get(
+      url,
+      {},
+      {
+        auth: {
+          username: 'rocketlab',
+          password: 'react4me',
+        },
+      }
+    )
     .then(res => getProductsByEventId(res.data))
+    .then(data => data)
     .catch(error => {
       logger.error(`Error in Shop Service - getEventId()`, error.message);
       console.log('____getEventId_____ error', error);
@@ -53,7 +90,7 @@ const getProductDataByProductId = async (
 ) => {
   const url = `${SWIAM_API_V3}/shop/products/${productId}?currency=${currency}`;
 
-  const http = HttpClient.getHttpClient(5000);
+  const http = HttpClient.getHttpClient();
 
   try {
     const response = await http.get(url, {
@@ -67,8 +104,7 @@ const getProductDataByProductId = async (
       response.data &&
       response.data.length &&
       response.data[0];
-    console.log('\n\n\n ==== getProductDataByProductId ====');
-    console.log(data);
+
     return data;
   } catch (error) {
     console.log('Error: ');
@@ -336,6 +372,7 @@ const setPayment = async ({
   cartId,
   currency,
   lineItems,
+  cardholderName,
   amount,
   transactionToken,
   firstName,
@@ -343,6 +380,7 @@ const setPayment = async ({
   email,
   phone,
   typeTickets,
+  deliveryAdress,
 }) => {
   const http = HttpClient.getHttpClient(8000);
   const requestParameters = {
@@ -374,11 +412,19 @@ const setPayment = async ({
         }/customerInfo`,
         {
           name: `${firstName} ${lastName}`,
-          email: email,
-          phone: phone,
+          email,
+          phone,
           ticketingEmail: '',
           dob: '',
-          addresses: [],
+          addresses: [
+            {
+              ...getDeliveryAdress(item, deliveryAdress),
+              attn: cardholderName,
+              premise: '',
+              purposes: ['SHIPPING'],
+              phone,
+            },
+          ],
         },
         requestParameters
       )

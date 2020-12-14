@@ -20,7 +20,7 @@ import {
   hotelData,
 } from './hotel';
 import { allBlogPosts } from './blogPost';
-import { loginWithEmail } from './login';
+import { loginWithUserName } from './login';
 import { venueByIdFromDate, venueImportantInformationById } from './venue';
 import { allLeagues, contentDashboard, contentCarousel } from './leagues';
 import {
@@ -50,7 +50,7 @@ import { getBooking } from './booking';
 import getNews from './news';
 import interestData, { interestQuestions } from './interestData';
 import { teamById } from './team';
-import { me, register } from './user';
+import { me, register, upComingEvents } from './user';
 import { searchProducts } from './searchProduts';
 import {
   getUniversalToken,
@@ -71,7 +71,7 @@ export {
   allBlogPosts,
   searchByTerm,
   allHotels,
-  loginWithEmail,
+  loginWithUserName,
   allLeagues,
   getleagueVideos,
   getNews,
@@ -106,6 +106,7 @@ export {
   interestData,
   interestQuestions,
   me,
+  upComingEvents,
   register,
   searchProducts,
   customerInfo,

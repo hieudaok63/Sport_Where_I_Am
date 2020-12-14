@@ -102,6 +102,8 @@ export const ProductIdValue = new GraphQLObjectType({
 export const HotelProduct = new GraphQLObjectType({
   name: 'HotelProduct',
   fields: {
+    status: { type: GraphQLString },
+    message: { type: GraphQLString },
     id: { type: GraphQLString },
     type: { type: GraphQLString },
     name: { type: GraphQLString },

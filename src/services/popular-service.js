@@ -26,7 +26,6 @@ export const getAllPopulars = token => {
   return http
     .get(url, token && getAuthOption(token))
     .then(res => {
-      console.log(res);
       return res.data;
     })
     .catch(error => {
