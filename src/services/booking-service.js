@@ -1,4 +1,4 @@
-const sendEmailToBookingCrew = (bookingId, email, fullName) => {
+const sendEmailToBookingCrew = (bookingId, email, fullName, mergeData) => {
   // TODO: Return the real API data (staging / prod)
   // TODO: Mock localhost response
   const promiseTimeout = time => () =>
@@ -14,10 +14,13 @@ const sendEmailToBookingCrew = (bookingId, email, fullName) => {
     const details = {};
 
     // Add the unique identifier for the smart email
-    details.smartEmailID = 'cbce3426-ef21-452f-98a5-72829927d4f4';
+    details.smartEmailID = '1b739c3a-a5c2-4ad9-bb02-e7c7571233ef';
 
     // Add the 'To' email address
     details.to = `${fullName} <${email}>`;
+
+    // Add mail merge variables
+    details.data = JSON.parse(mergeData);
 
     // Send the smart email(and provide a callback function that takes an error and a response parameter)
     api.transactional.sendSmartEmail(details, (err, res) => {
