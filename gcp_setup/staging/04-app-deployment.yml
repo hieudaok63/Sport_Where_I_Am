@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: staging-swiam-gql
+  labels:
+    app: staging-swiam-gql
+spec:
+  selector:
+    matchLabels:
+      app: staging-swiam-gql
+      tier: backend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: staging-swiam-gql
+        tier: backend
+    spec:
+      containers:
+        - image: gcr.io/swiam-220407/staging-swiam-gql:0.1.0
+          name: staging-swiam-gql
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+              name: stage-swiam-gql
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 30
+            periodSeconds: 3
+            failureThreshold: 2

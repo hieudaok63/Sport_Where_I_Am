@@ -2,12 +2,18 @@ import {
   GraphQLObjectType,
   GraphQLString,
   GraphQLInt,
+  GraphQLList,
   GraphQLFloat,
 } from 'graphql';
-import Country from './Country';
-import Venue from './Venue';
-import VenueDetails from './VenueDetails';
 import GraphQLLong from 'graphql-type-long';
+import Country from './Country';
+import VenueDetails from './VenueDetails';
+import DateTimeStatus from './shop/DateTimeStatus';
+import Facilities from './shop/Facilities';
+import Ticks from './shop/Ticks';
+import PriceCart from './shop/PriceCart';
+import Variant from './shop/Variant';
+import VenueInfo from './shop/VenueInfo';
 
 const PriceType = new GraphQLObjectType({
   name: 'Price',
@@ -47,6 +53,29 @@ const Hotel = new GraphQLObjectType({
     venueImage: { type: GraphQLString },
     venueName: { type: GraphQLString },
     promoBanner: { type: GraphQLString },
+    nearbyVenue: { type: VenueDetails },
+  },
+});
+
+export const HotelData = new GraphQLObjectType({
+  name: 'HotelData',
+  fields: {
+    hotelID: { type: GraphQLString },
+    nearbyVenue: { type: VenueDetails },
+    bestEventDescription: { type: GraphQLString },
+    bestVenueDescription: { type: GraphQLString },
+    hotelName: { type: GraphQLString },
+    hotelImage: { type: GraphQLString },
+    fromPrice: { type: PriceType },
+    promoBanner: { type: GraphQLString },
+    rating: { type: GraphQLFloat },
+    address: { type: GraphQLString },
+    overview: { type: GraphQLString },
+    images: { type: GraphQLList(GraphQLString) },
+    geoCoordinates: { type: CoOrdinatesType },
+    amenities: { type: GraphQLList(GraphQLString) },
+    headlineImage: { type: GraphQLString },
+    nearestCityId: { type: GraphQLInt },
   },
 });
 
@@ -60,6 +89,34 @@ export const TopHotel = new GraphQLObjectType({
     promoBanner: { type: GraphQLString },
     fromPrice: { type: PriceType },
     nearbyVenue: { type: VenueDetails },
+  },
+});
+
+export const ProductIdValue = new GraphQLObjectType({
+  name: 'ProductIdValue',
+  fields: {
+    value: { type: GraphQLString },
+  },
+});
+
+export const HotelProduct = new GraphQLObjectType({
+  name: 'HotelProduct',
+  fields: {
+    status: { type: GraphQLString },
+    message: { type: GraphQLString },
+    id: { type: GraphQLString },
+    type: { type: GraphQLString },
+    name: { type: GraphQLString },
+    description: { type: GraphQLString },
+    localDateTime: { type: GraphQLString },
+    dateTimeStatus: { type: DateTimeStatus },
+    price: { type: PriceCart },
+    url: { type: GraphQLString },
+    urlType: { type: GraphQLString },
+    variants: { type: GraphQLList(Variant) },
+    venueDetails: { type: VenueInfo },
+    facilities: { type: GraphQLList(Facilities) },
+    ticks: { type: GraphQLList(Ticks) },
   },
 });
 

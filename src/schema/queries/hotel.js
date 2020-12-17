@@ -1,34 +1,64 @@
-import { GraphQLList, GraphQLString } from 'graphql';
+import { GraphQLInt, GraphQLList, GraphQLString } from 'graphql';
 
-import Hotel, { TopHotel } from '../types/Hotel';
+import Hotel, { TopHotel, HotelData } from '../types/Hotel';
 import {
   getAllHotels,
   getHotelsForBigSportingEvents,
   getPopularHotels,
   getPopularHotelsByCityId,
+  getHotelsNearTheGame,
+  getHotelDataById,
 } from '../../services/hotel-service';
 
 export const allHotels = {
   type: GraphQLList(Hotel),
   args: {},
-  resolve: (rawUserData, args, req) => getAllHotels(req.token),
+  resolve: (rawUserData, args, req) => getAllHotels(req.headers.authorization),
+};
+
+export const hotelData = {
+  type: HotelData,
+  args: {
+    hotelId: { type: GraphQLString },
+  },
+  resolve: (rawHotelData, args, req) => {
+    const { hotelId } = args;
+    if (hotelId !== undefined)
+      return getHotelDataById(hotelId, req.headers.authorization);
+    return null;
+  },
 };
 
 export const popularHotels = {
   type: GraphQLList(Hotel),
   args: {},
-  resolve: (rawUserData, args, req) => getPopularHotels(req.token),
+  resolve: (rawUserData, args, req) =>
+    getPopularHotels(req.headers.authorization),
 };
 
 export const popularHotelsByCityId = {
   type: GraphQLList(Hotel),
   args: {
-    cityId: { type: GraphQLString },
+    cityId: { type: GraphQLInt },
   },
   resolve: (rawUserData, args, req) => {
     const { cityId } = args;
     if (cityId !== undefined) {
-      return getPopularHotelsByCityId(cityId, req.token);
+      return getPopularHotelsByCityId(cityId, req.headers.authorization);
+    }
+    return null;
+  },
+};
+
+export const hotelsNearTheGame = {
+  type: GraphQLList(Hotel),
+  args: {
+    eventId: { type: GraphQLString },
+  },
+  resolve: (rawUserData, args, req) => {
+    const { eventId } = args;
+    if (eventId !== undefined) {
+      return getHotelsNearTheGame(eventId, req.headers.authorization);
     }
     return null;
   },
@@ -37,5 +67,6 @@ export const popularHotelsByCityId = {
 export const hotelsForBigSportingEvents = {
   type: GraphQLList(TopHotel),
   args: {},
-  resolve: (rawUserData, args, req) => getHotelsForBigSportingEvents(req.token),
+  resolve: (rawUserData, args, req) =>
+    getHotelsForBigSportingEvents(req.headers.authorization),
 };

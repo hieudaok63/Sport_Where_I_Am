@@ -4,6 +4,7 @@ import {
   GraphQLInt,
   GraphQLBoolean,
 } from 'graphql';
+import VenueDetails from './VenueDetails';
 
 const leagueEvents = new GraphQLObjectType({
   name: 'LeagueEvents',
@@ -26,6 +27,7 @@ const leagueEvents = new GraphQLObjectType({
     teamB: { type: GraphQLString },
     timelineItemType: { type: GraphQLString },
     venueWordpressID: { type: GraphQLInt },
+    venue: { type: VenueDetails },
     venueid: { type: GraphQLInt },
   },
 });

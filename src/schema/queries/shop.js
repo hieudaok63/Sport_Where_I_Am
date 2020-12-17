@@ -1,9 +1,17 @@
-import { GraphQLList, GraphQLString, GraphQLFloat, GraphQLInt } from 'graphql';
+import {
+  GraphQLList,
+  GraphQLString,
+  GraphQLFloat,
+  GraphQLInt,
+  GraphQLObjectType,
+} from 'graphql';
 import Product, { EventProduct } from '../types/Product';
+import Merchandise from '../types/Merchandise';
 import Cart from '../types/shop/Cart';
 import CustomerInfo from '../types/shop/CustomerInfo';
 import PaymentPublicKey from '../types/PaymentPublicKey';
 import {
+  getHotelProductById,
   getProductIdByEventId,
   getCartId,
   getCart,
@@ -14,7 +22,9 @@ import {
   setCustomerInfo,
   getProductDataByEventId,
   removeProduct,
+  getMerchandiseByEventId,
 } from '../../services/shop-service';
+import { HotelProduct, ProductIdValue } from '../types/Hotel';
 
 const payNow = {
   type: Cart, // TODO: verify what the api returns when the payment is concluded
@@ -23,18 +33,73 @@ const payNow = {
     currency: { type: GraphQLString },
     amount: { type: GraphQLFloat },
     transactionToken: { type: GraphQLString },
+    firstName: { type: GraphQLString },
+    lastName: { type: GraphQLString },
+    email: { type: GraphQLString },
+    phone: { type: GraphQLString },
+    cardholderName: { type: GraphQLString },
+    deliveryAdress: { type: GraphQLString },
+    lineItems: {
+      type: GraphQLString,
+    },
+    typeTickets: {
+      type: GraphQLList(GraphQLString),
+    },
   },
-  resolve: (rawUserData, args, req) => {
-    const { cartId, currency, amount, transactionToken } = args;
+  resolve: (rawCartData, args, req) => {
+    const {
+      cartId,
+      currency,
+      amount,
+      transactionToken,
+      firstName,
+      lastName,
+      email,
+      phone,
+      lineItems,
+      cardholderName,
+      typeTickets,
+      deliveryAdress,
+    } = args;
     if (cartId && currency && amount && transactionToken) {
-      return setPayment(cartId, currency, amount, transactionToken);
+      return setPayment({
+        lineItems: JSON.parse(lineItems),
+        cartId,
+        currency,
+        amount,
+        transactionToken,
+        firstName,
+        lastName,
+        email,
+        phone,
+        cardholderName,
+        typeTickets,
+        deliveryAdress: JSON.parse(deliveryAdress),
+      });
+    }
+    return null;
+  },
+};
+
+const hotelProductById = {
+  type: GraphQLList(HotelProduct),
+  args: {
+    startDate: { type: GraphQLString },
+    endDate: { type: GraphQLString },
+    qualifiers: { type: GraphQLString },
+    hotelId: { type: GraphQLString },
+  },
+  resolve: (rawUserData, args) => {
+    const { startDate, endDate, qualifiers, hotelId } = args;
+    if (startDate && endDate && qualifiers && hotelId) {
+      return getHotelProductById(startDate, endDate, qualifiers, hotelId);
     }
     return null;
   },
 };
 
 const productIdByEventId = {
-  type: GraphQLList(Product),
+  type: GraphQLList(ProductIdValue),
   args: {
     eventId: { type: GraphQLString },
     cartId: { type: GraphQLString },
@@ -42,7 +107,7 @@ const productIdByEventId = {
   resolve: (rawUserData, args, req) => {
     const { eventId, cartId } = args;
     if (eventId) {
-      return getProductIdByEventId(eventId, cartId, req.token);
+      return getProductIdByEventId(eventId, cartId, req.headers.authorization);
     }
     return null;
   },
@@ -57,7 +122,11 @@ const productDataByEventId = {
   resolve: (rawUserData, args, req) => {
     const { eventId, cartId } = args;
     if (eventId) {
-      return getProductDataByEventId(eventId, cartId, req.token);
+      return getProductDataByEventId(
+        eventId,
+        cartId,
+        req.headers.authorization
+      );
     }
     return null;
   },
@@ -66,9 +135,7 @@ const productDataByEventId = {
 const createCartId = {
   type: Cart,
   args: {},
-  resolve: (rawUserData, args, req) => {
-    return getCartId();
-  },
+  resolve: (rawUserData, args, req) => getCartId(),
 };
 
 const cartById = {
@@ -119,7 +186,11 @@ const removeItemFromCartById = {
   resolve: (rawUserData, args, req) => {
     const { cartId, lineItemId } = args;
     if (cartId && lineItemId) {
-      return deleteItemFromCartById(cartId, lineItemId, req.token);
+      return deleteItemFromCartById(
+        cartId,
+        lineItemId,
+        req.headers.authorization
+      );
     }
     return null;
   },
@@ -160,7 +231,22 @@ const removeProductFromCart = {
   resolve: (rawUserData, args, req) => removeProduct(args),
 };
 
+const merchandiseByEventId = {
+  type: GraphQLList(Merchandise),
+  args: {
+    eventId: { type: GraphQLString },
+  },
+  resolve: (rawUserData, args, req) => {
+    const { eventId } = args;
+
+    if (!eventId) return null;
+
+    return getMerchandiseByEventId(eventId);
+  },
+};
+
 export {
+  hotelProductById,
   productIdByEventId,
   productDataByEventId,
   createCartId,
@@ -171,4 +257,5 @@ export {
   payNow,
   customerInfo,
   addProductOnCart,
+  merchandiseByEventId,
 };

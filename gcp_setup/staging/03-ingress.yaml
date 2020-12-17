@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: staging-swiam-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: staging-swiam-ip
+    networking.gke.io/managed-certificates: staging-swiam-cert
+  labels:
+    app: staging-swiam-gql
+    tier: backend
+spec:
+  backend:
+    serviceName: staging-swiam-gql
+    servicePort: 5000

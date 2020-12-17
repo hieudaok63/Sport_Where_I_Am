@@ -8,9 +8,23 @@ import {
 } from 'graphql';
 import VenueDetails from './VenueDetails';
 import TeamAbbrev from './TeamAbbrev';
-
+import League from './League';
 import City from './City';
 import { getCityById } from '../../services/city-service';
+import { getEventDataById } from '../../services/event-service';
+import { getLeagueInfoByAbbreviation } from '../../services/league-service';
+
+const EventData = new GraphQLObjectType({
+  name: 'EventData',
+  fields: {
+    eventID: { type: GraphQLID },
+    eventDateTime: { type: GraphQLString },
+    eventImage: { type: GraphQLString },
+    eventName: { type: GraphQLString },
+    league: { type: League },
+    venue: { type: VenueDetails },
+  },
+});
 
 const EventWithCityDetails = new GraphQLObjectType({
   name: 'EventWithCityDetails',
@@ -41,8 +55,31 @@ const EventWithCityDetails = new GraphQLObjectType({
       resolve: (rawCityData, args, req) => {
         const { venue } = rawCityData;
         if (venue && venue.cityid) {
-          return getCityById(venue.cityid, req.token);
+          return getCityById(venue.cityid, req.headers.authorization);
         }
+        return null;
+      },
+    },
+    moreEventData: {
+      type: EventData,
+      resolve: (rawEventData, args, req) => {
+        const { eventid } = rawEventData;
+        if (eventid) {
+          return getEventDataById(eventid, req.headers.authorization);
+        }
+        return null;
+      },
+    },
+    league: {
+      type: League,
+      resolve: (rawEventData, args, req) => {
+        // NB: leagueid in this case is actually the abbreviation
+        const { leagueid } = rawEventData;
+        if (leagueid)
+          return getLeagueInfoByAbbreviation(
+            req.headers.authorization,
+            leagueid
+          );
         return null;
       },
     },

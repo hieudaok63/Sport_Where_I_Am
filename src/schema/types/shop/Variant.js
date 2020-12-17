@@ -9,6 +9,7 @@ const Variant = new GraphQLObjectType({
     id: { type: GraphQLString },
     type: { type: GraphQLString },
     name: { type: GraphQLString },
+    ticket: { type: GraphQLString },
     description: { type: GraphQLString },
     price: { type: PriceCart },
     url: { type: GraphQLString },

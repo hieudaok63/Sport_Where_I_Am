@@ -10,7 +10,7 @@ const searchByTerm = {
   resolve: (rawUserData, args, req) => {
     const { searchTerm } = args;
     if (searchTerm) {
-      return getSearchByTerm(searchTerm, req.token);
+      return getSearchByTerm(searchTerm, req.headers.authorization);
     }
     return null;
   },

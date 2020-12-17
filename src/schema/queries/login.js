@@ -1,8 +1,8 @@
 import { GraphQLString } from 'graphql';
 import User from '../types/User';
-import { getLoginWithEmail } from '../../services/login-service';
+import { loginByUserName } from '../../services/login-service';
 
-const loginWithEmail = {
+const loginWithUserName = {
   type: User,
   args: {
     username: { type: GraphQLString },
@@ -11,10 +11,10 @@ const loginWithEmail = {
   resolve: (rawUserData, args, req) => {
     const { username, password } = args;
     if (username && password) {
-      return getLoginWithEmail(username, password);
+      return loginByUserName(username, password);
     }
     return null;
   },
 };
 
-export { loginWithEmail };
+export { loginWithUserName };

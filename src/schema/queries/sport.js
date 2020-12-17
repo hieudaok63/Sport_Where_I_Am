@@ -5,5 +5,5 @@ import { getAllSports } from '../../services/sport-service';
 export const allSports = {
   type: GraphQLList(Sport),
   args: {},
-  resolve: (rawUserData, args, req) => getAllSports(req.token),
+  resolve: (rawUserData, args, req) => getAllSports(req.headers.authorization),
 };
