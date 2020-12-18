@@ -6,7 +6,10 @@ const { SWIAM_API_V2, SWIAM_API } = process.env;
 const getLoginWithEmail = (username, password) => {
   const url = `${SWIAM_API_V2}/login`;
 
+const loginByUserName = (username, password) => {
+  const url = `${SWIAM_API}/login`;
   const http = HttpClient.getHttpClient();
+
   return http
     .get(url, {
       params: {
@@ -14,7 +17,10 @@ const getLoginWithEmail = (username, password) => {
         password,
       },
     })
-    .then(res => res.data)
+    .then(res => ({
+      ...res.data,
+      wpid: res.data.wpid || res.data.wpID,
+    }))
     .catch(error => {
       logger.error(
         `Error in Search Service - getLoginByEmail()`,
@@ -39,4 +45,4 @@ const getLoginWithFacebook = ({ email, accessToken }) => {
     });
 };
 
-export { getLoginWithEmail, getLoginWithFacebook };
+export { loginByUserName, getLoginWithEmail, getLoginWithFacebook };

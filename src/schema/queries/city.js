@@ -2,6 +2,7 @@ import TopCities from '../types/TopCities';
 import { GraphQLID, GraphQLList, GraphQLString } from 'graphql';
 import City, { CitySummary } from '../types/City';
 import CityDetails from '../types/CityDetails';
+import { IdByName } from './index';
 import {
   getAllCities,
   getCityById,
@@ -18,7 +19,7 @@ export const cityById = {
   resolve: (rawCityData, args, req) => {
     const { id } = args;
     if (id) {
-      return getCityById(id, req.token);
+      return getCityById(id, req.headers.authorization);
     }
     return null;
   },
@@ -33,7 +34,11 @@ export const cityDetailsByIdFromDate = {
   resolve: (rawCityData, args, req) => {
     const { id, fromDate } = args;
     if (id) {
-      return getCityDetailsByIdFromDate(id, fromDate, req.token);
+      return getCityDetailsByIdFromDate(
+        id,
+        fromDate,
+        req.headers.authorization
+      );
     }
     return null;
   },
@@ -42,12 +47,13 @@ export const cityDetailsByIdFromDate = {
 export const popularSportingCities = {
   type: GraphQLList(CitySummary),
   args: {},
-  resolve: (rawCityData, args, req) => getPopularSportingCities(req.token),
+  resolve: (rawCityData, args, req) =>
+    getPopularSportingCities(req.headers.authorization),
 };
 
 export const allCities = {
   type: GraphQLList(City),
-  resolve: (rawUserData, args, req) => getAllCities(req.token),
+  resolve: (rawUserData, args, req) => getAllCities(req.headers.authorization),
 };
 
 export const topCities = {

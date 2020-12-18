@@ -1,9 +1,25 @@
 import { GraphQLString } from 'graphql';
 import User from '../types/User';
 import {
+  loginByUserName,
   getLoginWithEmail,
   getLoginWithFacebook,
 } from '../../services/login-service';
+
+const loginWithUserName = {
+  type: User,
+  args: {
+    username: { type: GraphQLString },
+    password: { type: GraphQLString },
+  },
+  resolve: (rawUserData, args, req) => {
+    const { username, password } = args;
+    if (username && password) {
+      return loginByUserName(username, password);
+    }
+    return null;
+  },
+};
 
 const loginWithEmail = {
   type: User,
@@ -31,4 +47,4 @@ const loginWithFacebook = {
   },
 };
 
-export { loginWithEmail, loginWithFacebook };
+export { loginWithUserName, loginWithEmail, loginWithFacebook };

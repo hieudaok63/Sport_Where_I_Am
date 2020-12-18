@@ -3,8 +3,84 @@ import { get } from 'lodash';
 
 import HttpClient from '../tools/http-client';
 import { getAuthOption } from '../tools/auth-header';
+const lookup = require('country-code-lookup');
 
-const { SWIAM_API_V3, SWIAM_OPENAPI, SWIAM_SHOP_API_KEY } = process.env;
+const {
+  SWIAM_API,
+  SWIAM_OPENAPI,
+  SWIAM_API_V3,
+  SWIAM_SHOP_API_KEY,
+} = process.env;
+
+const MAIL_OPTION = 'MAIL';
+const E_TICKET_OPTION = 'ETICKET';
+
+const isInternationalDelivery = ticket =>
+  ticket.shippingOptions[0].type === MAIL_OPTION;
+const isMobileDelivery = ticket =>
+  ticket.shippingOptions[0].type === E_TICKET_OPTION;
+
+const getDeliveryAdress = (ticket, deliveryAdress) => {
+  let address = deliveryAdress.local;
+
+  if (isInternationalDelivery(ticket)) {
+    address = deliveryAdress.international;
+  } else if (isMobileDelivery(ticket)) {
+    address = deliveryAdress.billing;
+  }
+
+  return {
+    ...address,
+    country: {
+      ...address.country,
+      code: lookup.byCountry(address.country.name).iso3,
+    },
+  };
+};
+
+const getProductsByEventId = eventId => {
+  const url = `${SWIAM_API_V3}/shop/products/${eventId}`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, {
+      headers: {
+        'Content-Type': 'application/json',
+        'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
+      },
+    })
+    .then(res => res.data)
+    .catch(error => {
+      logger.error(
+        `Error in Shop Service - getProductsByEventId() for event id: ${eventId} `,
+        error.message
+      );
+      console.log('____getProductsByEventId_____ error', error);
+    });
+};
+
+const getHotelProductById = (startDate, endDate, qualifiers, hotelId) => {
+  const url = `${SWIAM_API}/admin/enc?message=hb:${startDate}:${endDate}:${qualifiers}:${hotelId}`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(
+      url,
+      {},
+      {
+        auth: {
+          username: 'rocketlab',
+          password: 'react4me',
+        },
+      }
+    )
+    .then(res => getProductsByEventId(res.data))
+    .then(data => data)
+    .catch(error => {
+      logger.error(`Error in Shop Service - getEventId()`, error.message);
+      console.log('____getEventId_____ error', error);
+    });
+};
 
 const getProductDataByProductId = async (
   productId,
@@ -14,7 +90,7 @@ const getProductDataByProductId = async (
 ) => {
   const url = `${SWIAM_API_V3}/shop/products/${productId}?currency=${currency}`;
 
-  const http = HttpClient.getHttpClient(5000);
+  const http = HttpClient.getHttpClient();
 
   try {
     const response = await http.get(url, {
@@ -28,6 +104,7 @@ const getProductDataByProductId = async (
       response.data &&
       response.data.length &&
       response.data[0];
+
     return data;
   } catch (error) {
     console.log('Error: ');
@@ -138,7 +215,7 @@ const getCart = (cartId, currency = 'AUD') => {
     });
 };
 
-const setCustomerInfo = (
+const setCustomerInfo = async (
   cartId,
   firstName,
   lastName,
@@ -193,13 +270,7 @@ const deleteItemFromCartById = (cartId = 'GEJKL8', lineItemId, token) => {
     });
 };
 
-const addProduct = ({
-  cartId = 'GEJKL8',
-  variantId,
-  quantity,
-  productId,
-  currency,
-}) => {
+const addProduct = ({ cartId, variantId, quantity, productId, currency }) => {
   const url = `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems`;
   const data = {
     productId,
@@ -272,35 +343,15 @@ const removeProduct = ({ cartId, lineItemId }) => {
     });
 };
 
-const setPayment = (cartId, currency, amount, transactionToken) => {
-  const url = `${SWIAM_API_V3}/shop/carts/${cartId}/payment`;
-
-  // TODO: remove this sample code when the api response becomes stable
-
-  // [8:28 AM] def doStripePayment(cart: JsValue, stripeToken: String ) = {
-  //   val cartId = (cart \ "id").as[String]
-  //   val currency= ( cart \ "displayCurrency" ).as[String]
-  //     val amount= (cart \ "total" \ "amount" ).as[Double]
-  //     // NB this is "OnAccount" for this example, will need "Stripe" gateway in final version (OnAccount will be disabled)
-  //     val payment= s"""{
-  //       "currencyAmount": { "currency": "$currency","amount":$amount},
-  //       "token": "$stripeToken",
-  //       "gateway": "Stripe"
-  //     }"""
-  //     println(s"Payment $payment")
-  //     await(ws.url(BaseUrl + s"/v3/shop/carts/$cartId/payment").withHttpHeaders("api-key" -> apiKey ).put(Json.parse(payment)))
-  // }
-
+// This call is required by the API for God knows what reason
+const syncLineItems = async (cartId, firstName, lastName, email, phone) => {
+  const url = `${SWIAM_API_V3}/shop/carts/${cartId}/customerInfo?syncLineItems=false`;
   const data = JSON.stringify({
-    currencyAmount: {
-      currency,
-      amount,
-    },
-    token: transactionToken,
-    gateway: 'Stripe',
+    name: `${firstName} ${lastName}`,
+    email,
+    phone,
   });
-
-  const http = HttpClient.getHttpClient(6000);
+  const http = HttpClient.getHttpClient();
   return http
     .put(url, data, {
       headers: {
@@ -317,12 +368,106 @@ const setPayment = (cartId, currency, amount, transactionToken) => {
     });
 };
 
-const getMerchandiseByEventId = (eventId, token) => {
-  const url = `${SWIAM_OPENAPI}/cms/v1/eventmerchandise/${eventId}`;
+const setPayment = async ({
+  cartId,
+  currency,
+  lineItems,
+  cardholderName,
+  amount,
+  transactionToken,
+  firstName,
+  lastName,
+  email,
+  phone,
+  typeTickets,
+  deliveryAdress,
+}) => {
+  const http = HttpClient.getHttpClient(8000);
+  const requestParameters = {
+    headers: {
+      'Content-Type': 'application/json',
+      'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
+    },
+  };
+
+  await Promise.all(
+    lineItems.map((item, index) =>
+      http.put(
+        `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems/${
+          item.id
+        }/shippingOption`,
+        {
+          id: typeTickets[index],
+        },
+        requestParameters
+      )
+    )
+  );
+
+  await Promise.all(
+    lineItems.map((item, index) =>
+      http.put(
+        `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems/${
+          item.id
+        }/customerInfo`,
+        {
+          name: `${firstName} ${lastName}`,
+          email,
+          phone,
+          ticketingEmail: '',
+          dob: '',
+          addresses: [
+            {
+              ...getDeliveryAdress(item, deliveryAdress),
+              attn: cardholderName,
+              premise: '',
+              purposes: ['SHIPPING'],
+              phone,
+            },
+          ],
+        },
+        requestParameters
+      )
+    )
+  );
+
+  const data = JSON.stringify({
+    currencyAmount: {
+      currency,
+      amount,
+    },
+    token: transactionToken,
+    gateway: 'Stripe',
+  });
+
+  return syncLineItems(cartId, firstName, lastName, email, phone)
+    .then(() => {
+      const paymentUrl = `${SWIAM_API_V3}/shop/carts/${cartId}/payment`;
+
+      return http
+        .put(paymentUrl, data, requestParameters)
+        .then(res => res.data)
+        .catch(error => {
+          logger.error(`Error in Shop Service - setPayment( `, error.message);
+          console.log('____setPayment_____ error', error.message);
+
+          return null;
+        });
+    })
+    .catch(e => {
+      console.log(
+        `Error syncing line items before payment for cart id ${cartId}`
+      );
+      return null;
+    });
+};
+
+const getMerchandiseByEventId = eventId => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/eventMerchandise/${eventId}`;
 
   const http = HttpClient.getHttpClient();
   return http
-    .get(url, token && getAuthOption(token))
+    .get(url)
     .then(res => res.data.data)
     .catch(error => {
       logger.error(
@@ -335,6 +480,7 @@ const getMerchandiseByEventId = (eventId, token) => {
 
 export {
   getProductDataByEventId,
+  getHotelProductById,
   getProductIdByEventId,
   getCartId,
   getCart,

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: staging-swiam-gql
+spec:
+  ports:
+  - protocol: TCP
+    name: stage-swiam-gql
+    port: 5000
+    targetPort: 5000
+  selector:
+    app: staging-swiam-gql
+    tier: backend
+  type: NodePort

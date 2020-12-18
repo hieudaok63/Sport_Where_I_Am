@@ -8,7 +8,7 @@ import {
 import { allSports } from './sport';
 import { searchByTerm } from './search';
 import { allPopularEvents } from './popularEvents';
-import { nearbyEventsByCityId } from './nearbyEvents';
+import { nearbyEventsByCityId, eventsNearHotel } from './nearbyEvents';
 import { allExperiences } from './experiences';
 import { allCarousels } from './carousel';
 import {
@@ -16,12 +16,16 @@ import {
   hotelsForBigSportingEvents,
   popularHotels,
   popularHotelsByCityId,
+  hotelsNearTheGame,
+  hotelData,
 } from './hotel';
 import { allBlogPosts } from './blogPost';
 import { loginWithEmail, loginWithFacebook } from './login';
+import { loginWithUserName } from './login';
 import { venueByIdFromDate, venueImportantInformationById } from './venue';
-import { allLeagues } from './leagues';
+import { allLeagues, contentDashboard, contentCarousel } from './leagues';
 import {
+  hotelProductById,
   productIdByEventId,
   productDataByEventId,
   createCartId,
@@ -39,6 +43,7 @@ import {
   getleagueVideos,
   getleagueTeams,
   topLeagues,
+  leaguesByCityId,
 } from './league';
 import { eventById } from './event';
 import { sendTicketConfirmation } from './sendTicketConfirmation';
@@ -46,7 +51,7 @@ import { getBooking } from './booking';
 import getNews from './news';
 import interestData, { interestQuestions } from './interestData';
 import { teamById } from './team';
-import { me, register } from './user';
+import { me, register, upComingEvents } from './user';
 import { searchProducts } from './searchProduts';
 import {
   getUniversalToken,
@@ -54,6 +59,7 @@ import {
   listAllStates,
   listAllCities,
 } from './universal';
+import { objectIdByName } from './common';
 
 export {
   cityById,
@@ -66,6 +72,7 @@ export {
   allBlogPosts,
   searchByTerm,
   allHotels,
+  loginWithUserName,
   loginWithFacebook,
   loginWithEmail,
   allLeagues,
@@ -75,8 +82,12 @@ export {
   hotelsForBigSportingEvents,
   topCities,
   leagueInfo,
+  leaguesByCityId,
   venueByIdFromDate,
   nearbyEventsByCityId,
+  eventsNearHotel,
+  hotelProductById,
+  objectIdByName,
   productIdByEventId,
   eventById,
   createCartId,
@@ -87,6 +98,8 @@ export {
   paymentPublicKey,
   popularHotels,
   popularHotelsByCityId,
+  hotelsNearTheGame,
+  hotelData,
   popularSportingCities,
   productDataByEventId,
   removeItemFromCartById,
@@ -96,6 +109,7 @@ export {
   interestData,
   interestQuestions,
   me,
+  upComingEvents,
   register,
   searchProducts,
   customerInfo,
@@ -106,4 +120,6 @@ export {
   listAllCities,
   removeProductFromCart,
   merchandiseByEventId,
+  contentDashboard,
+  contentCarousel,
 };

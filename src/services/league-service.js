@@ -28,7 +28,23 @@ export const getLeagueInfo = (token, leagueId) => {
     .then(res => res.data.data)
     .catch(error => {
       logger.error(
-        `Error in League Service - getLeagueInfo() - `,
+        `Error in League Service - getLeagueInfo() - leagueId:${leagueId}`,
+        error.message
+      );
+      return null;
+    });
+};
+
+export const getLeagueInfoByAbbreviation = (token, leagueAbbreviation) => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/league/${leagueAbbreviation}/infoByAbbreviation`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      logger.error(
+        `Error in League Service - getLeagueInfoByAbbreviation() - leagueAbbreviation:${leagueAbbreviation}`,
         error.message
       );
       return null;
@@ -45,6 +61,22 @@ export const getLeagueVideos = (token, leagueId) => {
     .catch(error => {
       logger.error(
         `Error in League Service - getLeagueVideos() - `,
+        error.message
+      );
+      return null;
+    });
+};
+
+export const getLeaguesByCityId = (token, cityId) => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/${cityId}/leagues`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      logger.error(
+        `Error in League Service - getLeaguesByCityId() - `,
         error.message
       );
       return null;
@@ -83,4 +115,43 @@ export const getTopLeagues = (token, leagueId) => {
     });
 };
 
-export default { getAllLeagues, getLeagueInfo, getLeagueVideos, getTopLeagues };
+export const getContentDashboard = (token, interestId, interestType) => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/contentDashboard/${interestType}/${interestId}`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      logger.error(
+        `Error in League Service - getContentDashboard() - `,
+        error.message
+      );
+      return null;
+    });
+};
+
+export const getContentCarousel = (token, interestId, interestType) => {
+  const url = `${SWIAM_OPENAPI}/cms/v1/contentCarousel/${interestType}/${interestId}`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, token && getAuthOption(token))
+    .then(res => res.data.data)
+    .catch(error => {
+      console.log(error);
+      logger.error(
+        `Error in League Service - getContentCarousel() - `,
+        error.message
+      );
+      return null;
+    });
+};
+
+export default {
+  getAllLeagues,
+  getLeagueInfo,
+  getLeagueVideos,
+  getTopLeagues,
+  getLeaguesByCityId,
+};

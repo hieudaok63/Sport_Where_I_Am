@@ -43,11 +43,24 @@ const City = new GraphQLObjectType({
     //   resolve: (rawCityData, args, req) => {
     //     const { id } = rawCityData;
     //     if (id) {
-    //       return getCityDetailsByIdFromDate(id, '', req.token);
+    //       return getCityDetailsByIdFromDate(id, '', req.headers.authorization);
     //     }
     //     return null;
     //   },
     // },
+  },
+});
+
+export const IdByName = new GraphQLObjectType({
+  name: 'IdByName',
+  fields: {
+    cityId: { type: GraphQLID },
+    cityName: { type: GraphQLString },
+    cityOverview: { type: GraphQLString },
+    country: { type: Country },
+    events: { type: GraphQLList(EventDetails) },
+    image: { type: GraphQLString },
+    imageURL: { type: GraphQLString },
   },
 });
 

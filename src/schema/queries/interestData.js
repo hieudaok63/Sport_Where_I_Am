@@ -13,7 +13,11 @@ const interestData = {
     interestType: { type: GraphQLString },
   },
   resolve: (rawUserData, args, req) =>
-    getInterestData(args.interestId, args.interestType, req.token),
+    getInterestData(
+      args.interestId,
+      args.interestType,
+      req.headers.authorization
+    ),
 };
 
 export const interestQuestions = {
@@ -23,7 +27,11 @@ export const interestQuestions = {
     interestType: { type: GraphQLString },
   },
   resolve: (rawUserData, args, req) =>
-    getInterestQuestions(args.interestId, args.interestType, req.token),
+    getInterestQuestions(
+      args.interestId,
+      args.interestType,
+      req.headers.authorization
+    ),
 };
 
 export default interestData;

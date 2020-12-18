@@ -36,7 +36,7 @@ const Cart = new GraphQLObjectType({
       type: Booking,
       resolve: (rawCartData, args, req) => {
         if (rawCartData.id) {
-          return findBooking(rawCartData.id, req.token);
+          return findBooking(rawCartData.id, req.headers.authorization);
         }
         return null;
       },
