@@ -8,11 +8,12 @@ const sendTicketConfirmation = {
     bookingId: { type: GraphQLString },
     email: { type: GraphQLString },
     fullName: { type: GraphQLString },
+    mergeData: { type: GraphQLString },
   },
   resolve: (rawUserData, args, req) => {
-    const { bookingId, email, fullName } = args;
+    const { bookingId, email, fullName, mergeData } = args;
     if (bookingId && email && fullName) {
-      return sendEmailToBookingCrew(bookingId, email, fullName);
+      return sendEmailToBookingCrew(bookingId, email, fullName, mergeData);
     }
     return null;
   },

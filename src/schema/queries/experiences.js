@@ -8,7 +8,8 @@ const EXPERIENCES = 'Experiences';
 const allExperiences = {
   type: GraphQLList(Events(EXPERIENCES)),
   args: {},
-  resolve: (rawUserData, args, req) => getAllExperiences(req.token),
+  resolve: (rawUserData, args, req) =>
+    getAllExperiences(req.headers.authorization),
 };
 
 export { allExperiences };

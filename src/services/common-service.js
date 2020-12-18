@@ -10,7 +10,6 @@ export const getObjectIdByName = (name, token) => {
   return http
     .get(url, token && getAuthOption(token))
     .then(res => {
-      console.log(res.data);
       return res && res.data;
     })
     .catch(error => {

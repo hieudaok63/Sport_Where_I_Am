@@ -37,7 +37,7 @@ const LineItem = new GraphQLObjectType({
       resolve: (rawLineItemData, args, req) => {
         const { eventId } = rawLineItemData;
         if (eventId) {
-          return getEventById(eventId, req.token);
+          return getEventById(eventId, req.headers.authorization);
         }
         return null;
       },

@@ -6,5 +6,6 @@ import { getAllCarousels } from '../../services/carousel-service';
 export const allCarousels = {
   type: GraphQLList(Carousel),
   args: {},
-  resolve: (rawUserData, args, req) => getAllCarousels(req.token),
+  resolve: (rawUserData, args, req) =>
+    getAllCarousels(req.headers.authorization),
 };
