@@ -20,6 +20,7 @@ import {
   hotelData,
 } from './hotel';
 import { allBlogPosts } from './blogPost';
+import { loginWithEmail, loginWithFacebook } from './login';
 import { loginWithUserName } from './login';
 import { venueByIdFromDate, venueImportantInformationById } from './venue';
 import { allLeagues, contentDashboard, contentCarousel } from './leagues';
@@ -72,6 +73,8 @@ export {
   searchByTerm,
   allHotels,
   loginWithUserName,
+  loginWithFacebook,
+  loginWithEmail,
   allLeagues,
   getleagueVideos,
   getNews,
