@@ -16,9 +16,17 @@ const MAIL_OPTION = 'MAIL';
 const E_TICKET_OPTION = 'ETICKET';
 
 const isInternationalDelivery = ticket =>
+  // ticket.shippingOptions[0].type === MAIL_OPTION;
+  ticket.shippingOptions &&
+  ticket.shippingOptions.length > 0 &&
   ticket.shippingOptions[0].type === MAIL_OPTION;
 const isMobileDelivery = ticket =>
-  ticket.shippingOptions[0].type === E_TICKET_OPTION;
+  // ticket.shippingOptions[0].type === E_TICKET_OPTION;
+  !ticket.shippingOptions ||
+  ticket.shippingOptions.length === 0 ||
+  (ticket.shippingOptions &&
+    ticket.shippingOptions.length > 0 &&
+    ticket.shippingOptions[0].type === E_TICKET_OPTION);
 
 const getDeliveryAdress = (ticket, deliveryAdress) => {
   let address = deliveryAdress.local;
@@ -391,7 +399,7 @@ const setPayment = async ({
   };
 
   await Promise.all(
-    lineItems.map((item, index) =>
+    lineItems.filter(item => item.product.type !== 'HOTEL').map((item, index) =>
       http.put(
         `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems/${
           item.id
@@ -405,30 +413,32 @@ const setPayment = async ({
   );
 
   await Promise.all(
-    lineItems.map((item, index) =>
-      http.put(
+    lineItems.map((item, index) => {
+      const data = {
+        name: `${firstName} ${lastName}`,
+        email,
+        phone,
+        ticketingEmail: '',
+        dob: '',
+        addresses: [
+          {
+            ...getDeliveryAdress(item, deliveryAdress),
+            attn: cardholderName,
+            premise: '',
+            purposes: ['SHIPPING'],
+            phone,
+          },
+        ],
+        more: [],
+      };
+      return http.put(
         `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems/${
           item.id
         }/customerInfo`,
-        {
-          name: `${firstName} ${lastName}`,
-          email,
-          phone,
-          ticketingEmail: '',
-          dob: '',
-          addresses: [
-            {
-              ...getDeliveryAdress(item, deliveryAdress),
-              attn: cardholderName,
-              premise: '',
-              purposes: ['SHIPPING'],
-              phone,
-            },
-          ],
-        },
+        data,
         requestParameters
-      )
-    )
+      );
+    })
   );
 
   const data = JSON.stringify({
