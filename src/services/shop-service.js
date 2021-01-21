@@ -214,7 +214,10 @@ const getCart = (cartId, currency = 'AUD') => {
         'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
       },
     })
-    .then(res => res.data)
+    .then(res => {
+      console.log('CART DATA FROM API', res.data);
+      return res.data;
+    })
     .catch(error => {
       logger.error(`Error in Shop Service - getCart( `, error.message);
       console.log('____getCart_____ error', error.message);
@@ -278,7 +281,11 @@ const setHotelLineItemCustomerInfo = async ({
       JSON.parse(guestDetails),
       requestParameters
     )
-    .then(res => res.data)
+    .then(res => {
+      const customerInfo = get(res, 'data.customerInfo', {});
+      console.log('SET HOTEL CUSTOMER INFO RESPONSE', customerInfo);
+      return customerInfo;
+    })
     .catch(error => {
       logger.error(
         `Error in shop service - setHotelLineItemCustomerInfo`,
