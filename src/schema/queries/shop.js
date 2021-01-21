@@ -4,6 +4,7 @@ import {
   GraphQLFloat,
   GraphQLInt,
   GraphQLObjectType,
+  graphqlSync,
 } from 'graphql';
 import Product, { EventProduct } from '../types/Product';
 import Merchandise from '../types/Merchandise';
@@ -23,6 +24,7 @@ import {
   getProductDataByEventId,
   removeProduct,
   getMerchandiseByEventId,
+  setHotelLineItemCustomerInfo,
 } from '../../services/shop-service';
 import { HotelProduct, ProductIdValue } from '../types/Hotel';
 
@@ -231,6 +233,16 @@ const removeProductFromCart = {
   resolve: (rawUserData, args, req) => removeProduct(args),
 };
 
+const setHotelCustomerInfo = {
+  type: Cart,
+  args: {
+    cartId: { type: GraphQLString },
+    lineItemId: { type: GraphQLString },
+    guestDetails: { type: GraphQLString },
+  },
+  resolve: (rawUserData, args, req) => setHotelLineItemCustomerInfo(args),
+};
+
 const merchandiseByEventId = {
   type: GraphQLList(Merchandise),
   args: {
@@ -258,4 +270,5 @@ export {
   customerInfo,
   addProductOnCart,
   merchandiseByEventId,
+  setHotelCustomerInfo,
 };
