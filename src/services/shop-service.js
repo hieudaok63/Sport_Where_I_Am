@@ -260,6 +260,34 @@ const setCustomerInfo = async (
     });
 };
 
+const setHotelLineItemCustomerInfo = async ({
+  cartId,
+  lineItemId,
+  guestDetails,
+}) => {
+  const http = HttpClient.getHttpClient(8000);
+  const requestParameters = {
+    headers: {
+      'Content-Type': 'application/json',
+      'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
+    },
+  };
+  return http
+    .put(
+      `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems/${lineItemId}/customerInfo`,
+      JSON.parse(guestDetails),
+      requestParameters
+    )
+    .then(res => res.data)
+    .catch(error => {
+      logger.error(
+        `Error in shop service - setHotelLineItemCustomerInfo`,
+        error.message
+      );
+      console.log('____setHotelLineItemCustomerInfo____ error', error.message);
+    });
+};
+
 const deleteItemFromCartById = (cartId = 'GEJKL8', lineItemId, token) => {
   const url = `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems/${lineItemId}`;
 
@@ -412,33 +440,35 @@ const setPayment = async ({
     )
   );
 
+  // set customer info for events only - hotels are handled as guest forms are filled out using setHotelLineItemCustomerInfo above
   await Promise.all(
-    lineItems.map((item, index) => {
-      const data = {
-        name: `${firstName} ${lastName}`,
-        email,
-        phone,
-        ticketingEmail: '',
-        dob: '',
-        addresses: [
-          {
-            ...getDeliveryAdress(item, deliveryAdress),
-            attn: cardholderName,
-            premise: '',
-            purposes: ['SHIPPING'],
-            phone,
-          },
-        ],
-        more: [],
-      };
-      return http.put(
-        `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems/${
-          item.id
-        }/customerInfo`,
-        data,
-        requestParameters
-      );
-    })
+    lineItems
+      .filter(item => item.product.type === 'EVENT')
+      .map((item, index) => {
+        const data = {
+          name: `${firstName} ${lastName}`,
+          email,
+          phone,
+          ticketingEmail: '',
+          dob: '',
+          addresses: [
+            {
+              ...getDeliveryAdress(item, deliveryAdress),
+              attn: cardholderName,
+              premise: '',
+              purposes: ['SHIPPING'],
+              phone,
+            },
+          ],
+        };
+        return http.put(
+          `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems/${
+            item.id
+          }/customerInfo`,
+          data,
+          requestParameters
+        );
+      })
   );
 
   const data = JSON.stringify({
@@ -501,4 +531,5 @@ export {
   setCustomerInfo,
   removeProduct,
   getMerchandiseByEventId,
+  setHotelLineItemCustomerInfo,
 };
