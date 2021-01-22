@@ -31,11 +31,10 @@ const isMobileDelivery = ticket =>
 const getDeliveryAdress = (ticket, deliveryAdress) => {
   let address = deliveryAdress.local;
 
-  if (isInternationalDelivery(ticket)) {
+  if (!ticket.shippingOptions) address = deliveryAdress.billing;
+  else if (isInternationalDelivery(ticket))
     address = deliveryAdress.international;
-  } else if (isMobileDelivery(ticket)) {
-    address = deliveryAdress.billing;
-  }
+  else if (isMobileDelivery(ticket)) address = deliveryAdress.billing;
 
   return {
     ...address,
@@ -434,16 +433,19 @@ const setPayment = async ({
   };
 
   await Promise.all(
-    lineItems.filter(item => item.product.type !== 'HOTEL').map((item, index) =>
-      http.put(
-        `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems/${
-          item.id
-        }/shippingOption`,
-        {
-          id: typeTickets[index],
-        },
-        requestParameters
-      )
+    lineItems.map(
+      (item, index) =>
+        typeTickets[index] !== null
+          ? http.put(
+              `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems/${
+                item.id
+              }/shippingOption`,
+              {
+                id: typeTickets[index],
+              },
+              requestParameters
+            )
+          : Promise.resolve()
     )
   );
 
