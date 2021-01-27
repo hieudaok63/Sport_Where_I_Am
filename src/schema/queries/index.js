@@ -20,7 +20,7 @@ import {
   hotelData,
 } from './hotel';
 import { allBlogPosts } from './blogPost';
-import { loginWithEmail, loginWithFacebook } from './login';
+import { loginWithEmail, loginWithFacebook, loginWithGoogle } from './login';
 import { loginWithUserName } from './login';
 import { venueByIdFromDate, venueImportantInformationById } from './venue';
 import { allLeagues, contentDashboard, contentCarousel } from './leagues';
@@ -37,6 +37,7 @@ import {
   customerInfo,
   removeProductFromCart,
   merchandiseByEventId,
+  setHotelCustomerInfo,
 } from './shop';
 import {
   leagueInfo,
@@ -74,6 +75,7 @@ export {
   allHotels,
   loginWithUserName,
   loginWithFacebook,
+  loginWithGoogle,
   loginWithEmail,
   allLeagues,
   getleagueVideos,
@@ -122,4 +124,5 @@ export {
   merchandiseByEventId,
   contentDashboard,
   contentCarousel,
+  setHotelCustomerInfo,
 };

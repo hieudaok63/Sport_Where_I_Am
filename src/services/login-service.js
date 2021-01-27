@@ -59,9 +59,28 @@ const getLoginWithFacebook = ({ email, accessToken }) => {
     .then(res => res.data)
     .catch(error => {
       console.log(error);
-      logger.error(`Error in Service - register()`, error);
+      logger.error(`Error in Service - login()[facebook]`, error);
       throw new ApolloError(error);
     });
 };
 
-export { loginByUserName, getLoginWithEmail, getLoginWithFacebook };
+const getLoginWithGoogle = ({ email, idToken }) => {
+  const url = `${SWIAM_API}/googlelogin`;
+
+  const http = HttpClient.getHttpClient();
+  return http
+    .get(url, { params: { email, id_token: idToken } })
+    .then(res => res.data)
+    .catch(error => {
+      console.log(error);
+      logger.error(`Error in Service - login()[google]`, error);
+      throw new ApolloError(error);
+    });
+};
+
+export {
+  loginByUserName,
+  getLoginWithEmail,
+  getLoginWithFacebook,
+  getLoginWithGoogle,
+};

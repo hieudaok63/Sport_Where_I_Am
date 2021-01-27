@@ -16,18 +16,25 @@ const MAIL_OPTION = 'MAIL';
 const E_TICKET_OPTION = 'ETICKET';
 
 const isInternationalDelivery = ticket =>
+  // ticket.shippingOptions[0].type === MAIL_OPTION;
+  ticket.shippingOptions &&
+  ticket.shippingOptions.length > 0 &&
   ticket.shippingOptions[0].type === MAIL_OPTION;
 const isMobileDelivery = ticket =>
-  ticket.shippingOptions[0].type === E_TICKET_OPTION;
+  // ticket.shippingOptions[0].type === E_TICKET_OPTION;
+  !ticket.shippingOptions ||
+  ticket.shippingOptions.length === 0 ||
+  (ticket.shippingOptions &&
+    ticket.shippingOptions.length > 0 &&
+    ticket.shippingOptions[0].type === E_TICKET_OPTION);
 
 const getDeliveryAdress = (ticket, deliveryAdress) => {
   let address = deliveryAdress.local;
 
-  if (isInternationalDelivery(ticket)) {
+  if (!ticket.shippingOptions) address = deliveryAdress.billing;
+  else if (isInternationalDelivery(ticket))
     address = deliveryAdress.international;
-  } else if (isMobileDelivery(ticket)) {
-    address = deliveryAdress.billing;
-  }
+  else if (isMobileDelivery(ticket)) address = deliveryAdress.billing;
 
   return {
     ...address,
@@ -206,7 +213,10 @@ const getCart = (cartId, currency = 'AUD') => {
         'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
       },
     })
-    .then(res => res.data)
+    .then(res => {
+      console.log('CART DATA FROM API', res.data);
+      return res.data;
+    })
     .catch(error => {
       logger.error(`Error in Shop Service - getCart( `, error.message);
       console.log('____getCart_____ error', error.message);
@@ -249,6 +259,38 @@ const setCustomerInfo = async (
       console.log('____setCustomerInfo_____ error', error.message);
 
       return null;
+    });
+};
+
+const setHotelLineItemCustomerInfo = async ({
+  cartId,
+  lineItemId,
+  guestDetails,
+}) => {
+  const http = HttpClient.getHttpClient(8000);
+  const requestParameters = {
+    headers: {
+      'Content-Type': 'application/json',
+      'api-key': SWIAM_SHOP_API_KEY, // it uses api-key instead of token for authentication
+    },
+  };
+  return http
+    .put(
+      `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems/${lineItemId}/customerInfo`,
+      JSON.parse(guestDetails),
+      requestParameters
+    )
+    .then(res => {
+      const customerInfo = get(res, 'data.customerInfo', {});
+      console.log('SET HOTEL CUSTOMER INFO RESPONSE', customerInfo);
+      return customerInfo;
+    })
+    .catch(error => {
+      logger.error(
+        `Error in shop service - setHotelLineItemCustomerInfo`,
+        error.message
+      );
+      console.log('____setHotelLineItemCustomerInfo____ error', error.message);
     });
 };
 
@@ -391,26 +433,28 @@ const setPayment = async ({
   };
 
   await Promise.all(
-    lineItems.map((item, index) =>
-      http.put(
-        `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems/${
-          item.id
-        }/shippingOption`,
-        {
-          id: typeTickets[index],
-        },
-        requestParameters
-      )
+    lineItems.map(
+      (item, index) =>
+        typeTickets[index] !== null
+          ? http.put(
+              `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems/${
+                item.id
+              }/shippingOption`,
+              {
+                id: typeTickets[index],
+              },
+              requestParameters
+            )
+          : Promise.resolve()
     )
   );
 
+  // set customer info for events only - hotels are handled as guest forms are filled out using setHotelLineItemCustomerInfo above
   await Promise.all(
-    lineItems.map((item, index) =>
-      http.put(
-        `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems/${
-          item.id
-        }/customerInfo`,
-        {
+    lineItems
+      .filter(item => item.product.type === 'EVENT')
+      .map((item, index) => {
+        const data = {
           name: `${firstName} ${lastName}`,
           email,
           phone,
@@ -425,10 +469,15 @@ const setPayment = async ({
               phone,
             },
           ],
-        },
-        requestParameters
-      )
-    )
+        };
+        return http.put(
+          `${SWIAM_API_V3}/shop/carts/${cartId}/lineitems/${
+            item.id
+          }/customerInfo`,
+          data,
+          requestParameters
+        );
+      })
   );
 
   const data = JSON.stringify({
@@ -491,4 +540,5 @@ export {
   setCustomerInfo,
   removeProduct,
   getMerchandiseByEventId,
+  setHotelLineItemCustomerInfo,
 };

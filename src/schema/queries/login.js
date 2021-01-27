@@ -4,6 +4,7 @@ import {
   loginByUserName,
   getLoginWithEmail,
   getLoginWithFacebook,
+  getLoginWithGoogle,
 } from '../../services/login-service';
 
 const loginWithUserName = {
@@ -47,4 +48,20 @@ const loginWithFacebook = {
   },
 };
 
-export { loginWithUserName, loginWithEmail, loginWithFacebook };
+const loginWithGoogle = {
+  type: User,
+  args: {
+    email: { type: GraphQLString },
+    idToken: { type: GraphQLString },
+  },
+  resolve: (rawUserData, args) => {
+    return getLoginWithGoogle(args);
+  },
+};
+
+export {
+  loginWithUserName,
+  loginWithEmail,
+  loginWithFacebook,
+  loginWithGoogle,
+};
