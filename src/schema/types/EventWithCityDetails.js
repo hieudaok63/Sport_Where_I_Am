@@ -53,8 +53,9 @@ const EventWithCityDetails = new GraphQLObjectType({
     cityData: {
       type: City,
       resolve: (rawCityData, args, req) => {
-        const { venue } = rawCityData;
-        if (venue && venue.cityid) {
+        const { venue, cityid } = rawCityData;
+        if (cityid) return getCityById(cityid, req.headers.authorization);
+        else if (venue && venue.cityid) {
           return getCityById(venue.cityid, req.headers.authorization);
         }
         return null;
