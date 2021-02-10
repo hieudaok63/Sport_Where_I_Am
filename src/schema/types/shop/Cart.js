@@ -41,6 +41,7 @@ const Cart = new GraphQLObjectType({
         return null;
       },
     },
+    promoCodes: { type: GraphQLList(GraphQLString) },
   },
 });
 
