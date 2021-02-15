@@ -282,7 +282,6 @@ const setHotelLineItemCustomerInfo = async ({
     )
     .then(res => {
       const customerInfo = get(res, 'data.customerInfo', {});
-      console.log('SET HOTEL CUSTOMER INFO RESPONSE', customerInfo);
       return customerInfo;
     })
     .catch(error => {
@@ -381,6 +380,25 @@ const removeProduct = ({ cartId, lineItemId }) => {
       logger.error(`Error in Shop Service - removeProduct( `, error.message);
       console.log('____removeProduct_____ error', error.message);
 
+      return null;
+    });
+};
+
+const updatePromoCodes = (cartId, promoCodes, token) => {
+  const url = `${SWIAM_API_V3}/shop/carts/${cartId}/promoCodes`;
+  const data = JSON.stringify(promoCodes);
+  const http = HttpClient.getHttpClient();
+  return http
+    .post(url, data, {
+      headers: {
+        'Content-Type': 'application/json',
+        'api-key': SWIAM_SHOP_API_KEY,
+      },
+    })
+    .then(res => res.data)
+    .catch(error => {
+      logger.error(`Error in Shop Service - updatePromoCodes( `, error.message);
+      console.log('____updatePromoCodes_____ error', error);
       return null;
     });
 };
@@ -541,4 +559,5 @@ export {
   removeProduct,
   getMerchandiseByEventId,
   setHotelLineItemCustomerInfo,
+  updatePromoCodes,
 };

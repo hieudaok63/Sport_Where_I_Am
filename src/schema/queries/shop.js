@@ -25,6 +25,7 @@ import {
   removeProduct,
   getMerchandiseByEventId,
   setHotelLineItemCustomerInfo,
+  updatePromoCodes,
 } from '../../services/shop-service';
 import { HotelProduct, ProductIdValue } from '../types/Hotel';
 
@@ -198,6 +199,21 @@ const removeItemFromCartById = {
   },
 };
 
+const promoCodes = {
+  type: Cart,
+  args: {
+    cartId: { type: GraphQLString },
+    promoCodes: { type: GraphQLList(GraphQLString) },
+  },
+  resolve: (data, args, req) => {
+    const { cartId, promoCodes } = args;
+    if (cartId && promoCodes) {
+      return updatePromoCodes(cartId, promoCodes, req.headers.authorization);
+    }
+    return null;
+  },
+};
+
 const paymentPublicKey = {
   type: PaymentPublicKey,
   args: {
@@ -271,4 +287,5 @@ export {
   addProductOnCart,
   merchandiseByEventId,
   setHotelCustomerInfo,
+  promoCodes,
 };
