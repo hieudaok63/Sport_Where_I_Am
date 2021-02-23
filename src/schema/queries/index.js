@@ -38,6 +38,7 @@ import {
   removeProductFromCart,
   merchandiseByEventId,
   setHotelCustomerInfo,
+  promoCodes,
 } from './shop';
 import {
   leagueInfo,
@@ -125,4 +126,5 @@ export {
   contentDashboard,
   contentCarousel,
   setHotelCustomerInfo,
+  promoCodes,
 };
