@@ -8,14 +8,15 @@ const searchByTerm = {
     searchTerm: { type: GraphQLString },
     useHotelIDs: { type: GraphQLBoolean },
   },
-  resolve: (rawUserData, args, req) => {
+  resolve: async (rawUserData, args, req) => {
     const { searchTerm, useHotelIDs } = args;
     if (searchTerm) {
-      return getSearchByTerm(
+      const results = await getSearchByTerm(
         searchTerm,
         useHotelIDs,
         req.headers.authorization
       );
+      return results;
     }
     return null;
   },
