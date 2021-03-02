@@ -1,4 +1,4 @@
-import { GraphQLObjectType, GraphQLInt, GraphQLList } from 'graphql';
+import { GraphQLObjectType, GraphQLFloat, GraphQLList } from 'graphql';
 
 import Address from './Address';
 import Image from './Image';
@@ -8,7 +8,7 @@ import Ticks from './Ticks.js';
 const VenueInfo = new GraphQLObjectType({
   name: 'VenueInfo',
   fields: {
-    rating: { type: GraphQLInt },
+    rating: { type: GraphQLFloat },
     address: { type: Address },
     images: { type: GraphQLList(Image) },
     facilities: { type: Facilities },
