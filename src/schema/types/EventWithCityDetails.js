@@ -13,6 +13,7 @@ import City from './City';
 import { getCityById } from '../../services/city-service';
 import { getEventDataById } from '../../services/event-service';
 import { getLeagueInfoByAbbreviation } from '../../services/league-service';
+import FeaturedEventData from './FeaturedEventData';
 
 const EventData = new GraphQLObjectType({
   name: 'EventData',
@@ -50,6 +51,8 @@ const EventWithCityDetails = new GraphQLObjectType({
     niceWhen: { type: GraphQLString },
     isFuture: { type: GraphQLBoolean },
     sportIcon: { type: GraphQLString },
+    featuredEvent: { type: GraphQLBoolean },
+    featuredData: { type: FeaturedEventData },
     cityData: {
       type: City,
       resolve: (rawCityData, args, req) => {
