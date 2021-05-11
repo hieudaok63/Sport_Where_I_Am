@@ -24,6 +24,8 @@ const EventData = new GraphQLObjectType({
     eventName: { type: GraphQLString },
     league: { type: League },
     venue: { type: VenueDetails },
+    featuredEvent: { type: GraphQLBoolean },
+    featuredData: { type: FeaturedEventData },
   },
 });
 
@@ -51,8 +53,6 @@ const EventWithCityDetails = new GraphQLObjectType({
     niceWhen: { type: GraphQLString },
     isFuture: { type: GraphQLBoolean },
     sportIcon: { type: GraphQLString },
-    featuredEvent: { type: GraphQLBoolean },
-    featuredData: { type: FeaturedEventData },
     cityData: {
       type: City,
       resolve: (rawCityData, args, req) => {
