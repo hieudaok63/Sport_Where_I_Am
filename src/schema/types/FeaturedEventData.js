@@ -1,4 +1,4 @@
-import { GraphQLObjectType, GraphQLList, GraphQLString } from 'graphql';
+import { GraphQLObjectType, GraphQLList, GraphQLString, GraphQLInt } from 'graphql';
 
 const TicketClass = new GraphQLObjectType({
   name: 'TicketClass',
@@ -20,5 +20,17 @@ const FeaturedEventData = new GraphQLObjectType({
     ticketPurchaseConditions: { type: GraphQLString },
   },
 });
+
+const FromPriceData = new GraphQLObjectType({
+  name : 'FromPriceData',
+  fields : {
+    currencyId : { type : GraphQLString },
+    amount : { type : GraphQLInt }
+  }
+})
+
+export {
+  FromPriceData
+}
 
 export default FeaturedEventData;
