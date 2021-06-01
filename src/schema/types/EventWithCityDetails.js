@@ -13,7 +13,7 @@ import City from './City';
 import { getCityById } from '../../services/city-service';
 import { getEventDataById } from '../../services/event-service';
 import { getLeagueInfoByAbbreviation } from '../../services/league-service';
-import FeaturedEventData from './FeaturedEventData';
+import FeaturedEventData, { FromPriceData } from './FeaturedEventData';
 
 const EventData = new GraphQLObjectType({
   name: 'EventData',
@@ -27,6 +27,7 @@ const EventData = new GraphQLObjectType({
     eventTicketingUrl : { type : GraphQLString },
     featuredEvent: { type: GraphQLBoolean },
     featuredData: { type: FeaturedEventData },
+    fromPrice : { type : FromPriceData },
   },
 });
 
