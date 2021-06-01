@@ -24,7 +24,7 @@ const EventData = new GraphQLObjectType({
     eventName: { type: GraphQLString },
     league: { type: League },
     venue: { type: VenueDetails },
-    eventTicketingURL : { type : GraphQLString },
+    eventTicketingUrl : { type : GraphQLString },
     featuredEvent: { type: GraphQLBoolean },
     featuredData: { type: FeaturedEventData },
   },
