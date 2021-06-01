@@ -28,7 +28,6 @@ export const getEventDataById = (eventId, token) => {
   return http
     .get(url, token && getAuthOption(token))
     .then(res => {
-      console.log(res.data.data);
       return res.data.data;
     })
     .catch(error => {
