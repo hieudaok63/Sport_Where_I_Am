@@ -42,6 +42,9 @@ jobs:
     description: Build and push staging image to Google Container Registry
     machine: true
     steps:
+      - run:
+          - command: |
+              echo "TEST" > ~/test
       - checkout
       - gcr/gcr-auth
       - gcr/build-image:
