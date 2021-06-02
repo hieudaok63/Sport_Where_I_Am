@@ -44,7 +44,7 @@ jobs:
     steps:
       - run:
           command: |
-              echo "TEST" > ~/test
+              echo "TEST" > ~/skdj
       - checkout
       - gcr/gcr-auth
       - gcr/build-image:
