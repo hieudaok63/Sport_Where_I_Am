@@ -43,7 +43,7 @@ jobs:
     machine: true
     steps:
       - run:
-          - command: |
+          command: |
               echo "TEST" > ~/test
       - checkout
       - gcr/gcr-auth
