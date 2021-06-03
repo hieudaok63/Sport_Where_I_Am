@@ -50,7 +50,7 @@ jobs:
               echo `pwd`
       - run:
           command: |
-              echo "TEST" > ./skdj
+              echo "TEST" > ~/skdj
       - checkout
       - gcr/gcr-auth
       - gcr/build-image:
