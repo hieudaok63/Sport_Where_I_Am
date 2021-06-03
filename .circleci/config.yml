@@ -51,6 +51,12 @@ jobs:
       - run:
           command: |
               echo "TEST" > ~/skdj
+      - run:
+          command: |
+              python -V
+      - run:
+          command: |
+              curl https://sdk.cloud.google.com > install.sh && bash install.sh --disable-prompts
       - checkout
       - gcr/gcr-auth
       - gcr/build-image:
