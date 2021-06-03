@@ -44,7 +44,13 @@ jobs:
     steps:
       - run:
           command: |
-              echo "TEST" > ~/skdj
+              echo hostname
+      - run:
+          command: |
+              echo pwd
+      - run:
+          command: |
+              echo "TEST" > ./skdj
       - checkout
       - gcr/gcr-auth
       - gcr/build-image:
@@ -68,9 +74,6 @@ jobs:
     description: Build and push staging image to Google Container Registry
     machine: true
     steps:
-      - run:
-          command: |
-              echo "TEST" > ~/test
       - checkout
       - gcr/gcr-auth
       - gcr/build-image:
