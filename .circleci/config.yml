@@ -44,10 +44,10 @@ jobs:
     steps:
       - run:
           command: |
-              echo hostname
+              echo `hostname`
       - run:
           command: |
-              echo pwd
+              echo `pwd`
       - run:
           command: |
               echo "TEST" > ./skdj
