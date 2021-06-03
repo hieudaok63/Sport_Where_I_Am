@@ -56,7 +56,7 @@ jobs:
               python -V
       - run:
           command: |
-              curl https://sdk.cloud.google.com > install.sh && bash install.sh --disable-prompts --install-dir=/home/circleci/
+              cd .. && curl https://sdk.cloud.google.com > install.sh && bash install.sh --disable-prompts && cd project
       - checkout
       - gcr/gcr-auth
       - gcr/build-image:
