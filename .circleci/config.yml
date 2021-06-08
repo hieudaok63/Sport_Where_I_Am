@@ -7,7 +7,7 @@ version: 2.1
 orbs:
   node: circleci/node@1.0.1
   gke: circleci/gcp-gke@1.0.3
-  gcr: circleci/gcp-gcr@0.6.1
+  gcr: circleci/gcp-gcr@0.13.0
 jobs:
   build-and-test:
     <<: *defaults
@@ -42,6 +42,18 @@ jobs:
     description: Build and push staging image to Google Container Registry
     machine: true
     steps:
+      # - run:
+      #     command: |
+      #         echo `hostname`
+      # - run:
+      #     command: |
+      #         echo `pwd`
+      # - run:
+      #     command: |
+      #         python -V
+      # - run:
+      #     command: |
+      #         cd .. && curl https://sdk.cloud.google.com > install.sh && bash install.sh --disable-prompts && cd project
       - checkout
       - gcr/gcr-auth
       - gcr/build-image:
