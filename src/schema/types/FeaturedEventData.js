@@ -1,4 +1,9 @@
-import { GraphQLObjectType, GraphQLList, GraphQLString, GraphQLInt } from 'graphql';
+import {
+  GraphQLObjectType,
+  GraphQLList,
+  GraphQLString,
+  GraphQLInt,
+} from 'graphql';
 
 const TicketClass = new GraphQLObjectType({
   name: 'TicketClass',
@@ -18,19 +23,23 @@ const FeaturedEventData = new GraphQLObjectType({
     sponsorImage: { type: GraphQLString },
     sponsorDescription: { type: GraphQLString },
     ticketPurchaseConditions: { type: GraphQLString },
+    extraText1Tag: { type: GraphQLString },
+    extraText1Body: { type: GraphQLString },
+    extraText2Tag: { type: GraphQLString },
+    extraText2Body: { type: GraphQLString },
+    extraText3Tag: { type: GraphQLString },
+    extraText3Body: { type: GraphQLString },
   },
 });
 
 const FromPriceData = new GraphQLObjectType({
-  name : 'FromPriceData',
-  fields : {
-    currencyId : { type : GraphQLString },
-    amount : { type : GraphQLInt }
-  }
-})
+  name: 'FromPriceData',
+  fields: {
+    currencyId: { type: GraphQLString },
+    amount: { type: GraphQLInt },
+  },
+});
 
-export {
-  FromPriceData
-}
+export { FromPriceData };
 
 export default FeaturedEventData;
