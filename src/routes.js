@@ -12,7 +12,7 @@ const router = new express.Router({
 
 router.use(bearerToken());
 
-const formatError = error => {
+const customFormatErrorFn = error => {
   const message = error.message || 'An unknown error occurred.';
   const path = error.path ? error.path : '';
   const status = error.status ? error.status : 0;
@@ -27,7 +27,7 @@ const initializedGraphQLMiddleware = graphqlHttp({
   pretty: true,
   // Enable GraphiQL dev tool
   graphiql: true,
-  formatError,
+  customFormatErrorFn,
   subscriptionsEndpoint: `ws://localhost:5000/subscriptions`,
 });
 
