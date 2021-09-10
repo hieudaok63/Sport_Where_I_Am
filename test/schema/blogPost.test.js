@@ -20,7 +20,7 @@ describe('BlogPost Query', () => {
     nock.cleanAll();
   });
 
-  it(`allBlogPosts query should return list of sports with required fields`, done => {
+  it.skip(`allBlogPosts query should return list of sports with required fields`, done => {
     request
       .post(`/${apiPrefix}`)
       .send({
