@@ -1,4 +1,5 @@
 --require @babel/register
+--require @babel/plugin-transform-regenerator
 --reporter spec
 --file ./test/setup.js
 

@@ -1150,6 +1150,11 @@
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.3.tgz#7ee330ba7caafb98090bece86a5ee44115904c2c"
   integrity sha512-ewFXqrQHlFsgc09MK5jP5iR7vumV/BYayNC6PgJO2LPe8vrnNFyjQjSppfEngITi0qvfKtzFvgKymGheFM9UOA==
 
+"@types/regenerator-runtime@^0.13.1":
+  version "0.13.1"
+  resolved "https://registry.yarnpkg.com/@types/regenerator-runtime/-/regenerator-runtime-0.13.1.tgz#1285f0b1b0508e0ead609104b9a42409473122d1"
+  integrity sha512-Wr4Kopo+zs7kl1mxveVrP7Hl5nEzauQKdSNFN5Eg27Ze11MAgJYKgidYc9AAkQzGXXWH9lqVzPbXUGH6M8VY6g==
+
 "@types/serve-static@*":
   version "1.13.5"
   resolved "https://registry.yarnpkg.com/@types/serve-static/-/serve-static-1.13.5.tgz#3d25d941a18415d3ab092def846e135a08bbcf53"
@@ -6191,6 +6196,11 @@ regenerate@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.4.0.tgz#4a856ec4b56e4077c557589cae85e7a4c8869a11"
   integrity sha512-1G6jJVDWrt0rK99kBjvEtziZNCICAuvIPkSiUFIQxVP06RCVpq3dmDo2oi6ABpYaDYaTRr67BEhL8r1wgEZZKg==
+
+regenerator-runtime@0.13.9:
+  version "0.13.9"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.9.tgz#8925742a98ffd90814988d7566ad30ca3b263b52"
+  integrity sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==
 
 regenerator-runtime@^0.11.0:
   version "0.11.1"
