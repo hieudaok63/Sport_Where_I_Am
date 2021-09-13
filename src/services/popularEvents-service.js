@@ -9,7 +9,11 @@ export const getAllPopularEvents = token => {
   const http = HttpClient.getHttpClient();
   return http
     .get(url, token && getAuthOption(token))
-    .then(res => res.data.data)
+    .then(res => {
+      const result = res.data.data;
+      result.sort((a, b) => new Date(a.eventDateTime) - new Date(b.eventDateTime));
+      return result;
+    })
     .catch(error => {
       logger.error(
         `Error in Sport Service - getPopularEvents() - `,

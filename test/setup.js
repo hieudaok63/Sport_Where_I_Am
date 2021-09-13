@@ -1,3 +1,5 @@
+global.regeneratorRuntime = require('regenerator-runtime/runtime');
+
 process.env.NODE_ENV = 'test';
 
 global.app = require('../src').server;
