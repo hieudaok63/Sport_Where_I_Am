@@ -11,15 +11,11 @@ export const getAllPopularEvents = token => {
     .get(url, token && getAuthOption(token))
     .then(res => {
       const result = res.data.data;
-      result.forEach(element => {
-        if (!element.eventDateTime) {
-          return result;
-        }
-      });
-      result.sort(
+      const dateArray = result.filter(element => element.eventDateTime);
+      dateArray.sort(
         (a, b) => new Date(a.eventDateTime) - new Date(b.eventDateTime)
       );
-      return result;
+      return dateArray;
     })
     .catch(error => {
       logger.error(
