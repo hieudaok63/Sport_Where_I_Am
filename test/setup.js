@@ -1,5 +1,6 @@
-process.env.NODE_ENV = 'test';
+global.regeneratorRuntime = require('regenerator-runtime/runtime');
 
+process.env.NODE_ENV = 'test';
 global.app = require('../src').server;
 
 global.url = `${process.env.BASE_GQL_URL}:${process.env.PORT}`;
