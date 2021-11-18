@@ -34,7 +34,7 @@ const register = {
     email: { type: GraphQLString },
     firstName: { type: GraphQLString },
     password: { type: GraphQLString },
-    surnameName: { type: GraphQLString },
+    lastName: { type: GraphQLString },
     tsandcs: { type: GraphQLBoolean },
   },
   resolve: (rawUserData, args) => {
