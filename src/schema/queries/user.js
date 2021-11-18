@@ -35,7 +35,6 @@ const register = {
     firstName: { type: GraphQLString },
     password: { type: GraphQLString },
     lastName: { type: GraphQLString },
-    tsandcs: { type: GraphQLBoolean },
   },
   resolve: (rawUserData, args) => {
     return registerService(args);
