@@ -31,11 +31,12 @@ const upComingEvents = {
 const register = {
   type: User,
   args: {
+    username: { type: GraphQLString },
     email: { type: GraphQLString },
+    userToken: { type: GraphQLString },
     firstName: { type: GraphQLString },
-    password: { type: GraphQLString },
-    lastName: { type: GraphQLString },
-    tsandcs: { type: GraphQLBoolean },
+    surnameName: { type: GraphQLString },
+    fullName: { type: GraphQLString },
   },
   resolve: (rawUserData, args) => {
     return registerService(args);
