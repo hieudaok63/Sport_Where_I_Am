@@ -42,8 +42,8 @@ const getUpComingEvents = token => {
     });
 };
 
-const register = ({ email, firstName, password, surnameName }) => {
-  const url = `${SWIAM_API}/register?email=${email}&firstName=${firstName}&password=${password}&surnameName=${surnameName}&tsandcs=true`;
+const register = ({ email, firstName, password, surname }) => {
+  const url = `${SWIAM_API}/register?email=${email}&firstName=${firstName}&password=${password}&surnameName=${surname}&tsandcs=true`;
 
   const http = HttpClient.getHttpClient();
   return http
