@@ -5,7 +5,6 @@ const { SWIAM_API_V2, SWIAM_API_V3I, SWIAM_OPENAPI } = process.env;
 
 export const getCityById = (cityId, token) => {
   const url = `${SWIAM_OPENAPI}/cms/v1/city/${cityId}/info`;
-  // const url = `${SWIAM_API_V3I}/cities/${cityId}`; // old
 
   const http = HttpClient.getHttpClient();
   return http
